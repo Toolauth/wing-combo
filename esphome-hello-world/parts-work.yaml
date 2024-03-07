@@ -1,0 +1,122 @@
+#
+#
+#     Written to work as ESPHome firmware.
+#     
+#     Simply test that all feature of the baord are working, not integrate into toolauth.
+#
+#
+esphome:
+  name: wing-combo-io-test
+  project:
+    name: "toolauth.hardware"
+    version: "1.3.1"
+
+esp32:
+  board: adafruit_feather_esp32_v2
+  framework:
+    type: arduino
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+  encryption:
+    key: "PshkQJcQPu6gSwUX/ixnLBue6fTtERWyU3WqokLrh90="
+  services:
+  # double test: api-services && buzzer 
+    - service: play_rtttl
+      variables:
+        song_str: string
+      then:
+        - rtttl.play: "mario:d=4,o=5,b=100:16e6,16e6,32p,8e6,16c6,8e6,8g6,8p,8g,8p,8c6,16p,8g,16p,8e,16p,8a,8b,16a#,8a,16g.,16e6,16g6,8a6,16f6,8g6,8e6,16c6,16d6,8b,16p,8c6,16p,8g,16p,8e,16p,8a,8b,16a#,8a,16g.,16e6,16g6,8a6,16f6,8g6,8e6,16c6,16d6,8b,8p,16g6,16f#6,16f6,16d#6,16p,16e6,16p,16g#,16a,16c6,16p,16a,16c6,16d6,8p,16g6,16f#6,16f6,16d#6,16p,16e6,16p,16c7,16p,16c7,16c7,p,16g6,16f#6,16f6,16d#6,16p,16e6,16p,16g#,16a,16c6,16p,16a,16c6,16d6,8p,16d#6,8p,16d6,8p,16c6"
+
+# Enable Over The Air updates
+ota:
+  password: "d3281c2e8ad00b965c8bbb69717ce993"
+
+# Enable WiFi funcitonality
+captive_portal:
+wifi:
+  ssid: "your_wifi_ssid"
+  password: "your_wifi_password"
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "combo board test"
+    password: "some_silly_password"
+
+i2c:
+  sda: GPIO21
+  scl: GPIO22
+  
+pn532_i2c:
+  update_interval: 1s
+
+sensor:
+  - platform: ade7953
+    irq_pin: GPIO25
+    voltage:
+      name: test Voltage
+    current_a:
+      name: test Current A
+    current_b:
+      name: test Current B
+    active_power_a:
+      name: test Active Power A
+      filters:
+        - multiply: -1
+    active_power_b:
+      name: test Active Power B
+      filters:
+        - multiply: -1
+    update_interval: 60s
+
+light:
+  - platform: status_led
+    name: "Red LED"
+    pin: GPIO32
+  - platform: status_led
+    name: "Green LED"
+    pin: GPIO33
+    
+switch:
+  - platform: gpio
+    pin: GPIO17
+    name: "reset relay"
+  - platform: gpio
+    pin: GPIO16
+    name: "set relay"
+
+# needed for rtttl (buzzer)
+output:
+  - platform: ledc
+    pin: GPIO5
+    id: rtttl_out
+rtttl:
+  output: rtttl_out
+  
+binary_sensor:
+  - platform: gpio
+    id: bypass
+    name: "bypass key"
+    pin:
+      number: GPIO26
+      mode:
+        input: true
+  - platform: gpio
+    name: "1st E-Stop"
+    pin:
+      number: GPIO27
+      inverted: true
+      mode:
+        input: true
+        pullup: false
+  - platform: gpio
+    name: "2nd E-Stop"
+    pin:
+      number: GPIO14
+      inverted: true
+      mode:
+        input: true
+        pullup: false
