@@ -24,6 +24,6 @@ _Yes, we could have designed a specific ESP32 into the board. But experience wit
 This project was designed to work with [Home Assistant](https://www.home-assistant.io/) and [ESPHome](https://esphome.io/), because they allow us to host the whole solution on-premises. However, this board is not tied to that stack by any means. There are lots of ways firmware and software could come together to make this work.
 
 ## Design Software
-Schematic and board designed in [KiCAD](https://www.kicad.org/).
-Graphics designed in [Inkscape](https://inkscape.org/)
-Ordered as assembled boards from [JLCPCB](https://jlcpcb.com/).
+* Schematic and board designed in [KiCAD](https://www.kicad.org/).
+* Graphics designed in [Inkscape](https://inkscape.org/).
+* Ordered as assembled boards from [JLCPCB](https://jlcpcb.com/).
