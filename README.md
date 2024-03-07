@@ -12,6 +12,9 @@ The board has the following features:
 * Simple connection for panel-mounted Red & Green status LEDs.
 * 5V supply (from onboard transformer) in USB and solder-able form, for future expansion.
 
+## How do i play with this design?
+It is as easy as downloading this design by whatever means you like: zip file, `clone`, etc. Then, open the `wing-combo.kicad_pro` file with any version of [KiCAD](https://www.kicad.org/) you like, but the newest version will probably be best.
+
 ## Adafuit Feather Specification
 In avoidance of obsolescence, we have designed this board to the [Adafruit](https://www.adafruit.com/)'s [Feather Specification](https://learn.adafruit.com/adafruit-feather/feather-specification). The logic here is that the Feather specification itself should allow us to upgrade the 'brain' of this wing without needing a major re-design. 
 
