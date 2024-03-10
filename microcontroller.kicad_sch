@@ -1,110 +1,281 @@
-(kicad_sch (version 20211123) (generator eeschema)
-
-  (uuid 5bb54eab-2962-4397-a18e-c5fdb30ff9d0)
-
-  (paper "USLetter")
-
-  (title_block
-    (date "2022-10-09")
-    (rev "3")
-    (company "Corey Rice & MakeHaven")
-  )
-
-  (lib_symbols
-  )
-
-
-  (text "This shows the relationships between all components running at 3.3VDC or 5VDC on the board. \nThese are all on the 'low voltage' side of the board. These are all united in their service \nto the ESP32-DEVKITC-V4+ board, but that board itself is removable (for ease of programming \nand switching out the controller, without needing to rewire the tools). "
-    (at 33.02 49.53 0)
-    (effects (font (size 2.5 2.5)) (justify left bottom))
-    (uuid 1af02779-8fa2-4b8d-a301-24cbee7fdcd6)
-  )
-  (text "This is a collection of the simple circuits \nthat translate between voltage levels, break \nout the programming buttons for the ESP32, \ndescribe the DIP switches for configuration \nself-description, control the buzzer, and \ncontrol the indicator LEDs. Many of these \ncircuits use the 3.3V from the ESP32's \nonboard regulator.\n"
-    (at 175.26 151.13 0)
-    (effects (font (size 1.75 1.75)) (justify left bottom))
-    (uuid 301e80af-5416-4b93-9940-5f5e22e6cc3a)
-  )
-  (text "This shows a component to represent the \nESP32-DEVKITC-V4+ board, as it will be \nseated in place. However, the component \nitself is not included on the circuit \nboard, instead seating into some breakout \nheaders for easy replacement. This page \nis for reference only, not design."
-    (at 66.04 88.9 0)
-    (effects (font (size 1.75 1.75)) (justify left bottom))
-    (uuid 3a7ab80c-361a-49c0-8a0d-789b69d4c128)
-  )
-  (text "Breakout Board Connections" (at 33.02 128.27 0)
-    (effects (font (size 3.5 3.5) bold) (justify left bottom))
-    (uuid 59c492da-66d1-4c13-a055-ebe32e8a3be2)
-  )
-  (text "These are the connections for I2C, SPI, and \nthe ESP32 headers. There is also a 3.3V \nlinear regulator to power these daughter \nboards, without placing more draw on the \nESP32's onboard linear regulator (this \nincludes powering the ADE7953).\n\nThere is also a USB plug to provide \naccess to 5VDC - this is primarily \navailable so a panel mount USB power \nport can be added. MakeHaven can \nforesee wanting to add an external \nESP32 to control an E-Paper display, \nand this USB port could provide easy \naccess to power.\n\n"
-    (at 66.04 175.26 0)
-    (effects (font (size 1.75 1.75)) (justify left bottom))
-    (uuid 5c0bf010-eec4-412c-a7fb-47851428f147)
-  )
-  (text "Lights, Sounds & Status" (at 142.24 127 0)
-    (effects (font (size 3.5 3.5) bold) (justify left bottom))
-    (uuid 8dc13897-b540-4b8a-adfb-a6145cbf6596)
-  )
-  (text "The ADE7953 is a high accuracy current, \nvoltage and power measurement chip that \ncommunicates with the ESP32 via I2C. \nThere are three 3.1mm audio jacks to \nenable connecting CT split-ring clamp \nsensors. These CT sensors can be \nclamped around the wires that run \npower to the tool, to monitor the \ncurrent and voltage draw throughout \nuse. Additionally, there are a number \nof jumpers that can be soldered to \nmodify the filtering circuits if \nnecessary. "
-    (at 175.26 105.41 0)
-    (effects (font (size 1.75 1.75)) (justify left bottom))
-    (uuid 91ae1e2a-ea9e-4ed2-8b42-0353493f24c6)
-  )
-  (text "ESP32 Core" (at 33.02 67.31 0)
-    (effects (font (size 3.5 3.5) bold) (justify left bottom))
-    (uuid a6f88849-16da-4fe3-b49a-14bc606ddeb3)
-  )
-  (text "Microcontroller Overview" (at 34.29 31.75 0)
-    (effects (font (size 5 5) (thickness 1) bold) (justify left bottom))
-    (uuid e889a208-8c11-4c5a-b276-88b744b17e86)
-  )
-  (text "ADE7953" (at 143.51 66.04 0)
-    (effects (font (size 3.5 3.5) bold) (justify left bottom))
-    (uuid fd733a39-27c0-4403-b3ee-7e74ff2cc0ff)
-  )
-
-  (sheet (at 143.51 69.85) (size 25.4 13.97) (fields_autoplaced)
-    (stroke (width 0.1524) (type solid) (color 0 0 0 0))
-    (fill (color 0 0 0 0.0000))
-    (uuid 03adfa84-7245-4a0a-b28d-db7d09a8f743)
-    (property "Sheet name" "ade7953" (id 0) (at 143.51 69.1384 0)
-      (effects (font (size 1.27 1.27)) (justify left bottom))
-    )
-    (property "Sheet file" "ade7953.kicad_sch" (id 1) (at 143.51 84.4046 0)
-      (effects (font (size 1.27 1.27)) (justify left top))
-    )
-  )
-
-  (sheet (at 34.29 71.12) (size 25.4 13.97) (fields_autoplaced)
-    (stroke (width 0.1524) (type solid) (color 0 0 0 0))
-    (fill (color 0 0 0 0.0000))
-    (uuid 72caadd5-963d-408a-b010-ddf83ca901da)
-    (property "Sheet name" "esp32core" (id 0) (at 34.29 70.4084 0)
-      (effects (font (size 1.27 1.27)) (justify left bottom))
-    )
-    (property "Sheet file" "esp32core.kicad_sch" (id 1) (at 34.29 85.6746 0)
-      (effects (font (size 1.27 1.27)) (justify left top))
-    )
-  )
-
-  (sheet (at 34.29 130.81) (size 25.4 13.97) (fields_autoplaced)
-    (stroke (width 0.1524) (type solid) (color 0 0 0 0))
-    (fill (color 0 0 0 0.0000))
-    (uuid 76df30f3-bf0f-4a81-9e12-488966ab08bf)
-    (property "Sheet name" "breakoutboards" (id 0) (at 34.29 130.0984 0)
-      (effects (font (size 1.27 1.27)) (justify left bottom))
-    )
-    (property "Sheet file" "breakoutbaords.kicad_sch" (id 1) (at 34.29 145.3646 0)
-      (effects (font (size 1.27 1.27)) (justify left top))
-    )
-  )
-
-  (sheet (at 143.51 130.81) (size 25.4 13.97) (fields_autoplaced)
-    (stroke (width 0.1524) (type solid) (color 0 0 0 0))
-    (fill (color 0 0 0 0.0000))
-    (uuid cdc711b4-3986-4d05-ace8-22e18ebb4f7d)
-    (property "Sheet name" "lightsounds" (id 0) (at 143.51 130.0984 0)
-      (effects (font (size 1.27 1.27)) (justify left bottom))
-    )
-    (property "Sheet file" "lightsounds.kicad_sch" (id 1) (at 143.51 145.3646 0)
-      (effects (font (size 1.27 1.27)) (justify left top))
-    )
-  )
+(kicad_sch
+	(version 20231120)
+	(generator "eeschema")
+	(generator_version "8.0")
+	(uuid "5bb54eab-2962-4397-a18e-c5fdb30ff9d0")
+	(paper "USLetter")
+	(title_block
+		(date "2022-10-09")
+		(rev "3")
+		(company "Corey Rice & MakeHaven")
+	)
+	(lib_symbols)
+	(text "This shows the relationships between all components running at 3.3VDC or 5VDC on the board. \nThese are all on the 'low voltage' side of the board. These are all united in their service \nto the ESP32-DEVKITC-V4+ board, but that board itself is removable (for ease of programming \nand switching out the controller, without needing to rewire the tools). "
+		(exclude_from_sim no)
+		(at 33.02 49.53 0)
+		(effects
+			(font
+				(size 2.5 2.5)
+			)
+			(justify left bottom)
+		)
+		(uuid "1af02779-8fa2-4b8d-a301-24cbee7fdcd6")
+	)
+	(text "This is a collection of the simple circuits \nthat translate between voltage levels, break \nout the programming buttons for the ESP32, \ndescribe the DIP switches for configuration \nself-description, control the buzzer, and \ncontrol the indicator LEDs. Many of these \ncircuits use the 3.3V from the ESP32's \nonboard regulator.\n"
+		(exclude_from_sim no)
+		(at 175.26 151.13 0)
+		(effects
+			(font
+				(size 1.75 1.75)
+			)
+			(justify left bottom)
+		)
+		(uuid "301e80af-5416-4b93-9940-5f5e22e6cc3a")
+	)
+	(text "This shows a component to represent the \nESP32-DEVKITC-V4+ board, as it will be \nseated in place. However, the component \nitself is not included on the circuit \nboard, instead seating into some breakout \nheaders for easy replacement. This page \nis for reference only, not design."
+		(exclude_from_sim no)
+		(at 66.04 88.9 0)
+		(effects
+			(font
+				(size 1.75 1.75)
+			)
+			(justify left bottom)
+		)
+		(uuid "3a7ab80c-361a-49c0-8a0d-789b69d4c128")
+	)
+	(text "Breakout Board Connections"
+		(exclude_from_sim no)
+		(at 33.02 128.27 0)
+		(effects
+			(font
+				(size 3.5 3.5)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "59c492da-66d1-4c13-a055-ebe32e8a3be2")
+	)
+	(text "These are the connections for I2C, SPI, and \nthe ESP32 headers. There is also a 3.3V \nlinear regulator to power these daughter \nboards, without placing more draw on the \nESP32's onboard linear regulator (this \nincludes powering the ADE7953).\n\nThere is also a USB plug to provide \naccess to 5VDC - this is primarily \navailable so a panel mount USB power \nport can be added. MakeHaven can \nforesee wanting to add an external \nESP32 to control an E-Paper display, \nand this USB port could provide easy \naccess to power.\n\n"
+		(exclude_from_sim no)
+		(at 66.04 175.26 0)
+		(effects
+			(font
+				(size 1.75 1.75)
+			)
+			(justify left bottom)
+		)
+		(uuid "5c0bf010-eec4-412c-a7fb-47851428f147")
+	)
+	(text "Lights, Sounds & Status"
+		(exclude_from_sim no)
+		(at 142.24 127 0)
+		(effects
+			(font
+				(size 3.5 3.5)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "8dc13897-b540-4b8a-adfb-a6145cbf6596")
+	)
+	(text "The ADE7953 is a high accuracy current, \nvoltage and power measurement chip that \ncommunicates with the ESP32 via I2C. \nThere are three 3.1mm audio jacks to \nenable connecting CT split-ring clamp \nsensors. These CT sensors can be \nclamped around the wires that run \npower to the tool, to monitor the \ncurrent and voltage draw throughout \nuse. Additionally, there are a number \nof jumpers that can be soldered to \nmodify the filtering circuits if \nnecessary. "
+		(exclude_from_sim no)
+		(at 175.26 105.41 0)
+		(effects
+			(font
+				(size 1.75 1.75)
+			)
+			(justify left bottom)
+		)
+		(uuid "91ae1e2a-ea9e-4ed2-8b42-0353493f24c6")
+	)
+	(text "ESP32 Core"
+		(exclude_from_sim no)
+		(at 33.02 67.31 0)
+		(effects
+			(font
+				(size 3.5 3.5)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "a6f88849-16da-4fe3-b49a-14bc606ddeb3")
+	)
+	(text "Microcontroller Overview"
+		(exclude_from_sim no)
+		(at 34.29 31.75 0)
+		(effects
+			(font
+				(size 5 5)
+				(thickness 1)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "e889a208-8c11-4c5a-b276-88b744b17e86")
+	)
+	(text "ADE7953"
+		(exclude_from_sim no)
+		(at 143.51 66.04 0)
+		(effects
+			(font
+				(size 3.5 3.5)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "fd733a39-27c0-4403-b3ee-7e74ff2cc0ff")
+	)
+	(sheet
+		(at 143.51 69.85)
+		(size 25.4 13.97)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "03adfa84-7245-4a0a-b28d-db7d09a8f743")
+		(property "Sheetname" "ade7953"
+			(at 143.51 69.1384 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "ade7953.kicad_sch"
+			(at 143.51 84.4046 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "mh-custom-v1.3"
+				(path "/586efc0f-7de2-49a7-ac21-ecfef2f716d6/3f0e9b91-fe15-47d5-84d6-aa71b368b91e"
+					(page "6")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 34.29 71.12)
+		(size 25.4 13.97)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "72caadd5-963d-408a-b010-ddf83ca901da")
+		(property "Sheetname" "esp32core"
+			(at 34.29 70.4084 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "esp32core.kicad_sch"
+			(at 34.29 85.6746 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "mh-custom-v1.3"
+				(path "/586efc0f-7de2-49a7-ac21-ecfef2f716d6/3f0e9b91-fe15-47d5-84d6-aa71b368b91e"
+					(page "3")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 34.29 130.81)
+		(size 25.4 13.97)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "76df30f3-bf0f-4a81-9e12-488966ab08bf")
+		(property "Sheetname" "breakoutboards"
+			(at 34.29 130.0984 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "breakoutbaords.kicad_sch"
+			(at 34.29 145.3646 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "mh-custom-v1.3"
+				(path "/586efc0f-7de2-49a7-ac21-ecfef2f716d6/3f0e9b91-fe15-47d5-84d6-aa71b368b91e"
+					(page "5")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 143.51 130.81)
+		(size 25.4 13.97)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "cdc711b4-3986-4d05-ace8-22e18ebb4f7d")
+		(property "Sheetname" "lightsounds"
+			(at 143.51 130.0984 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "lightsounds.kicad_sch"
+			(at 143.51 145.3646 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "mh-custom-v1.3"
+				(path "/586efc0f-7de2-49a7-ac21-ecfef2f716d6/3f0e9b91-fe15-47d5-84d6-aa71b368b91e"
+					(page "4")
+				)
+			)
+		)
+	)
 )

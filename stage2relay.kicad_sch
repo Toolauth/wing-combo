@@ -1,1103 +1,2860 @@
-(kicad_sch (version 20211123) (generator eeschema)
-
-  (uuid 5e15a2f7-7a22-47f5-8852-a50da26eda9e)
-
-  (paper "USLetter")
-
-  (title_block
-    (title "Stage 2 | Core 'Active Self-Latching' relay")
-    (date "2022-10-09")
-    (rev "3")
-    (company "Corey Rice & MakeHaven")
-    (comment 1 "Once activated, relay holds itself open with power ")
-    (comment 2 "Can be interrupted by E-Stops or the S1/'reset' relay")
-    (comment 3 "Fuses added to power inputs, to protect board from improper wiring")
-    (comment 4 "E-Stop low voltage light & switch logic shown for reference")
-  )
-
-  (lib_symbols
-    (symbol "Device:Fuse" (pin_numbers hide) (pin_names (offset 0)) (in_bom yes) (on_board yes)
-      (property "Reference" "F" (id 0) (at 2.032 0 90)
-        (effects (font (size 1.27 1.27)))
-      )
-      (property "Value" "Fuse" (id 1) (at -1.905 0 90)
-        (effects (font (size 1.27 1.27)))
-      )
-      (property "Footprint" "" (id 2) (at -1.778 0 90)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "Datasheet" "~" (id 3) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_keywords" "fuse" (id 4) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_description" "Fuse" (id 5) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_fp_filters" "*Fuse*" (id 6) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (symbol "Fuse_0_1"
-        (rectangle (start -0.762 -2.54) (end 0.762 2.54)
-          (stroke (width 0.254) (type default) (color 0 0 0 0))
-          (fill (type none))
-        )
-        (polyline
-          (pts
-            (xy 0 2.54)
-            (xy 0 -2.54)
-          )
-          (stroke (width 0) (type default) (color 0 0 0 0))
-          (fill (type none))
-        )
-      )
-      (symbol "Fuse_1_1"
-        (pin passive line (at 0 3.81 270) (length 1.27)
-          (name "~" (effects (font (size 1.27 1.27))))
-          (number "1" (effects (font (size 1.27 1.27))))
-        )
-        (pin passive line (at 0 -3.81 90) (length 1.27)
-          (name "~" (effects (font (size 1.27 1.27))))
-          (number "2" (effects (font (size 1.27 1.27))))
-        )
-      )
-    )
-    (symbol "Device:Lamp" (pin_numbers hide) (pin_names (offset 0.0254) hide) (in_bom yes) (on_board yes)
-      (property "Reference" "LA" (id 0) (at 0.635 3.81 0)
-        (effects (font (size 1.27 1.27)) (justify left))
-      )
-      (property "Value" "Lamp" (id 1) (at 0.635 -3.81 0)
-        (effects (font (size 1.27 1.27)) (justify left))
-      )
-      (property "Footprint" "" (id 2) (at 0 2.54 90)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "Datasheet" "~" (id 3) (at 0 2.54 90)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_keywords" "lamp" (id 4) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_description" "Lamp" (id 5) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (symbol "Lamp_0_1"
-        (polyline
-          (pts
-            (xy -1.778 1.778)
-            (xy 1.778 -1.778)
-          )
-          (stroke (width 0) (type default) (color 0 0 0 0))
-          (fill (type none))
-        )
-        (polyline
-          (pts
-            (xy 1.778 1.778)
-            (xy -1.778 -1.778)
-          )
-          (stroke (width 0) (type default) (color 0 0 0 0))
-          (fill (type none))
-        )
-        (circle (center 0 0) (radius 2.54)
-          (stroke (width 0) (type default) (color 0 0 0 0))
-          (fill (type none))
-        )
-      )
-      (symbol "Lamp_1_1"
-        (pin passive line (at 0 -5.08 90) (length 2.54)
-          (name "-" (effects (font (size 1.27 1.27))))
-          (number "1" (effects (font (size 1.27 1.27))))
-        )
-        (pin passive line (at 0 5.08 270) (length 2.54)
-          (name "+" (effects (font (size 1.27 1.27))))
-          (number "2" (effects (font (size 1.27 1.27))))
-        )
-      )
-    )
-    (symbol "Relay_Omron-MY2-02:Relay_Omron_MY2-02" (in_bom yes) (on_board yes)
-      (property "Reference" "R" (id 0) (at 19.05 1.27 0)
-        (effects (font (size 1.27 1.27)))
-      )
-      (property "Value" "Relay_Omron_MY2-02" (id 1) (at 27.94 -1.27 0)
-        (effects (font (size 1.27 1.27)))
-      )
-      (property "Footprint" "relay_Omron-MY2-02:relay-Omron-MY2-02" (id 2) (at 0 20.32 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "Datasheet" "" (id 3) (at 0 20.32 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_description" "PCB mounted relay with AC coil. There are 110VAC and 220VAC versions." (id 4) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (symbol "Relay_Omron_MY2-02_0_1"
-        (rectangle (start -13.97 5.08) (end 16.51 -5.08)
-          (stroke (width 0.254) (type default) (color 0 0 0 0))
-          (fill (type background))
-        )
-        (rectangle (start -12.065 1.905) (end -5.715 -1.905)
-          (stroke (width 0.254) (type default) (color 0 0 0 0))
-          (fill (type none))
-        )
-        (polyline
-          (pts
-            (xy -11.43 -1.905)
-            (xy -6.35 1.905)
-          )
-          (stroke (width 0.254) (type default) (color 0 0 0 0))
-          (fill (type none))
-        )
-        (polyline
-          (pts
-            (xy -8.89 -5.08)
-            (xy -8.89 -1.905)
-          )
-          (stroke (width 0) (type default) (color 0 0 0 0))
-          (fill (type none))
-        )
-        (polyline
-          (pts
-            (xy -8.89 5.08)
-            (xy -8.89 1.905)
-          )
-          (stroke (width 0) (type default) (color 0 0 0 0))
-          (fill (type none))
-        )
-        (polyline
-          (pts
-            (xy -5.715 0)
-            (xy -5.08 0)
-          )
-          (stroke (width 0.254) (type default) (color 0 0 0 0))
-          (fill (type none))
-        )
-        (polyline
-          (pts
-            (xy -4.445 0)
-            (xy -3.81 0)
-          )
-          (stroke (width 0.254) (type default) (color 0 0 0 0))
-          (fill (type none))
-        )
-        (polyline
-          (pts
-            (xy -3.175 0)
-            (xy -2.54 0)
-          )
-          (stroke (width 0.254) (type default) (color 0 0 0 0))
-          (fill (type none))
-        )
-        (polyline
-          (pts
-            (xy -1.905 0)
-            (xy -1.27 0)
-          )
-          (stroke (width 0.254) (type default) (color 0 0 0 0))
-          (fill (type none))
-        )
-        (polyline
-          (pts
-            (xy -0.635 0)
-            (xy 0 0)
-          )
-          (stroke (width 0.254) (type default) (color 0 0 0 0))
-          (fill (type none))
-        )
-        (polyline
-          (pts
-            (xy 0.635 0)
-            (xy 1.27 0)
-          )
-          (stroke (width 0.254) (type default) (color 0 0 0 0))
-          (fill (type none))
-        )
-        (polyline
-          (pts
-            (xy 1.27 -2.54)
-            (xy -0.635 3.81)
-          )
-          (stroke (width 0.508) (type default) (color 0 0 0 0))
-          (fill (type none))
-        )
-        (polyline
-          (pts
-            (xy 1.27 -2.54)
-            (xy 1.27 -5.08)
-          )
-          (stroke (width 0) (type default) (color 0 0 0 0))
-          (fill (type none))
-        )
-        (polyline
-          (pts
-            (xy 1.905 0)
-            (xy 2.54 0)
-          )
-          (stroke (width 0.254) (type default) (color 0 0 0 0))
-          (fill (type none))
-        )
-        (polyline
-          (pts
-            (xy 3.175 0)
-            (xy 3.81 0)
-          )
-          (stroke (width 0.254) (type default) (color 0 0 0 0))
-          (fill (type none))
-        )
-        (polyline
-          (pts
-            (xy 4.445 0)
-            (xy 5.08 0)
-          )
-          (stroke (width 0.254) (type default) (color 0 0 0 0))
-          (fill (type none))
-        )
-        (polyline
-          (pts
-            (xy 5.715 0)
-            (xy 6.35 0)
-          )
-          (stroke (width 0.254) (type default) (color 0 0 0 0))
-          (fill (type none))
-        )
-        (polyline
-          (pts
-            (xy 6.985 0)
-            (xy 7.62 0)
-          )
-          (stroke (width 0.254) (type default) (color 0 0 0 0))
-          (fill (type none))
-        )
-        (polyline
-          (pts
-            (xy 8.255 0)
-            (xy 8.89 0)
-          )
-          (stroke (width 0.254) (type default) (color 0 0 0 0))
-          (fill (type none))
-        )
-        (polyline
-          (pts
-            (xy 9.525 0)
-            (xy 10.16 0)
-          )
-          (stroke (width 0.254) (type default) (color 0 0 0 0))
-          (fill (type none))
-        )
-        (polyline
-          (pts
-            (xy 11.43 -2.54)
-            (xy 9.525 3.81)
-          )
-          (stroke (width 0.508) (type default) (color 0 0 0 0))
-          (fill (type none))
-        )
-        (polyline
-          (pts
-            (xy 11.43 -2.54)
-            (xy 11.43 -5.08)
-          )
-          (stroke (width 0) (type default) (color 0 0 0 0))
-          (fill (type none))
-        )
-        (polyline
-          (pts
-            (xy -1.27 5.08)
-            (xy -1.27 2.54)
-            (xy -0.635 3.175)
-            (xy -1.27 3.81)
-          )
-          (stroke (width 0) (type default) (color 0 0 0 0))
-          (fill (type outline))
-        )
-        (polyline
-          (pts
-            (xy 3.81 5.08)
-            (xy 3.81 2.54)
-            (xy 3.175 3.175)
-            (xy 3.81 3.81)
-          )
-          (stroke (width 0) (type default) (color 0 0 0 0))
-          (fill (type none))
-        )
-        (polyline
-          (pts
-            (xy 8.89 5.08)
-            (xy 8.89 2.54)
-            (xy 9.525 3.175)
-            (xy 8.89 3.81)
-          )
-          (stroke (width 0) (type default) (color 0 0 0 0))
-          (fill (type outline))
-        )
-        (polyline
-          (pts
-            (xy 13.97 5.08)
-            (xy 13.97 2.54)
-            (xy 13.335 3.175)
-            (xy 13.97 3.81)
-          )
-          (stroke (width 0) (type default) (color 0 0 0 0))
-          (fill (type none))
-        )
-        (rectangle (start 1.27 12.7) (end 1.27 12.7)
-          (stroke (width 0) (type default) (color 0 0 0 0))
-          (fill (type none))
-        )
-      )
-      (symbol "Relay_Omron_MY2-02_1_1"
-        (pin bidirectional line (at -1.27 7.62 270) (length 2.54)
-          (name "" (effects (font (size 1.27 1.27))))
-          (number "1" (effects (font (size 1.27 1.27))))
-        )
-        (pin bidirectional line (at 11.43 -7.62 90) (length 2.54)
-          (name "" (effects (font (size 1.27 1.27))))
-          (number "12" (effects (font (size 1.27 1.27))))
-        )
-        (pin input line (at -8.89 7.62 270) (length 2.54)
-          (name "" (effects (font (size 1.27 1.27))))
-          (number "13" (effects (font (size 1.27 1.27))))
-        )
-        (pin input line (at -8.89 -7.62 90) (length 2.54)
-          (name "" (effects (font (size 1.27 1.27))))
-          (number "14" (effects (font (size 1.27 1.27))))
-        )
-        (pin bidirectional line (at 8.89 7.62 270) (length 2.54)
-          (name "" (effects (font (size 1.27 1.27))))
-          (number "4" (effects (font (size 1.27 1.27))))
-        )
-        (pin bidirectional line (at 3.81 7.62 270) (length 2.54)
-          (name "" (effects (font (size 1.27 1.27))))
-          (number "5" (effects (font (size 1.27 1.27))))
-        )
-        (pin bidirectional line (at 13.97 7.62 270) (length 2.54)
-          (name "" (effects (font (size 1.27 1.27))))
-          (number "8" (effects (font (size 1.27 1.27))))
-        )
-        (pin bidirectional line (at 1.27 -7.62 90) (length 2.54)
-          (name "" (effects (font (size 1.27 1.27))))
-          (number "9" (effects (font (size 1.27 1.27))))
-        )
-      )
-    )
-    (symbol "Switch:SW_Push" (pin_numbers hide) (pin_names (offset 1.016) hide) (in_bom yes) (on_board yes)
-      (property "Reference" "SW" (id 0) (at 1.27 2.54 0)
-        (effects (font (size 1.27 1.27)) (justify left))
-      )
-      (property "Value" "SW_Push" (id 1) (at 0 -1.524 0)
-        (effects (font (size 1.27 1.27)))
-      )
-      (property "Footprint" "" (id 2) (at 0 5.08 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "Datasheet" "~" (id 3) (at 0 5.08 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_keywords" "switch normally-open pushbutton push-button" (id 4) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_description" "Push button switch, generic, two pins" (id 5) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (symbol "SW_Push_0_1"
-        (circle (center -2.032 0) (radius 0.508)
-          (stroke (width 0) (type default) (color 0 0 0 0))
-          (fill (type none))
-        )
-        (polyline
-          (pts
-            (xy 0 1.27)
-            (xy 0 3.048)
-          )
-          (stroke (width 0) (type default) (color 0 0 0 0))
-          (fill (type none))
-        )
-        (polyline
-          (pts
-            (xy 2.54 1.27)
-            (xy -2.54 1.27)
-          )
-          (stroke (width 0) (type default) (color 0 0 0 0))
-          (fill (type none))
-        )
-        (circle (center 2.032 0) (radius 0.508)
-          (stroke (width 0) (type default) (color 0 0 0 0))
-          (fill (type none))
-        )
-        (pin passive line (at -5.08 0 0) (length 2.54)
-          (name "1" (effects (font (size 1.27 1.27))))
-          (number "1" (effects (font (size 1.27 1.27))))
-        )
-        (pin passive line (at 5.08 0 180) (length 2.54)
-          (name "2" (effects (font (size 1.27 1.27))))
-          (number "2" (effects (font (size 1.27 1.27))))
-        )
-      )
-    )
-    (symbol "power:+5V" (power) (pin_names (offset 0)) (in_bom yes) (on_board yes)
-      (property "Reference" "#PWR" (id 0) (at 0 -3.81 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "Value" "+5V" (id 1) (at 0 3.556 0)
-        (effects (font (size 1.27 1.27)))
-      )
-      (property "Footprint" "" (id 2) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "Datasheet" "" (id 3) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_keywords" "power-flag" (id 4) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_description" "Power symbol creates a global label with name \"+5V\"" (id 5) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (symbol "+5V_0_1"
-        (polyline
-          (pts
-            (xy -0.762 1.27)
-            (xy 0 2.54)
-          )
-          (stroke (width 0) (type default) (color 0 0 0 0))
-          (fill (type none))
-        )
-        (polyline
-          (pts
-            (xy 0 0)
-            (xy 0 2.54)
-          )
-          (stroke (width 0) (type default) (color 0 0 0 0))
-          (fill (type none))
-        )
-        (polyline
-          (pts
-            (xy 0 2.54)
-            (xy 0.762 1.27)
-          )
-          (stroke (width 0) (type default) (color 0 0 0 0))
-          (fill (type none))
-        )
-      )
-      (symbol "+5V_1_1"
-        (pin power_in line (at 0 0 90) (length 0) hide
-          (name "+5V" (effects (font (size 1.27 1.27))))
-          (number "1" (effects (font (size 1.27 1.27))))
-        )
-      )
-    )
-    (symbol "power:GND" (power) (pin_names (offset 0)) (in_bom yes) (on_board yes)
-      (property "Reference" "#PWR" (id 0) (at 0 -6.35 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "Value" "GND" (id 1) (at 0 -3.81 0)
-        (effects (font (size 1.27 1.27)))
-      )
-      (property "Footprint" "" (id 2) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "Datasheet" "" (id 3) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_keywords" "power-flag" (id 4) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_description" "Power symbol creates a global label with name \"GND\" , ground" (id 5) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (symbol "GND_0_1"
-        (polyline
-          (pts
-            (xy 0 0)
-            (xy 0 -1.27)
-            (xy 1.27 -1.27)
-            (xy 0 -2.54)
-            (xy -1.27 -1.27)
-            (xy 0 -1.27)
-          )
-          (stroke (width 0) (type default) (color 0 0 0 0))
-          (fill (type none))
-        )
-      )
-      (symbol "GND_1_1"
-        (pin power_in line (at 0 0 270) (length 0) hide
-          (name "GND" (effects (font (size 1.27 1.27))))
-          (number "1" (effects (font (size 1.27 1.27))))
-        )
-      )
-    )
-  )
-
-  (junction (at 66.04 110.49) (diameter 0) (color 0 0 0 0)
-    (uuid 02e5ae4b-a788-45d2-bc28-8e4504a17b90)
-  )
-
-  (wire (pts (xy 193.04 74.93) (xy 193.04 85.09))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid 00ae087c-86a9-4780-b947-34669d7dffa1)
-  )
-  (wire (pts (xy 123.19 133.35) (xy 76.2 133.35))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid 01b85774-c82d-478c-875f-0ebf325c567a)
-  )
-  (wire (pts (xy 88.9 113.03) (xy 95.25 113.03))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid 0413e18d-1ffa-4cb5-adf8-1647303528f3)
-  )
-  (wire (pts (xy 95.25 130.81) (xy 95.25 127))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid 0983459c-d9b2-4e8d-b35a-fba5502f9859)
-  )
-  (wire (pts (xy 95.25 119.38) (xy 102.87 119.38))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid 0ed5abd4-83a2-4c54-945f-9ad175f8e733)
-  )
-  (wire (pts (xy 66.04 100.33) (xy 66.04 110.49))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid 16e0a73b-f8f0-48e1-ac67-b05a7f630367)
-  )
-  (polyline (pts (xy 68.58 198.12) (xy 44.45 198.12))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid 2517c95e-0dbb-4427-b9b1-80fa2a152bf5)
-  )
-
-  (wire (pts (xy 190.5 156.21) (xy 191.77 156.21))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid 2553999c-7cc3-4505-b2e1-c21b659b89fc)
-  )
-  (wire (pts (xy 50.8 90.17) (xy 66.04 90.17))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid 2ed9f985-734e-4db0-8b24-0d4c232ff9d8)
-  )
-  (wire (pts (xy 49.53 170.18) (xy 49.53 171.45))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid 3a939f1e-ee6a-42eb-bf86-3d9820ec6938)
-  )
-  (wire (pts (xy 66.04 129.54) (xy 66.04 140.97))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid 4032257b-c09b-4a8b-8ba0-dcb7d59b15cf)
-  )
-  (wire (pts (xy 193.04 63.5) (xy 193.04 72.39))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid 40f33e79-7f61-463e-aa24-ad4c37a21355)
-  )
-  (polyline (pts (xy 44.45 163.83) (xy 68.58 163.83))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid 47b569c7-caed-400b-ab1f-7debe3eb9340)
-  )
-
-  (wire (pts (xy 88.9 114.3) (xy 88.9 113.03))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid 5a868845-6d5f-4067-8990-005b3f4f30be)
-  )
-  (wire (pts (xy 76.2 129.54) (xy 76.2 133.35))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid 5d9799cb-106a-4c44-b809-087209e009db)
-  )
-  (wire (pts (xy 95.25 127) (xy 102.87 127))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid 65d2ab2c-13d1-4b04-9728-449da50dc051)
-  )
-  (wire (pts (xy 190.5 153.67) (xy 191.77 153.67))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid 66092ba8-1668-4c4e-b393-80c050ba3603)
-  )
-  (wire (pts (xy 193.04 87.63) (xy 193.04 101.6))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid 6df8d7d9-ab8f-47bc-bd9f-25461e4c57d5)
-  )
-  (polyline (pts (xy 43.18 163.83) (xy 43.18 198.12))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid 79145791-22eb-4bd9-b6bb-4ac699f489fc)
-  )
-
-  (wire (pts (xy 78.74 110.49) (xy 66.04 110.49))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid 836d4379-aa11-4ed8-a5fe-f9e33c009c24)
-  )
-  (wire (pts (xy 95.25 113.03) (xy 95.25 119.38))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid 908d18c2-d5ca-4542-96b3-c4488177771e)
-  )
-  (wire (pts (xy 86.36 129.54) (xy 86.36 130.81))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid 98617195-5dc9-49f6-b0eb-ae0cb1e58fa3)
-  )
-  (wire (pts (xy 199.39 156.21) (xy 204.47 156.21))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid 9f0dcb76-f32e-43f0-8f2f-5285c0ab359a)
-  )
-  (polyline (pts (xy 191.77 100.33) (xy 191.77 105.41))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid a13651f3-f798-479d-87c7-8acd7b8ef6b9)
-  )
-  (polyline (pts (xy 191.77 88.9) (xy 191.77 83.82))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid bcd75f51-5fc9-466a-9a79-2ead80ffa31e)
-  )
-
-  (wire (pts (xy 123.19 91.44) (xy 123.19 133.35))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid bcdecae9-7a9a-464b-9f7f-22ce3897301b)
-  )
-  (wire (pts (xy 66.04 97.79) (xy 66.04 90.17))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid d60139d3-ca52-49dc-8b41-86a0e14258c9)
-  )
-  (wire (pts (xy 78.74 114.3) (xy 78.74 110.49))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid d70a667e-445c-4473-ab07-2db82da8f45c)
-  )
-  (wire (pts (xy 193.04 104.14) (xy 193.04 116.84))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid d8504546-7575-44f2-aeda-2acb53ef07ce)
-  )
-  (polyline (pts (xy 68.58 163.83) (xy 68.58 198.12))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid da7f1377-48ab-4515-80ab-07f3e31d685e)
-  )
-
-  (wire (pts (xy 66.04 110.49) (xy 66.04 114.3))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid db199d7a-1373-4a1f-8bce-9f9c7c23a16f)
-  )
-  (wire (pts (xy 49.53 191.77) (xy 49.53 190.5))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid e0c856dc-0130-4850-bc0a-5a30ef774412)
-  )
-  (wire (pts (xy 86.36 130.81) (xy 95.25 130.81))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid e31765ad-12f5-4768-a712-07144cfb3dde)
-  )
-  (polyline (pts (xy 44.45 163.83) (xy 44.45 198.12))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid eec73c12-5eae-47c3-98b8-c1cc6799ed51)
-  )
-
-  (wire (pts (xy 199.39 153.67) (xy 204.47 153.67))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid f85852fe-812c-4949-a8da-f7b49c703194)
-  )
-  (wire (pts (xy 193.04 52.07) (xy 193.04 60.96))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid f949e146-a9e3-40bb-9171-d2ed9725fd5f)
-  )
-
-  (text "Connection to mains-fused-H/L1\n==> Regulated by two controllers \n      in logical 'OR' configuration\n    - bypass key (manual activation)\n    - S1-1 'set' relay for SW 'enable'"
-    (at 26.67 102.87 0)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid 01b6fcd8-7452-4872-8b02-8496ada00dee)
-  )
-  (text "The previous Tool-Controller design was just this section of the circuit (with simpler Microcontroller connection)."
-    (at 21.59 48.26 0)
-    (effects (font (size 1.5 1.5)) (justify left bottom))
-    (uuid 0d95b27e-8894-4549-8b27-544245c89688)
-  )
-  (text "Mains power needs connected here, and will power the whole box.\nExcept, perhaps, the tool. If more exotic power is needed.\n\nLabeled on PCB as H/L1 & N/L2 to cover the bases (that both may be live)."
-    (at 175.26 146.05 0)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid 41078c4e-59f3-4701-b744-e9710d47f7e9)
-  )
-  (text "S1-2 relay for timeout on tool" (at 213.36 63.5 0)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid 41337242-57bd-4e72-bc2f-8d5d1bc28713)
-  )
-  (text "'Reset' circuit on Stage 2 relay" (at 175.26 33.02 0)
-    (effects (font (size 2 2) (thickness 0.4) bold) (justify left bottom))
-    (uuid 469a546a-b901-4d8f-a26e-2f76d45a7acf)
-  )
-  (text "Stage 2 || Core Functions run at full 110-230VAC\n" (at 20.32 21.59 0)
-    (effects (font (size 4 4) (thickness 0.8) bold) (justify left bottom))
-    (uuid 53a41ee3-db1b-49d8-a198-3f95a5f96e7e)
-  )
-  (text "If there is a Stage 3 relay, then Stage 2 relay can have a lowered switching current -> down to approximately 2amps"
-    (at 21.59 38.1 0)
-    (effects (font (size 1.5 1.5)) (justify left bottom))
-    (uuid 5b4eae8b-22de-4dcd-ba80-9fed16379da7)
-  )
-  (text "The E-Stop light runs at 5V, and is shown here\nbecuase it conceptually makes sense on the sheet.\n\nThis lamp-to-switch connection is done on the \nmodular E-Stop switches themselves, not any PCB. \n\nThe middle 'read-E-stop' informs the microcontroller."
-    (at 71.12 195.58 0)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid 5d08c72c-f2ec-4a76-b907-ae422e627e51)
-  )
-  (text "N-ON switch" (at 226.06 74.93 0)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid 635ee82d-95f4-4670-ba44-eda56eb8110c)
-  )
-  (text "The E-Stop is connected from a 3-wire header:\n  >> 5V goes 'above' the incadescent bulb\n  >> Read goes 'between' E-Stop and switch\n  >> GND goes 'below' switch"
-    (at 71.12 179.07 0)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid 6740d32f-5460-45b5-a99a-5cef3a28ddf1)
-  )
-  (text "N-OFF switch" (at 93.98 100.33 0)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid 7c4fbb21-9858-4cba-a83a-0d45b2547718)
-  )
-  (text "N-ON switch\nneeded for bypass mode" (at 219.71 88.9 0)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid 83d8d6e1-53a8-44f1-b57b-64434d8d3ec6)
-  )
-  (text "E-Stop on modular, panel-mount button" (at 71.12 168.91 0)
-    (effects (font (size 2 2) bold) (justify left bottom))
-    (uuid 8c5b4499-7cb1-4dc7-b538-c61f98cd7d56)
-  )
-  (text "aux E-stop -->" (at 190.5 104.14 180)
-    (effects (font (size 1.27 1.27)) (justify right bottom))
-    (uuid 8f854099-7cb7-4f5e-98e0-f1012663fcc2)
-  )
-  (text "forgetful member -->" (at 191.77 63.5 180)
-    (effects (font (size 1.27 1.27)) (justify right bottom))
-    (uuid 932b0a0a-53cf-4e18-95f7-a2828904e0ea)
-  )
-  (text "These are all the ways to 'reset' the Stage 2 relay. \n[Not including overall loss of power, which also causes reset.]\nNormally a member will press the red button. But they may also \nuse the E-Stop to temporarily pause function, or the timeout \ncould trigger automatically if programmed correctly..."
-    (at 176.53 44.45 0)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid a7d2a0c9-deb3-4500-aaa4-f6ed6dbde2b5)
-  )
-  (text "This Estop is linked to 'Member-E-Stop-sw1'\nThe EStop here (sw2) resets the active self-latch\nand also blocks the green button from working."
-    (at 194.31 96.52 0)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid aff6aeba-85df-4279-a858-15300bae58a3)
-  )
-  (text "active self-latching of a relay   https://electronics.stackexchange.com/questions/223691/self-latching-relay"
-    (at 21.59 30.48 0)
-    (effects (font (size 1.5 1.5)) (justify left bottom))
-    (uuid bc4195aa-09ed-4ec4-9152-4ff60c41bd91)
-  )
-  (text "Fuse Protected Power Inputs" (at 175.26 137.16 0)
-    (effects (font (size 2 2) (thickness 0.4) bold) (justify left bottom))
-    (uuid be0df719-ecef-425c-b214-f735477503c9)
-  )
-  (text "'Set' & 'Latch' circuit on Stage 2 relay" (at 33.02 73.66 0)
-    (effects (font (size 2 2) (thickness 0.4) bold) (justify left bottom))
-    (uuid c12013cb-16c7-4ab1-a974-508351bcc737)
-  )
-  (text "normal tool end -->" (at 191.77 74.93 180)
-    (effects (font (size 1.27 1.27)) (justify right bottom))
-    (uuid d9cfff9f-50a8-462a-9266-c5b34c1c43b2)
-  )
-  (text "main E-stop -->" (at 190.5 87.63 180)
-    (effects (font (size 1.27 1.27)) (justify right bottom))
-    (uuid da75c609-ec20-44aa-98a3-f9bac7412f2e)
-  )
-  (text "N-ON switch\nMany tools will have this jumpered-shut.\nOnly tools that need a second E-Stop in a\nmore reachable place will use this.\n"
-    (at 220.98 107.95 0)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid db7ebb4e-1c83-445f-b4aa-d0bf1871b7ab)
-  )
-  (text "Relay 2 [main function] {110VAC or 240VAC coil activation} "
-    (at 21.59 26.67 0)
-    (effects (font (size 2 2)) (justify left bottom))
-    (uuid dddcb925-ea06-4280-8a58-6ded8decc310)
-  )
-  (text "In this location, the E-Stop shuts off the tool\nand resets the active self-latch at the same time.\nand this works in bypass mode."
-    (at 194.31 115.57 0)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid e86fdcb6-8445-4b6e-8b6d-d2a22dce58d1)
-  )
-  (text "Out to Stage 3" (at 92.71 124.46 0)
-    (effects (font (size 2 2) italic) (justify left bottom))
-    (uuid ea4a65ad-b323-4249-856e-25a4d377f4ad)
-  )
-  (text "Provides the majority of the Member's interface experience\n"
-    (at 21.59 43.18 0)
-    (effects (font (size 1.5 1.5)) (justify left bottom))
-    (uuid ec8d5a33-b48f-432f-ba56-4cc0c9a63662)
-  )
-  (text "This portion of the circuit allows the Stage 2 Relay to turn on & stay on.\nWhen enabled [by ESP32 or Bypass] a person can turn on the relay with the green button.\nOnce activated, the link from relay pin 5_to_13 'latch' the relay on while powered, until reset.\nThe \"Can-Turn-On\" light will shine if it is possible to 'set' the relay for any reason.\nThe light is important, because it shows a working system or if bypass mode is enabled by a key."
-    (at 33.02 85.09 0)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid f47f5a7b-4538-49c3-a67a-50e85e1672f8)
-  )
-
-  (label "active self-latch" (at 67.31 110.49 0)
-    (effects (font (size 1.75 1.75) italic) (justify left bottom))
-    (uuid 1bd3d193-bcbb-465e-a3ae-30ed054fba1e)
-  )
-
-  (global_label "Stage3-NO" (shape input) (at 102.87 119.38 0) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify left))
-    (uuid 209dceb5-b209-4ebc-b1f7-0db897897476)
-    (property "Intersheet References" "${INTERSHEET_REFS}" (id 0) (at 116.0479 119.3006 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-  )
-  (global_label "mHotSw1" (shape input) (at 50.8 90.17 180) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify right))
-    (uuid 221ff463-1af7-4d15-bb4a-ccc0de66e647)
-    (property "Intersheet References" "${INTERSHEET_REFS}" (id 0) (at 39.7388 90.0906 0)
-      (effects (font (size 1.27 1.27)) (justify right) hide)
-    )
-  )
-  (global_label "reset-timeout-2" (shape input) (at 193.04 60.96 0) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify left))
-    (uuid 3a84e10d-68c7-4bf0-b708-28524d31d7a3)
-    (property "Intersheet References" "${INTERSHEET_REFS}" (id 0) (at 211.6607 60.8806 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-  )
-  (global_label "Member-E-Stop-sw2-1" (shape input) (at 193.04 85.09 0) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify left))
-    (uuid 46ce10a4-0f52-4017-9408-4188dc86f48a)
-    (property "Intersheet References" "${INTERSHEET_REFS}" (id 0) (at 219.1598 85.0106 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-  )
-  (global_label "reset-timeout-1" (shape input) (at 193.04 63.5 0) (fields_autoplaced)
-    (effects (font (size 1.27 1.27) italic) (justify left))
-    (uuid 4926a4f5-9059-4508-95e3-4b306f8dad19)
-    (property "Intersheet References" "${INTERSHEET_REFS}" (id 0) (at 211.9163 63.4206 0)
-      (effects (font (size 1.27 1.27) italic) (justify left) hide)
-    )
-  )
-  (global_label "reset" (shape input) (at 193.04 52.07 0) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify left))
-    (uuid 63a02f40-3ea1-4ae1-af2d-dbf7f32c43b8)
-    (property "Intersheet References" "${INTERSHEET_REFS}" (id 0) (at 200.1702 51.9906 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-  )
-  (global_label "N{slash}L2" (shape passive) (at 190.5 156.21 180) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify right))
-    (uuid 7df39d46-1b7b-4ac0-8182-2be777479147)
-    (property "Intersheet References" "${INTERSHEET_REFS}" (id 0) (at 183.1883 156.1306 0)
-      (effects (font (size 1.27 1.27)) (justify right) hide)
-    )
-  )
-  (global_label "reset" (shape input) (at 66.04 140.97 0) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify left))
-    (uuid 8abb8c66-60cc-4f4d-bf1d-beb6f783688c)
-    (property "Intersheet References" "${INTERSHEET_REFS}" (id 0) (at 73.1702 140.8906 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-  )
-  (global_label "mains-fused-H{slash}L1" (shape passive) (at 204.47 153.67 0) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify left))
-    (uuid 9ad4c224-856c-452e-bd99-71a15d537261)
-    (property "Intersheet References" "${INTERSHEET_REFS}" (id 0) (at 225.6912 153.5906 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-  )
-  (global_label "mains-fused-N{slash}L2" (shape passive) (at 193.04 116.84 180) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify right))
-    (uuid a13fe548-2b36-4bc5-9636-5a9859a08d9b)
-    (property "Intersheet References" "${INTERSHEET_REFS}" (id 0) (at 171.8188 116.9194 0)
-      (effects (font (size 1.27 1.27)) (justify right) hide)
-    )
-  )
-  (global_label "Stage3-Com" (shape input) (at 102.87 127 0) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify left))
-    (uuid a45ab463-c3de-41b0-bdb5-82b64af6c778)
-    (property "Intersheet References" "${INTERSHEET_REFS}" (id 0) (at 117.4993 127.0794 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-  )
-  (global_label "mains-fused-N{slash}L2" (shape passive) (at 204.47 156.21 0) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify left))
-    (uuid b03444bf-6122-417d-83dc-1bd432ca617b)
-    (property "Intersheet References" "${INTERSHEET_REFS}" (id 0) (at 225.6912 156.1306 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-  )
-  (global_label "Member-E-Stop-aux2-1" (shape input) (at 193.04 101.6 0) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify left))
-    (uuid b11aed26-1822-4485-9e21-1a7396b76460)
-    (property "Intersheet References" "${INTERSHEET_REFS}" (id 0) (at 220.1274 101.5206 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-  )
-  (global_label "Member-Red-Reset-Button-2" (shape input) (at 193.04 74.93 0) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify left))
-    (uuid d01543d6-2a6e-475a-9ce2-e2e5463dc1e8)
-    (property "Intersheet References" "${INTERSHEET_REFS}" (id 0) (at 225.0864 74.8506 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-  )
-  (global_label "Member-E-Stop-sw2-2" (shape input) (at 193.04 87.63 0) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify left))
-    (uuid d067c23e-7631-4d9f-9a1b-c3421d438f3b)
-    (property "Intersheet References" "${INTERSHEET_REFS}" (id 0) (at 219.1598 87.5506 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-  )
-  (global_label "Member-Red-Reset-Button-1" (shape input) (at 193.04 72.39 0) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify left))
-    (uuid d7161274-2d9b-413e-886d-9f61fb39c5a9)
-    (property "Intersheet References" "${INTERSHEET_REFS}" (id 0) (at 225.0864 72.3106 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-  )
-  (global_label "Member-Green-Button-1" (shape input) (at 66.04 97.79 0) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify left))
-    (uuid e6693a7b-7b12-42e8-aab6-d78a93093df6)
-    (property "Intersheet References" "${INTERSHEET_REFS}" (id 0) (at 93.1879 97.7106 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-  )
-  (global_label "Member-E-Stop-aux2-2" (shape input) (at 193.04 104.14 0) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify left))
-    (uuid f0a19d4c-637b-4bf2-bded-83fd9161ff83)
-    (property "Intersheet References" "${INTERSHEET_REFS}" (id 0) (at 220.1274 104.0606 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-  )
-  (global_label "Member-Green-Button-2" (shape input) (at 66.04 100.33 0) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify left))
-    (uuid f319386b-15d2-4208-bbd9-176c4e315470)
-    (property "Intersheet References" "${INTERSHEET_REFS}" (id 0) (at 93.1879 100.2506 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-  )
-  (global_label "mains-fused-H{slash}L1" (shape passive) (at 123.19 91.44 0) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify left))
-    (uuid f333ff7e-6498-4cbb-8f09-74aed79d9481)
-    (property "Intersheet References" "${INTERSHEET_REFS}" (id 0) (at 144.4112 91.5194 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-  )
-  (global_label "read-E-Stop-5v" (shape input) (at 49.53 181.61 0) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify left))
-    (uuid f7bdfaaa-97b0-4676-931d-e50a0b839217)
-    (property "Intersheet References" "${INTERSHEET_REFS}" (id 0) (at 68.3926 181.5306 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-  )
-  (global_label "H{slash}L1" (shape passive) (at 190.5 153.67 180) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify right))
-    (uuid fd6949a7-378e-4d0f-b571-b62a72a69a39)
-    (property "Intersheet References" "${INTERSHEET_REFS}" (id 0) (at 183.1883 153.5906 0)
-      (effects (font (size 1.27 1.27)) (justify right) hide)
-    )
-  )
-
-  (symbol (lib_id "Relay_Omron-MY2-02:Relay_Omron_MY2-02") (at 74.93 121.92 0) (unit 1)
-    (in_bom yes) (on_board yes)
-    (uuid 0b8f9ac1-299f-4907-bd99-0b6b98fabf1b)
-    (property "Reference" "R31" (id 0) (at 54.61 120.65 0)
-      (effects (font (size 1.27 1.27)) (justify left))
-    )
-    (property "Value" "Relay_Omron_MY2-02" (id 1) (at 39.37 123.19 0)
-      (effects (font (size 1.27 1.27)) (justify left))
-    )
-    (property "Footprint" "MY2-02 AC110 Omron:relay-Omron-MY2-02" (id 2) (at 74.93 101.6 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "" (id 3) (at 74.93 101.6 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (pin "1" (uuid d9d93f8a-2f54-4860-9214-e534196c380d))
-    (pin "12" (uuid 55f6c8e4-0fa3-47b7-8939-a764f456c76e))
-    (pin "13" (uuid 45d87732-e8bd-45e8-bf21-b232ca737e34))
-    (pin "14" (uuid 6bfc995e-3456-4635-a7e5-aa4a78e7d90f))
-    (pin "4" (uuid b152be73-eb57-4d63-9e34-dab0b2efd278))
-    (pin "5" (uuid b4edf7fa-6a53-478b-a152-2a4ce1167d34))
-    (pin "8" (uuid 21204a71-5645-4a1d-ab20-c703548cf993))
-    (pin "9" (uuid 909c076f-08be-4ffd-8698-c3a120c3940a))
-  )
-
-  (symbol (lib_id "Device:Fuse") (at 195.58 156.21 90) (unit 1)
-    (in_bom yes) (on_board yes)
-    (uuid 2ff34f33-dcf3-466d-b1b2-ed620cbbe491)
-    (property "Reference" "F2" (id 0) (at 195.58 161.29 90))
-    (property "Value" "Fuse" (id 1) (at 195.58 158.75 90))
-    (property "Footprint" "Fuse:Fuseholder_Cylinder-5x20mm_Stelvio-Kontek_PTF78_Horizontal_Open" (id 2) (at 195.58 157.988 90)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "~" (id 3) (at 195.58 156.21 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "JLBPCB Part #" "C717030" (id 4) (at 195.58 156.21 90)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (pin "1" (uuid edb12910-4ed3-4af3-8ac0-e367002a07a5))
-    (pin "2" (uuid b1575ef0-8d56-46d3-91b7-d85be0569e2a))
-  )
-
-  (symbol (lib_id "power:GND") (at 49.53 190.5 0) (unit 1)
-    (in_bom yes) (on_board yes) (fields_autoplaced)
-    (uuid 32fbf7a8-8acd-4b78-abd2-189d244b52d3)
-    (property "Reference" "#PWR0163" (id 0) (at 49.53 196.85 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Value" "GND" (id 1) (at 49.53 195.58 0))
-    (property "Footprint" "" (id 2) (at 49.53 190.5 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "" (id 3) (at 49.53 190.5 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (pin "1" (uuid 6d103f74-d317-40f5-a00a-7a9a5bc8d509))
-  )
-
-  (symbol (lib_id "Device:Fuse") (at 195.58 153.67 90) (unit 1)
-    (in_bom yes) (on_board yes)
-    (uuid 847c94dd-b84d-4235-be43-419c321ccb0f)
-    (property "Reference" "F1" (id 0) (at 195.58 148.59 90))
-    (property "Value" "Fuse" (id 1) (at 195.58 151.13 90))
-    (property "Footprint" "Fuse:Fuseholder_Cylinder-5x20mm_Stelvio-Kontek_PTF78_Horizontal_Open" (id 2) (at 195.58 155.448 90)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "~" (id 3) (at 195.58 153.67 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "JLCPCB Part #" "C717030" (id 4) (at 195.58 153.67 90)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (pin "1" (uuid c60aa66d-87d1-40bd-b75e-40fb8b8dbb05))
-    (pin "2" (uuid d4dabc7b-c6e7-4d61-952a-5218a2f068a4))
-  )
-
-  (symbol (lib_id "power:+5V") (at 49.53 170.18 0) (unit 1)
-    (in_bom yes) (on_board yes) (fields_autoplaced)
-    (uuid 8f0bfec3-b758-44c6-a0f9-1f90cac4bfe1)
-    (property "Reference" "#PWR0164" (id 0) (at 49.53 173.99 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Value" "+5V" (id 1) (at 49.53 165.1 0))
-    (property "Footprint" "" (id 2) (at 49.53 170.18 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "" (id 3) (at 49.53 170.18 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (pin "1" (uuid cc8db541-c8a1-4f6d-b7dc-e41d9eb65d1b))
-  )
-
-  (symbol (lib_id "Switch:SW_Push") (at 49.53 186.69 90) (unit 1)
-    (in_bom no) (on_board no) (fields_autoplaced)
-    (uuid 9df00fc6-588c-4338-8168-afa7f3a65612)
-    (property "Reference" "SW2" (id 0) (at 50.8 185.4199 90)
-      (effects (font (size 1.27 1.27)) (justify right))
-    )
-    (property "Value" "SW_Push" (id 1) (at 50.8 187.9599 90)
-      (effects (font (size 1.27 1.27)) (justify right))
-    )
-    (property "Footprint" "" (id 2) (at 44.45 186.69 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "~" (id 3) (at 44.45 186.69 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (pin "1" (uuid eaebf4b5-de47-4b23-ab06-a3c7603bb15f))
-    (pin "2" (uuid 4d12d925-e106-413d-82a1-cc35b7029239))
-  )
-
-  (symbol (lib_id "Device:Lamp") (at 49.53 176.53 0) (unit 1)
-    (in_bom no) (on_board no) (fields_autoplaced)
-    (uuid b75edc47-7822-4285-8aa2-21aa1f33894f)
-    (property "Reference" "LA1" (id 0) (at 53.34 175.2599 0)
-      (effects (font (size 1.27 1.27)) (justify left))
-    )
-    (property "Value" "Lamp" (id 1) (at 53.34 177.7999 0)
-      (effects (font (size 1.27 1.27)) (justify left))
-    )
-    (property "Footprint" "" (id 2) (at 49.53 173.99 90)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "~" (id 3) (at 49.53 173.99 90)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (pin "1" (uuid 696eeec0-5ec0-462e-9abf-850910d0b5b5))
-    (pin "2" (uuid 0ca483eb-05f3-452c-a3e7-fdcdedc05fd2))
-  )
+(kicad_sch
+	(version 20231120)
+	(generator "eeschema")
+	(generator_version "8.0")
+	(uuid "5e15a2f7-7a22-47f5-8852-a50da26eda9e")
+	(paper "USLetter")
+	(title_block
+		(title "Stage 2 | Core 'Active Self-Latching' relay")
+		(date "2022-10-09")
+		(rev "3")
+		(company "Corey Rice & MakeHaven")
+		(comment 1 "Once activated, relay holds itself open with power ")
+		(comment 2 "Can be interrupted by E-Stops or the S1/'reset' relay")
+		(comment 3 "Fuses added to power inputs, to protect board from improper wiring")
+		(comment 4 "E-Stop low voltage light & switch logic shown for reference")
+	)
+	(lib_symbols
+		(symbol "Device:Fuse"
+			(pin_numbers hide)
+			(pin_names
+				(offset 0)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "F"
+				(at 2.032 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Fuse"
+				(at -1.905 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at -1.778 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Fuse"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "fuse"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "*Fuse*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "Fuse_0_1"
+				(rectangle
+					(start -0.762 -2.54)
+					(end 0.762 2.54)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.54) (xy 0 -2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "Fuse_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 1.27)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 1.27)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "Device:Lamp"
+			(pin_numbers hide)
+			(pin_names
+				(offset 0.0254) hide)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "LA"
+				(at 0.635 3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "Lamp"
+				(at 0.635 -3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 2.54 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 2.54 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Lamp"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "lamp"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "Lamp_0_1"
+				(polyline
+					(pts
+						(xy -1.778 1.778) (xy 1.778 -1.778)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.778 1.778) (xy -1.778 -1.778)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 0 0)
+					(radius 2.54)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "Lamp_1_1"
+				(pin passive line
+					(at 0 -5.08 90)
+					(length 2.54)
+					(name "-"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 5.08 270)
+					(length 2.54)
+					(name "+"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "Relay_Omron-MY2-02:Relay_Omron_MY2-02"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "R"
+				(at 19.05 1.27 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Relay_Omron_MY2-02"
+				(at 27.94 -1.27 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "relay_Omron-MY2-02:relay-Omron-MY2-02"
+				(at 0 20.32 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 20.32 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "PCB mounted relay with AC coil. There are 110VAC and 220VAC versions."
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "Relay_Omron_MY2-02_0_1"
+				(rectangle
+					(start -13.97 5.08)
+					(end 16.51 -5.08)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(rectangle
+					(start -12.065 1.905)
+					(end -5.715 -1.905)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -11.43 -1.905) (xy -6.35 1.905)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -8.89 -5.08) (xy -8.89 -1.905)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -8.89 5.08) (xy -8.89 1.905)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -5.715 0) (xy -5.08 0)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -4.445 0) (xy -3.81 0)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -3.175 0) (xy -2.54 0)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.905 0) (xy -1.27 0)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.635 0) (xy 0 0)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.635 0) (xy 1.27 0)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 -2.54) (xy -0.635 3.81)
+					)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 -2.54) (xy 1.27 -5.08)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.905 0) (xy 2.54 0)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.175 0) (xy 3.81 0)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 4.445 0) (xy 5.08 0)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 5.715 0) (xy 6.35 0)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 6.985 0) (xy 7.62 0)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 8.255 0) (xy 8.89 0)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 9.525 0) (xy 10.16 0)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 11.43 -2.54) (xy 9.525 3.81)
+					)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 11.43 -2.54) (xy 11.43 -5.08)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 5.08) (xy -1.27 2.54) (xy -0.635 3.175) (xy -1.27 3.81)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.81 5.08) (xy 3.81 2.54) (xy 3.175 3.175) (xy 3.81 3.81)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 8.89 5.08) (xy 8.89 2.54) (xy 9.525 3.175) (xy 8.89 3.81)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy 13.97 5.08) (xy 13.97 2.54) (xy 13.335 3.175) (xy 13.97 3.81)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start 1.27 12.7)
+					(end 1.27 12.7)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "Relay_Omron_MY2-02_1_1"
+				(pin bidirectional line
+					(at -1.27 7.62 270)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 11.43 -7.62 90)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "12"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -8.89 7.62 270)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "13"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -8.89 -7.62 90)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "14"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 8.89 7.62 270)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 3.81 7.62 270)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 13.97 7.62 270)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 1.27 -7.62 90)
+					(length 2.54)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "9"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "Switch:SW_Push"
+			(pin_numbers hide)
+			(pin_names
+				(offset 1.016) hide)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "SW"
+				(at 1.27 2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "SW_Push"
+				(at 0 -1.524 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Push button switch, generic, two pins"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "switch normally-open pushbutton push-button"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "SW_Push_0_1"
+				(circle
+					(center -2.032 0)
+					(radius 0.508)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 1.27) (xy 0 3.048)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 1.27) (xy -2.54 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 2.032 0)
+					(radius 0.508)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at -5.08 0 0)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 0 180)
+					(length 2.54)
+					(name "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "power:+5V"
+			(power)
+			(pin_names
+				(offset 0)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "#PWR"
+				(at 0 -3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Value" "+5V"
+				(at 0 3.556 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Power symbol creates a global label with name \"+5V\""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "power-flag"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "+5V_0_1"
+				(polyline
+					(pts
+						(xy -0.762 1.27) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.54) (xy 0.762 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "+5V_1_1"
+				(pin power_in line
+					(at 0 0 90)
+					(length 0) hide
+					(name "+5V"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "power:GND"
+			(power)
+			(pin_names
+				(offset 0)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "#PWR"
+				(at 0 -6.35 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Value" "GND"
+				(at 0 -3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "power-flag"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "GND_0_1"
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 -1.27) (xy 1.27 -1.27) (xy 0 -2.54) (xy -1.27 -1.27) (xy 0 -1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "GND_1_1"
+				(pin power_in line
+					(at 0 0 270)
+					(length 0) hide
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+	)
+	(junction
+		(at 66.04 110.49)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "02e5ae4b-a788-45d2-bc28-8e4504a17b90")
+	)
+	(wire
+		(pts
+			(xy 193.04 74.93) (xy 193.04 85.09)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "00ae087c-86a9-4780-b947-34669d7dffa1")
+	)
+	(wire
+		(pts
+			(xy 123.19 133.35) (xy 76.2 133.35)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "01b85774-c82d-478c-875f-0ebf325c567a")
+	)
+	(wire
+		(pts
+			(xy 88.9 113.03) (xy 95.25 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0413e18d-1ffa-4cb5-adf8-1647303528f3")
+	)
+	(wire
+		(pts
+			(xy 95.25 130.81) (xy 95.25 127)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0983459c-d9b2-4e8d-b35a-fba5502f9859")
+	)
+	(wire
+		(pts
+			(xy 95.25 119.38) (xy 102.87 119.38)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0ed5abd4-83a2-4c54-945f-9ad175f8e733")
+	)
+	(wire
+		(pts
+			(xy 66.04 100.33) (xy 66.04 110.49)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "16e0a73b-f8f0-48e1-ac67-b05a7f630367")
+	)
+	(polyline
+		(pts
+			(xy 68.58 198.12) (xy 44.45 198.12)
+		)
+		(stroke
+			(width 0)
+			(type dash)
+		)
+		(uuid "2517c95e-0dbb-4427-b9b1-80fa2a152bf5")
+	)
+	(wire
+		(pts
+			(xy 190.5 156.21) (xy 191.77 156.21)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2553999c-7cc3-4505-b2e1-c21b659b89fc")
+	)
+	(wire
+		(pts
+			(xy 50.8 90.17) (xy 66.04 90.17)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2ed9f985-734e-4db0-8b24-0d4c232ff9d8")
+	)
+	(wire
+		(pts
+			(xy 49.53 170.18) (xy 49.53 171.45)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3a939f1e-ee6a-42eb-bf86-3d9820ec6938")
+	)
+	(wire
+		(pts
+			(xy 66.04 129.54) (xy 66.04 140.97)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4032257b-c09b-4a8b-8ba0-dcb7d59b15cf")
+	)
+	(wire
+		(pts
+			(xy 193.04 63.5) (xy 193.04 72.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "40f33e79-7f61-463e-aa24-ad4c37a21355")
+	)
+	(polyline
+		(pts
+			(xy 44.45 163.83) (xy 68.58 163.83)
+		)
+		(stroke
+			(width 0)
+			(type dash)
+		)
+		(uuid "47b569c7-caed-400b-ab1f-7debe3eb9340")
+	)
+	(wire
+		(pts
+			(xy 88.9 114.3) (xy 88.9 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5a868845-6d5f-4067-8990-005b3f4f30be")
+	)
+	(wire
+		(pts
+			(xy 76.2 129.54) (xy 76.2 133.35)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5d9799cb-106a-4c44-b809-087209e009db")
+	)
+	(wire
+		(pts
+			(xy 95.25 127) (xy 102.87 127)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "65d2ab2c-13d1-4b04-9728-449da50dc051")
+	)
+	(wire
+		(pts
+			(xy 190.5 153.67) (xy 191.77 153.67)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "66092ba8-1668-4c4e-b393-80c050ba3603")
+	)
+	(wire
+		(pts
+			(xy 193.04 87.63) (xy 193.04 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6df8d7d9-ab8f-47bc-bd9f-25461e4c57d5")
+	)
+	(polyline
+		(pts
+			(xy 43.18 163.83) (xy 43.18 198.12)
+		)
+		(stroke
+			(width 0)
+			(type dash)
+		)
+		(uuid "79145791-22eb-4bd9-b6bb-4ac699f489fc")
+	)
+	(wire
+		(pts
+			(xy 78.74 110.49) (xy 66.04 110.49)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "836d4379-aa11-4ed8-a5fe-f9e33c009c24")
+	)
+	(wire
+		(pts
+			(xy 95.25 113.03) (xy 95.25 119.38)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "908d18c2-d5ca-4542-96b3-c4488177771e")
+	)
+	(wire
+		(pts
+			(xy 86.36 129.54) (xy 86.36 130.81)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "98617195-5dc9-49f6-b0eb-ae0cb1e58fa3")
+	)
+	(wire
+		(pts
+			(xy 199.39 156.21) (xy 204.47 156.21)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9f0dcb76-f32e-43f0-8f2f-5285c0ab359a")
+	)
+	(polyline
+		(pts
+			(xy 191.77 100.33) (xy 191.77 105.41)
+		)
+		(stroke
+			(width 0)
+			(type dash)
+		)
+		(uuid "a13651f3-f798-479d-87c7-8acd7b8ef6b9")
+	)
+	(polyline
+		(pts
+			(xy 191.77 88.9) (xy 191.77 83.82)
+		)
+		(stroke
+			(width 0)
+			(type dash)
+		)
+		(uuid "bcd75f51-5fc9-466a-9a79-2ead80ffa31e")
+	)
+	(wire
+		(pts
+			(xy 123.19 91.44) (xy 123.19 133.35)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bcdecae9-7a9a-464b-9f7f-22ce3897301b")
+	)
+	(wire
+		(pts
+			(xy 66.04 97.79) (xy 66.04 90.17)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d60139d3-ca52-49dc-8b41-86a0e14258c9")
+	)
+	(wire
+		(pts
+			(xy 78.74 114.3) (xy 78.74 110.49)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d70a667e-445c-4473-ab07-2db82da8f45c")
+	)
+	(wire
+		(pts
+			(xy 193.04 104.14) (xy 193.04 116.84)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d8504546-7575-44f2-aeda-2acb53ef07ce")
+	)
+	(polyline
+		(pts
+			(xy 68.58 163.83) (xy 68.58 198.12)
+		)
+		(stroke
+			(width 0)
+			(type dash)
+		)
+		(uuid "da7f1377-48ab-4515-80ab-07f3e31d685e")
+	)
+	(wire
+		(pts
+			(xy 66.04 110.49) (xy 66.04 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "db199d7a-1373-4a1f-8bce-9f9c7c23a16f")
+	)
+	(wire
+		(pts
+			(xy 49.53 191.77) (xy 49.53 190.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e0c856dc-0130-4850-bc0a-5a30ef774412")
+	)
+	(wire
+		(pts
+			(xy 86.36 130.81) (xy 95.25 130.81)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e31765ad-12f5-4768-a712-07144cfb3dde")
+	)
+	(polyline
+		(pts
+			(xy 44.45 163.83) (xy 44.45 198.12)
+		)
+		(stroke
+			(width 0)
+			(type dash)
+		)
+		(uuid "eec73c12-5eae-47c3-98b8-c1cc6799ed51")
+	)
+	(wire
+		(pts
+			(xy 199.39 153.67) (xy 204.47 153.67)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f85852fe-812c-4949-a8da-f7b49c703194")
+	)
+	(wire
+		(pts
+			(xy 193.04 52.07) (xy 193.04 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f949e146-a9e3-40bb-9171-d2ed9725fd5f")
+	)
+	(text "Connection to mains-fused-H/L1\n==> Regulated by two controllers \n      in logical 'OR' configuration\n    - bypass key (manual activation)\n    - S1-1 'set' relay for SW 'enable'"
+		(exclude_from_sim no)
+		(at 26.67 102.87 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "01b6fcd8-7452-4872-8b02-8496ada00dee")
+	)
+	(text "The previous Tool-Controller design was just this section of the circuit (with simpler Microcontroller connection)."
+		(exclude_from_sim no)
+		(at 21.59 48.26 0)
+		(effects
+			(font
+				(size 1.5 1.5)
+			)
+			(justify left bottom)
+		)
+		(uuid "0d95b27e-8894-4549-8b27-544245c89688")
+	)
+	(text "Mains power needs connected here, and will power the whole box.\nExcept, perhaps, the tool. If more exotic power is needed.\n\nLabeled on PCB as H/L1 & N/L2 to cover the bases (that both may be live)."
+		(exclude_from_sim no)
+		(at 175.26 146.05 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "41078c4e-59f3-4701-b744-e9710d47f7e9")
+	)
+	(text "S1-2 relay for timeout on tool"
+		(exclude_from_sim no)
+		(at 213.36 63.5 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "41337242-57bd-4e72-bc2f-8d5d1bc28713")
+	)
+	(text "'Reset' circuit on Stage 2 relay"
+		(exclude_from_sim no)
+		(at 175.26 33.02 0)
+		(effects
+			(font
+				(size 2 2)
+				(thickness 0.4)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "469a546a-b901-4d8f-a26e-2f76d45a7acf")
+	)
+	(text "Stage 2 || Core Functions run at full 110-230VAC\n"
+		(exclude_from_sim no)
+		(at 20.32 21.59 0)
+		(effects
+			(font
+				(size 4 4)
+				(thickness 0.8)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "53a41ee3-db1b-49d8-a198-3f95a5f96e7e")
+	)
+	(text "If there is a Stage 3 relay, then Stage 2 relay can have a lowered switching current -> down to approximately 2amps"
+		(exclude_from_sim no)
+		(at 21.59 38.1 0)
+		(effects
+			(font
+				(size 1.5 1.5)
+			)
+			(justify left bottom)
+		)
+		(uuid "5b4eae8b-22de-4dcd-ba80-9fed16379da7")
+	)
+	(text "The E-Stop light runs at 5V, and is shown here\nbecuase it conceptually makes sense on the sheet.\n\nThis lamp-to-switch connection is done on the \nmodular E-Stop switches themselves, not any PCB. \n\nThe middle 'read-E-stop' informs the microcontroller."
+		(exclude_from_sim no)
+		(at 71.12 195.58 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "5d08c72c-f2ec-4a76-b907-ae422e627e51")
+	)
+	(text "N-ON switch"
+		(exclude_from_sim no)
+		(at 226.06 74.93 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "635ee82d-95f4-4670-ba44-eda56eb8110c")
+	)
+	(text "The E-Stop is connected from a 3-wire header:\n  >> 5V goes 'above' the incadescent bulb\n  >> Read goes 'between' E-Stop and switch\n  >> GND goes 'below' switch"
+		(exclude_from_sim no)
+		(at 71.12 179.07 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "6740d32f-5460-45b5-a99a-5cef3a28ddf1")
+	)
+	(text "N-OFF switch"
+		(exclude_from_sim no)
+		(at 93.98 100.33 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "7c4fbb21-9858-4cba-a83a-0d45b2547718")
+	)
+	(text "N-ON switch\nneeded for bypass mode"
+		(exclude_from_sim no)
+		(at 219.71 88.9 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "83d8d6e1-53a8-44f1-b57b-64434d8d3ec6")
+	)
+	(text "E-Stop on modular, panel-mount button"
+		(exclude_from_sim no)
+		(at 71.12 168.91 0)
+		(effects
+			(font
+				(size 2 2)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "8c5b4499-7cb1-4dc7-b538-c61f98cd7d56")
+	)
+	(text "aux E-stop -->"
+		(exclude_from_sim no)
+		(at 190.5 104.14 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "8f854099-7cb7-4f5e-98e0-f1012663fcc2")
+	)
+	(text "forgetful member -->"
+		(exclude_from_sim no)
+		(at 191.77 63.5 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "932b0a0a-53cf-4e18-95f7-a2828904e0ea")
+	)
+	(text "These are all the ways to 'reset' the Stage 2 relay. \n[Not including overall loss of power, which also causes reset.]\nNormally a member will press the red button. But they may also \nuse the E-Stop to temporarily pause function, or the timeout \ncould trigger automatically if programmed correctly..."
+		(exclude_from_sim no)
+		(at 176.53 44.45 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "a7d2a0c9-deb3-4500-aaa4-f6ed6dbde2b5")
+	)
+	(text "This Estop is linked to 'Member-E-Stop-sw1'\nThe EStop here (sw2) resets the active self-latch\nand also blocks the green button from working."
+		(exclude_from_sim no)
+		(at 194.31 96.52 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "aff6aeba-85df-4279-a858-15300bae58a3")
+	)
+	(text "active self-latching of a relay   https://electronics.stackexchange.com/questions/223691/self-latching-relay"
+		(exclude_from_sim no)
+		(at 21.59 30.48 0)
+		(effects
+			(font
+				(size 1.5 1.5)
+			)
+			(justify left bottom)
+		)
+		(uuid "bc4195aa-09ed-4ec4-9152-4ff60c41bd91")
+	)
+	(text "Fuse Protected Power Inputs"
+		(exclude_from_sim no)
+		(at 175.26 137.16 0)
+		(effects
+			(font
+				(size 2 2)
+				(thickness 0.4)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "be0df719-ecef-425c-b214-f735477503c9")
+	)
+	(text "'Set' & 'Latch' circuit on Stage 2 relay"
+		(exclude_from_sim no)
+		(at 33.02 73.66 0)
+		(effects
+			(font
+				(size 2 2)
+				(thickness 0.4)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "c12013cb-16c7-4ab1-a974-508351bcc737")
+	)
+	(text "normal tool end -->"
+		(exclude_from_sim no)
+		(at 191.77 74.93 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "d9cfff9f-50a8-462a-9266-c5b34c1c43b2")
+	)
+	(text "main E-stop -->"
+		(exclude_from_sim no)
+		(at 190.5 87.63 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "da75c609-ec20-44aa-98a3-f9bac7412f2e")
+	)
+	(text "N-ON switch\nMany tools will have this jumpered-shut.\nOnly tools that need a second E-Stop in a\nmore reachable place will use this.\n"
+		(exclude_from_sim no)
+		(at 220.98 107.95 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "db7ebb4e-1c83-445f-b4aa-d0bf1871b7ab")
+	)
+	(text "Relay 2 [main function] {110VAC or 240VAC coil activation} "
+		(exclude_from_sim no)
+		(at 21.59 26.67 0)
+		(effects
+			(font
+				(size 2 2)
+			)
+			(justify left bottom)
+		)
+		(uuid "dddcb925-ea06-4280-8a58-6ded8decc310")
+	)
+	(text "In this location, the E-Stop shuts off the tool\nand resets the active self-latch at the same time.\nand this works in bypass mode."
+		(exclude_from_sim no)
+		(at 194.31 115.57 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "e86fdcb6-8445-4b6e-8b6d-d2a22dce58d1")
+	)
+	(text "Out to Stage 3"
+		(exclude_from_sim no)
+		(at 92.71 124.46 0)
+		(effects
+			(font
+				(size 2 2)
+				(italic yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "ea4a65ad-b323-4249-856e-25a4d377f4ad")
+	)
+	(text "Provides the majority of the Member's interface experience\n"
+		(exclude_from_sim no)
+		(at 21.59 43.18 0)
+		(effects
+			(font
+				(size 1.5 1.5)
+			)
+			(justify left bottom)
+		)
+		(uuid "ec8d5a33-b48f-432f-ba56-4cc0c9a63662")
+	)
+	(text "This portion of the circuit allows the Stage 2 Relay to turn on & stay on.\nWhen enabled [by ESP32 or Bypass] a person can turn on the relay with the green button.\nOnce activated, the link from relay pin 5_to_13 'latch' the relay on while powered, until reset.\nThe \"Can-Turn-On\" light will shine if it is possible to 'set' the relay for any reason.\nThe light is important, because it shows a working system or if bypass mode is enabled by a key."
+		(exclude_from_sim no)
+		(at 33.02 85.09 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "f47f5a7b-4538-49c3-a67a-50e85e1672f8")
+	)
+	(label "active self-latch"
+		(at 67.31 110.49 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.75 1.75)
+				(italic yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "1bd3d193-bcbb-465e-a3ae-30ed054fba1e")
+	)
+	(global_label "Stage3-NO"
+		(shape input)
+		(at 102.87 119.38 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "209dceb5-b209-4ebc-b1f7-0db897897476")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 116.0479 119.3006 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "mHotSw1"
+		(shape input)
+		(at 50.8 90.17 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "221ff463-1af7-4d15-bb4a-ccc0de66e647")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 39.7388 90.0906 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "reset-timeout-2"
+		(shape input)
+		(at 193.04 60.96 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "3a84e10d-68c7-4bf0-b708-28524d31d7a3")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 211.6607 60.8806 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "Member-E-Stop-sw2-1"
+		(shape input)
+		(at 193.04 85.09 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "46ce10a4-0f52-4017-9408-4188dc86f48a")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 219.1598 85.0106 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "reset-timeout-1"
+		(shape input)
+		(at 193.04 63.5 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(italic yes)
+			)
+			(justify left)
+		)
+		(uuid "4926a4f5-9059-4508-95e3-4b306f8dad19")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 211.9163 63.4206 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "reset"
+		(shape input)
+		(at 193.04 52.07 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "63a02f40-3ea1-4ae1-af2d-dbf7f32c43b8")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 200.1702 51.9906 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "N{slash}L2"
+		(shape passive)
+		(at 190.5 156.21 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "7df39d46-1b7b-4ac0-8182-2be777479147")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 183.1883 156.1306 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "reset"
+		(shape input)
+		(at 66.04 140.97 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "8abb8c66-60cc-4f4d-bf1d-beb6f783688c")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 73.1702 140.8906 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "mains-fused-H{slash}L1"
+		(shape passive)
+		(at 204.47 153.67 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "9ad4c224-856c-452e-bd99-71a15d537261")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 225.6912 153.5906 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "mains-fused-N{slash}L2"
+		(shape passive)
+		(at 193.04 116.84 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "a13fe548-2b36-4bc5-9636-5a9859a08d9b")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 171.8188 116.9194 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "Stage3-Com"
+		(shape input)
+		(at 102.87 127 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "a45ab463-c3de-41b0-bdb5-82b64af6c778")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 117.4993 127.0794 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "mains-fused-N{slash}L2"
+		(shape passive)
+		(at 204.47 156.21 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "b03444bf-6122-417d-83dc-1bd432ca617b")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 225.6912 156.1306 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "Member-E-Stop-aux2-1"
+		(shape input)
+		(at 193.04 101.6 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "b11aed26-1822-4485-9e21-1a7396b76460")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 220.1274 101.5206 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "Member-Red-Reset-Button-2"
+		(shape input)
+		(at 193.04 74.93 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "d01543d6-2a6e-475a-9ce2-e2e5463dc1e8")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 225.0864 74.8506 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "Member-E-Stop-sw2-2"
+		(shape input)
+		(at 193.04 87.63 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "d067c23e-7631-4d9f-9a1b-c3421d438f3b")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 219.1598 87.5506 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "Member-Red-Reset-Button-1"
+		(shape input)
+		(at 193.04 72.39 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "d7161274-2d9b-413e-886d-9f61fb39c5a9")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 225.0864 72.3106 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "Member-Green-Button-1"
+		(shape input)
+		(at 66.04 97.79 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "e6693a7b-7b12-42e8-aab6-d78a93093df6")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 93.1879 97.7106 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "Member-E-Stop-aux2-2"
+		(shape input)
+		(at 193.04 104.14 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "f0a19d4c-637b-4bf2-bded-83fd9161ff83")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 220.1274 104.0606 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "Member-Green-Button-2"
+		(shape input)
+		(at 66.04 100.33 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "f319386b-15d2-4208-bbd9-176c4e315470")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 93.1879 100.2506 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "mains-fused-H{slash}L1"
+		(shape passive)
+		(at 123.19 91.44 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "f333ff7e-6498-4cbb-8f09-74aed79d9481")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 144.4112 91.5194 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "read-E-Stop-5v"
+		(shape input)
+		(at 49.53 181.61 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "f7bdfaaa-97b0-4676-931d-e50a0b839217")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 68.3926 181.5306 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "H{slash}L1"
+		(shape passive)
+		(at 190.5 153.67 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "fd6949a7-378e-4d0f-b571-b62a72a69a39")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 183.1883 153.5906 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Relay_Omron-MY2-02:Relay_Omron_MY2-02")
+		(at 74.93 121.92 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "0b8f9ac1-299f-4907-bd99-0b6b98fabf1b")
+		(property "Reference" "R31"
+			(at 54.61 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Relay_Omron_MY2-02"
+			(at 39.37 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "MY2-02 AC110 Omron:relay-Omron-MY2-02"
+			(at 74.93 101.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 74.93 101.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 74.93 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "d9d93f8a-2f54-4860-9214-e534196c380d")
+		)
+		(pin "12"
+			(uuid "55f6c8e4-0fa3-47b7-8939-a764f456c76e")
+		)
+		(pin "13"
+			(uuid "45d87732-e8bd-45e8-bf21-b232ca737e34")
+		)
+		(pin "14"
+			(uuid "6bfc995e-3456-4635-a7e5-aa4a78e7d90f")
+		)
+		(pin "4"
+			(uuid "b152be73-eb57-4d63-9e34-dab0b2efd278")
+		)
+		(pin "5"
+			(uuid "b4edf7fa-6a53-478b-a152-2a4ce1167d34")
+		)
+		(pin "8"
+			(uuid "21204a71-5645-4a1d-ab20-c703548cf993")
+		)
+		(pin "9"
+			(uuid "909c076f-08be-4ffd-8698-c3a120c3940a")
+		)
+		(instances
+			(project "mh-custom-v1.3"
+				(path "/586efc0f-7de2-49a7-ac21-ecfef2f716d6/6f44f9bb-3a88-498d-9739-be3794f35f17/fd75559e-77bb-4f15-bd9f-e39243a04df3"
+					(reference "R31")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:Fuse")
+		(at 195.58 156.21 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "2ff34f33-dcf3-466d-b1b2-ed620cbbe491")
+		(property "Reference" "F2"
+			(at 195.58 161.29 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Fuse"
+			(at 195.58 158.75 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Fuse:Fuseholder_Cylinder-5x20mm_Stelvio-Kontek_PTF78_Horizontal_Open"
+			(at 195.58 157.988 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 195.58 156.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 195.58 156.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLBPCB Part #" "C717030"
+			(at 195.58 156.21 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "edb12910-4ed3-4af3-8ac0-e367002a07a5")
+		)
+		(pin "2"
+			(uuid "b1575ef0-8d56-46d3-91b7-d85be0569e2a")
+		)
+		(instances
+			(project "mh-custom-v1.3"
+				(path "/586efc0f-7de2-49a7-ac21-ecfef2f716d6/6f44f9bb-3a88-498d-9739-be3794f35f17/fd75559e-77bb-4f15-bd9f-e39243a04df3"
+					(reference "F2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 49.53 190.5 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "32fbf7a8-8acd-4b78-abd2-189d244b52d3")
+		(property "Reference" "#PWR0163"
+			(at 49.53 196.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 49.53 195.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 49.53 190.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 49.53 190.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 49.53 190.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "6d103f74-d317-40f5-a00a-7a9a5bc8d509")
+		)
+		(instances
+			(project "mh-custom-v1.3"
+				(path "/586efc0f-7de2-49a7-ac21-ecfef2f716d6/6f44f9bb-3a88-498d-9739-be3794f35f17/fd75559e-77bb-4f15-bd9f-e39243a04df3"
+					(reference "#PWR0163")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:Fuse")
+		(at 195.58 153.67 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "847c94dd-b84d-4235-be43-419c321ccb0f")
+		(property "Reference" "F1"
+			(at 195.58 148.59 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Fuse"
+			(at 195.58 151.13 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Fuse:Fuseholder_Cylinder-5x20mm_Stelvio-Kontek_PTF78_Horizontal_Open"
+			(at 195.58 155.448 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 195.58 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 195.58 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB Part #" "C717030"
+			(at 195.58 153.67 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "c60aa66d-87d1-40bd-b75e-40fb8b8dbb05")
+		)
+		(pin "2"
+			(uuid "d4dabc7b-c6e7-4d61-952a-5218a2f068a4")
+		)
+		(instances
+			(project "mh-custom-v1.3"
+				(path "/586efc0f-7de2-49a7-ac21-ecfef2f716d6/6f44f9bb-3a88-498d-9739-be3794f35f17/fd75559e-77bb-4f15-bd9f-e39243a04df3"
+					(reference "F1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 49.53 170.18 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "8f0bfec3-b758-44c6-a0f9-1f90cac4bfe1")
+		(property "Reference" "#PWR0164"
+			(at 49.53 173.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 49.53 165.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 49.53 170.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 49.53 170.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 49.53 170.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "cc8db541-c8a1-4f6d-b7dc-e41d9eb65d1b")
+		)
+		(instances
+			(project "mh-custom-v1.3"
+				(path "/586efc0f-7de2-49a7-ac21-ecfef2f716d6/6f44f9bb-3a88-498d-9739-be3794f35f17/fd75559e-77bb-4f15-bd9f-e39243a04df3"
+					(reference "#PWR0164")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Switch:SW_Push")
+		(at 49.53 186.69 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "9df00fc6-588c-4338-8168-afa7f3a65612")
+		(property "Reference" "SW2"
+			(at 50.8 185.4199 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "SW_Push"
+			(at 50.8 187.9599 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 44.45 186.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 44.45 186.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 49.53 186.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "eaebf4b5-de47-4b23-ab06-a3c7603bb15f")
+		)
+		(pin "2"
+			(uuid "4d12d925-e106-413d-82a1-cc35b7029239")
+		)
+		(instances
+			(project "mh-custom-v1.3"
+				(path "/586efc0f-7de2-49a7-ac21-ecfef2f716d6/6f44f9bb-3a88-498d-9739-be3794f35f17/fd75559e-77bb-4f15-bd9f-e39243a04df3"
+					(reference "SW2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:Lamp")
+		(at 49.53 176.53 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom no)
+		(on_board no)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "b75edc47-7822-4285-8aa2-21aa1f33894f")
+		(property "Reference" "LA1"
+			(at 53.34 175.2599 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Lamp"
+			(at 53.34 177.7999 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 49.53 173.99 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 49.53 173.99 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 49.53 176.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "696eeec0-5ec0-462e-9abf-850910d0b5b5")
+		)
+		(pin "2"
+			(uuid "0ca483eb-05f3-452c-a3e7-fdcdedc05fd2")
+		)
+		(instances
+			(project "mh-custom-v1.3"
+				(path "/586efc0f-7de2-49a7-ac21-ecfef2f716d6/6f44f9bb-3a88-498d-9739-be3794f35f17/fd75559e-77bb-4f15-bd9f-e39243a04df3"
+					(reference "LA1")
+					(unit 1)
+				)
+			)
+		)
+	)
 )

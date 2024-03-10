@@ -59,22 +59,7 @@
           "width": 0.0
         }
       ],
-      "drc_exclusions": [
-        "courtyards_overlap|123158028|102960601|0a21bc05-7f83-495d-93d5-6b9650e81588|4210b645-8c8c-490c-a1eb-18d0de2e1c3a",
-        "courtyards_overlap|124544999|32970001|dd284d08-8cd5-48e9-9266-fb8c5bb53bf5|fe781acf-05ec-4eea-9ea4-06aa359fcfbe",
-        "courtyards_overlap|124544999|42970001|649739d5-0fbc-44a6-8be4-aa4b8c4722ea|fe781acf-05ec-4eea-9ea4-06aa359fcfbe",
-        "courtyards_overlap|124544999|52970001|2c72f0ca-481e-4a08-8746-79a2d4dec7b5|649739d5-0fbc-44a6-8be4-aa4b8c4722ea",
-        "courtyards_overlap|124544999|62970001|0919b5bb-c6ea-45fc-bfff-2090d143bd46|2c72f0ca-481e-4a08-8746-79a2d4dec7b5",
-        "courtyards_overlap|124544999|72970001|0919b5bb-c6ea-45fc-bfff-2090d143bd46|567952fe-0c29-4c5a-9879-8bf59b9a5d3b",
-        "courtyards_overlap|124544999|82970001|567952fe-0c29-4c5a-9879-8bf59b9a5d3b|e8b0f63b-cd7f-4949-a45b-4a376ef0e259",
-        "courtyards_overlap|124544999|92970001|0a21bc05-7f83-495d-93d5-6b9650e81588|e8b0f63b-cd7f-4949-a45b-4a376ef0e259",
-        "courtyards_overlap|124644999|39875001|0919b5bb-c6ea-45fc-bfff-2090d143bd46|dd284d08-8cd5-48e9-9266-fb8c5bb53bf5",
-        "courtyards_overlap|124644999|49875001|0919b5bb-c6ea-45fc-bfff-2090d143bd46|2c72f0ca-481e-4a08-8746-79a2d4dec7b5",
-        "courtyards_overlap|124644999|59875001|2c72f0ca-481e-4a08-8746-79a2d4dec7b5|649739d5-0fbc-44a6-8be4-aa4b8c4722ea",
-        "courtyards_overlap|124644999|69875001|649739d5-0fbc-44a6-8be4-aa4b8c4722ea|fe781acf-05ec-4eea-9ea4-06aa359fcfbe",
-        "courtyards_overlap|124644999|79875001|0a21bc05-7f83-495d-93d5-6b9650e81588|fe781acf-05ec-4eea-9ea4-06aa359fcfbe",
-        "courtyards_overlap|67676601|34846601|ac0fe963-33fb-4a04-9e64-55877a4252c9|f405cd8c-2679-43d3-8f48-e3caa8eb6154"
-      ],
+      "drc_exclusions": [],
       "meta": {
         "version": 2
       },
@@ -529,7 +514,9 @@
       "version": 3
     },
     "net_colors": null,
-    "netclass_assignments": null,
+    "netclass_assignments": {
+      "/microcontroller/lightsounds/dcp1": "DC-Power"
+    },
     "netclass_patterns": [
       {
         "netclass": "AC-Power",
@@ -600,7 +587,7 @@
         "pattern": "/mainslevelcontrol/stage1relays/dcp2"
       },
       {
-        "netclass": "DC-Power",
+        "netclass": "Default",
         "pattern": "3vRead-Bypass"
       },
       {
@@ -610,6 +597,10 @@
       {
         "netclass": "DC-Power",
         "pattern": "read-bypass"
+      },
+      {
+        "netclass": "DC-Power",
+        "pattern": "+3.3VA"
       }
     ]
   },
@@ -622,7 +613,7 @@
       "pos_files": "",
       "specctra_dsn": "",
       "step": "",
-      "svg": "",
+      "svg": "R:/OneDrive/Desktop/toolauth-feather/notes/",
       "vrml": ""
     },
     "page_layout_descr_file": ""
@@ -738,7 +729,7 @@
   "sheets": [
     [
       "586efc0f-7de2-49a7-ac21-ecfef2f716d6",
-      ""
+      "Root"
     ],
     [
       "3f0e9b91-fe15-47d5-84d6-aa71b368b91e",

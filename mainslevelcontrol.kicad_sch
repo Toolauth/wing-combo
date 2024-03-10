@@ -1,89 +1,224 @@
-(kicad_sch (version 20211123) (generator eeschema)
-
-  (uuid 473ccc68-6a6a-489f-b5f1-15b19fc33a30)
-
-  (paper "USLetter")
-
-  (title_block
-    (date "2022-10-09")
-    (rev "3")
-    (company "Corey Rice & MakeHaven")
-  )
-
-  (lib_symbols
-  )
-
-
-  (text "With an off-board contactor\nthis shows the logical loop \nthat connects to the device.\n\nThe screw-terminal connectors\nare also shown on this page."
-    (at 196.85 163.83 0)
-    (effects (font (size 2.5 2.5)) (justify left bottom))
-    (uuid 32fe0a59-68d0-4b4f-8e23-d83bb4eb655b)
-  )
-  (text "This includes the one \nmains-controlled relay.\n\nAlso, the logic of the \nmain latching circuit is \noutlined on this page.\n\nThe fuses are included here."
-    (at 110.49 170.18 0)
-    (effects (font (size 2.5 2.5)) (justify left bottom))
-    (uuid 3ceeab97-b330-441d-be71-911907be6baa)
-  )
-  (text "Stage 3" (at 210.82 116.84 0)
-    (effects (font (size 3.5 3.5) (thickness 0.7) bold) (justify left bottom))
-    (uuid 492a239e-7637-424f-8646-64df28d2307b)
-  )
-  (text "Mains Level Control" (at 48.26 49.53 0)
-    (effects (font (size 12 12) (thickness 2.4) bold italic) (justify left bottom))
-    (uuid 9466442e-daf1-4ed2-8e17-daf0b9968e62)
-  )
-  (text "Stage 2" (at 120.65 118.11 0)
-    (effects (font (size 3.5 3.5) (thickness 0.7) bold) (justify left bottom))
-    (uuid ccd0afa8-abb5-4fb3-a592-fcbe6656fa00)
-  )
-  (text "The original version of these tool controllers (before this design) \nrequired that this mains-level circuit be built by hand, every time. \n\nThe goal here is to build a latching relay system from non-latching relays, with the added benefit of available E-Stops. \nAlthough a bit redundant, this design breaks up the control of power-access to a tool into three stages: \n\n--> 1) Small relays that are controlled by a microcontroller, which allow access to use tool\n\n--> 2) A larger relay that is triggered and controls mains-level voltage (also has 110 & 220 versions)\n\n--> 3) An off-board contactor that actually transmits the full power needs of the tool"
-    (at 24.13 100.33 0)
-    (effects (font (size 2.5 2.5)) (justify left bottom))
-    (uuid d13dc615-f5bc-4da3-9f98-b99d5040d2e2)
-  )
-  (text "This includes both logic-\nlevel relays circuits.\n\nThe page also shows the \n5VDC sealed transformer \nand a simple 'sanity \ncheck' power LED :)"
-    (at 22.86 167.64 0)
-    (effects (font (size 2.5 2.5)) (justify left bottom))
-    (uuid d33c8939-bfc4-407b-a74f-9105e2b85ec2)
-  )
-  (text "Stage 1" (at 31.75 116.84 0)
-    (effects (font (size 3.5 3.5) (thickness 0.7) bold) (justify left bottom))
-    (uuid f657341d-018f-4236-a327-6e5b48936a2f)
-  )
-
-  (sheet (at 213.36 120.65) (size 17.78 13.97) (fields_autoplaced)
-    (stroke (width 0.1524) (type solid) (color 0 0 0 0))
-    (fill (color 0 0 0 0.0000))
-    (uuid 7e35b9a1-6df7-4aff-8cae-346c220af792)
-    (property "Sheet name" "stage3contactor" (id 0) (at 213.36 119.9384 0)
-      (effects (font (size 1.27 1.27)) (justify left bottom))
-    )
-    (property "Sheet file" "stage3contactor.kicad_sch" (id 1) (at 213.36 135.2046 0)
-      (effects (font (size 1.27 1.27)) (justify left top))
-    )
-  )
-
-  (sheet (at 33.02 120.65) (size 17.78 13.97) (fields_autoplaced)
-    (stroke (width 0.1524) (type solid) (color 0 0 0 0))
-    (fill (color 0 0 0 0.0000))
-    (uuid 9191b819-8102-4422-9a84-62b3b85afe01)
-    (property "Sheet name" "stage1relays" (id 0) (at 33.02 119.9384 0)
-      (effects (font (size 1.27 1.27)) (justify left bottom))
-    )
-    (property "Sheet file" "stage1relays.kicad_sch" (id 1) (at 33.02 135.2046 0)
-      (effects (font (size 1.27 1.27)) (justify left top))
-    )
-  )
-
-  (sheet (at 121.92 120.65) (size 17.78 13.97) (fields_autoplaced)
-    (stroke (width 0.1524) (type solid) (color 0 0 0 0))
-    (fill (color 0 0 0 0.0000))
-    (uuid fd75559e-77bb-4f15-bd9f-e39243a04df3)
-    (property "Sheet name" "stage2relay" (id 0) (at 121.92 119.9384 0)
-      (effects (font (size 1.27 1.27)) (justify left bottom))
-    )
-    (property "Sheet file" "stage2relay.kicad_sch" (id 1) (at 121.92 135.2046 0)
-      (effects (font (size 1.27 1.27)) (justify left top))
-    )
-  )
+(kicad_sch
+	(version 20231120)
+	(generator "eeschema")
+	(generator_version "8.0")
+	(uuid "473ccc68-6a6a-489f-b5f1-15b19fc33a30")
+	(paper "USLetter")
+	(title_block
+		(date "2022-10-09")
+		(rev "3")
+		(company "Corey Rice & MakeHaven")
+	)
+	(lib_symbols)
+	(text "With an off-board contactor\nthis shows the logical loop \nthat connects to the device.\n\nThe screw-terminal connectors\nare also shown on this page."
+		(exclude_from_sim no)
+		(at 196.85 163.83 0)
+		(effects
+			(font
+				(size 2.5 2.5)
+			)
+			(justify left bottom)
+		)
+		(uuid "32fe0a59-68d0-4b4f-8e23-d83bb4eb655b")
+	)
+	(text "This includes the one \nmains-controlled relay.\n\nAlso, the logic of the \nmain latching circuit is \noutlined on this page.\n\nThe fuses are included here."
+		(exclude_from_sim no)
+		(at 110.49 170.18 0)
+		(effects
+			(font
+				(size 2.5 2.5)
+			)
+			(justify left bottom)
+		)
+		(uuid "3ceeab97-b330-441d-be71-911907be6baa")
+	)
+	(text "Stage 3"
+		(exclude_from_sim no)
+		(at 210.82 116.84 0)
+		(effects
+			(font
+				(size 3.5 3.5)
+				(thickness 0.7)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "492a239e-7637-424f-8646-64df28d2307b")
+	)
+	(text "Mains Level Control"
+		(exclude_from_sim no)
+		(at 48.26 49.53 0)
+		(effects
+			(font
+				(size 12 12)
+				(thickness 2.4)
+				(bold yes)
+				(italic yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "9466442e-daf1-4ed2-8e17-daf0b9968e62")
+	)
+	(text "Stage 2"
+		(exclude_from_sim no)
+		(at 120.65 118.11 0)
+		(effects
+			(font
+				(size 3.5 3.5)
+				(thickness 0.7)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "ccd0afa8-abb5-4fb3-a592-fcbe6656fa00")
+	)
+	(text "The original version of these tool controllers (before this design) \nrequired that this mains-level circuit be built by hand, every time. \n\nThe goal here is to build a latching relay system from non-latching relays, with the added benefit of available E-Stops. \nAlthough a bit redundant, this design breaks up the control of power-access to a tool into three stages: \n\n--> 1) Small relays that are controlled by a microcontroller, which allow access to use tool\n\n--> 2) A larger relay that is triggered and controls mains-level voltage (also has 110 & 220 versions)\n\n--> 3) An off-board contactor that actually transmits the full power needs of the tool"
+		(exclude_from_sim no)
+		(at 24.13 100.33 0)
+		(effects
+			(font
+				(size 2.5 2.5)
+			)
+			(justify left bottom)
+		)
+		(uuid "d13dc615-f5bc-4da3-9f98-b99d5040d2e2")
+	)
+	(text "This includes both logic-\nlevel relays circuits.\n\nThe page also shows the \n5VDC sealed transformer \nand a simple 'sanity \ncheck' power LED :)"
+		(exclude_from_sim no)
+		(at 22.86 167.64 0)
+		(effects
+			(font
+				(size 2.5 2.5)
+			)
+			(justify left bottom)
+		)
+		(uuid "d33c8939-bfc4-407b-a74f-9105e2b85ec2")
+	)
+	(text "Stage 1"
+		(exclude_from_sim no)
+		(at 31.75 116.84 0)
+		(effects
+			(font
+				(size 3.5 3.5)
+				(thickness 0.7)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "f657341d-018f-4236-a327-6e5b48936a2f")
+	)
+	(sheet
+		(at 213.36 120.65)
+		(size 17.78 13.97)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "7e35b9a1-6df7-4aff-8cae-346c220af792")
+		(property "Sheetname" "stage3contactor"
+			(at 213.36 119.9384 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "stage3contactor.kicad_sch"
+			(at 213.36 135.2046 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "mh-custom-v1.3"
+				(path "/586efc0f-7de2-49a7-ac21-ecfef2f716d6/6f44f9bb-3a88-498d-9739-be3794f35f17"
+					(page "10")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 33.02 120.65)
+		(size 17.78 13.97)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "9191b819-8102-4422-9a84-62b3b85afe01")
+		(property "Sheetname" "stage1relays"
+			(at 33.02 119.9384 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "stage1relays.kicad_sch"
+			(at 33.02 135.2046 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "mh-custom-v1.3"
+				(path "/586efc0f-7de2-49a7-ac21-ecfef2f716d6/6f44f9bb-3a88-498d-9739-be3794f35f17"
+					(page "8")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 121.92 120.65)
+		(size 17.78 13.97)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "fd75559e-77bb-4f15-bd9f-e39243a04df3")
+		(property "Sheetname" "stage2relay"
+			(at 121.92 119.9384 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "stage2relay.kicad_sch"
+			(at 121.92 135.2046 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "mh-custom-v1.3"
+				(path "/586efc0f-7de2-49a7-ac21-ecfef2f716d6/6f44f9bb-3a88-498d-9739-be3794f35f17"
+					(page "9")
+				)
+			)
+		)
+	)
 )

@@ -1,705 +1,2041 @@
-(kicad_sch (version 20211123) (generator eeschema)
-
-  (uuid 24fc4378-6cc8-4278-b1f1-7915a2382f64)
-
-  (paper "USLetter")
-
-  (title_block
-    (title "Stage 3 | Contactor to power the Tool")
-    (date "2022-10-29")
-    (rev "3")
-    (company "Corey Rice & MakeHaven")
-    (comment 1 "The contactor actually controls the tool, and is activated from J12 (or J11).")
-    (comment 2 "A fuse is added to protect the board from improper wiring")
-    (comment 3 "Screw-terminals shown here, to connect to mains-level devices")
-    (comment 4 "Jumper the EStp3 if there will not be any secondary EStop used")
-  )
-
-  (lib_symbols
-    (symbol "Connector:Screw_Terminal_01x02" (pin_names (offset 1.016) hide) (in_bom yes) (on_board yes)
-      (property "Reference" "J" (id 0) (at 0 2.54 0)
-        (effects (font (size 1.27 1.27)))
-      )
-      (property "Value" "Screw_Terminal_01x02" (id 1) (at 0 -5.08 0)
-        (effects (font (size 1.27 1.27)))
-      )
-      (property "Footprint" "" (id 2) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "Datasheet" "~" (id 3) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_keywords" "screw terminal" (id 4) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_description" "Generic screw terminal, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)" (id 5) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (property "ki_fp_filters" "TerminalBlock*:*" (id 6) (at 0 0 0)
-        (effects (font (size 1.27 1.27)) hide)
-      )
-      (symbol "Screw_Terminal_01x02_1_1"
-        (rectangle (start -1.27 1.27) (end 1.27 -3.81)
-          (stroke (width 0.254) (type default) (color 0 0 0 0))
-          (fill (type background))
-        )
-        (circle (center 0 -2.54) (radius 0.635)
-          (stroke (width 0.1524) (type default) (color 0 0 0 0))
-          (fill (type none))
-        )
-        (polyline
-          (pts
-            (xy -0.5334 -2.2098)
-            (xy 0.3302 -3.048)
-          )
-          (stroke (width 0.1524) (type default) (color 0 0 0 0))
-          (fill (type none))
-        )
-        (polyline
-          (pts
-            (xy -0.5334 0.3302)
-            (xy 0.3302 -0.508)
-          )
-          (stroke (width 0.1524) (type default) (color 0 0 0 0))
-          (fill (type none))
-        )
-        (polyline
-          (pts
-            (xy -0.3556 -2.032)
-            (xy 0.508 -2.8702)
-          )
-          (stroke (width 0.1524) (type default) (color 0 0 0 0))
-          (fill (type none))
-        )
-        (polyline
-          (pts
-            (xy -0.3556 0.508)
-            (xy 0.508 -0.3302)
-          )
-          (stroke (width 0.1524) (type default) (color 0 0 0 0))
-          (fill (type none))
-        )
-        (circle (center 0 0) (radius 0.635)
-          (stroke (width 0.1524) (type default) (color 0 0 0 0))
-          (fill (type none))
-        )
-        (pin passive line (at -5.08 0 0) (length 3.81)
-          (name "Pin_1" (effects (font (size 1.27 1.27))))
-          (number "1" (effects (font (size 1.27 1.27))))
-        )
-        (pin passive line (at -5.08 -2.54 0) (length 3.81)
-          (name "Pin_2" (effects (font (size 1.27 1.27))))
-          (number "2" (effects (font (size 1.27 1.27))))
-        )
-      )
-    )
-  )
-
-  (junction (at 66.04 95.25) (diameter 0) (color 0 0 0 0)
-    (uuid 690587c0-534e-4e41-bdb5-c7f4c8dc6cc1)
-  )
-  (junction (at 66.04 105.41) (diameter 0) (color 0 0 0 0)
-    (uuid ebeb52ca-054f-40cf-a4c6-4ecc020479be)
-  )
-
-  (wire (pts (xy 201.93 158.75) (xy 203.2 158.75))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid 05e2c82d-412f-4e03-8beb-93dddcd47556)
-  )
-  (wire (pts (xy 66.04 101.6) (xy 66.04 105.41))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid 0b5ce7a4-fee1-4e9d-a6c9-0f29a6d17572)
-  )
-  (wire (pts (xy 201.93 135.89) (xy 203.2 135.89))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid 0cd59bf6-30a7-4612-80cc-de2a2a0bf7fe)
-  )
-  (polyline (pts (xy 64.77 114.3) (xy 64.77 120.65))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid 105e1039-de4b-4bcd-a597-653cc6985562)
-  )
-
-  (wire (pts (xy 100.33 99.06) (xy 100.33 95.25))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid 13877107-9e17-49b2-a4d1-a97641db49ad)
-  )
-  (wire (pts (xy 100.33 101.6) (xy 100.33 105.41))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid 26568930-c562-40c6-862b-1436686aa49d)
-  )
-  (wire (pts (xy 66.04 105.41) (xy 66.04 115.57))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid 35f7ce9c-d9fb-42d7-ae84-02766498b72c)
-  )
-  (wire (pts (xy 66.04 95.25) (xy 100.33 95.25))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid 39bd75f6-7777-4b91-a457-2612d64c6493)
-  )
-  (wire (pts (xy 66.04 130.81) (xy 66.04 152.4))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid 3d1ef21a-29ad-457a-914b-b3e44beebbdd)
-  )
-  (wire (pts (xy 201.93 151.13) (xy 203.2 151.13))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid 3ec9557e-11e3-4730-9102-aae1c3967519)
-  )
-  (wire (pts (xy 201.93 120.65) (xy 203.2 120.65))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid 40795be5-3152-4578-bb36-487e5e172a96)
-  )
-  (wire (pts (xy 201.93 133.35) (xy 203.2 133.35))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid 4222fb6c-442d-4e23-b2f8-974134e74747)
-  )
-  (wire (pts (xy 66.04 105.41) (xy 100.33 105.41))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid 4acb6635-243c-4f1d-b41f-b4ce043ee945)
-  )
-  (wire (pts (xy 201.93 138.43) (xy 203.2 138.43))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid 7400f7b0-36bd-4149-b83e-112d496a329d)
-  )
-  (wire (pts (xy 201.93 118.11) (xy 203.2 118.11))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid 75bf1cd1-06c7-4dd7-930e-4ea94a5661f1)
-  )
-  (wire (pts (xy 66.04 95.25) (xy 66.04 99.06))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid 7646c9a8-bdd0-4c19-aed6-5a7691bdb847)
-  )
-  (polyline (pts (xy 64.77 132.08) (xy 64.77 127))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid 88d394a9-26ae-4612-a8a4-307433aa06a2)
-  )
-
-  (wire (pts (xy 201.93 146.05) (xy 203.2 146.05))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid 91631a12-acdb-4e1a-8e91-df351ea19d9e)
-  )
-  (polyline (pts (xy 64.77 151.13) (xy 64.77 156.21))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid 955414a6-1c35-4252-aa4c-d19ac3695fdd)
-  )
-
-  (wire (pts (xy 66.04 119.38) (xy 66.04 128.27))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid 97996a99-7d77-470e-bb1a-530fdc09e278)
-  )
-  (wire (pts (xy 201.93 128.27) (xy 203.2 128.27))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid 9d15c9ed-f88a-45b9-8512-e2fbd4700a7f)
-  )
-  (wire (pts (xy 201.93 125.73) (xy 203.2 125.73))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid a1a8a4c9-ebf0-4deb-93bb-fd06bbd52988)
-  )
-  (wire (pts (xy 66.04 90.17) (xy 66.04 95.25))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid aa38cb0b-bfdd-4efe-922f-b0f8abc14f71)
-  )
-  (wire (pts (xy 201.93 123.19) (xy 203.2 123.19))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid b84ca701-5aef-47dc-be82-5cd53dcd76f6)
-  )
-  (wire (pts (xy 201.93 156.21) (xy 203.2 156.21))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid d489f58a-20c6-494f-8738-ac60903fe6d8)
-  )
-  (wire (pts (xy 201.93 130.81) (xy 203.2 130.81))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid d83deaa1-bc60-4f56-abc6-2bce26579024)
-  )
-  (wire (pts (xy 201.93 161.29) (xy 203.2 161.29))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid dba9aa66-c83f-4820-b83b-2d78e4493e1b)
-  )
-  (wire (pts (xy 201.93 143.51) (xy 203.2 143.51))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid e87f97de-3740-480d-bac7-bb9dcdbc43e3)
-  )
-  (wire (pts (xy 201.93 148.59) (xy 203.2 148.59))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid ebf79de0-fb21-4bd4-a802-28f8909279fd)
-  )
-  (wire (pts (xy 201.93 140.97) (xy 203.2 140.97))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid face64fa-8791-405e-9508-b9d0c2fcc2b4)
-  )
-  (wire (pts (xy 201.93 153.67) (xy 203.2 153.67))
-    (stroke (width 0) (type default) (color 0 0 0 0))
-    (uuid fb4e418d-f9a5-4976-8739-54ecffb3fd77)
-  )
-
-  (text "These screw terminals are broken out for all functions.\nThe terminals are in pairs, and labeled on the board. \n\nBonus mode: if you want to use this whole board as a \nlow-current AC \"smart switch\" you can attach an \ninterrupted 'Hot' line across J12-1 and J11-3. \nJust don't exceed the limits of Relay 1-2 in Stage 1."
-    (at 173.99 114.3 0)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid 0cf6328e-dd23-4921-847c-0f6723fce492)
-  )
-  (text "Active Door Control [such as to power a solenoid actvation directly]\n***** Used nearly as intended as a tool, follow most labels\n***** SW: requires 'set' and 'reset' relays to open/close door\n--> Jumper shut as labeled: G.btn, R.btn, (both)EStpA, (both)EStpB\n--> Use G.light as normal to indicate when door is open-able\n--> Connect solenoid across OUT screw terminals\n\nPassive Door Control [when contact between wires is all that is needed]\n***** Includes Green Light for open-able indication (optional)\n***** Needs S2 relay installed for the correct voltage \n***** SW: requires 'set' and 'reset' relays to open/close door\n--> Jumper shut as labeled: R.btn, [top/ starred on bottom] EStpA, EStpB\n--> DO NOT connect in any way: G.light, [bottom/ unstarred] EStpA, EStpB\n--> Attach the green indicator light in screw terminals labeled: G.btn\n      to show when the door is open-able\n      **A light or jumper MUST be installed across G.btn terminals\n      **Revert to jumper if LED Green light blocks operation of S2 relay\n        (or a parallel reverse-bias diode may allow LED light use)\n--> Connect door-actvation wires as labled on back of board\n      pins labeld with '*DOOR' [bottom] EStpA & [top] OUT"
-    (at 163.83 86.36 0)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid 14bc317a-86b8-4b98-80e9-532b0ce88f3a)
-  )
-  (text "Stage 3 ||Final Contactor & Screw Terminals\n" (at 35.56 30.48 0)
-    (effects (font (size 4 4) (thickness 0.8) bold) (justify left bottom))
-    (uuid 1645e8e0-a72e-487b-9934-bfad0ec8905c)
-  )
-  (text "With a separate connection, in parallel to everything else, this will power\nthe stage 3 contactor. A green indicator light is used to show the state of power.\n\nThe primary E-Stop (sw1) works on this line, to directly cut power to the contactor\nand by extension the tool. This is mechanically activated at the same time as the \nsw2 Estop (on page 9) that resets the active latch held on the S2 relay. \n\nThe auxilary EStop is also here to ensure it can directly turn-off the tool, and \nthe firmware will reset the S2 relay's active self-latch. "
-    (at 43.18 78.74 0)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid 465bada5-f32e-4827-a845-aac252f01855)
-  )
-  (text "Many tools will have this jumpered-shut.\nOnly tools that need a second E-Stop in a\nmore reachable place will use this.\n"
-    (at 69.85 163.83 0)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid 5a6ff54c-b4bb-49b5-9156-4e1be8c126f1)
-  )
-  (text "This fuse may be unnecessary if \npowered from 'mains-fused-H/L1'"
-    (at 73.66 92.71 0)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid 63300473-8b1f-442b-a9ea-98ac41738c85)
-  )
-  (text "Use this board as Active and Passive door controller"
-    (at 158.75 44.45 0)
-    (effects (font (size 2 2) (thickness 0.4) bold) (justify left bottom))
-    (uuid 64710481-5254-4ef3-a328-8c3c0bc45078)
-  )
-  (text "Putting the main E-Stop here has \nit as 'close' to the tool as possible.\nThis should makes it less likely \nto fail because of a self-welded relay. \nBecause it is mechanically linked, \nthis will also activate with 'Member-E-Stop-sw2'"
-    (at 69.85 146.05 0)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid 6e53bd27-1803-40c6-8502-a5ce862073fa)
-  )
-  (text "The output fron the S2 \nrelay that controls \nthe Stage 3 contactor."
-    (at 83.82 120.65 0)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid 91f7a894-d7d0-467d-af95-177a7652c7ed)
-  )
-  (text "main E-stop -->" (at 63.5 130.81 180)
-    (effects (font (size 1.27 1.27)) (justify right bottom))
-    (uuid a6a8a31c-5ec0-4246-8f02-b50965c69f8d)
-  )
-  (text "Control for Final Contactor\n" (at 41.91 59.69 0)
-    (effects (font (size 2 2) (thickness 0.4) bold) (justify left bottom))
-    (uuid c0aa64a4-e322-4fe3-bcf5-fb6c2ce0aebd)
-  )
-  (text "N-ON switch\n" (at 93.98 156.21 0)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid d034cdf8-6f92-4406-a24e-234501887afe)
-  )
-  (text "aux E-stop -->" (at 63.5 154.94 180)
-    (effects (font (size 1.27 1.27)) (justify right bottom))
-    (uuid d12ce1f4-b943-43c3-a6b3-f4cd6cbf897d)
-  )
-  (text "Output to control the Contactor, and a light to show the state."
-    (at 36.83 35.56 0)
-    (effects (font (size 2.5 2.5)) (justify left bottom))
-    (uuid dc6368ee-5afe-4e71-a1bc-4967a46f2ae3)
-  )
-  (text "N-ON switch\nneeded for bypass mode" (at 92.71 132.08 0)
-    (effects (font (size 1.27 1.27)) (justify left bottom))
-    (uuid def72fb5-b11d-41ef-a9c6-1e8cf588b0d6)
-  )
-  (text "Screw Terminals for all functions" (at 173.99 99.06 0)
-    (effects (font (size 2 2) (thickness 0.4) bold) (justify left bottom))
-    (uuid e567d0f0-da2d-433d-87a8-905eb3d912c4)
-  )
-  (text "S2 Output -->" (at 63.5 118.11 180)
-    (effects (font (size 1.27 1.27)) (justify right bottom))
-    (uuid fc7580c8-0f4e-4955-82f0-d4286a6da0f5)
-  )
-
-  (global_label "Green-Indicator-light-1" (shape output) (at 203.2 143.51 0) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify left))
-    (uuid 04d27d52-cde1-412a-95f6-00c7df1e44dd)
-    (property "Intersheet References" "${INTERSHEET_REFS}" (id 0) (at 229.6221 143.4306 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-  )
-  (global_label "Member-Green-Button-2" (shape input) (at 203.2 140.97 0) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify left))
-    (uuid 1647b59c-b582-4d39-84e3-45e7b93ab6b4)
-    (property "Intersheet References" "${INTERSHEET_REFS}" (id 0) (at 230.3479 140.8906 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-  )
-  (global_label "H{slash}L1" (shape passive) (at 203.2 120.65 0) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify left))
-    (uuid 23f2f8a5-5757-4087-94bd-eab7215f8ac5)
-    (property "Intersheet References" "${INTERSHEET_REFS}" (id 0) (at 210.5117 120.7294 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-  )
-  (global_label "Member-E-Stop-aux1-1" (shape input) (at 66.04 152.4 0) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify left))
-    (uuid 2bdf7e9b-e1f8-4f40-bfa2-bcccd7ee9092)
-    (property "Intersheet References" "${INTERSHEET_REFS}" (id 0) (at 93.1274 152.3206 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-  )
-  (global_label "S3-Contactor-Control-2" (shape output) (at 203.2 148.59 0) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify left))
-    (uuid 2d732aa9-276f-48ca-b80b-c2e11489e0a2)
-    (property "Intersheet References" "${INTERSHEET_REFS}" (id 0) (at 230.0455 148.5106 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-  )
-  (global_label "mains-fused-N{slash}L2" (shape passive) (at 203.2 153.67 0) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify left))
-    (uuid 3935725f-3695-4d97-815f-a843d9cf3fe4)
-    (property "Intersheet References" "${INTERSHEET_REFS}" (id 0) (at 224.4212 153.5906 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-  )
-  (global_label "Member-Red-Reset-Button-2" (shape input) (at 203.2 133.35 0) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify left))
-    (uuid 3a4c4624-33f7-4b76-a375-21cac4f4737e)
-    (property "Intersheet References" "${INTERSHEET_REFS}" (id 0) (at 235.2464 133.2706 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-  )
-  (global_label "S3-Contactor-Control-1" (shape output) (at 203.2 151.13 0) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify left))
-    (uuid 4ccfbb20-d8a3-4edb-a60b-2e75f8a24bb1)
-    (property "Intersheet References" "${INTERSHEET_REFS}" (id 0) (at 230.0455 151.0506 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-  )
-  (global_label "Green-Indicator-light-2" (shape output) (at 203.2 146.05 0) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify left))
-    (uuid 4ff97193-fb9d-4394-ab8a-e6600f0a7ca2)
-    (property "Intersheet References" "${INTERSHEET_REFS}" (id 0) (at 229.6221 145.9706 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-  )
-  (global_label "Green-Indicator-light-2" (shape output) (at 100.33 101.6 0) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify left))
-    (uuid 55441d1e-99fd-4537-a90e-37c8dfaf7e0f)
-    (property "Intersheet References" "${INTERSHEET_REFS}" (id 0) (at 126.7521 101.5206 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-  )
-  (global_label "Member-E-Stop-sw1-2" (shape input) (at 203.2 158.75 0) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify left))
-    (uuid 565f8e84-a7fd-480f-9ad6-effee3193203)
-    (property "Intersheet References" "${INTERSHEET_REFS}" (id 0) (at 229.3198 158.6706 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-  )
-  (global_label "S3-Contactor-Control-2" (shape output) (at 66.04 101.6 0) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify left))
-    (uuid 57c94ae4-d3ed-4940-b86b-3101074b340e)
-    (property "Intersheet References" "${INTERSHEET_REFS}" (id 0) (at 92.8855 101.5206 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-  )
-  (global_label "Member-E-Stop-aux1-1" (shape input) (at 203.2 156.21 0) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify left))
-    (uuid 5cdf1153-b368-43a0-aeaf-1dffdf691a6b)
-    (property "Intersheet References" "${INTERSHEET_REFS}" (id 0) (at 230.2874 156.1306 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-  )
-  (global_label "Member-Green-Button-1" (shape input) (at 203.2 138.43 0) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify left))
-    (uuid 60c9aa18-de09-44ac-9347-03d28d3d6a10)
-    (property "Intersheet References" "${INTERSHEET_REFS}" (id 0) (at 230.3479 138.3506 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-  )
-  (global_label "Member-E-Stop-sw1-2" (shape input) (at 66.04 130.81 0) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify left))
-    (uuid 61639ce2-8089-48ce-a2a5-eddc580b12b4)
-    (property "Intersheet References" "${INTERSHEET_REFS}" (id 0) (at 92.1598 130.7306 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-  )
-  (global_label "Member-E-Stop-sw1-1" (shape input) (at 66.04 128.27 0) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify left))
-    (uuid 69f8bdf7-1f3c-4af6-8ee8-a7a5565cdcad)
-    (property "Intersheet References" "${INTERSHEET_REFS}" (id 0) (at 92.1598 128.1906 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-  )
-  (global_label "Member-Red-Reset-Button-1" (shape input) (at 203.2 135.89 0) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify left))
-    (uuid 9bd20aac-0ee8-4f63-96f3-7190a7a260fc)
-    (property "Intersheet References" "${INTERSHEET_REFS}" (id 0) (at 235.2464 135.8106 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-  )
-  (global_label "Member-E-Stop-sw1-1" (shape input) (at 203.2 161.29 0) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify left))
-    (uuid 9c4296c9-0d43-4f08-95c3-e9736a52bd70)
-    (property "Intersheet References" "${INTERSHEET_REFS}" (id 0) (at 229.3198 161.2106 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-  )
-  (global_label "S3-Contactor-Control-1" (shape output) (at 66.04 99.06 0) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify left))
-    (uuid a2a01711-9fb3-4584-a959-d99afb112f50)
-    (property "Intersheet References" "${INTERSHEET_REFS}" (id 0) (at 92.8855 98.9806 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-  )
-  (global_label "Stage3-NO" (shape input) (at 66.04 115.57 0) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify left))
-    (uuid a75f4d1d-9e65-43b2-900c-6c9a65a6779d)
-    (property "Intersheet References" "${INTERSHEET_REFS}" (id 0) (at 79.2179 115.4906 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-  )
-  (global_label "Member-E-Stop-aux2-1" (shape input) (at 203.2 125.73 0) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify left))
-    (uuid b51ecb16-235c-49ef-9e4e-938271da8543)
-    (property "Intersheet References" "${INTERSHEET_REFS}" (id 0) (at 230.2874 125.6506 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-  )
-  (global_label "Member-E-Stop-aux2-2" (shape input) (at 203.2 123.19 0) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify left))
-    (uuid bb79a373-67a0-492f-9a8b-d75b14e6a246)
-    (property "Intersheet References" "${INTERSHEET_REFS}" (id 0) (at 230.2874 123.1106 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-  )
-  (global_label "N{slash}L2" (shape passive) (at 203.2 118.11 0) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify left))
-    (uuid c3f9aae3-a639-460b-ac43-8a794ee69d39)
-    (property "Intersheet References" "${INTERSHEET_REFS}" (id 0) (at 210.5117 118.0306 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-  )
-  (global_label "Green-Indicator-light-1" (shape output) (at 100.33 99.06 0) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify left))
-    (uuid cf9c63c0-5a77-4a99-aae9-344ef19277bf)
-    (property "Intersheet References" "${INTERSHEET_REFS}" (id 0) (at 126.7521 98.9806 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-  )
-  (global_label "Member-E-Stop-sw2-1" (shape input) (at 203.2 130.81 0) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify left))
-    (uuid d3b58a0c-6bb9-4486-9aa6-59fd6a6371b6)
-    (property "Intersheet References" "${INTERSHEET_REFS}" (id 0) (at 229.3198 130.7306 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-  )
-  (global_label "Stage3-Com" (shape input) (at 66.04 119.38 0) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify left))
-    (uuid d436cf3d-a625-4552-82f6-89142f75854e)
-    (property "Intersheet References" "${INTERSHEET_REFS}" (id 0) (at 80.6693 119.3006 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-  )
-  (global_label "mains-fused-H{slash}L1" (shape input) (at 66.04 90.17 180) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify right))
-    (uuid db40cda5-9384-48d1-87ab-20c3fbebd0a3)
-    (property "Intersheet References" "${INTERSHEET_REFS}" (id 0) (at 44.8188 90.0906 0)
-      (effects (font (size 1.27 1.27)) (justify right) hide)
-    )
-  )
-  (global_label "Member-E-Stop-sw2-2" (shape input) (at 203.2 128.27 0) (fields_autoplaced)
-    (effects (font (size 1.27 1.27)) (justify left))
-    (uuid f6afcf4f-5802-4364-830d-cd9e9b4c80a7)
-    (property "Intersheet References" "${INTERSHEET_REFS}" (id 0) (at 229.3198 128.1906 0)
-      (effects (font (size 1.27 1.27)) (justify left) hide)
-    )
-  )
-
-  (symbol (lib_id "Connector:Screw_Terminal_01x02") (at 196.85 120.65 180) (unit 1)
-    (in_bom yes) (on_board yes)
-    (uuid 02f04e79-ec13-446b-9e64-e63387fde823)
-    (property "Reference" "J5" (id 0) (at 194.31 118.11 0)
-      (effects (font (size 1.27 1.27)) (justify left))
-    )
-    (property "Value" "Screw_Terminal_01x02" (id 1) (at 194.31 120.65 0)
-      (effects (font (size 1.27 1.27)) (justify left))
-    )
-    (property "Footprint" "TerminalBlock:TerminalBlock_Altech_AK300-2_P5.00mm" (id 2) (at 196.85 120.65 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "~" (id 3) (at 196.85 120.65 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "JLCPCB Part #" "C8269" (id 4) (at 196.85 120.65 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (pin "1" (uuid 55d8740a-dd3b-4d28-a712-5026dbdcd15b))
-    (pin "2" (uuid 15fbf468-db43-48ae-9856-ff4e38d051e9))
-  )
-
-  (symbol (lib_id "Connector:Screw_Terminal_01x02") (at 196.85 146.05 180) (unit 1)
-    (in_bom yes) (on_board yes)
-    (uuid 1025be90-f22a-454b-a7bf-ffa4eee205d1)
-    (property "Reference" "J12" (id 0) (at 194.31 143.51 0)
-      (effects (font (size 1.27 1.27)) (justify left))
-    )
-    (property "Value" "Screw_Terminal_01x02" (id 1) (at 194.31 146.05 0)
-      (effects (font (size 1.27 1.27)) (justify left))
-    )
-    (property "Footprint" "TerminalBlock:TerminalBlock_Altech_AK300-2_P5.00mm" (id 2) (at 196.85 146.05 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "~" (id 3) (at 196.85 146.05 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "JLCPCB Part #" "C8269" (id 4) (at 196.85 146.05 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (pin "1" (uuid 6ca36c81-947f-41a5-bc21-54d22db0d812))
-    (pin "2" (uuid 1fafd549-8e0b-47a8-88c7-34f214ce10ab))
-  )
-
-  (symbol (lib_id "Connector:Screw_Terminal_01x02") (at 196.85 125.73 180) (unit 1)
-    (in_bom yes) (on_board yes)
-    (uuid 1bdcafcb-de7e-45ce-b3b7-1e723ef60258)
-    (property "Reference" "J9" (id 0) (at 194.31 123.19 0)
-      (effects (font (size 1.27 1.27)) (justify left))
-    )
-    (property "Value" "Screw_Terminal_01x02" (id 1) (at 194.31 125.73 0)
-      (effects (font (size 1.27 1.27)) (justify left))
-    )
-    (property "Footprint" "TerminalBlock:TerminalBlock_Altech_AK300-2_P5.00mm" (id 2) (at 196.85 125.73 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "~" (id 3) (at 196.85 125.73 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "JLCPCB Part #" "C8269" (id 4) (at 196.85 125.73 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (pin "1" (uuid d856d9a1-c08e-4199-ae52-bc0ae92a8682))
-    (pin "2" (uuid 91eb382b-77ca-4718-a21d-67f56f8821b1))
-  )
-
-  (symbol (lib_id "Connector:Screw_Terminal_01x02") (at 196.85 161.29 180) (unit 1)
-    (in_bom yes) (on_board yes)
-    (uuid 640bba73-7536-45a8-a0f1-ae04216cf9a0)
-    (property "Reference" "J11" (id 0) (at 194.31 158.75 0)
-      (effects (font (size 1.27 1.27)) (justify left))
-    )
-    (property "Value" "Screw_Terminal_01x02" (id 1) (at 194.31 161.29 0)
-      (effects (font (size 1.27 1.27)) (justify left))
-    )
-    (property "Footprint" "TerminalBlock:TerminalBlock_Altech_AK300-2_P5.00mm" (id 2) (at 196.85 161.29 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "~" (id 3) (at 196.85 161.29 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "JLCPCB Part #" "C8269" (id 4) (at 196.85 161.29 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (pin "1" (uuid b7896c88-8111-4677-b48f-ed53efa4fea0))
-    (pin "2" (uuid b492bd3b-d138-4afb-9937-7386c19b5467))
-  )
-
-  (symbol (lib_id "Connector:Screw_Terminal_01x02") (at 196.85 135.89 180) (unit 1)
-    (in_bom yes) (on_board yes)
-    (uuid 6e875ce5-3533-4a7d-9205-ccfd75825caa)
-    (property "Reference" "J7" (id 0) (at 194.31 133.35 0)
-      (effects (font (size 1.27 1.27)) (justify left))
-    )
-    (property "Value" "Screw_Terminal_01x02" (id 1) (at 194.31 135.89 0)
-      (effects (font (size 1.27 1.27)) (justify left))
-    )
-    (property "Footprint" "TerminalBlock:TerminalBlock_Altech_AK300-2_P5.00mm" (id 2) (at 196.85 135.89 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "~" (id 3) (at 196.85 135.89 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "JLCPCB Part #" "C8269" (id 4) (at 196.85 135.89 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (pin "1" (uuid eed4bfc1-15c1-4e88-8d4d-f1a42ec6b873))
-    (pin "2" (uuid a00c0c84-ab9f-47c0-8b32-1fe12378fcae))
-  )
-
-  (symbol (lib_id "Connector:Screw_Terminal_01x02") (at 196.85 140.97 180) (unit 1)
-    (in_bom yes) (on_board yes)
-    (uuid 952adfeb-4cfd-4a4d-9ce1-fb6d521fb670)
-    (property "Reference" "J6" (id 0) (at 194.31 138.43 0)
-      (effects (font (size 1.27 1.27)) (justify left))
-    )
-    (property "Value" "Screw_Terminal_01x02" (id 1) (at 194.31 140.97 0)
-      (effects (font (size 1.27 1.27)) (justify left))
-    )
-    (property "Footprint" "TerminalBlock:TerminalBlock_Altech_AK300-2_P5.00mm" (id 2) (at 196.85 140.97 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "~" (id 3) (at 196.85 140.97 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "JLCPCB Part #" "C8269" (id 4) (at 196.85 140.97 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (pin "1" (uuid c6498abc-f542-495f-aa75-83f92968b9d2))
-    (pin "2" (uuid d0f3256b-7dd2-4ca5-a39e-300010f93552))
-  )
-
-  (symbol (lib_id "Connector:Screw_Terminal_01x02") (at 196.85 130.81 180) (unit 1)
-    (in_bom yes) (on_board yes)
-    (uuid a125bb4b-fb97-49bb-ab46-444f0c9a766d)
-    (property "Reference" "J8" (id 0) (at 194.31 128.27 0)
-      (effects (font (size 1.27 1.27)) (justify left))
-    )
-    (property "Value" "Screw_Terminal_01x02" (id 1) (at 194.31 130.81 0)
-      (effects (font (size 1.27 1.27)) (justify left))
-    )
-    (property "Footprint" "TerminalBlock:TerminalBlock_Altech_AK300-2_P5.00mm" (id 2) (at 196.85 130.81 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "~" (id 3) (at 196.85 130.81 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "JLCPCB Part #" "C8269" (id 4) (at 196.85 130.81 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (pin "1" (uuid 0315be6c-cefa-4c39-ac68-42f736922b44))
-    (pin "2" (uuid f37655fb-c811-4aee-8ba3-0172949b839b))
-  )
-
-  (symbol (lib_id "Connector:Screw_Terminal_01x02") (at 196.85 151.13 180) (unit 1)
-    (in_bom yes) (on_board yes)
-    (uuid f11cc7db-4a2f-45ac-8624-07f887f21b2d)
-    (property "Reference" "J14" (id 0) (at 194.31 148.59 0)
-      (effects (font (size 1.27 1.27)) (justify left))
-    )
-    (property "Value" "Screw_Terminal_01x02" (id 1) (at 194.31 151.13 0)
-      (effects (font (size 1.27 1.27)) (justify left))
-    )
-    (property "Footprint" "TerminalBlock:TerminalBlock_Altech_AK300-2_P5.00mm" (id 2) (at 196.85 151.13 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "~" (id 3) (at 196.85 151.13 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "JLCPCB Part #" "C8269" (id 4) (at 196.85 151.13 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (pin "1" (uuid a137a947-c648-45f5-83a6-b653aac24e00))
-    (pin "2" (uuid 291055b6-5803-425c-ae0a-ac3d1ea0730c))
-  )
-
-  (symbol (lib_id "Connector:Screw_Terminal_01x02") (at 196.85 156.21 180) (unit 1)
-    (in_bom yes) (on_board yes)
-    (uuid f13d6df0-a7db-4505-83f0-0629f73502f4)
-    (property "Reference" "J10" (id 0) (at 194.31 153.67 0)
-      (effects (font (size 1.27 1.27)) (justify left))
-    )
-    (property "Value" "Screw_Terminal_01x02" (id 1) (at 194.31 156.21 0)
-      (effects (font (size 1.27 1.27)) (justify left))
-    )
-    (property "Footprint" "TerminalBlock:TerminalBlock_Altech_AK300-2_P5.00mm" (id 2) (at 196.85 156.21 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "~" (id 3) (at 196.85 156.21 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "JLCPCB Part #" "C8269" (id 4) (at 196.85 156.21 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (pin "1" (uuid eb2a4fe2-b9d6-473d-b401-151f1f84f43a))
-    (pin "2" (uuid ace631d1-6893-486a-8ad6-fe44180f1c0d))
-  )
+(kicad_sch
+	(version 20231120)
+	(generator "eeschema")
+	(generator_version "8.0")
+	(uuid "24fc4378-6cc8-4278-b1f1-7915a2382f64")
+	(paper "USLetter")
+	(title_block
+		(title "Stage 3 | Contactor to power the Tool")
+		(date "2022-10-29")
+		(rev "3")
+		(company "Corey Rice & MakeHaven")
+		(comment 1 "The contactor actually controls the tool, and is activated from J12 (or J11).")
+		(comment 2 "A fuse is added to protect the board from improper wiring")
+		(comment 3 "Screw-terminals shown here, to connect to mains-level devices")
+		(comment 4 "Jumper the EStp3 if there will not be any secondary EStop used")
+	)
+	(lib_symbols
+		(symbol "Connector:Screw_Terminal_01x02"
+			(pin_names
+				(offset 1.016) hide)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "J"
+				(at 0 2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Screw_Terminal_01x02"
+				(at 0 -5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Generic screw terminal, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "screw terminal"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "TerminalBlock*:*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "Screw_Terminal_01x02_1_1"
+				(rectangle
+					(start -1.27 1.27)
+					(end 1.27 -3.81)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(circle
+					(center 0 -2.54)
+					(radius 0.635)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.5334 -2.2098) (xy 0.3302 -3.048)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.5334 0.3302) (xy 0.3302 -0.508)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.3556 -2.032) (xy 0.508 -2.8702)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.3556 0.508) (xy 0.508 -0.3302)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 0 0)
+					(radius 0.635)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin passive line
+					(at -5.08 0 0)
+					(length 3.81)
+					(name "Pin_1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -2.54 0)
+					(length 3.81)
+					(name "Pin_2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+	)
+	(junction
+		(at 66.04 95.25)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "690587c0-534e-4e41-bdb5-c7f4c8dc6cc1")
+	)
+	(junction
+		(at 66.04 105.41)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "ebeb52ca-054f-40cf-a4c6-4ecc020479be")
+	)
+	(wire
+		(pts
+			(xy 201.93 158.75) (xy 203.2 158.75)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "05e2c82d-412f-4e03-8beb-93dddcd47556")
+	)
+	(wire
+		(pts
+			(xy 66.04 101.6) (xy 66.04 105.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0b5ce7a4-fee1-4e9d-a6c9-0f29a6d17572")
+	)
+	(wire
+		(pts
+			(xy 201.93 135.89) (xy 203.2 135.89)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0cd59bf6-30a7-4612-80cc-de2a2a0bf7fe")
+	)
+	(polyline
+		(pts
+			(xy 64.77 114.3) (xy 64.77 120.65)
+		)
+		(stroke
+			(width 0)
+			(type dash)
+		)
+		(uuid "105e1039-de4b-4bcd-a597-653cc6985562")
+	)
+	(wire
+		(pts
+			(xy 100.33 99.06) (xy 100.33 95.25)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "13877107-9e17-49b2-a4d1-a97641db49ad")
+	)
+	(wire
+		(pts
+			(xy 100.33 101.6) (xy 100.33 105.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "26568930-c562-40c6-862b-1436686aa49d")
+	)
+	(wire
+		(pts
+			(xy 66.04 105.41) (xy 66.04 115.57)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "35f7ce9c-d9fb-42d7-ae84-02766498b72c")
+	)
+	(wire
+		(pts
+			(xy 66.04 95.25) (xy 100.33 95.25)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "39bd75f6-7777-4b91-a457-2612d64c6493")
+	)
+	(wire
+		(pts
+			(xy 66.04 130.81) (xy 66.04 152.4)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3d1ef21a-29ad-457a-914b-b3e44beebbdd")
+	)
+	(wire
+		(pts
+			(xy 201.93 151.13) (xy 203.2 151.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3ec9557e-11e3-4730-9102-aae1c3967519")
+	)
+	(wire
+		(pts
+			(xy 201.93 120.65) (xy 203.2 120.65)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "40795be5-3152-4578-bb36-487e5e172a96")
+	)
+	(wire
+		(pts
+			(xy 201.93 133.35) (xy 203.2 133.35)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4222fb6c-442d-4e23-b2f8-974134e74747")
+	)
+	(wire
+		(pts
+			(xy 66.04 105.41) (xy 100.33 105.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4acb6635-243c-4f1d-b41f-b4ce043ee945")
+	)
+	(wire
+		(pts
+			(xy 201.93 138.43) (xy 203.2 138.43)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7400f7b0-36bd-4149-b83e-112d496a329d")
+	)
+	(wire
+		(pts
+			(xy 201.93 118.11) (xy 203.2 118.11)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "75bf1cd1-06c7-4dd7-930e-4ea94a5661f1")
+	)
+	(wire
+		(pts
+			(xy 66.04 95.25) (xy 66.04 99.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7646c9a8-bdd0-4c19-aed6-5a7691bdb847")
+	)
+	(polyline
+		(pts
+			(xy 64.77 132.08) (xy 64.77 127)
+		)
+		(stroke
+			(width 0)
+			(type dash)
+		)
+		(uuid "88d394a9-26ae-4612-a8a4-307433aa06a2")
+	)
+	(wire
+		(pts
+			(xy 201.93 146.05) (xy 203.2 146.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "91631a12-acdb-4e1a-8e91-df351ea19d9e")
+	)
+	(polyline
+		(pts
+			(xy 64.77 151.13) (xy 64.77 156.21)
+		)
+		(stroke
+			(width 0)
+			(type dash)
+		)
+		(uuid "955414a6-1c35-4252-aa4c-d19ac3695fdd")
+	)
+	(wire
+		(pts
+			(xy 66.04 119.38) (xy 66.04 128.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "97996a99-7d77-470e-bb1a-530fdc09e278")
+	)
+	(wire
+		(pts
+			(xy 201.93 128.27) (xy 203.2 128.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9d15c9ed-f88a-45b9-8512-e2fbd4700a7f")
+	)
+	(wire
+		(pts
+			(xy 201.93 125.73) (xy 203.2 125.73)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a1a8a4c9-ebf0-4deb-93bb-fd06bbd52988")
+	)
+	(wire
+		(pts
+			(xy 66.04 90.17) (xy 66.04 95.25)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "aa38cb0b-bfdd-4efe-922f-b0f8abc14f71")
+	)
+	(wire
+		(pts
+			(xy 201.93 123.19) (xy 203.2 123.19)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b84ca701-5aef-47dc-be82-5cd53dcd76f6")
+	)
+	(wire
+		(pts
+			(xy 201.93 156.21) (xy 203.2 156.21)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d489f58a-20c6-494f-8738-ac60903fe6d8")
+	)
+	(wire
+		(pts
+			(xy 201.93 130.81) (xy 203.2 130.81)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d83deaa1-bc60-4f56-abc6-2bce26579024")
+	)
+	(wire
+		(pts
+			(xy 201.93 161.29) (xy 203.2 161.29)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dba9aa66-c83f-4820-b83b-2d78e4493e1b")
+	)
+	(wire
+		(pts
+			(xy 201.93 143.51) (xy 203.2 143.51)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e87f97de-3740-480d-bac7-bb9dcdbc43e3")
+	)
+	(wire
+		(pts
+			(xy 201.93 148.59) (xy 203.2 148.59)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ebf79de0-fb21-4bd4-a802-28f8909279fd")
+	)
+	(wire
+		(pts
+			(xy 201.93 140.97) (xy 203.2 140.97)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "face64fa-8791-405e-9508-b9d0c2fcc2b4")
+	)
+	(wire
+		(pts
+			(xy 201.93 153.67) (xy 203.2 153.67)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fb4e418d-f9a5-4976-8739-54ecffb3fd77")
+	)
+	(text "These screw terminals are broken out for all functions.\nThe terminals are in pairs, and labeled on the board. \n\nBonus mode: if you want to use this whole board as a \nlow-current AC \"smart switch\" you can attach an \ninterrupted 'Hot' line across J12-1 and J11-3. \nJust don't exceed the limits of Relay 1-2 in Stage 1."
+		(exclude_from_sim no)
+		(at 173.99 114.3 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "0cf6328e-dd23-4921-847c-0f6723fce492")
+	)
+	(text "Active Door Control [such as to power a solenoid actvation directly]\n***** Used nearly as intended as a tool, follow most labels\n***** SW: requires 'set' and 'reset' relays to open/close door\n--> Jumper shut as labeled: G.btn, R.btn, (both)EStpA, (both)EStpB\n--> Use G.light as normal to indicate when door is open-able\n--> Connect solenoid across OUT screw terminals\n\nPassive Door Control [when contact between wires is all that is needed]\n***** Includes Green Light for open-able indication (optional)\n***** Needs S2 relay installed for the correct voltage \n***** SW: requires 'set' and 'reset' relays to open/close door\n--> Jumper shut as labeled: R.btn, [top/ starred on bottom] EStpA, EStpB\n--> DO NOT connect in any way: G.light, [bottom/ unstarred] EStpA, EStpB\n--> Attach the green indicator light in screw terminals labeled: G.btn\n      to show when the door is open-able\n      **A light or jumper MUST be installed across G.btn terminals\n      **Revert to jumper if LED Green light blocks operation of S2 relay\n        (or a parallel reverse-bias diode may allow LED light use)\n--> Connect door-actvation wires as labled on back of board\n      pins labeld with '*DOOR' [bottom] EStpA & [top] OUT"
+		(exclude_from_sim no)
+		(at 163.83 86.36 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "14bc317a-86b8-4b98-80e9-532b0ce88f3a")
+	)
+	(text "Stage 3 ||Final Contactor & Screw Terminals\n"
+		(exclude_from_sim no)
+		(at 35.56 30.48 0)
+		(effects
+			(font
+				(size 4 4)
+				(thickness 0.8)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "1645e8e0-a72e-487b-9934-bfad0ec8905c")
+	)
+	(text "With a separate connection, in parallel to everything else, this will power\nthe stage 3 contactor. A green indicator light is used to show the state of power.\n\nThe primary E-Stop (sw1) works on this line, to directly cut power to the contactor\nand by extension the tool. This is mechanically activated at the same time as the \nsw2 Estop (on page 9) that resets the active latch held on the S2 relay. \n\nThe auxilary EStop is also here to ensure it can directly turn-off the tool, and \nthe firmware will reset the S2 relay's active self-latch. "
+		(exclude_from_sim no)
+		(at 43.18 78.74 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "465bada5-f32e-4827-a845-aac252f01855")
+	)
+	(text "Many tools will have this jumpered-shut.\nOnly tools that need a second E-Stop in a\nmore reachable place will use this.\n"
+		(exclude_from_sim no)
+		(at 69.85 163.83 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "5a6ff54c-b4bb-49b5-9156-4e1be8c126f1")
+	)
+	(text "This fuse may be unnecessary if \npowered from 'mains-fused-H/L1'"
+		(exclude_from_sim no)
+		(at 73.66 92.71 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "63300473-8b1f-442b-a9ea-98ac41738c85")
+	)
+	(text "Use this board as Active and Passive door controller"
+		(exclude_from_sim no)
+		(at 158.75 44.45 0)
+		(effects
+			(font
+				(size 2 2)
+				(thickness 0.4)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "64710481-5254-4ef3-a328-8c3c0bc45078")
+	)
+	(text "Putting the main E-Stop here has \nit as 'close' to the tool as possible.\nThis should makes it less likely \nto fail because of a self-welded relay. \nBecause it is mechanically linked, \nthis will also activate with 'Member-E-Stop-sw2'"
+		(exclude_from_sim no)
+		(at 69.85 146.05 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "6e53bd27-1803-40c6-8502-a5ce862073fa")
+	)
+	(text "The output fron the S2 \nrelay that controls \nthe Stage 3 contactor."
+		(exclude_from_sim no)
+		(at 83.82 120.65 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "91f7a894-d7d0-467d-af95-177a7652c7ed")
+	)
+	(text "main E-stop -->"
+		(exclude_from_sim no)
+		(at 63.5 130.81 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "a6a8a31c-5ec0-4246-8f02-b50965c69f8d")
+	)
+	(text "Control for Final Contactor\n"
+		(exclude_from_sim no)
+		(at 41.91 59.69 0)
+		(effects
+			(font
+				(size 2 2)
+				(thickness 0.4)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "c0aa64a4-e322-4fe3-bcf5-fb6c2ce0aebd")
+	)
+	(text "N-ON switch\n"
+		(exclude_from_sim no)
+		(at 93.98 156.21 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "d034cdf8-6f92-4406-a24e-234501887afe")
+	)
+	(text "aux E-stop -->"
+		(exclude_from_sim no)
+		(at 63.5 154.94 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "d12ce1f4-b943-43c3-a6b3-f4cd6cbf897d")
+	)
+	(text "Output to control the Contactor, and a light to show the state."
+		(exclude_from_sim no)
+		(at 36.83 35.56 0)
+		(effects
+			(font
+				(size 2.5 2.5)
+			)
+			(justify left bottom)
+		)
+		(uuid "dc6368ee-5afe-4e71-a1bc-4967a46f2ae3")
+	)
+	(text "N-ON switch\nneeded for bypass mode"
+		(exclude_from_sim no)
+		(at 92.71 132.08 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "def72fb5-b11d-41ef-a9c6-1e8cf588b0d6")
+	)
+	(text "Screw Terminals for all functions"
+		(exclude_from_sim no)
+		(at 173.99 99.06 0)
+		(effects
+			(font
+				(size 2 2)
+				(thickness 0.4)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "e567d0f0-da2d-433d-87a8-905eb3d912c4")
+	)
+	(text "S2 Output -->"
+		(exclude_from_sim no)
+		(at 63.5 118.11 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "fc7580c8-0f4e-4955-82f0-d4286a6da0f5")
+	)
+	(global_label "Green-Indicator-light-1"
+		(shape output)
+		(at 203.2 143.51 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "04d27d52-cde1-412a-95f6-00c7df1e44dd")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 229.6221 143.4306 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "Member-Green-Button-2"
+		(shape input)
+		(at 203.2 140.97 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "1647b59c-b582-4d39-84e3-45e7b93ab6b4")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 230.3479 140.8906 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "H{slash}L1"
+		(shape passive)
+		(at 203.2 120.65 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "23f2f8a5-5757-4087-94bd-eab7215f8ac5")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 210.5117 120.7294 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "Member-E-Stop-aux1-1"
+		(shape input)
+		(at 66.04 152.4 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "2bdf7e9b-e1f8-4f40-bfa2-bcccd7ee9092")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 93.1274 152.3206 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "S3-Contactor-Control-2"
+		(shape output)
+		(at 203.2 148.59 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "2d732aa9-276f-48ca-b80b-c2e11489e0a2")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 230.0455 148.5106 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "mains-fused-N{slash}L2"
+		(shape passive)
+		(at 203.2 153.67 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "3935725f-3695-4d97-815f-a843d9cf3fe4")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 224.4212 153.5906 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "Member-Red-Reset-Button-2"
+		(shape input)
+		(at 203.2 133.35 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "3a4c4624-33f7-4b76-a375-21cac4f4737e")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 235.2464 133.2706 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "S3-Contactor-Control-1"
+		(shape output)
+		(at 203.2 151.13 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "4ccfbb20-d8a3-4edb-a60b-2e75f8a24bb1")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 230.0455 151.0506 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "Green-Indicator-light-2"
+		(shape output)
+		(at 203.2 146.05 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "4ff97193-fb9d-4394-ab8a-e6600f0a7ca2")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 229.6221 145.9706 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "Green-Indicator-light-2"
+		(shape output)
+		(at 100.33 101.6 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "55441d1e-99fd-4537-a90e-37c8dfaf7e0f")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 126.7521 101.5206 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "Member-E-Stop-sw1-2"
+		(shape input)
+		(at 203.2 158.75 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "565f8e84-a7fd-480f-9ad6-effee3193203")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 229.3198 158.6706 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "S3-Contactor-Control-2"
+		(shape output)
+		(at 66.04 101.6 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "57c94ae4-d3ed-4940-b86b-3101074b340e")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 92.8855 101.5206 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "Member-E-Stop-aux1-1"
+		(shape input)
+		(at 203.2 156.21 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "5cdf1153-b368-43a0-aeaf-1dffdf691a6b")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 230.2874 156.1306 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "Member-Green-Button-1"
+		(shape input)
+		(at 203.2 138.43 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "60c9aa18-de09-44ac-9347-03d28d3d6a10")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 230.3479 138.3506 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "Member-E-Stop-sw1-2"
+		(shape input)
+		(at 66.04 130.81 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "61639ce2-8089-48ce-a2a5-eddc580b12b4")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 92.1598 130.7306 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "Member-E-Stop-sw1-1"
+		(shape input)
+		(at 66.04 128.27 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "69f8bdf7-1f3c-4af6-8ee8-a7a5565cdcad")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 92.1598 128.1906 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "Member-Red-Reset-Button-1"
+		(shape input)
+		(at 203.2 135.89 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "9bd20aac-0ee8-4f63-96f3-7190a7a260fc")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 235.2464 135.8106 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "Member-E-Stop-sw1-1"
+		(shape input)
+		(at 203.2 161.29 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "9c4296c9-0d43-4f08-95c3-e9736a52bd70")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 229.3198 161.2106 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "S3-Contactor-Control-1"
+		(shape output)
+		(at 66.04 99.06 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "a2a01711-9fb3-4584-a959-d99afb112f50")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 92.8855 98.9806 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "Stage3-NO"
+		(shape input)
+		(at 66.04 115.57 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "a75f4d1d-9e65-43b2-900c-6c9a65a6779d")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 79.2179 115.4906 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "Member-E-Stop-aux2-1"
+		(shape input)
+		(at 203.2 125.73 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "b51ecb16-235c-49ef-9e4e-938271da8543")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 230.2874 125.6506 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "Member-E-Stop-aux2-2"
+		(shape input)
+		(at 203.2 123.19 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "bb79a373-67a0-492f-9a8b-d75b14e6a246")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 230.2874 123.1106 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "N{slash}L2"
+		(shape passive)
+		(at 203.2 118.11 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "c3f9aae3-a639-460b-ac43-8a794ee69d39")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 210.5117 118.0306 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "Green-Indicator-light-1"
+		(shape output)
+		(at 100.33 99.06 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "cf9c63c0-5a77-4a99-aae9-344ef19277bf")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 126.7521 98.9806 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "Member-E-Stop-sw2-1"
+		(shape input)
+		(at 203.2 130.81 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "d3b58a0c-6bb9-4486-9aa6-59fd6a6371b6")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 229.3198 130.7306 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "Stage3-Com"
+		(shape input)
+		(at 66.04 119.38 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "d436cf3d-a625-4552-82f6-89142f75854e")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 80.6693 119.3006 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "mains-fused-H{slash}L1"
+		(shape input)
+		(at 66.04 90.17 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "db40cda5-9384-48d1-87ab-20c3fbebd0a3")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 44.8188 90.0906 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "Member-E-Stop-sw2-2"
+		(shape input)
+		(at 203.2 128.27 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "f6afcf4f-5802-4364-830d-cd9e9b4c80a7")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 229.3198 128.1906 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Screw_Terminal_01x02")
+		(at 196.85 120.65 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "02f04e79-ec13-446b-9e64-e63387fde823")
+		(property "Reference" "J5"
+			(at 194.31 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Screw_Terminal_01x02"
+			(at 194.31 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TerminalBlock:TerminalBlock_Altech_AK300-2_P5.00mm"
+			(at 196.85 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 196.85 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 196.85 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB Part #" "C8269"
+			(at 196.85 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "55d8740a-dd3b-4d28-a712-5026dbdcd15b")
+		)
+		(pin "2"
+			(uuid "15fbf468-db43-48ae-9856-ff4e38d051e9")
+		)
+		(instances
+			(project "mh-custom-v1.3"
+				(path "/586efc0f-7de2-49a7-ac21-ecfef2f716d6/6f44f9bb-3a88-498d-9739-be3794f35f17/7e35b9a1-6df7-4aff-8cae-346c220af792"
+					(reference "J5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Screw_Terminal_01x02")
+		(at 196.85 146.05 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "1025be90-f22a-454b-a7bf-ffa4eee205d1")
+		(property "Reference" "J12"
+			(at 194.31 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Screw_Terminal_01x02"
+			(at 194.31 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TerminalBlock:TerminalBlock_Altech_AK300-2_P5.00mm"
+			(at 196.85 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 196.85 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 196.85 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB Part #" "C8269"
+			(at 196.85 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "6ca36c81-947f-41a5-bc21-54d22db0d812")
+		)
+		(pin "2"
+			(uuid "1fafd549-8e0b-47a8-88c7-34f214ce10ab")
+		)
+		(instances
+			(project "mh-custom-v1.3"
+				(path "/586efc0f-7de2-49a7-ac21-ecfef2f716d6/6f44f9bb-3a88-498d-9739-be3794f35f17/7e35b9a1-6df7-4aff-8cae-346c220af792"
+					(reference "J12")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Screw_Terminal_01x02")
+		(at 196.85 125.73 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "1bdcafcb-de7e-45ce-b3b7-1e723ef60258")
+		(property "Reference" "J9"
+			(at 194.31 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Screw_Terminal_01x02"
+			(at 194.31 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TerminalBlock:TerminalBlock_Altech_AK300-2_P5.00mm"
+			(at 196.85 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 196.85 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 196.85 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB Part #" "C8269"
+			(at 196.85 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "d856d9a1-c08e-4199-ae52-bc0ae92a8682")
+		)
+		(pin "2"
+			(uuid "91eb382b-77ca-4718-a21d-67f56f8821b1")
+		)
+		(instances
+			(project "mh-custom-v1.3"
+				(path "/586efc0f-7de2-49a7-ac21-ecfef2f716d6/6f44f9bb-3a88-498d-9739-be3794f35f17/7e35b9a1-6df7-4aff-8cae-346c220af792"
+					(reference "J9")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Screw_Terminal_01x02")
+		(at 196.85 161.29 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "640bba73-7536-45a8-a0f1-ae04216cf9a0")
+		(property "Reference" "J11"
+			(at 194.31 158.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Screw_Terminal_01x02"
+			(at 194.31 161.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TerminalBlock:TerminalBlock_Altech_AK300-2_P5.00mm"
+			(at 196.85 161.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 196.85 161.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 196.85 161.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB Part #" "C8269"
+			(at 196.85 161.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "b7896c88-8111-4677-b48f-ed53efa4fea0")
+		)
+		(pin "2"
+			(uuid "b492bd3b-d138-4afb-9937-7386c19b5467")
+		)
+		(instances
+			(project "mh-custom-v1.3"
+				(path "/586efc0f-7de2-49a7-ac21-ecfef2f716d6/6f44f9bb-3a88-498d-9739-be3794f35f17/7e35b9a1-6df7-4aff-8cae-346c220af792"
+					(reference "J11")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Screw_Terminal_01x02")
+		(at 196.85 135.89 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "6e875ce5-3533-4a7d-9205-ccfd75825caa")
+		(property "Reference" "J7"
+			(at 194.31 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Screw_Terminal_01x02"
+			(at 194.31 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TerminalBlock:TerminalBlock_Altech_AK300-2_P5.00mm"
+			(at 196.85 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 196.85 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 196.85 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB Part #" "C8269"
+			(at 196.85 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "eed4bfc1-15c1-4e88-8d4d-f1a42ec6b873")
+		)
+		(pin "2"
+			(uuid "a00c0c84-ab9f-47c0-8b32-1fe12378fcae")
+		)
+		(instances
+			(project "mh-custom-v1.3"
+				(path "/586efc0f-7de2-49a7-ac21-ecfef2f716d6/6f44f9bb-3a88-498d-9739-be3794f35f17/7e35b9a1-6df7-4aff-8cae-346c220af792"
+					(reference "J7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Screw_Terminal_01x02")
+		(at 196.85 140.97 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "952adfeb-4cfd-4a4d-9ce1-fb6d521fb670")
+		(property "Reference" "J6"
+			(at 194.31 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Screw_Terminal_01x02"
+			(at 194.31 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TerminalBlock:TerminalBlock_Altech_AK300-2_P5.00mm"
+			(at 196.85 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 196.85 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 196.85 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB Part #" "C8269"
+			(at 196.85 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "c6498abc-f542-495f-aa75-83f92968b9d2")
+		)
+		(pin "2"
+			(uuid "d0f3256b-7dd2-4ca5-a39e-300010f93552")
+		)
+		(instances
+			(project "mh-custom-v1.3"
+				(path "/586efc0f-7de2-49a7-ac21-ecfef2f716d6/6f44f9bb-3a88-498d-9739-be3794f35f17/7e35b9a1-6df7-4aff-8cae-346c220af792"
+					(reference "J6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Screw_Terminal_01x02")
+		(at 196.85 130.81 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "a125bb4b-fb97-49bb-ab46-444f0c9a766d")
+		(property "Reference" "J8"
+			(at 194.31 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Screw_Terminal_01x02"
+			(at 194.31 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TerminalBlock:TerminalBlock_Altech_AK300-2_P5.00mm"
+			(at 196.85 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 196.85 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 196.85 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB Part #" "C8269"
+			(at 196.85 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "0315be6c-cefa-4c39-ac68-42f736922b44")
+		)
+		(pin "2"
+			(uuid "f37655fb-c811-4aee-8ba3-0172949b839b")
+		)
+		(instances
+			(project "mh-custom-v1.3"
+				(path "/586efc0f-7de2-49a7-ac21-ecfef2f716d6/6f44f9bb-3a88-498d-9739-be3794f35f17/7e35b9a1-6df7-4aff-8cae-346c220af792"
+					(reference "J8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Screw_Terminal_01x02")
+		(at 196.85 151.13 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "f11cc7db-4a2f-45ac-8624-07f887f21b2d")
+		(property "Reference" "J14"
+			(at 194.31 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Screw_Terminal_01x02"
+			(at 194.31 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TerminalBlock:TerminalBlock_Altech_AK300-2_P5.00mm"
+			(at 196.85 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 196.85 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 196.85 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB Part #" "C8269"
+			(at 196.85 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "a137a947-c648-45f5-83a6-b653aac24e00")
+		)
+		(pin "2"
+			(uuid "291055b6-5803-425c-ae0a-ac3d1ea0730c")
+		)
+		(instances
+			(project "mh-custom-v1.3"
+				(path "/586efc0f-7de2-49a7-ac21-ecfef2f716d6/6f44f9bb-3a88-498d-9739-be3794f35f17/7e35b9a1-6df7-4aff-8cae-346c220af792"
+					(reference "J14")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Screw_Terminal_01x02")
+		(at 196.85 156.21 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "f13d6df0-a7db-4505-83f0-0629f73502f4")
+		(property "Reference" "J10"
+			(at 194.31 153.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Screw_Terminal_01x02"
+			(at 194.31 156.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TerminalBlock:TerminalBlock_Altech_AK300-2_P5.00mm"
+			(at 196.85 156.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 196.85 156.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 196.85 156.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB Part #" "C8269"
+			(at 196.85 156.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "eb2a4fe2-b9d6-473d-b401-151f1f84f43a")
+		)
+		(pin "2"
+			(uuid "ace631d1-6893-486a-8ad6-fe44180f1c0d")
+		)
+		(instances
+			(project "mh-custom-v1.3"
+				(path "/586efc0f-7de2-49a7-ac21-ecfef2f716d6/6f44f9bb-3a88-498d-9739-be3794f35f17/7e35b9a1-6df7-4aff-8cae-346c220af792"
+					(reference "J10")
+					(unit 1)
+				)
+			)
+		)
+	)
 )
