@@ -1,7 +1,7 @@
 # Combined Use Board
 This is the **flagship board** for the [Toolauth](https://github.com/Toolauth) project.  
 
-![Combined use circuit board, front and back](/../main/assets/docs/img/offset-rt-both.png)
+![Combined use circuit board, front and back](/../main/docs/img/offset-rt-both.png)
 
 It can allow for the management of power tools, and serve as the gateway for user authorization.
 
