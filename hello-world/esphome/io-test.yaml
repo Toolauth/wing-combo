@@ -2,9 +2,23 @@
 #
 #     Written to work as ESPHome firmware.
 #     
-#     Simply test that all feature of the baord are working, not integrate into toolauth.
+#     Simply test that all features of the board are working, not integrate into toolauth.
 #
 #
+
+substitutions:
+  pin_sda: GPIO21
+  pin_scl: GPIO22
+  pin_irq: GPIO25
+  pin_red_led: GPIO32
+  pin_green_led: GPIO33
+  pin_reset_relay: GPIO17
+  pin_set_relay: GPIO16
+  pin_buzzer: GPIO5
+  pin_bypass_key: GPIO26
+  pin_estop_1: GPIO27
+  pin_estop_2: GPIO14
+
 esphome:
   name: wing-combo-io-test
   project:
@@ -47,15 +61,15 @@ wifi:
     password: "some_silly_password"
 
 i2c:
-  sda: GPIO21
-  scl: GPIO22
+  sda: pin_sda
+  scl: pin_scl
   
 pn532_i2c:
   update_interval: 1s
 
 sensor:
   - platform: ade7953
-    irq_pin: GPIO25
+    irq_pin: pin_irq
     voltage:
       name: test Voltage
     current_a:
@@ -75,23 +89,23 @@ sensor:
 light:
   - platform: status_led
     name: "Red LED"
-    pin: GPIO32
+    pin: pin_red_led
   - platform: status_led
     name: "Green LED"
-    pin: GPIO33
+    pin: pin_green_led
     
 switch:
   - platform: gpio
-    pin: GPIO17
+    pin: pin_reset_relay
     name: "reset relay"
   - platform: gpio
-    pin: GPIO16
+    pin: pin_set_relay
     name: "set relay"
 
 # needed for rtttl (buzzer)
 output:
   - platform: ledc
-    pin: GPIO5
+    pin: pin_buzzer
     id: rtttl_out
 rtttl:
   output: rtttl_out
@@ -101,13 +115,13 @@ binary_sensor:
     id: bypass
     name: "bypass key"
     pin:
-      number: GPIO26
+      number: pin_bypass_key
       mode:
         input: true
   - platform: gpio
     name: "1st E-Stop"
     pin:
-      number: GPIO27
+      number: pin_estop_1
       inverted: true
       mode:
         input: true
@@ -115,7 +129,7 @@ binary_sensor:
   - platform: gpio
     name: "2nd E-Stop"
     pin:
-      number: GPIO14
+      number: pin_estop_2
       inverted: true
       mode:
         input: true
