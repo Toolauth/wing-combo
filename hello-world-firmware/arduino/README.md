@@ -1,7 +1,10 @@
 # Example Arduino Firmware
 
-> [!CAUTION]
-> This firmware example is incomplete.
+> [!TIP]
+> Arduino is not the firmware used by the [*Toolauth* project](https://github.com/Toolauth) creators.
+> So, this firmware underwent less testing than the [ESPHome version](../esphome/). 
 
-This Arduino firmware is just barely enough to show that all the hardware I/O is working for the board.
+This Arduino firmware is just enough to show that all the hardware I/O is working for the board.
+
+The Arduino IDE has opinions about libraries, so we have included a snapshot of all the needed ones and URLs to their origin. Open the folder, and have the Arduino IDE open the `io_test.ino` file to get this working on your board. 
 
