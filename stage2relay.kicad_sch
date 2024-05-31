@@ -9,7 +9,7 @@
 		(date "2022-10-09")
 		(rev "3")
 		(company "Corey Rice & MakeHaven")
-		(comment 1 "Once activated, relay holds itself open with power ")
+		(comment 1 "Once activated, relay holds itself in an active state until reset")
 		(comment 2 "Can be interrupted by E-Stops or the S1/'reset' relay")
 		(comment 3 "Fuses added to power inputs, to protect board from improper wiring")
 		(comment 4 "E-Stop low voltage light & switch logic shown for reference")
@@ -1600,18 +1600,7 @@
 		)
 		(uuid "53a41ee3-db1b-49d8-a198-3f95a5f96e7e")
 	)
-	(text "If there is a Stage 3 relay, then Stage 2 relay can have a lowered switching current -> down to approximately 2amps"
-		(exclude_from_sim no)
-		(at 21.59 38.1 0)
-		(effects
-			(font
-				(size 1.5 1.5)
-			)
-			(justify left bottom)
-		)
-		(uuid "5b4eae8b-22de-4dcd-ba80-9fed16379da7")
-	)
-	(text "The E-Stop light runs at 5V, and is shown here\nbecuase it conceptually makes sense on the sheet.\n\nThis lamp-to-switch connection is done on the \nmodular E-Stop switches themselves, not any PCB. \n\nThe middle 'read-E-stop' informs the microcontroller."
+	(text "The E-Stop light runs at 5V, yet is shown here\nto be closer to the relevant 'reset' features.\n\nThis lamp-to-switch connection is done on the \nmodular E-Stop switches themselves, not any PCB. \n\nThe middle 'read-E-stop' informs the microcontroller."
 		(exclude_from_sim no)
 		(at 71.12 195.58 0)
 		(effects
@@ -1621,6 +1610,17 @@
 			(justify left bottom)
 		)
 		(uuid "5d08c72c-f2ec-4a76-b907-ae422e627e51")
+	)
+	(text "There are multiple vaariants of the Omron-MY2-02 relay, which allow for various voltage levels."
+		(exclude_from_sim no)
+		(at 21.59 37.592 0)
+		(effects
+			(font
+				(size 1.5 1.5)
+			)
+			(justify left bottom)
+		)
+		(uuid "615f01d5-c847-4f79-9ba3-b7f0d5d94850")
 	)
 	(text "N-ON switch"
 		(exclude_from_sim no)
@@ -1633,7 +1633,7 @@
 		)
 		(uuid "635ee82d-95f4-4670-ba44-eda56eb8110c")
 	)
-	(text "The E-Stop is connected from a 3-wire header:\n  >> 5V goes 'above' the incadescent bulb\n  >> Read goes 'between' E-Stop and switch\n  >> GND goes 'below' switch"
+	(text "The E-Stop is connected from a 3-wire header:\n  >> 5V goes 'above' the incadescent bulb\n  >> Sig/Read goes 'between' E-Stop and switch\n  >> GND goes 'below' switch"
 		(exclude_from_sim no)
 		(at 71.12 179.07 0)
 		(effects
@@ -1680,7 +1680,7 @@
 	)
 	(text "aux E-stop -->"
 		(exclude_from_sim no)
-		(at 190.5 104.14 180)
+		(at 190.5 104.14 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1691,7 +1691,7 @@
 	)
 	(text "forgetful member -->"
 		(exclude_from_sim no)
-		(at 191.77 63.5 180)
+		(at 191.77 63.5 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1700,7 +1700,7 @@
 		)
 		(uuid "932b0a0a-53cf-4e18-95f7-a2828904e0ea")
 	)
-	(text "These are all the ways to 'reset' the Stage 2 relay. \n[Not including overall loss of power, which also causes reset.]\nNormally a member will press the red button. But they may also \nuse the E-Stop to temporarily pause function, or the timeout \ncould trigger automatically if programmed correctly..."
+	(text "These are all the ways to 'reset' the Stage 2 relay. \n[Not including overall loss of power, which also causes reset.]\nNormally a member will press the red button. But they may also \nuse the E-Stop to quickly end function, or the timeout \ncould trigger automatically (if programmed correctly...)"
 		(exclude_from_sim no)
 		(at 176.53 44.45 0)
 		(effects
@@ -1761,7 +1761,7 @@
 	)
 	(text "normal tool end -->"
 		(exclude_from_sim no)
-		(at 191.77 74.93 180)
+		(at 191.77 74.93 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1772,7 +1772,7 @@
 	)
 	(text "main E-stop -->"
 		(exclude_from_sim no)
-		(at 190.5 87.63 180)
+		(at 190.5 87.63 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1826,7 +1826,7 @@
 		)
 		(uuid "ea4a65ad-b323-4249-856e-25a4d377f4ad")
 	)
-	(text "Provides the majority of the Member's interface experience\n"
+	(text "Provides the majority of the Member's interface experience: This is the latch that powers the contactor.\n"
 		(exclude_from_sim no)
 		(at 21.59 43.18 0)
 		(effects
@@ -1837,9 +1837,9 @@
 		)
 		(uuid "ec8d5a33-b48f-432f-ba56-4cc0c9a63662")
 	)
-	(text "This portion of the circuit allows the Stage 2 Relay to turn on & stay on.\nWhen enabled [by ESP32 or Bypass] a person can turn on the relay with the green button.\nOnce activated, the link from relay pin 5_to_13 'latch' the relay on while powered, until reset.\nThe \"Can-Turn-On\" light will shine if it is possible to 'set' the relay for any reason.\nThe light is important, because it shows a working system or if bypass mode is enabled by a key."
+	(text "This portion of the circuit allows the Stage 2 Relay to turn on & stay on.\nWhen enabled [by ESP32 or Bypass] a person can turn on the relay with the green button.\nOnce activated, the link from relay pin 5_to_13 'latch' the relay on while powered, until reset."
 		(exclude_from_sim no)
-		(at 33.02 85.09 0)
+		(at 33.274 81.534 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1848,7 +1848,7 @@
 		)
 		(uuid "f47f5a7b-4538-49c3-a67a-50e85e1672f8")
 	)
-	(label "active self-latch"
+	(label "self-latch"
 		(at 67.31 110.49 0)
 		(fields_autoplaced yes)
 		(effects
@@ -2425,7 +2425,7 @@
 			(uuid "909c076f-08be-4ffd-8698-c3a120c3940a")
 		)
 		(instances
-			(project "mh-custom-v1.3"
+			(project "wing-combo"
 				(path "/586efc0f-7de2-49a7-ac21-ecfef2f716d6/6f44f9bb-3a88-498d-9739-be3794f35f17/fd75559e-77bb-4f15-bd9f-e39243a04df3"
 					(reference "R31")
 					(unit 1)
@@ -2501,7 +2501,7 @@
 			(uuid "b1575ef0-8d56-46d3-91b7-d85be0569e2a")
 		)
 		(instances
-			(project "mh-custom-v1.3"
+			(project "wing-combo"
 				(path "/586efc0f-7de2-49a7-ac21-ecfef2f716d6/6f44f9bb-3a88-498d-9739-be3794f35f17/fd75559e-77bb-4f15-bd9f-e39243a04df3"
 					(reference "F2")
 					(unit 1)
@@ -2567,7 +2567,7 @@
 			(uuid "6d103f74-d317-40f5-a00a-7a9a5bc8d509")
 		)
 		(instances
-			(project "mh-custom-v1.3"
+			(project "wing-combo"
 				(path "/586efc0f-7de2-49a7-ac21-ecfef2f716d6/6f44f9bb-3a88-498d-9739-be3794f35f17/fd75559e-77bb-4f15-bd9f-e39243a04df3"
 					(reference "#PWR0163")
 					(unit 1)
@@ -2643,7 +2643,7 @@
 			(uuid "d4dabc7b-c6e7-4d61-952a-5218a2f068a4")
 		)
 		(instances
-			(project "mh-custom-v1.3"
+			(project "wing-combo"
 				(path "/586efc0f-7de2-49a7-ac21-ecfef2f716d6/6f44f9bb-3a88-498d-9739-be3794f35f17/fd75559e-77bb-4f15-bd9f-e39243a04df3"
 					(reference "F1")
 					(unit 1)
@@ -2709,7 +2709,7 @@
 			(uuid "cc8db541-c8a1-4f6d-b7dc-e41d9eb65d1b")
 		)
 		(instances
-			(project "mh-custom-v1.3"
+			(project "wing-combo"
 				(path "/586efc0f-7de2-49a7-ac21-ecfef2f716d6/6f44f9bb-3a88-498d-9739-be3794f35f17/fd75559e-77bb-4f15-bd9f-e39243a04df3"
 					(reference "#PWR0164")
 					(unit 1)
@@ -2779,7 +2779,7 @@
 			(uuid "4d12d925-e106-413d-82a1-cc35b7029239")
 		)
 		(instances
-			(project "mh-custom-v1.3"
+			(project "wing-combo"
 				(path "/586efc0f-7de2-49a7-ac21-ecfef2f716d6/6f44f9bb-3a88-498d-9739-be3794f35f17/fd75559e-77bb-4f15-bd9f-e39243a04df3"
 					(reference "SW2")
 					(unit 1)
@@ -2849,7 +2849,7 @@
 			(uuid "0ca483eb-05f3-452c-a3e7-fdcdedc05fd2")
 		)
 		(instances
-			(project "mh-custom-v1.3"
+			(project "wing-combo"
 				(path "/586efc0f-7de2-49a7-ac21-ecfef2f716d6/6f44f9bb-3a88-498d-9739-be3794f35f17/fd75559e-77bb-4f15-bd9f-e39243a04df3"
 					(reference "LA1")
 					(unit 1)

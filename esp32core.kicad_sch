@@ -1434,7 +1434,7 @@
 			(uuid "b604596f-1e0a-4cc4-b95c-dd4af1926c8e")
 		)
 		(instances
-			(project "mh-custom-v1.3"
+			(project "wing-combo"
 				(path "/586efc0f-7de2-49a7-ac21-ecfef2f716d6/3f0e9b91-fe15-47d5-84d6-aa71b368b91e/72caadd5-963d-408a-b010-ddf83ca901da"
 					(reference "#PWR09")
 					(unit 1)
@@ -1500,7 +1500,7 @@
 			(uuid "13b58479-3956-4009-8058-d8f893c26d8e")
 		)
 		(instances
-			(project "mh-custom-v1.3"
+			(project "wing-combo"
 				(path "/586efc0f-7de2-49a7-ac21-ecfef2f716d6/3f0e9b91-fe15-47d5-84d6-aa71b368b91e/72caadd5-963d-408a-b010-ddf83ca901da"
 					(reference "#PWR05")
 					(unit 1)
@@ -1565,7 +1565,7 @@
 			(uuid "80105f48-77cb-40de-85dc-615f4df54e45")
 		)
 		(instances
-			(project "mh-custom-v1.3"
+			(project "wing-combo"
 				(path "/586efc0f-7de2-49a7-ac21-ecfef2f716d6/3f0e9b91-fe15-47d5-84d6-aa71b368b91e/72caadd5-963d-408a-b010-ddf83ca901da"
 					(reference "#PWR08")
 					(unit 1)
@@ -1714,7 +1714,7 @@
 			(uuid "e06f635f-d73c-4b3a-afa6-f4904746cf1c")
 		)
 		(instances
-			(project "mh-custom-v1.3"
+			(project "wing-combo"
 				(path "/586efc0f-7de2-49a7-ac21-ecfef2f716d6/3f0e9b91-fe15-47d5-84d6-aa71b368b91e/72caadd5-963d-408a-b010-ddf83ca901da"
 					(reference "A1")
 					(unit 1)

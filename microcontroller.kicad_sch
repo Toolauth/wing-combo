@@ -157,7 +157,7 @@
 			)
 		)
 		(instances
-			(project "mh-custom-v1.3"
+			(project "wing-combo"
 				(path "/586efc0f-7de2-49a7-ac21-ecfef2f716d6/3f0e9b91-fe15-47d5-84d6-aa71b368b91e"
 					(page "6")
 				)
@@ -195,7 +195,7 @@
 			)
 		)
 		(instances
-			(project "mh-custom-v1.3"
+			(project "wing-combo"
 				(path "/586efc0f-7de2-49a7-ac21-ecfef2f716d6/3f0e9b91-fe15-47d5-84d6-aa71b368b91e"
 					(page "3")
 				)
@@ -233,7 +233,7 @@
 			)
 		)
 		(instances
-			(project "mh-custom-v1.3"
+			(project "wing-combo"
 				(path "/586efc0f-7de2-49a7-ac21-ecfef2f716d6/3f0e9b91-fe15-47d5-84d6-aa71b368b91e"
 					(page "5")
 				)
@@ -271,7 +271,7 @@
 			)
 		)
 		(instances
-			(project "mh-custom-v1.3"
+			(project "wing-combo"
 				(path "/586efc0f-7de2-49a7-ac21-ecfef2f716d6/3f0e9b91-fe15-47d5-84d6-aa71b368b91e"
 					(page "4")
 				)

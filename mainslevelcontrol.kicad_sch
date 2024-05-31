@@ -72,9 +72,9 @@
 		)
 		(uuid "ccd0afa8-abb5-4fb3-a592-fcbe6656fa00")
 	)
-	(text "The original version of these tool controllers (before this design) \nrequired that this mains-level circuit be built by hand, every time. \n\nThe goal here is to build a latching relay system from non-latching relays, with the added benefit of available E-Stops. \nAlthough a bit redundant, this design breaks up the control of power-access to a tool into three stages: \n\n--> 1) Small relays that are controlled by a microcontroller, which allow access to use tool\n\n--> 2) A larger relay that is triggered and controls mains-level voltage (also has 110 & 220 versions)\n\n--> 3) An off-board contactor that actually transmits the full power needs of the tool"
+	(text "The original version of these tool controllers (before this design) \nrequired that this mains-level circuit be built by hand, every time. \n\nThe goal here is to build a latching relay system from non-latching relays (for reset on power failure)\nwith the added benefit of available E-Stops. Although a bit redundant, this design breaks up the \ncontrol of power-access to a tool into three stages to manage voltage levels and needed current. \n\n--> 1) Twin small relays that are controlled by a microcontroller, which allow access to use tool\n\n--> 2) A larger relay that is triggered and controls mains-level voltage (also has 110 & 220 versions)\n\n--> 3) An off-board contactor that actually transmits the full power needs of the tool"
 		(exclude_from_sim no)
-		(at 24.13 100.33 0)
+		(at 33.274 103.124 0)
 		(effects
 			(font
 				(size 2.5 2.5)
@@ -138,7 +138,7 @@
 			)
 		)
 		(instances
-			(project "mh-custom-v1.3"
+			(project "wing-combo"
 				(path "/586efc0f-7de2-49a7-ac21-ecfef2f716d6/6f44f9bb-3a88-498d-9739-be3794f35f17"
 					(page "10")
 				)
@@ -176,7 +176,7 @@
 			)
 		)
 		(instances
-			(project "mh-custom-v1.3"
+			(project "wing-combo"
 				(path "/586efc0f-7de2-49a7-ac21-ecfef2f716d6/6f44f9bb-3a88-498d-9739-be3794f35f17"
 					(page "8")
 				)
@@ -214,7 +214,7 @@
 			)
 		)
 		(instances
-			(project "mh-custom-v1.3"
+			(project "wing-combo"
 				(path "/586efc0f-7de2-49a7-ac21-ecfef2f716d6/6f44f9bb-3a88-498d-9739-be3794f35f17"
 					(page "9")
 				)
