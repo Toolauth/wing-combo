@@ -1,9 +1,9 @@
 # Combined Use Board
-This is the **flagship board** for the [Toolauth](https://github.com/Toolauth) project.  
+This is the **flagship board** for the [Toolauth](https://github.com/Toolauth) project.  More information about use, setup, and firmware is available in [this repo's wiki](https://github.com/Toolauth/wing-combo/wiki).
 
 ![Combined use circuit board, front and back](/docs/img/offset-rt-both.png)
 
-It can allow for the management of power tools, and serve as the gateway for user authorization.
+It can allow for the management of power tools, and serve as the gateway for user authorization in a shared workshop.
 
 The board has the following features:
 * A stack of relays & a contactor for controlling power to the downstream tool.
@@ -14,7 +14,7 @@ The board has the following features:
 * Simple connection for panel-mounted Red & Green status LEDs.
 * 5V supply (from onboard transformer) in USB and solder-able form, for future expansion.
 
-## How do I play with this design?
+## How do I play with this PCB design?
 It is as easy as downloading this design by whatever means you like: zip file, `clone`, etc. Then, open the `wing-combo.kicad_pro` file with any version of [KiCAD](https://www.kicad.org/) you like, but the newest version will probably be best.
 
 ## Adafuit Feather Specification
