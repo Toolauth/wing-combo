@@ -55586,8 +55586,8 @@
 			(justify mirror)
 		)
 	)
-	(gr_text "makehaven.org/openshop"
-		(at 68.435 53.46 90)
+	(gr_text "makehaven.org/toolauth"
+		(at 68.435 53.579828 90)
 		(layer "B.SilkS")
 		(uuid "d723d36d-2546-43cb-ab83-d1c07166f83b")
 		(effects
