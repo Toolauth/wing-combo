@@ -4880,9 +4880,9 @@
 		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "7f00934a-6c71-487b-af9d-b4a2acfe06e3")
 		(property "Reference" "Boot1"
 			(at 138.43 134.62 0)
@@ -5546,9 +5546,9 @@
 		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "ad0f48f2-5423-4693-8637-6fd9d8e6373c")
 		(property "Reference" "EN1"
 			(at 171.45 134.62 0)

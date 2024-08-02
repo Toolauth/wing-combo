@@ -6765,9 +6765,9 @@
 		(at 44.45 73.66 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "5f410b4c-62b8-404e-aac5-cb3dbc7baed4")
 		(property "Reference" "IN-AUX-1"
