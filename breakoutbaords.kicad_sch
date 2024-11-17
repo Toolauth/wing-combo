@@ -2852,12 +2852,6 @@
 		(uuid "3c9e340b-014d-42ef-91ef-feaf3b9454fe")
 	)
 	(junction
-		(at 193.04 90.17)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "40e8cfad-c9eb-4206-9ca0-068ee98c966e")
-	)
-	(junction
 		(at 99.06 166.37)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3071,16 +3065,6 @@
 	)
 	(wire
 		(pts
-			(xy 193.04 85.09) (xy 193.04 90.17)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1cb4af85-b58a-402b-95be-6fb27b181bb6")
-	)
-	(wire
-		(pts
 			(xy 99.06 161.29) (xy 101.6 161.29)
 		)
 		(stroke
@@ -3228,6 +3212,16 @@
 			(type default)
 		)
 		(uuid "3ebaf420-a32c-4dac-8064-b9bf5a757235")
+	)
+	(wire
+		(pts
+			(xy 52.07 151.13) (xy 57.15 151.13)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "451ea609-335e-4734-91ab-73e017158463")
 	)
 	(wire
 		(pts
@@ -3671,16 +3665,6 @@
 	)
 	(wire
 		(pts
-			(xy 204.47 85.09) (xy 193.04 85.09)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b8ed37c7-3249-47db-b7e7-e4117575f863")
-	)
-	(wire
-		(pts
 			(xy 57.15 156.21) (xy 60.96 156.21)
 		)
 		(stroke
@@ -3738,6 +3722,16 @@
 			(type default)
 		)
 		(uuid "c69b304f-9b75-4b35-91c4-9532617902f0")
+	)
+	(wire
+		(pts
+			(xy 191.77 85.09) (xy 201.93 85.09)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c8e306d2-4153-42f2-a1f5-c08e99a9faa0")
 	)
 	(wire
 		(pts
@@ -3861,6 +3855,16 @@
 	)
 	(wire
 		(pts
+			(xy 101.6 156.21) (xy 106.68 156.21)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ecac5f8f-29ca-45b3-bf6c-466750ea3818")
+	)
+	(wire
+		(pts
 			(xy 99.06 176.53) (xy 101.6 176.53)
 		)
 		(stroke
@@ -3965,6 +3969,16 @@
 		)
 		(uuid "3716cfc4-8b8c-40df-b47d-a4320adc1f5c")
 	)
+	(text "https://learn.adafruit.com/\nadafruit-wiz5500-wiznet-\nethernet-featherwing/pinouts"
+		(exclude_from_sim no)
+		(at 26.67 150.876 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "3b6496d5-6926-4367-8762-46cc02fa308b")
+	)
 	(text "D0/RX"
 		(exclude_from_sim no)
 		(at 103.886 143.764 0)
@@ -3985,6 +3999,16 @@
 			(href "https://learn.adafruit.com/adafruit-feather/feather-specification")
 		)
 		(uuid "58b43f65-b9fe-4c9f-a476-bd1fb4e77f32")
+	)
+	(text "<-- candidate"
+		(exclude_from_sim no)
+		(at 123.444 156.464 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "5d967446-259b-4fe9-8195-3cf48be39ff7")
 	)
 	(text "out only"
 		(exclude_from_sim no)
@@ -4109,6 +4133,16 @@
 			(justify left bottom)
 		)
 		(uuid "e57b3805-609f-4649-af15-6f50207b5d7c")
+	)
+	(text "<-- candidate"
+		(exclude_from_sim no)
+		(at 217.424 85.09 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "e90c7da7-f16d-43aa-b6b6-33411c0f917b")
 	)
 	(text "There are only enough pins to cinfigure a single \nSPI connection by pulling the 'chip select' to GND\nwith all the other pins needed on the board.\nFor this reason, choose your SPI friends wisely."
 		(exclude_from_sim no)
@@ -4419,6 +4453,28 @@
 			)
 		)
 	)
+	(global_label "CS-eth0"
+		(shape output)
+		(at 52.07 151.13 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "53a11054-368e-4eac-add9-dd395e6cc6f9")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 40.8601 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "POCI"
 		(shape input)
 		(at 204.47 80.01 180)
@@ -4432,6 +4488,28 @@
 		(uuid "55cbef41-4cc7-4201-80a9-0f6d442aa164")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 197.5817 79.9306 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "CS-jst"
+		(shape input)
+		(at 191.77 85.09 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "56dfe819-ac05-4a9a-a301-b942e7ddb123")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 182.3743 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4569,6 +4647,28 @@
 					(size 1.27 1.27)
 				)
 				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "CS-jst"
+		(shape output)
+		(at 106.68 156.21 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "b9295597-8759-4442-a112-45a6890356e0")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 116.0757 156.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 				(hide yes)
 			)
 		)
@@ -5989,8 +6089,8 @@
 		(at 146.05 100.33 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
+		(in_bom no)
+		(on_board no)
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b0879a83-2c60-4d38-9740-611c564c8f55")
