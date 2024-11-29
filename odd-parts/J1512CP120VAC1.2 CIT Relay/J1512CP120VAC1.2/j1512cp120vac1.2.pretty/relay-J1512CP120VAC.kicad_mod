@@ -17,7 +17,7 @@
 		)
 	)
 	(property "Value" "J1512CP120VAC"
-		(at 0 12.2 0)
+		(at 0 -6.5 0)
 		(unlocked yes)
 		(layer "F.Fab")
 		(uuid "9e024ec5-f245-4074-b04f-207fe0695cdd")
@@ -66,8 +66,8 @@
 	)
 	(attr through_hole)
 	(fp_rect
-		(start -11.2 -13.3)
-		(end 10.7 15.2)
+		(start -11 -16.25)
+		(end 11 11.875)
 		(stroke
 			(width 0.12)
 			(type solid)
@@ -77,8 +77,8 @@
 		(uuid "25612780-a76a-4698-9c96-7c7cbfad66d3")
 	)
 	(fp_rect
-		(start -11.7 -13.7)
-		(end 11.1 15.7)
+		(start -11.25 -16.5)
+		(end 11.25 12.125)
 		(stroke
 			(width 0.12)
 			(type solid)
@@ -88,8 +88,8 @@
 		(uuid "15222b9e-47f5-4961-b382-3c5bd3ede1ce")
 	)
 	(fp_rect
-		(start -11 -13)
-		(end 10.5 15)
+		(start -10.8 -16)
+		(end 10.8 11.6)
 		(stroke
 			(width 0.12)
 			(type solid)
@@ -99,7 +99,7 @@
 		(uuid "1be9294a-3364-4242-a727-32efda198a0e")
 	)
 	(pad "1" thru_hole circle
-		(at -5 9)
+		(at -5 7.6)
 		(size 3.5 3.5)
 		(drill 1.6)
 		(layers "*.Cu" "*.Mask")
@@ -107,7 +107,7 @@
 		(uuid "945561e8-5286-49fd-901f-b2b5d68de004")
 	)
 	(pad "4" thru_hole circle
-		(at 5 9)
+		(at 5 7.6)
 		(size 3.5 3.5)
 		(drill 1.6)
 		(layers "*.Cu" "*.Mask")
