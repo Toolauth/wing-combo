@@ -1578,6 +1578,15 @@
 				(hide yes)
 			)
 		)
+		(property "lcsc_id" "C5290371"
+			(at 198.12 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "4"
 			(uuid "8db2e3f5-6337-4deb-81fb-ba5fca5290cb")
 		)
@@ -1660,6 +1669,15 @@
 				(hide yes)
 			)
 		)
+		(property "lcsc_id" "C5290371"
+			(at 198.12 109.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "4"
 			(uuid "dad0658c-4a8c-4038-9634-2b15d6272e36")
 		)
@@ -1734,6 +1752,15 @@
 			)
 		)
 		(property "Description" "Generic screw terminal, single row, 01x06, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 198.12 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "lcsc_id" "C5290371"
 			(at 198.12 124.46 0)
 			(effects
 				(font
