@@ -3015,7 +3015,7 @@
 	)
 	(wire
 		(pts
-			(xy 203.2 88.9) (xy 200.66 88.9)
+			(xy 203.2 88.9) (xy 193.04 88.9)
 		)
 		(stroke
 			(width 0)
@@ -3215,7 +3215,7 @@
 	)
 	(wire
 		(pts
-			(xy 52.07 151.13) (xy 57.15 151.13)
+			(xy 57.15 151.13) (xy 60.96 151.13)
 		)
 		(stroke
 			(width 0)
@@ -3555,16 +3555,6 @@
 	)
 	(wire
 		(pts
-			(xy 59.69 151.13) (xy 60.96 151.13)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a0b11b93-418f-4659-acce-e8834884af1a")
-	)
-	(wire
-		(pts
 			(xy 60.96 166.37) (xy 68.58 166.37)
 		)
 		(stroke
@@ -3725,16 +3715,6 @@
 	)
 	(wire
 		(pts
-			(xy 191.77 85.09) (xy 201.93 85.09)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c8e306d2-4153-42f2-a1f5-c08e99a9faa0")
-	)
-	(wire
-		(pts
 			(xy 138.43 100.33) (xy 140.97 100.33)
 		)
 		(stroke
@@ -3835,7 +3815,7 @@
 	)
 	(wire
 		(pts
-			(xy 99.06 156.21) (xy 100.33 156.21)
+			(xy 99.06 156.21) (xy 101.6 156.21)
 		)
 		(stroke
 			(width 0)
@@ -3852,16 +3832,6 @@
 			(type default)
 		)
 		(uuid "e6fc0904-0e9f-4552-a0c1-90a099305439")
-	)
-	(wire
-		(pts
-			(xy 101.6 156.21) (xy 106.68 156.21)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ecac5f8f-29ca-45b3-bf6c-466750ea3818")
 	)
 	(wire
 		(pts
@@ -3938,7 +3908,7 @@
 	)
 	(text "**Use input [not input_pullup]"
 		(exclude_from_sim no)
-		(at 134.112 153.67 0)
+		(at 131.318 153.924 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3979,13 +3949,14 @@
 		)
 		(uuid "3716cfc4-8b8c-40df-b47d-a4320adc1f5c")
 	)
-	(text "https://learn.adafruit.com/\nadafruit-wiz5500-wiznet-\nethernet-featherwing/pinouts"
+	(text "https://learn.adafruit.com/\nadafruit-wiz5500-wiznet-\nethernet-featherwing/pinouts\n------>"
 		(exclude_from_sim no)
-		(at 26.67 150.876 0)
+		(at 45.212 148.082 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
+			(justify right)
 		)
 		(uuid "3b6496d5-6926-4367-8762-46cc02fa308b")
 	)
@@ -4009,16 +3980,6 @@
 			(href "https://learn.adafruit.com/adafruit-feather/feather-specification")
 		)
 		(uuid "58b43f65-b9fe-4c9f-a476-bd1fb4e77f32")
-	)
-	(text "<-- candidate"
-		(exclude_from_sim no)
-		(at 123.444 156.464 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "5d967446-259b-4fe9-8195-3cf48be39ff7")
 	)
 	(text "out only"
 		(exclude_from_sim no)
@@ -4465,7 +4426,7 @@
 	)
 	(global_label "CS-eth0"
 		(shape output)
-		(at 52.07 151.13 180)
+		(at 57.15 151.13 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4475,7 +4436,7 @@
 		)
 		(uuid "53a11054-368e-4eac-add9-dd395e6cc6f9")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 40.8601 151.13 0)
+			(at 45.9401 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4509,7 +4470,7 @@
 	)
 	(global_label "CS-jst"
 		(shape input)
-		(at 191.77 85.09 180)
+		(at 204.47 85.09 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4519,7 +4480,7 @@
 		)
 		(uuid "56dfe819-ac05-4a9a-a301-b942e7ddb123")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 182.3743 85.09 0)
+			(at 195.0743 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4663,7 +4624,7 @@
 	)
 	(global_label "CS-jst"
 		(shape output)
-		(at 106.68 156.21 0)
+		(at 101.6 156.21 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4673,7 +4634,7 @@
 		)
 		(uuid "b9295597-8759-4442-a112-45a6890356e0")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 116.0757 156.21 0)
+			(at 110.9957 156.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6031,7 +5992,7 @@
 	(symbol
 		(lib_name "+3.3V_1")
 		(lib_id "power:+3.3V")
-		(at 200.66 88.9 0)
+		(at 193.04 88.9 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6039,7 +6000,7 @@
 		(dnp no)
 		(uuid "acc41754-a9c2-4325-833b-f50003c2b960")
 		(property "Reference" "#PWR0116"
-			(at 200.66 92.71 0)
+			(at 193.04 92.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6048,7 +6009,7 @@
 			)
 		)
 		(property "Value" "+3.3V"
-			(at 196.85 87.63 0)
+			(at 189.23 87.63 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6056,7 +6017,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 200.66 88.9 0)
+			(at 193.04 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6065,7 +6026,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 200.66 88.9 0)
+			(at 193.04 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6074,7 +6035,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 200.66 88.9 0)
+			(at 193.04 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
