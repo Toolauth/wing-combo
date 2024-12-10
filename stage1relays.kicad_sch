@@ -1997,12 +1997,6 @@
 		(uuid "4375c645-8500-4bae-915f-e655a5cdf4e7")
 	)
 	(junction
-		(at 73.66 114.3)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "43b37711-9dea-4bbc-a324-d91190c8c200")
-	)
-	(junction
 		(at 59.69 109.22)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2013,6 +2007,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "7051b403-cf61-4d2c-9ae4-6ba71072b49c")
+	)
+	(junction
+		(at 81.28 114.3)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "765dd93e-b146-4639-967c-6371e38425eb")
 	)
 	(junction
 		(at 193.04 88.9)
@@ -2328,16 +2328,6 @@
 	)
 	(wire
 		(pts
-			(xy 73.66 128.27) (xy 73.66 114.3)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "abde2dd3-a566-495c-9d62-f0bc7eaa7a77")
-	)
-	(wire
-		(pts
 			(xy 59.69 109.22) (xy 62.23 109.22)
 		)
 		(stroke
@@ -2448,6 +2438,26 @@
 	)
 	(wire
 		(pts
+			(xy 81.28 114.3) (xy 81.28 128.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e323aa19-2020-4833-928a-ac09b1aa6a16")
+	)
+	(wire
+		(pts
+			(xy 81.28 128.27) (xy 83.82 128.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "eb545925-69f7-4cb0-9590-4726ac433c28")
+	)
+	(wire
+		(pts
 			(xy 57.15 109.22) (xy 59.69 109.22)
 		)
 		(stroke
@@ -2486,16 +2496,6 @@
 		)
 		(uuid "f66e12cd-ea28-4dc5-a71f-4f9101a4f940")
 	)
-	(wire
-		(pts
-			(xy 73.66 128.27) (xy 83.82 128.27)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "fc05a902-3901-4e52-8228-25d07057e333")
-	)
 	(text "The 'SET' relay allows the tool to be turned on\nwith the additional press of the green button by\nthe human operator. Bypass locks this relay 'ON'"
 		(exclude_from_sim no)
 		(at 24.638 75.184 0)
@@ -2528,6 +2528,16 @@
 			(justify left bottom)
 		)
 		(uuid "3a362fcd-82bd-4533-966d-d8ce38386215")
+	)
+	(text "**Use input [not input_pullup]"
+		(exclude_from_sim no)
+		(at 98.806 131.064 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "67a6c17a-97c5-47ec-bfb9-35db0a548d02")
 	)
 	(text "Sealed switching power supply, soldered in place.\nCan accept 90-264VAC to generate 5V, up to 6W.\n100mV ripple and 78% efficient, by datasheet."
 		(exclude_from_sim no)
@@ -2614,7 +2624,7 @@
 	)
 	(text "A 'bypass key' mounted on the case \nwill let anyone with the key use a \nfull hardware-override of the system. \nThis will also be readable by the \nmicrocontroller, for feedback."
 		(exclude_from_sim no)
-		(at 81.28 125.984 0)
+		(at 83.82 125.984 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2864,6 +2874,52 @@
 				)
 				(justify right)
 				(hide yes)
+			)
+		)
+	)
+	(netclass_flag ""
+		(length 2.54)
+		(shape round)
+		(at 81.28 128.27 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "69d3f120-d85e-41b9-9f45-8c911139c785")
+		(property "Netclass" "Default"
+			(at 80.5815 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify right)
+			)
+		)
+	)
+	(netclass_flag ""
+		(length 2.54)
+		(shape round)
+		(at 60.96 109.22 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "9ecae66d-a8a1-4de1-953a-c9463c5ba574")
+		(property "Netclass" "DC-Power"
+			(at 61.6585 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
 			)
 		)
 	)

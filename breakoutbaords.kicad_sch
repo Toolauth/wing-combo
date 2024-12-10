@@ -3936,6 +3936,16 @@
 		)
 		(uuid "0dfc3af4-f196-4153-8e48-e5b75ed82c42")
 	)
+	(text "**Use input [not input_pullup]"
+		(exclude_from_sim no)
+		(at 134.112 153.67 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "154015d8-2943-486e-8c67-4e12014f0165")
+	)
 	(text "All of the connections are broken out to secondary pins, so they can\nbe accessed fairly easily. This will probably not be needed in normal\noperation, but it definitely helps to diagnose hardware problems or \ngive easy access to the happy matter-hackers that live in our space :)"
 		(exclude_from_sim no)
 		(at 46.99 132.08 0)
@@ -4299,7 +4309,7 @@
 			)
 		)
 	)
-	(global_label "3vRead-Bypass"
+	(global_label "Read-Bypass"
 		(shape input)
 		(at 101.6 153.67 0)
 		(fields_autoplaced yes)
@@ -4311,7 +4321,7 @@
 		)
 		(uuid "2a721bf5-01e7-4596-903f-af27fbea3a60")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 119.5831 153.67 0)
+			(at 117.406 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
