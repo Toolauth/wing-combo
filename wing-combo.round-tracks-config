@@ -1,4 +1,4 @@
-Default	True	2.0	3
+Default	False	2.0	3
 AC-Power	True	2.0	3
-DC-Power	True	2.0	3
+DC-Power	False	2.0	3
 False	True	False
