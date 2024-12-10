@@ -2364,8 +2364,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "Relay_Omron_MY2-02"
-			(at 39.37 123.19 0)
+		(property "Value" "J1512CP120VAC"
+			(at 42.926 122.936 0)
 			(effects
 				(font
 					(size 1.27 1.27)

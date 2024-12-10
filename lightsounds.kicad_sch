@@ -3638,7 +3638,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Buzzer_Beeper:Buzzer_12x9.5RM7.6"
+		(property "Footprint" "buzzer:BUZ-TH_BD12.0-P7.60-D0.6-FD"
 			(at 200.025 69.85 90)
 			(effects
 				(font
