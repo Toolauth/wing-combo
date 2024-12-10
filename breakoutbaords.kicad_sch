@@ -4309,7 +4309,7 @@
 			)
 		)
 	)
-	(global_label "Read-Bypass"
+	(global_label "read-bypass"
 		(shape input)
 		(at 101.6 153.67 0)
 		(fields_autoplaced yes)
@@ -4321,7 +4321,7 @@
 		)
 		(uuid "2a721bf5-01e7-4596-903f-af27fbea3a60")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 117.406 153.67 0)
+			(at 116.8012 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
