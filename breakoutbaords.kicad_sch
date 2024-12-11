@@ -2888,12 +2888,6 @@
 		(uuid "89ab4d77-0fba-4ebd-a417-dbd7dc3a3e75")
 	)
 	(junction
-		(at 99.06 146.05)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "8bb052a7-0166-44da-b7d6-1c8d4804530a")
-	)
-	(junction
 		(at 60.96 158.75)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2954,6 +2948,12 @@
 		(uuid "e154161b-af6a-427b-ad54-d13a853d36ed")
 	)
 	(junction
+		(at 99.06 146.05)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "e1923b7a-16b1-4478-89c9-83170cc035a4")
+	)
+	(junction
 		(at 142.24 88.9)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2982,6 +2982,16 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "fe64429d-df9c-4954-a66c-d8ce629547d0")
+	)
+	(wire
+		(pts
+			(xy 101.6 146.05) (xy 99.06 146.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "064f9b47-5772-4e9c-8591-e499a40df957")
 	)
 	(wire
 		(pts
@@ -3162,16 +3172,6 @@
 			(type default)
 		)
 		(uuid "30487c8d-b1a6-408d-b675-04b3f350f886")
-	)
-	(wire
-		(pts
-			(xy 99.06 148.59) (xy 101.6 148.59)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "30e97395-f727-4a32-a3bd-9007c64109ce")
 	)
 	(wire
 		(pts
@@ -3525,6 +3525,16 @@
 	)
 	(wire
 		(pts
+			(xy 101.6 148.59) (xy 99.06 148.59)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9980c7e3-e980-43fd-8874-b4886d2ef7b4")
+	)
+	(wire
+		(pts
 			(xy 189.23 143.51) (xy 191.77 143.51)
 		)
 		(stroke
@@ -3845,16 +3855,6 @@
 	)
 	(wire
 		(pts
-			(xy 99.06 146.05) (xy 101.6 146.05)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f53e24d4-5250-4bab-86ff-21daf0d57527")
-	)
-	(wire
-		(pts
 			(xy 59.69 161.29) (xy 60.96 161.29)
 		)
 		(stroke
@@ -4105,19 +4105,9 @@
 		)
 		(uuid "e57b3805-609f-4649-af15-6f50207b5d7c")
 	)
-	(text "<-- candidate"
+	(text "Here is a single SPI connection in a\n6-pin JST configuration. You will need\nto verify the alignment of these pins\nwith whatever you are connecting.\nAlso: be mindful of the new PICO notation \nversus the legacy MOSI notation for boards."
 		(exclude_from_sim no)
-		(at 217.424 85.09 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "e90c7da7-f16d-43aa-b6b6-33411c0f917b")
-	)
-	(text "There are only enough pins to cinfigure a single \nSPI connection by pulling the 'chip select' to GND\nwith all the other pins needed on the board.\nFor this reason, choose your SPI friends wisely."
-		(exclude_from_sim no)
-		(at 189.23 68.58 0)
+		(at 189.23 73.66 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4184,7 +4174,7 @@
 	)
 	(global_label "POCI"
 		(shape input)
-		(at 101.6 148.59 0)
+		(at 101.6 146.05 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4194,7 +4184,7 @@
 		)
 		(uuid "0d4e34c8-009f-426c-9339-8da2103d1e86")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 109.0605 148.59 0)
+			(at 109.0605 146.05 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4316,7 +4306,7 @@
 	)
 	(global_label "PICO"
 		(shape input)
-		(at 101.6 146.05 0)
+		(at 101.6 148.59 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4326,7 +4316,7 @@
 		)
 		(uuid "37ab6027-cfe4-4443-ba6d-5d4060c23bfa")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 109.0605 146.05 0)
+			(at 109.0605 148.59 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4906,7 +4896,7 @@
 		(dnp no)
 		(uuid "27caa90a-b42e-4156-a2d9-75ec066e0a3b")
 		(property "Reference" "SPI-1"
-			(at 209.55 71.12 0)
+			(at 216.916 77.216 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4915,7 +4905,7 @@
 			)
 		)
 		(property "Value" "Conn_01x06_Female"
-			(at 209.55 73.66 0)
+			(at 230.378 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
