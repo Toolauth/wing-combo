@@ -5931,6 +5931,15 @@
 				(hide yes)
 			)
 		)
+		(property "lcsd_id" "C2686963"
+			(at 144.78 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "A7"
 			(uuid "035b0a7b-465b-4eb3-b73d-4bc08a93c1ac")
 		)
