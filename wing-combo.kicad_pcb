@@ -11346,7 +11346,7 @@
 			(pintype "passive")
 			(uuid "af8dbd1e-cc3b-4b6a-a4ad-4e515ae3226c")
 		)
-		(model "${KICAD6_3DMODEL_DIR}/Package_CSP.3dshapes/LFCSP-28-1EP_5x5mm_P0.5mm_EP3.14x3.14mm.wrl"
+		(model "${KIPRJMOD}/odd-parts/ade7953/.3dshapes/LFCSP-28_L5.0-W5.0-H0.8-P0.50.step"
 			(offset
 				(xyz 0 0 0)
 			)
