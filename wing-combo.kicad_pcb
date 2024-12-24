@@ -20788,14 +20788,15 @@
 		(at 105.3366 39.4866 180)
 		(descr "CFM06S050-E-2")
 		(tags "Power Supply")
-		(property "Reference" "PS1"
-			(at 16.51 -6.87 180)
+		(property "Reference" "CFM06S050-E"
+			(at 17.6116 -2.3884 180)
 			(layer "F.SilkS")
 			(uuid "47b3b9da-7044-4807-9444-b344e8598f63")
 			(effects
 				(font
-					(size 1.27 1.27)
-					(thickness 0.254)
+					(size 1.5 1.5)
+					(thickness 0.3)
+					(bold yes)
 				)
 			)
 		)
@@ -55738,6 +55739,18 @@
 			)
 		)
 	)
+	(gr_text "Stage 2 Relay"
+		(at 94.725 111.125 0)
+		(layer "F.SilkS")
+		(uuid "1aab7c94-86b0-4c35-8aec-a7fcff2dc807")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+			(justify left bottom)
+		)
+	)
 	(gr_text "stage 2 "
 		(at 127.225 98.6 90)
 		(layer "F.SilkS")
@@ -56050,6 +56063,18 @@
 			)
 		)
 	)
+	(gr_text "Stage 1"
+		(at 80.925 72.725 115)
+		(layer "F.SilkS")
+		(uuid "b4d8f7ac-9ea9-4919-8730-ebd085440064")
+		(effects
+			(font
+				(size 1 0.8)
+				(thickness 0.15)
+			)
+			(justify left bottom)
+		)
+	)
 	(gr_text "GND"
 		(at 73.735 85.44 0)
 		(layer "F.SilkS")
@@ -56082,6 +56107,18 @@
 				(size 1.2 1.2)
 				(thickness 0.2)
 			)
+		)
+	)
+	(gr_text "120VAC activation"
+		(at 94.325 94.025 0)
+		(layer "F.SilkS")
+		(uuid "cd6c8738-f358-4e2c-88f7-b207512684de")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+			(justify left bottom)
 		)
 	)
 	(gr_text "sensor"
@@ -56118,6 +56155,19 @@
 				(bold yes)
 			)
 			(justify left bottom)
+		)
+	)
+	(gr_text "Sealed 5VDC Power Supply \nMax-Out: 6W/ 1.2Amps @ 5VDC"
+		(at 89.525 50.575 0)
+		(layer "F.SilkS")
+		(uuid "d45b9598-7e94-46b6-8bbd-c971f6da77b3")
+		(effects
+			(font
+				(size 1.5 1.5)
+				(thickness 0.3)
+				(bold yes)
+			)
+			(justify bottom)
 		)
 	)
 	(gr_text "SCL"
@@ -56164,6 +56214,18 @@
 				(size 1 1)
 				(thickness 0.15)
 			)
+		)
+	)
+	(gr_text "J1512CP120VAC\nDPDT Relay"
+		(at 98.4 104.925 0)
+		(layer "F.SilkS")
+		(uuid "e80c3817-ac77-4f6a-9a31-468635cab49f")
+		(effects
+			(font
+				(size 2 2)
+				(thickness 0.3)
+			)
+			(justify bottom)
 		)
 	)
 	(gr_text "PICO"
