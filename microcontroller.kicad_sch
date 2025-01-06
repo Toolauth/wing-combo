@@ -10,7 +10,7 @@
 		(company "Corey Rice & MakeHaven")
 	)
 	(lib_symbols)
-	(text "This shows the relationships between all components running at 3.3VDC or 5VDC on the board. \nThese are all on the 'low voltage' side of the board. These are all united in their service \nto the ESP32-DEVKITC-V4+ board, but that board itself is removable (for ease of programming \nand switching out the controller, without needing to rewire the tools). "
+	(text "This shows the relationships between all components running at 3.3VDC or 5VDC on the board. \nThese are all on the 'low voltage' side of the board. These are all united in their service \nto the Adafruit Feather board, but that board itself is removable (for ease of programming \nand switching out the controller, without needing to rewire the tools). "
 		(exclude_from_sim no)
 		(at 33.02 49.53 0)
 		(effects
@@ -21,9 +21,9 @@
 		)
 		(uuid "1af02779-8fa2-4b8d-a301-24cbee7fdcd6")
 	)
-	(text "This is a collection of the simple circuits \nthat translate between voltage levels, break \nout the programming buttons for the ESP32, \ndescribe the DIP switches for configuration \nself-description, control the buzzer, and \ncontrol the indicator LEDs. Many of these \ncircuits use the 3.3V from the ESP32's \nonboard regulator.\n"
+	(text "This is a collection of the simple circuits \nthat translate between voltage levels, break \nout the programming buttons for the Feather, \ncontrol the buzzer, and control the indicator \nLEDs. Many of these circuits use a mix of 3.3v\nand 5 volts to be as bright/loud as possible.\n"
 		(exclude_from_sim no)
-		(at 175.26 151.13 0)
+		(at 171.704 147.066 0)
 		(effects
 			(font
 				(size 1.75 1.75)
@@ -32,7 +32,7 @@
 		)
 		(uuid "301e80af-5416-4b93-9940-5f5e22e6cc3a")
 	)
-	(text "This shows a component to represent the \nESP32-DEVKITC-V4+ board, as it will be \nseated in place. However, the component \nitself is not included on the circuit \nboard, instead seating into some breakout \nheaders for easy replacement. This page \nis for reference only, not design."
+	(text "This shows a component to represent the \nAdafruit Feather board, as it will be \nseated in place. However, the component \nitself is not included on the circuit \nboard, instead seating into some breakout \nheaders for easy replacement. This page \nis for reference only, not design."
 		(exclude_from_sim no)
 		(at 66.04 88.9 0)
 		(effects
@@ -55,9 +55,9 @@
 		)
 		(uuid "59c492da-66d1-4c13-a055-ebe32e8a3be2")
 	)
-	(text "These are the connections for I2C, SPI, and \nthe ESP32 headers. There is also a 3.3V \nlinear regulator to power these daughter \nboards, without placing more draw on the \nESP32's onboard linear regulator (this \nincludes powering the ADE7953).\n\nThere is also a USB plug to provide \naccess to 5VDC - this is primarily \navailable so a panel mount USB power \nport can be added. MakeHaven can \nforesee wanting to add an external \nESP32 to control an E-Paper display, \nand this USB port could provide easy \naccess to power.\n\n"
+	(text "These are the connections for I2C, SPI, and \nthe Feather headers. There is also a 3.3V \nlinear regulator to power these daughter \nboards, without placing more draw on the \nFeather's onboard linear regulator (this \nincludes powering the ADE7953).\n\nThere are also USB plugs to provide \naccess to 5VDC - this is primarily \nto power the Feaather, as they are \ndesigned to be powered this way or by\nbattery. The second USB port could power \nfuture independent e-ink displays, etc.\n"
 		(exclude_from_sim no)
-		(at 66.04 175.26 0)
+		(at 64.77 166.37 0)
 		(effects
 			(font
 				(size 1.75 1.75)

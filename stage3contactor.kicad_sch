@@ -10,7 +10,7 @@
 		(rev "3")
 		(company "Corey Rice & MakeHaven")
 		(comment 1 "The contactor actually controls power access to the tool")
-		(comment 2 "A fuse is added to protect the board from over-current")
+		(comment 2 "E-Stops to interrupt power from the Stage 2 relay to contactor coil")
 		(comment 3 "Screw-terminals shown here, to connect to mains-level devices")
 	)
 	(lib_symbols
@@ -428,7 +428,7 @@
 	)
 	(wire
 		(pts
-			(xy 203.2 127) (xy 204.47 127)
+			(xy 189.23 125.73) (xy 190.5 125.73)
 		)
 		(stroke
 			(width 0)
@@ -448,7 +448,7 @@
 	)
 	(wire
 		(pts
-			(xy 203.2 104.14) (xy 204.47 104.14)
+			(xy 189.23 102.87) (xy 190.5 102.87)
 		)
 		(stroke
 			(width 0)
@@ -518,7 +518,7 @@
 	)
 	(wire
 		(pts
-			(xy 203.2 119.38) (xy 204.47 119.38)
+			(xy 189.23 118.11) (xy 190.5 118.11)
 		)
 		(stroke
 			(width 0)
@@ -528,7 +528,7 @@
 	)
 	(wire
 		(pts
-			(xy 203.2 88.9) (xy 204.47 88.9)
+			(xy 189.23 87.63) (xy 190.5 87.63)
 		)
 		(stroke
 			(width 0)
@@ -538,7 +538,7 @@
 	)
 	(wire
 		(pts
-			(xy 203.2 101.6) (xy 204.47 101.6)
+			(xy 189.23 100.33) (xy 190.5 100.33)
 		)
 		(stroke
 			(width 0)
@@ -558,7 +558,7 @@
 	)
 	(wire
 		(pts
-			(xy 203.2 106.68) (xy 204.47 106.68)
+			(xy 189.23 105.41) (xy 190.5 105.41)
 		)
 		(stroke
 			(width 0)
@@ -568,7 +568,7 @@
 	)
 	(wire
 		(pts
-			(xy 203.2 86.36) (xy 204.47 86.36)
+			(xy 189.23 85.09) (xy 190.5 85.09)
 		)
 		(stroke
 			(width 0)
@@ -598,7 +598,7 @@
 	)
 	(wire
 		(pts
-			(xy 203.2 114.3) (xy 204.47 114.3)
+			(xy 189.23 113.03) (xy 190.5 113.03)
 		)
 		(stroke
 			(width 0)
@@ -628,7 +628,7 @@
 	)
 	(wire
 		(pts
-			(xy 203.2 96.52) (xy 204.47 96.52)
+			(xy 189.23 95.25) (xy 190.5 95.25)
 		)
 		(stroke
 			(width 0)
@@ -638,7 +638,7 @@
 	)
 	(wire
 		(pts
-			(xy 203.2 93.98) (xy 204.47 93.98)
+			(xy 189.23 92.71) (xy 190.5 92.71)
 		)
 		(stroke
 			(width 0)
@@ -658,7 +658,7 @@
 	)
 	(wire
 		(pts
-			(xy 203.2 91.44) (xy 204.47 91.44)
+			(xy 189.23 90.17) (xy 190.5 90.17)
 		)
 		(stroke
 			(width 0)
@@ -668,7 +668,7 @@
 	)
 	(wire
 		(pts
-			(xy 203.2 124.46) (xy 204.47 124.46)
+			(xy 189.23 123.19) (xy 190.5 123.19)
 		)
 		(stroke
 			(width 0)
@@ -678,7 +678,7 @@
 	)
 	(wire
 		(pts
-			(xy 203.2 99.06) (xy 204.47 99.06)
+			(xy 189.23 97.79) (xy 190.5 97.79)
 		)
 		(stroke
 			(width 0)
@@ -688,7 +688,7 @@
 	)
 	(wire
 		(pts
-			(xy 203.2 129.54) (xy 204.47 129.54)
+			(xy 189.23 128.27) (xy 190.5 128.27)
 		)
 		(stroke
 			(width 0)
@@ -698,7 +698,7 @@
 	)
 	(wire
 		(pts
-			(xy 203.2 111.76) (xy 204.47 111.76)
+			(xy 189.23 110.49) (xy 190.5 110.49)
 		)
 		(stroke
 			(width 0)
@@ -708,7 +708,7 @@
 	)
 	(wire
 		(pts
-			(xy 203.2 116.84) (xy 204.47 116.84)
+			(xy 189.23 115.57) (xy 190.5 115.57)
 		)
 		(stroke
 			(width 0)
@@ -718,7 +718,7 @@
 	)
 	(wire
 		(pts
-			(xy 203.2 109.22) (xy 204.47 109.22)
+			(xy 189.23 107.95) (xy 190.5 107.95)
 		)
 		(stroke
 			(width 0)
@@ -728,7 +728,7 @@
 	)
 	(wire
 		(pts
-			(xy 203.2 121.92) (xy 204.47 121.92)
+			(xy 189.23 120.65) (xy 190.5 120.65)
 		)
 		(stroke
 			(width 0)
@@ -760,9 +760,20 @@
 		)
 		(uuid "1645e8e0-a72e-487b-9934-bfad0ec8905c")
 	)
-	(text "The contactor is not shown here, only the connection point labeled as\n\"S3-Contactor-Control-{1or2}\" which is a screw terminal connection point.\n\nThe Stage 3 contactor can supply power to the tool, directly from the mains\ninput power. However, all that is shown here is for the lower-current control\nloop that activates the contactor. !NOTE: Not for use with latching contactors.\n\nThe E-Stop switches shown here can cut power to the contactor in the unlikely \nevent that their twin switch (sw2 | each E-Stop has 2 switches) is fused shut, \nand the stage 2 relay stays powered. A backup to ensure the E-Stop is effective."
+	(text "N-ON switch\n"
 		(exclude_from_sim no)
-		(at 39.878 78.74 0)
+		(at 93.218 130.302 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "248bba65-8540-4bb0-a748-658aa9d9812a")
+	)
+	(text "The contactor is not shown here, only the connection point labeled as\n\"S3-Contactor-Control-{1or2}\" which is a screw terminal connection point.\n\nThe Stage 3 contactor can supply power to the tool, directly from the mains\ninput power. However, all that is shown here is for the lower-current control\nloop that activates the contactor. Tool-current should never paass through this PCB.\n\n>[!WARNING] Not for use with latching contactors.\n\nThe E-Stop switches shown here can cut power to the contactor in the unlikely \nevent that their twin switch (sw2 | each E-Stop has 2 switches) is fused shut, \nand the stage 2 relay stays powered. A backup to ensure the E-Stop is effective."
+		(exclude_from_sim no)
+		(at 39.878 82.296 0)
 		(effects
 			(font
 				(size 1.524 1.524)
@@ -782,20 +793,9 @@
 		)
 		(uuid "5a6ff54c-b4bb-49b5-9156-4e1be8c126f1")
 	)
-	(text "This fuse may be unnecessary if \npowered from 'mains-fused-H/L1'"
+	(text "Putting the main E-Stop here has \nit as 'close' to the tool as possible.\nThis avoids failing E-Stops because\nof a self-welded Stage 2 Relay."
 		(exclude_from_sim no)
-		(at 73.66 92.71 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "63300473-8b1f-442b-a9ea-98ac41738c85")
-	)
-	(text "Putting the main E-Stop here has \nit as 'close' to the tool as possible.\nThis should makes it less likely \nto fail because of a self-welded relay. \nBecause it is mechanically linked, \nthis will also activate with 'Member-E-Stop-sw2'"
-		(exclude_from_sim no)
-		(at 69.85 146.05 0)
+		(at 69.342 141.478 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -872,17 +872,6 @@
 		)
 		(uuid "dc6368ee-5afe-4e71-a1bc-4967a46f2ae3")
 	)
-	(text "N-ON switch\nneeded for bypass mode"
-		(exclude_from_sim no)
-		(at 92.71 132.08 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "def72fb5-b11d-41ef-a9c6-1e8cf588b0d6")
-	)
 	(text "Screw Terminals for all functions"
 		(exclude_from_sim no)
 		(at 175.26 60.96 0)
@@ -909,7 +898,7 @@
 	)
 	(global_label "Green-Indicator-light-1"
 		(shape output)
-		(at 204.47 111.76 0)
+		(at 190.5 110.49 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -919,7 +908,7 @@
 		)
 		(uuid "04d27d52-cde1-412a-95f6-00c7df1e44dd")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 230.8921 111.6806 0)
+			(at 216.9221 110.4106 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -931,7 +920,7 @@
 	)
 	(global_label "Member-Green-Button-2"
 		(shape input)
-		(at 204.47 109.22 0)
+		(at 190.5 107.95 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -941,7 +930,7 @@
 		)
 		(uuid "1647b59c-b582-4d39-84e3-45e7b93ab6b4")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 231.6179 109.1406 0)
+			(at 217.6479 107.8706 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -953,7 +942,7 @@
 	)
 	(global_label "H{slash}L1"
 		(shape passive)
-		(at 204.47 88.9 0)
+		(at 190.5 87.63 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -963,7 +952,7 @@
 		)
 		(uuid "23f2f8a5-5757-4087-94bd-eab7215f8ac5")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 211.7817 88.9794 0)
+			(at 197.8117 87.7094 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -997,7 +986,7 @@
 	)
 	(global_label "S3-Contactor-Control-2"
 		(shape output)
-		(at 204.47 116.84 0)
+		(at 190.5 115.57 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1007,7 +996,7 @@
 		)
 		(uuid "2d732aa9-276f-48ca-b80b-c2e11489e0a2")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 231.3155 116.7606 0)
+			(at 217.3455 115.4906 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1019,7 +1008,7 @@
 	)
 	(global_label "mains-fused-N{slash}L2"
 		(shape passive)
-		(at 204.47 121.92 0)
+		(at 190.5 120.65 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1029,7 +1018,7 @@
 		)
 		(uuid "3935725f-3695-4d97-815f-a843d9cf3fe4")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 225.6912 121.8406 0)
+			(at 211.7212 120.5706 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1041,7 +1030,7 @@
 	)
 	(global_label "Member-Red-Reset-Button-2"
 		(shape input)
-		(at 204.47 101.6 0)
+		(at 190.5 100.33 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1051,7 +1040,7 @@
 		)
 		(uuid "3a4c4624-33f7-4b76-a375-21cac4f4737e")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 236.5164 101.5206 0)
+			(at 222.5464 100.2506 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1063,7 +1052,7 @@
 	)
 	(global_label "S3-Contactor-Control-1"
 		(shape output)
-		(at 204.47 119.38 0)
+		(at 190.5 118.11 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1073,7 +1062,7 @@
 		)
 		(uuid "4ccfbb20-d8a3-4edb-a60b-2e75f8a24bb1")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 231.3155 119.3006 0)
+			(at 217.3455 118.0306 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1085,7 +1074,7 @@
 	)
 	(global_label "Green-Indicator-light-2"
 		(shape output)
-		(at 204.47 114.3 0)
+		(at 190.5 113.03 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1095,7 +1084,7 @@
 		)
 		(uuid "4ff97193-fb9d-4394-ab8a-e6600f0a7ca2")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 230.8921 114.2206 0)
+			(at 216.9221 112.9506 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1129,7 +1118,7 @@
 	)
 	(global_label "Member-E-Stop-sw1-2"
 		(shape input)
-		(at 204.47 127 0)
+		(at 190.5 125.73 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1139,7 +1128,7 @@
 		)
 		(uuid "565f8e84-a7fd-480f-9ad6-effee3193203")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 230.5898 126.9206 0)
+			(at 216.6198 125.6506 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1173,7 +1162,7 @@
 	)
 	(global_label "Member-E-Stop-aux1-1"
 		(shape input)
-		(at 204.47 124.46 0)
+		(at 190.5 123.19 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1183,7 +1172,7 @@
 		)
 		(uuid "5cdf1153-b368-43a0-aeaf-1dffdf691a6b")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 231.5574 124.3806 0)
+			(at 217.5874 123.1106 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1195,7 +1184,7 @@
 	)
 	(global_label "Member-Green-Button-1"
 		(shape input)
-		(at 204.47 106.68 0)
+		(at 190.5 105.41 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1205,7 +1194,7 @@
 		)
 		(uuid "60c9aa18-de09-44ac-9347-03d28d3d6a10")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 231.6179 106.6006 0)
+			(at 217.6479 105.3306 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1261,7 +1250,7 @@
 	)
 	(global_label "Member-Red-Reset-Button-1"
 		(shape input)
-		(at 204.47 104.14 0)
+		(at 190.5 102.87 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1271,7 +1260,7 @@
 		)
 		(uuid "9bd20aac-0ee8-4f63-96f3-7190a7a260fc")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 236.5164 104.0606 0)
+			(at 222.5464 102.7906 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1283,7 +1272,7 @@
 	)
 	(global_label "Member-E-Stop-sw1-1"
 		(shape input)
-		(at 204.47 129.54 0)
+		(at 190.5 128.27 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1293,7 +1282,7 @@
 		)
 		(uuid "9c4296c9-0d43-4f08-95c3-e9736a52bd70")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 230.5898 129.4606 0)
+			(at 216.6198 128.1906 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1349,7 +1338,7 @@
 	)
 	(global_label "Member-E-Stop-aux2-1"
 		(shape input)
-		(at 204.47 93.98 0)
+		(at 190.5 92.71 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1359,7 +1348,7 @@
 		)
 		(uuid "b51ecb16-235c-49ef-9e4e-938271da8543")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 231.5574 93.9006 0)
+			(at 217.5874 92.6306 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1371,7 +1360,7 @@
 	)
 	(global_label "Member-E-Stop-aux2-2"
 		(shape input)
-		(at 204.47 91.44 0)
+		(at 190.5 90.17 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1381,7 +1370,7 @@
 		)
 		(uuid "bb79a373-67a0-492f-9a8b-d75b14e6a246")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 231.5574 91.3606 0)
+			(at 217.5874 90.0906 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1393,7 +1382,7 @@
 	)
 	(global_label "N{slash}L2"
 		(shape passive)
-		(at 204.47 86.36 0)
+		(at 190.5 85.09 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1403,7 +1392,7 @@
 		)
 		(uuid "c3f9aae3-a639-460b-ac43-8a794ee69d39")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 211.7817 86.2806 0)
+			(at 197.8117 85.0106 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1437,7 +1426,7 @@
 	)
 	(global_label "Member-E-Stop-sw2-1"
 		(shape input)
-		(at 204.47 99.06 0)
+		(at 190.5 97.79 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1447,7 +1436,7 @@
 		)
 		(uuid "d3b58a0c-6bb9-4486-9aa6-59fd6a6371b6")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 230.5898 98.9806 0)
+			(at 216.6198 97.7106 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1503,7 +1492,7 @@
 	)
 	(global_label "Member-E-Stop-sw2-2"
 		(shape input)
-		(at 204.47 96.52 0)
+		(at 190.5 95.25 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1513,7 +1502,7 @@
 		)
 		(uuid "f6afcf4f-5802-4364-830d-cd9e9b4c80a7")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 230.5898 96.4406 0)
+			(at 216.6198 95.1706 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1525,7 +1514,7 @@
 	)
 	(symbol
 		(lib_id "Connector:Screw_Terminal_01x06")
-		(at 198.12 93.98 180)
+		(at 184.15 92.71 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -1534,7 +1523,7 @@
 		(fields_autoplaced yes)
 		(uuid "2468395c-31aa-42d8-a00f-8153c94d12e6")
 		(property "Reference" "J1"
-			(at 198.12 80.01 0)
+			(at 184.15 78.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1543,7 +1532,7 @@
 			)
 		)
 		(property "Value" "Screw_Terminal_01x06"
-			(at 198.12 82.55 0)
+			(at 184.15 81.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1552,7 +1541,7 @@
 			)
 		)
 		(property "Footprint" "screw_terminal:CONN-TH_6P-P5.00_MX128-5.0-06P-GN01-CU-Y-A"
-			(at 198.12 93.98 0)
+			(at 184.15 92.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1561,7 +1550,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 198.12 93.98 0)
+			(at 184.15 92.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1570,7 +1559,7 @@
 			)
 		)
 		(property "Description" "Generic screw terminal, single row, 01x06, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 198.12 93.98 0)
+			(at 184.15 92.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1579,7 +1568,7 @@
 			)
 		)
 		(property "lcsc_id" "C5290371"
-			(at 198.12 93.98 0)
+			(at 184.15 92.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1616,7 +1605,7 @@
 	)
 	(symbol
 		(lib_id "Connector:Screw_Terminal_01x06")
-		(at 198.12 109.22 180)
+		(at 184.15 107.95 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -1625,7 +1614,7 @@
 		(fields_autoplaced yes)
 		(uuid "a28fcf18-d1a8-4701-9313-33c88a6ceb69")
 		(property "Reference" "J17"
-			(at 198.12 95.25 0)
+			(at 184.15 93.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1634,7 +1623,7 @@
 			)
 		)
 		(property "Value" "Screw_Terminal_01x06"
-			(at 198.12 97.79 0)
+			(at 184.15 96.52 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1643,7 +1632,7 @@
 			)
 		)
 		(property "Footprint" "screw_terminal:CONN-TH_6P-P5.00_MX128-5.0-06P-GN01-CU-Y-A"
-			(at 198.12 109.22 0)
+			(at 184.15 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1652,7 +1641,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 198.12 109.22 0)
+			(at 184.15 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1661,7 +1650,7 @@
 			)
 		)
 		(property "Description" "Generic screw terminal, single row, 01x06, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 198.12 109.22 0)
+			(at 184.15 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1670,7 +1659,7 @@
 			)
 		)
 		(property "lcsc_id" "C5290371"
-			(at 198.12 109.22 0)
+			(at 184.15 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1707,7 +1696,7 @@
 	)
 	(symbol
 		(lib_id "Connector:Screw_Terminal_01x06")
-		(at 198.12 124.46 180)
+		(at 184.15 123.19 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -1716,7 +1705,7 @@
 		(fields_autoplaced yes)
 		(uuid "ffccae39-8314-48d4-b5f4-ce98cef64ed5")
 		(property "Reference" "J18"
-			(at 198.12 110.49 0)
+			(at 184.15 109.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1725,7 +1714,7 @@
 			)
 		)
 		(property "Value" "Screw_Terminal_01x06"
-			(at 198.12 113.03 0)
+			(at 184.15 111.76 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1734,7 +1723,7 @@
 			)
 		)
 		(property "Footprint" "screw_terminal:CONN-TH_6P-P5.00_MX128-5.0-06P-GN01-CU-Y-A"
-			(at 198.12 124.46 0)
+			(at 184.15 123.19 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1743,7 +1732,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 198.12 124.46 0)
+			(at 184.15 123.19 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1752,7 +1741,7 @@
 			)
 		)
 		(property "Description" "Generic screw terminal, single row, 01x06, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 198.12 124.46 0)
+			(at 184.15 123.19 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1761,7 +1750,7 @@
 			)
 		)
 		(property "lcsc_id" "C5290371"
-			(at 198.12 124.46 0)
+			(at 184.15 123.19 0)
 			(effects
 				(font
 					(size 1.27 1.27)

@@ -6,7 +6,7 @@
 	(paper "USLetter")
 	(title_block
 		(title "ADE7953 Current Sensor")
-		(date "2022-10-09")
+		(date "2024-12-13")
 		(rev "3")
 		(company "Corey Rice & MakeHaven")
 		(comment 1 "ADE7953 implemented as in engineering development board")
@@ -3901,6 +3901,7 @@
 				(size 2.5 2.5)
 			)
 			(justify left bottom)
+			(href "https://www.analog.com/media/en/technical-documentation/data-sheets/ADE7953.pdf")
 		)
 		(uuid "965dea60-8399-4cd6-8c4b-d0a244da1f3b")
 	)
@@ -3918,7 +3919,7 @@
 		)
 		(uuid "a278df89-9957-43c2-95f5-5f162206e70c")
 	)
-	(text "This current sensor was selected because it was known \nto work with the ESP32 and ESPHome (the main platforms \nof this project at large. It took several test-boards \nto get to a useful integration, yet much of this still\njust follows the documentation linked above. There are \njumpers that can be soldered over, if the circuit needs\nany kind of fine turing from later observations."
+	(text "This current sensor was selected because it was known \nto work with the ESP32 and ESPHome (the main platforms \nof this project at large). It took several test-boards \nto get to a useful integration, yet much of this still\njust follows the documentation linked above. There are \njumpers that can be soldered over, if the circuit needs\nany kind of fine tuning, from later observations."
 		(exclude_from_sim no)
 		(at 157.48 71.12 0)
 		(effects
@@ -3931,7 +3932,7 @@
 	)
 	(text "Current Sensors Filtering"
 		(exclude_from_sim no)
-		(at 21.59 97.79 0)
+		(at 30.734 101.6 0)
 		(effects
 			(font
 				(size 2 2)

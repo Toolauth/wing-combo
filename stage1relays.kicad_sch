@@ -2009,7 +2009,7 @@
 		(uuid "7051b403-cf61-4d2c-9ae4-6ba71072b49c")
 	)
 	(junction
-		(at 81.28 114.3)
+		(at 82.55 114.3)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "765dd93e-b146-4639-967c-6371e38425eb")
@@ -2318,13 +2318,23 @@
 	)
 	(wire
 		(pts
-			(xy 81.28 114.3) (xy 82.55 114.3)
+			(xy 82.55 114.3) (xy 88.9 114.3)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "99f616b7-370d-4d6e-8c72-b4c9325f7ff7")
+	)
+	(wire
+		(pts
+			(xy 78.74 114.3) (xy 82.55 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9a84d676-7df7-4091-a2ba-a3b27c73170c")
 	)
 	(wire
 		(pts
@@ -2378,6 +2388,16 @@
 	)
 	(wire
 		(pts
+			(xy 82.55 111.76) (xy 88.9 111.76)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c52fbc9c-b51e-4573-a40e-42b5e3fbdc16")
+	)
+	(wire
+		(pts
 			(xy 184.15 104.14) (xy 184.15 100.33)
 		)
 		(stroke
@@ -2428,17 +2448,7 @@
 	)
 	(wire
 		(pts
-			(xy 73.66 114.3) (xy 71.12 114.3)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e2d9e55f-a010-4fb4-a7c5-e0d2393b8caa")
-	)
-	(wire
-		(pts
-			(xy 81.28 114.3) (xy 81.28 128.27)
+			(xy 82.55 114.3) (xy 82.55 129.54)
 		)
 		(stroke
 			(width 0)
@@ -2448,7 +2458,7 @@
 	)
 	(wire
 		(pts
-			(xy 81.28 128.27) (xy 83.82 128.27)
+			(xy 82.55 129.54) (xy 88.9 129.54)
 		)
 		(stroke
 			(width 0)
@@ -2531,7 +2541,7 @@
 	)
 	(text "**Use input [not input_pullup]"
 		(exclude_from_sim no)
-		(at 98.806 131.064 0)
+		(at 103.886 132.334 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2541,7 +2551,7 @@
 	)
 	(text "Sealed switching power supply, soldered in place.\nCan accept 90-264VAC to generate 5V, up to 6W.\n100mV ripple and 78% efficient, by datasheet."
 		(exclude_from_sim no)
-		(at 52.07 165.1 0)
+		(at 39.37 164.592 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2613,10 +2623,10 @@
 	)
 	(text "[!NOTE] Tool Timeouts should only happen\nafter a tool is observed to not be in use \nfor a reasonable amount of time to ensure \nthere are no cases of power-loss that \nhappen unexpectedly, suprising a user.\n"
 		(exclude_from_sim no)
-		(at 177.8 150.876 0)
+		(at 173.99 152.4 0)
 		(effects
 			(font
-				(size 1.27 1.27)
+				(size 1.905 1.905)
 			)
 			(justify left bottom)
 		)
@@ -2624,7 +2634,7 @@
 	)
 	(text "A 'bypass key' mounted on the case \nwill let anyone with the key use a \nfull hardware-override of the system. \nThis will also be readable by the \nmicrocontroller, for feedback."
 		(exclude_from_sim no)
-		(at 83.82 125.984 0)
+		(at 88.9 125.984 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2633,9 +2643,9 @@
 		)
 		(uuid "c02851ae-f245-4bff-bb9a-23a7638c0d1f")
 	)
-	(text "This stage is responsible for allowing the microcontroller to control the actions of the mains level of power switching."
+	(text "This stage is responsible for allowing the Feather to control the actions of the mains level of power switching."
 		(exclude_from_sim no)
-		(at 23.114 55.88 0)
+		(at 31.242 54.102 0)
 		(effects
 			(font
 				(size 2.5 2.5)
@@ -2646,7 +2656,7 @@
 	)
 	(text "5V supply from mains (in box)"
 		(exclude_from_sim no)
-		(at 52.07 158.75 0)
+		(at 39.37 158.242 0)
 		(effects
 			(font
 				(size 2 2)
@@ -2813,7 +2823,7 @@
 	)
 	(global_label "read-bypass"
 		(shape output)
-		(at 83.82 128.27 0)
+		(at 88.9 129.54 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2823,7 +2833,7 @@
 		)
 		(uuid "de64977f-5b74-402c-b7e5-30bb2b1da43a")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 98.4493 128.1906 0)
+			(at 103.5293 129.4606 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2880,23 +2890,23 @@
 	(netclass_flag ""
 		(length 2.54)
 		(shape round)
-		(at 81.28 128.27 180)
+		(at 82.55 129.54 90)
 		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify right bottom)
+			(justify left bottom)
 		)
 		(uuid "69d3f120-d85e-41b9-9f45-8c911139c785")
 		(property "Netclass" "Default"
-			(at 80.5815 130.81 0)
+			(at 80.01 128.8415 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 					(italic yes)
 				)
-				(justify right)
+				(justify left)
 			)
 		)
 	)
@@ -3188,7 +3198,7 @@
 			)
 		)
 		(property "Value" "+3.3V"
-			(at 84.074 107.442 0)
+			(at 86.36 108.966 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3469,7 +3479,7 @@
 	)
 	(symbol
 		(lib_id "Device:R_US")
-		(at 77.47 114.3 270)
+		(at 74.93 114.3 270)
 		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
@@ -3478,7 +3488,7 @@
 		(dnp no)
 		(uuid "550bd87a-ed07-488f-8357-a1d77f1234d8")
 		(property "Reference" "R36"
-			(at 76.962 110.236 90)
+			(at 74.422 110.236 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3486,7 +3496,7 @@
 			)
 		)
 		(property "Value" "1k"
-			(at 77.216 112.268 90)
+			(at 74.676 112.268 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3494,7 +3504,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 77.216 113.284 90)
+			(at 74.676 113.284 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3503,7 +3513,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 77.47 114.3 0)
+			(at 74.93 114.3 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3512,7 +3522,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 77.47 114.3 0)
+			(at 74.93 114.3 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3521,7 +3531,7 @@
 			)
 		)
 		(property "JLCPCB Part #" "C21190"
-			(at 77.47 114.3 90)
+			(at 74.93 114.3 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4070,7 +4080,7 @@
 	)
 	(symbol
 		(lib_id "Connector:Conn_01x02_Female")
-		(at 87.63 114.3 0)
+		(at 93.98 114.3 0)
 		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
@@ -4079,7 +4089,7 @@
 		(dnp no)
 		(uuid "af775df8-347a-494a-ba97-12cef91155ac")
 		(property "Reference" "Bypass-1"
-			(at 88.9 114.3001 0)
+			(at 95.25 114.3001 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4088,7 +4098,7 @@
 			)
 		)
 		(property "Value" "Conn_01x02_Female"
-			(at 88.9 111.7601 0)
+			(at 95.25 111.7601 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4097,7 +4107,7 @@
 			)
 		)
 		(property "Footprint" "Connector_JST:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical"
-			(at 87.63 114.3 0)
+			(at 93.98 114.3 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4106,7 +4116,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 87.63 114.3 0)
+			(at 93.98 114.3 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4115,7 +4125,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 87.63 114.3 0)
+			(at 93.98 114.3 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4124,7 +4134,7 @@
 			)
 		)
 		(property "JLCPCB Part #" "C131337"
-			(at 87.63 114.3 0)
+			(at 93.98 114.3 0)
 			(effects
 				(font
 					(size 1.27 1.27)

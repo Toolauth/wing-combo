@@ -1576,7 +1576,7 @@
 	)
 	(text "'Reset' circuit on Stage 2 relay"
 		(exclude_from_sim no)
-		(at 175.26 33.02 0)
+		(at 173.736 30.734 0)
 		(effects
 			(font
 				(size 2 2)
@@ -1611,7 +1611,7 @@
 		)
 		(uuid "5d08c72c-f2ec-4a76-b907-ae422e627e51")
 	)
-	(text "There are multiple vaariants of the Omron-MY2-02 relay, which allow for various voltage levels."
+	(text "There are multiple variants of the J1512CP120VAC relay, which allow for various voltage levels."
 		(exclude_from_sim no)
 		(at 21.59 37.592 0)
 		(effects
@@ -1633,7 +1633,7 @@
 		)
 		(uuid "635ee82d-95f4-4670-ba44-eda56eb8110c")
 	)
-	(text "The E-Stop is connected from a 3-wire header:\n  >> 5V goes 'above' the incadescent bulb\n  >> Sig/Read goes 'between' E-Stop and switch\n  >> GND goes 'below' switch"
+	(text "The E-Stop is connected from a 3-wire header:\n  >> 5V goes 'above' the E-Stop's lightbulb\n  >> Sig/Read goes 'between' E-Stop and switch\n  >> GND goes 'below' switch"
 		(exclude_from_sim no)
 		(at 71.12 179.07 0)
 		(effects
@@ -1700,9 +1700,9 @@
 		)
 		(uuid "932b0a0a-53cf-4e18-95f7-a2828904e0ea")
 	)
-	(text "These are all the ways to 'reset' the Stage 2 relay. \n[Not including overall loss of power, which also causes reset.]\nNormally a member will press the red button. But they may also \nuse the E-Stop to quickly end function, or the timeout \ncould trigger automatically (if programmed correctly...)"
+	(text "These are all the ways to 'reset' the Stage 2 relay. \n- (Normally) a member will press the red button \n- (Emergency) the E-Stop to quickly end function\n- timeout could trigger Stage1 Reset relay (if programmed correctly...)\n- overall loss of power, which also causes reset\n\nThe connections needed for the above, are shown below:"
 		(exclude_from_sim no)
-		(at 176.53 44.45 0)
+		(at 175.006 45.974 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1730,6 +1730,7 @@
 				(size 1.5 1.5)
 			)
 			(justify left bottom)
+			(href "https://electronics.stackexchange.com/questions/223691/self-latching-relay")
 		)
 		(uuid "bc4195aa-09ed-4ec4-9152-4ff60c41bd91")
 	)
@@ -1748,7 +1749,7 @@
 	)
 	(text "'Set' & 'Latch' circuit on Stage 2 relay"
 		(exclude_from_sim no)
-		(at 33.02 73.66 0)
+		(at 32.766 66.802 0)
 		(effects
 			(font
 				(size 2 2)
@@ -1837,12 +1838,12 @@
 		)
 		(uuid "ec8d5a33-b48f-432f-ba56-4cc0c9a63662")
 	)
-	(text "This portion of the circuit allows the Stage 2 Relay to turn on & stay on.\nWhen enabled [by ESP32 or Bypass] a person can turn on the relay with the green button.\nOnce activated, the link from relay pin 5_to_13 'latch' the relay on while powered, until reset."
+	(text "This portion of the circuit allows the Stage 2 Relay \nto turn on & stay on. When enabled [by Feather or \nBypass] a person can turn on the relay with the green \nbutton. Once activated, the link from relay pin 5-to-13 \n'latch' the relay on while powered, until reset."
 		(exclude_from_sim no)
-		(at 33.274 81.534 0)
+		(at 33.274 82.804 0)
 		(effects
 			(font
-				(size 1.27 1.27)
+				(size 1.905 1.905)
 			)
 			(justify left bottom)
 		)

@@ -32,7 +32,18 @@
 		)
 		(uuid "f53bef5d-2cc8-4f5f-b2f7-c50e505b3adb")
 	)
-	(text "ToolAuth Hardware | Overview"
+	(text "The main MCU board is a 'Feather', and they can have 'Wings' plugged into them. \nThis is the biggest wing we are aware of: does that mke it an albatross?"
+		(exclude_from_sim no)
+		(at 34.036 189.738 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "22d80e04-3855-455e-96b5-425d43d2e478")
+	)
+	(text "Wing-Combo | Overview"
 		(exclude_from_sim no)
 		(at 22.86 36.83 0)
 		(effects
@@ -70,7 +81,7 @@
 		)
 		(uuid "9f4c5b91-08f5-46ae-b027-5c82091afb5a")
 	)
-	(text "This section of the schematic covers everything \nthat happens at 3.3VDC or 5VDC, including the \nmicrocontroller, peripherals, and some of the \nsimple circuits needed to support the operation \n\nPower for this section is provided by a sealed \nswitching transformer soldered onto the board. "
+	(text "This section of the schematic covers everything \nthat happens at 3.3VDC or 5VDC, including the \nmicrocontroller, peripherals, and some of the \nsimple circuits needed to support the operation.\n\nPower for this section is provided by a sealed \nswitching transformer soldered onto the board. "
 		(exclude_from_sim no)
 		(at 29.21 128.27 0)
 		(effects
@@ -81,14 +92,15 @@
 		)
 		(uuid "b4951989-c724-4b23-a717-a76551f1df46")
 	)
-	(text "This device is intended to help simplify the process of setting up and managing tool authorization \ncontrol, in a shared workshop environment. \n\nSpecifically, this is designed for use at MakeHaven, in New Haven, Connecticut, USA from a previous\nsolution. The circuit board shown here includes a place for an ESP32-DEVKITC-V4+ microcontroller \n(with wifi) to sit into place, and manage the functions of theboard and ultimately control access \nto power a tool. This schematic is broken into several pages to better clarify the circuit.\n"
+	(text "Part of the Toolauth Project: https://github.com/Toolauth/\n\nThis device is intended to help simplify the process of setting up and managing tool authorization \ncontrol, in a shared workshop environment. \n\nSpecifically, this is designed for use at MakeHaven, in New Haven, Connecticut, USA from a previous\nsolution. The circuit board shown here includes a place for an Adafruit Feather ESP32 microcontroller \n(with wifi) to sit into place, and manage the functions of the board and ultimately control access \nto power a tool. This schematic is broken into several pages to better clarify the circuit.\n"
 		(exclude_from_sim no)
-		(at 41.91 71.12 0)
+		(at 36.068 79.502 0)
 		(effects
 			(font
 				(size 2.5 2.5)
 			)
 			(justify left bottom)
+			(href "https://github.com/Toolauth/")
 		)
 		(uuid "b6c06f01-68a4-445d-9847-bc7bc38fecfe")
 	)
@@ -103,9 +115,9 @@
 		)
 		(uuid "c5350b23-e74d-4c28-995e-678b48565038")
 	)
-	(text "Based Around ESP32-DEVKITC-V4+ board"
+	(text "Based on Adafruit Feather ESP32 boards"
 		(exclude_from_sim no)
-		(at 27.94 191.77 0)
+		(at 27.94 186.436 0)
 		(effects
 			(font
 				(size 3 3)
