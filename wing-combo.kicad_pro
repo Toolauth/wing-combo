@@ -611,7 +611,8 @@
     "netclass_assignments": {
       "/microcontroller/lightsounds/dcp1": "DC-Power",
       "Net-(D3-A)": "DC-Power",
-      "read-bypass": "Default"
+      "read-bypass": "Default",
+      "unconnected-(T9-D-Pad3)": "DC-Power"
     },
     "netclass_patterns": [
       {

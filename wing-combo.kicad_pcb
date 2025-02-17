@@ -12065,7 +12065,7 @@
 		(descr "Resistor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R8"
-			(at 0 -1.43 360)
+			(at 0 -1.43 0)
 			(layer "F.SilkS")
 			(hide yes)
 			(uuid "c24d0630-b606-4c47-86d2-83c71c3a7f95")
@@ -12077,7 +12077,7 @@
 			)
 		)
 		(property "Value" "2.2k"
-			(at 0 1.43 360)
+			(at 0 1.43 0)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "0ad41e18-6e03-410e-99aa-62902198ced5")
@@ -12128,7 +12128,7 @@
 			)
 		)
 		(property "JLCPCB Part #" "C4190"
-			(at 0 0 360)
+			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "78cdc08f-71f4-4c00-bb88-daa466f98e36")
@@ -12245,7 +12245,7 @@
 			(uuid "1a01d4a8-f8ca-475c-a5fb-02fbb8cade70")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 0 0 360)
+			(at 0 0 0)
 			(layer "F.Fab")
 			(uuid "e2f3da14-f3e6-4e20-8bd8-e9139a06e01f")
 			(effects
@@ -13212,7 +13212,7 @@
 		(descr "Resistor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor")
 		(property "Reference" "R7"
-			(at 0 -1.43 360)
+			(at 0 -1.43 0)
 			(layer "F.SilkS")
 			(hide yes)
 			(uuid "d28644bf-5dea-4515-a411-50b9feb3beaa")
@@ -13224,7 +13224,7 @@
 			)
 		)
 		(property "Value" "2.2k"
-			(at 0 1.43 360)
+			(at 0 1.43 0)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "a3f85f97-b724-410a-8b04-dd34250cb5e4")
@@ -13275,7 +13275,7 @@
 			)
 		)
 		(property "JLCPCB Part #" "C4190"
-			(at 0 0 360)
+			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "284b820f-d596-41ae-83f2-27126bce5364")
@@ -13392,7 +13392,7 @@
 			(uuid "c47c2b84-9f51-4505-815d-d9ae1f0d0549")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 0 0 360)
+			(at 0 0 0)
 			(layer "F.Fab")
 			(uuid "f312b4bd-d7fa-49d1-9f79-acaf1e0f7c67")
 			(effects
