@@ -3325,7 +3325,7 @@
 		)
 		(uuid "14333178-c22a-4143-a2ac-b3611299a076")
 	)
-	(text "The 'RESET' relay will break the active self-latch on\nthe Stage 2 relay. This is used as a way to auto \nshut off the tool - in the event of a tool timeout."
+	(text "The 'RESET' relay will break the active self-latch on\nthe Stage 2 relay. Used as a way to auto shut-off the \ntool, in event of timeout. Bypass locks this relay 'OFF'"
 		(exclude_from_sim no)
 		(at 145.288 64.008 0)
 		(effects
