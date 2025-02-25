@@ -609,8 +609,10 @@
     },
     "net_colors": null,
     "netclass_assignments": {
+      "/mainslevelcontrol/stage1relays/dcp2": "DC-Power",
       "/microcontroller/lightsounds/dcp1": "DC-Power",
       "Net-(D3-A)": "DC-Power",
+      "Net-(D4-A)": "DC-Power",
       "read-bypass": "Default",
       "unconnected-(T9-D-Pad3)": "DC-Power"
     },
