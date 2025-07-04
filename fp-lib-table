@@ -5,4 +5,5 @@
   (lib (name "usb-female")(type "KiCad")(uri "${KIPRJMOD}/odd-parts/usb-female/usb-female.pretty")(options "")(descr ""))
   (lib (name "buzzer")(type "KiCad")(uri "${KIPRJMOD}/odd-parts/buzzer/.pretty")(options "")(descr ""))
   (lib (name "usbc")(type "KiCad")(uri "${KIPRJMOD}/odd-parts/usbc/.pretty")(options "")(descr ""))
+  (lib (name "74hc02d")(type "KiCad")(uri "${KIPRJMOD}/odd-parts/74hc02d/74hc02d_lib")(options "")(descr ""))
 )

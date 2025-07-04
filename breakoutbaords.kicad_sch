@@ -4755,7 +4755,7 @@
 	)
 	(wire
 		(pts
-			(xy 116.84 152.4) (xy 118.11 152.4)
+			(xy 116.84 152.4) (xy 119.38 152.4)
 		)
 		(stroke
 			(width 0)
@@ -5333,13 +5333,14 @@
 		)
 		(uuid "6c211e6f-fc10-471b-a96e-70da7f87c2a0")
 	)
-	(text "eth-wng-rst"
+	(text "eth-wng-rst\n  **if not using binary current"
 		(exclude_from_sim no)
-		(at 125.476 152.654 0)
+		(at 136.398 153.924 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
+			(justify left)
 		)
 		(uuid "6e1a47da-e20d-4a11-9c06-af4f2123e493")
 	)
@@ -6113,6 +6114,28 @@
 					(size 1.27 1.27)
 				)
 				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "binary-current"
+		(shape input)
+		(at 119.38 152.4 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "80fa5b52-6fe8-40c3-8ddd-38717105fa0a")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 136.5165 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 				(hide yes)
 			)
 		)
