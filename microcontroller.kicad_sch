@@ -223,7 +223,7 @@
 				(justify left bottom)
 			)
 		)
-		(property "Sheetfile" "breakoutbaords.kicad_sch"
+		(property "Sheetfile" "breakoutboards.kicad_sch"
 			(at 34.29 145.3646 0)
 			(effects
 				(font
