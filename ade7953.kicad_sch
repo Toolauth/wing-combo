@@ -9683,7 +9683,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "bfd312aa-1078-4648-8b03-c8dd2ab58efe")
-		(property "Reference" "binary-current"
+		(property "Reference" "binary-current1"
 			(at 102.616 100.33 0)
 			(effects
 				(font
@@ -9750,7 +9750,7 @@
 		(instances
 			(project "wing-combo"
 				(path "/586efc0f-7de2-49a7-ac21-ecfef2f716d6/3f0e9b91-fe15-47d5-84d6-aa71b368b91e/03adfa84-7245-4a0a-b28d-db7d09a8f743"
-					(reference "binary-current")
+					(reference "binary-current1")
 					(unit 1)
 				)
 			)
