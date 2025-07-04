@@ -1794,7 +1794,7 @@
 		)
 		(uuid "5d08c72c-f2ec-4a76-b907-ae422e627e51")
 	)
-	(text "There are multiple variants of the J1512CP120VAC relay, which allow for various voltage levels."
+	(text "There are multiple variants of Omron's MY series relays, which allow for various voltage levels."
 		(exclude_from_sim no)
 		(at 21.59 37.592 0)
 		(effects
@@ -2991,7 +2991,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "mk_relay_socket:RELAY-TH_PY14-02"
+		(property "Footprint" "Library:Relay_Socket_4PDT_Omron_PY14-02-local"
 			(at 66.802 151.638 0)
 			(effects
 				(font

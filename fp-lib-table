@@ -7,4 +7,5 @@
   (lib (name "usbc")(type "KiCad")(uri "${KIPRJMOD}/odd-parts/usbc/.pretty")(options "")(descr ""))
   (lib (name "74hc02d")(type "KiCad")(uri "${KIPRJMOD}/odd-parts/74hc02d/74hc02d_lib")(options "")(descr ""))
   (lib (name "MK-relay-socket")(type "KiCad")(uri "${KIPRJMOD}/odd-parts/mk_relay_socket")(options "")(descr "PY14-02"))
+  (lib (name "Library")(type "KiCad")(uri "${KIPRJMOD}/odd-parts/mk_relay_socket/Library.pretty")(options "")(descr ""))
 )
