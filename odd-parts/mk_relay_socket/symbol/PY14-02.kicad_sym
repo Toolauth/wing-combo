@@ -442,7 +442,7 @@
 			)
 		)
 		(symbol "PY14-02_1_1"
-			(pin unspecified line
+			(pin passive line
 				(at -12.7 5.08 270)
 				(length 2.54)
 				(name "sw1-nc"
@@ -460,7 +460,7 @@
 					)
 				)
 			)
-			(pin unspecified line
+			(pin passive line
 				(at -7.62 5.08 270)
 				(length 2.54)
 				(name "sw2-com"
@@ -478,7 +478,7 @@
 					)
 				)
 			)
-			(pin unspecified line
+			(pin passive line
 				(at 2.54 5.08 270)
 				(length 2.54)
 				(name "sw3-com"
@@ -496,7 +496,7 @@
 					)
 				)
 			)
-			(pin unspecified line
+			(pin passive line
 				(at 12.7 5.08 270)
 				(length 2.54)
 				(name "sw4-com"
@@ -514,7 +514,7 @@
 					)
 				)
 			)
-			(pin unspecified line
+			(pin passive line
 				(at -24.13 -13.97 0)
 				(length 2.54)
 				(name "solenoid"
@@ -532,7 +532,7 @@
 					)
 				)
 			)
-			(pin unspecified line
+			(pin passive line
 				(at 24.13 -13.97 180)
 				(length 2.54)
 				(name "solenoid"
@@ -550,7 +550,7 @@
 					)
 				)
 			)
-			(pin unspecified line
+			(pin passive line
 				(at -2.54 5.08 270)
 				(length 2.54)
 				(name "sw2-nc"
@@ -568,7 +568,7 @@
 					)
 				)
 			)
-			(pin unspecified line
+			(pin passive line
 				(at 7.62 5.08 270)
 				(length 2.54)
 				(name "sw3-nc"
@@ -586,7 +586,7 @@
 					)
 				)
 			)
-			(pin unspecified line
+			(pin passive line
 				(at 17.78 5.08 270)
 				(length 2.54)
 				(name "sw4-nc"
@@ -604,7 +604,7 @@
 					)
 				)
 			)
-			(pin unspecified line
+			(pin passive line
 				(at -15.24 5.08 270)
 				(length 2.54)
 				(name "sw1-no"
@@ -622,7 +622,7 @@
 					)
 				)
 			)
-			(pin unspecified line
+			(pin passive line
 				(at -5.08 5.08 270)
 				(length 2.54)
 				(name "sw2-no"
@@ -640,7 +640,7 @@
 					)
 				)
 			)
-			(pin unspecified line
+			(pin passive line
 				(at 5.08 5.08 270)
 				(length 2.54)
 				(name "sw3-no"
@@ -658,7 +658,7 @@
 					)
 				)
 			)
-			(pin unspecified line
+			(pin passive line
 				(at 15.24 5.08 270)
 				(length 2.54)
 				(name "sw4-no"
@@ -676,7 +676,7 @@
 					)
 				)
 			)
-			(pin unspecified line
+			(pin passive line
 				(at -17.78 5.08 270)
 				(length 2.54)
 				(name "sw1-com"
