@@ -10,9 +10,9 @@
 		(company "Corey Rice & MakeHaven")
 	)
 	(lib_symbols)
-	(text "This shows the relationships between all components running at 3.3VDC or 5VDC on the board. \nThese are all on the 'low voltage' side of the board. These are all united in their service \nto the Adafruit Feather board, but that board itself is removable (for ease of programming \nand switching out the controller, without needing to rewire the tools). "
+	(text "This shows the relationships between all components running at 3.3VDC or 5VDC on the board. \nThese are all on the 'low voltage' side of the board. These are all united in their service \nto the Adafruit Feather board. Thinkinc about this design as a whole. it is our past experience\nand makerspace spirit that guided us towards making this a Feather Wing rather than integrate\nthe ESP32 on-board. If the microcontroller is removable, it is easier to program and you can \nreplace a 'problematic feather' for any reason, without needing to rewire the tools. "
 		(exclude_from_sim no)
-		(at 33.02 49.53 0)
+		(at 34.036 57.15 0)
 		(effects
 			(font
 				(size 2.5 2.5)
@@ -32,9 +32,9 @@
 		)
 		(uuid "301e80af-5416-4b93-9940-5f5e22e6cc3a")
 	)
-	(text "This shows a component to represent the \nAdafruit Feather board, as it will be \nseated in place. However, the component \nitself is not included on the circuit \nboard, instead seating into some breakout \nheaders for easy replacement. This page \nis for reference only, not design."
+	(text "This shows a component to represent the \nAdafruit Feather board, as it will be \nseated in place. However, the component \nitself is not included on the circuit \nboard, instead seating into some breakout \nheaders for easy replacement. This page \nis for reference only, not design.\n----\nEsperience implementing things like this on \nnetworks has taught us that it can be handy\nto be able to get a new device/MAC address \nwithout needing to rewire the entire 'box'\nthat connects to the tool."
 		(exclude_from_sim no)
-		(at 66.04 88.9 0)
+		(at 65.532 113.792 0)
 		(effects
 			(font
 				(size 1.75 1.75)
@@ -80,7 +80,7 @@
 	)
 	(text "The ADE7953 is a high accuracy current, \nvoltage and power measurement chip that \ncommunicates with the ESP32 via I2C. \nThere are three 3.1mm audio jacks to \nenable connecting CT split-ring clamp \nsensors. These CT sensors can be \nclamped around the wires that run \npower to the tool, to monitor the \ncurrent and voltage draw throughout \nuse. Additionally, there are a number \nof jumpers that can be soldered to \nmodify the filtering circuits if \nnecessary. "
 		(exclude_from_sim no)
-		(at 175.26 105.41 0)
+		(at 175.26 113.03 0)
 		(effects
 			(font
 				(size 1.75 1.75)
@@ -91,7 +91,7 @@
 	)
 	(text "ESP32 Core"
 		(exclude_from_sim no)
-		(at 33.02 67.31 0)
+		(at 33.02 74.93 0)
 		(effects
 			(font
 				(size 3.5 3.5)
@@ -116,7 +116,7 @@
 	)
 	(text "ADE7953"
 		(exclude_from_sim no)
-		(at 143.51 66.04 0)
+		(at 143.51 73.66 0)
 		(effects
 			(font
 				(size 3.5 3.5)
@@ -127,7 +127,7 @@
 		(uuid "fd733a39-27c0-4403-b3ee-7e74ff2cc0ff")
 	)
 	(sheet
-		(at 143.51 69.85)
+		(at 143.51 77.47)
 		(size 25.4 13.97)
 		(fields_autoplaced yes)
 		(stroke
@@ -139,7 +139,7 @@
 		)
 		(uuid "03adfa84-7245-4a0a-b28d-db7d09a8f743")
 		(property "Sheetname" "ade7953"
-			(at 143.51 69.1384 0)
+			(at 143.51 76.7584 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -148,7 +148,7 @@
 			)
 		)
 		(property "Sheetfile" "ade7953.kicad_sch"
-			(at 143.51 84.4046 0)
+			(at 143.51 92.0246 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -165,7 +165,7 @@
 		)
 	)
 	(sheet
-		(at 34.29 71.12)
+		(at 34.29 78.74)
 		(size 25.4 13.97)
 		(fields_autoplaced yes)
 		(stroke
@@ -177,7 +177,7 @@
 		)
 		(uuid "72caadd5-963d-408a-b010-ddf83ca901da")
 		(property "Sheetname" "esp32core"
-			(at 34.29 70.4084 0)
+			(at 34.29 78.0284 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -186,7 +186,7 @@
 			)
 		)
 		(property "Sheetfile" "esp32core.kicad_sch"
-			(at 34.29 85.6746 0)
+			(at 34.29 93.2946 0)
 			(effects
 				(font
 					(size 1.27 1.27)

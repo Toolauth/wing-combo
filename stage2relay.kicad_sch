@@ -10,8 +10,8 @@
 		(rev "3")
 		(company "Corey Rice & MakeHaven")
 		(comment 1 "Once activated, relay holds itself in an active state until reset")
-		(comment 2 "Can be interrupted by E-Stops or the S1/'reset' relay")
-		(comment 3 "Fuses added to power inputs, to protect board from improper wiring")
+		(comment 2 "Can be interrupted by E-Stops or the S1 'reset' relay")
+		(comment 3 "Fuses added to power inputs, to protect board from shorts/ bad wiring")
 		(comment 4 "E-Stop low voltage light & switch logic shown for reference")
 	)
 	(lib_symbols
@@ -434,20 +434,22 @@
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
-			(property "Reference" "U"
-				(at 3.81 -16.002 0)
+			(property "Reference" "U4"
+				(at 3.556 -16.256 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
+					(justify left)
 				)
 			)
 			(property "Value" "PY14-02"
-				(at -15.24 -16.002 0)
+				(at -14.986 -16.256 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
+					(justify left)
 				)
 			)
 			(property "Footprint" "mk_relay_socket:RELAY-TH_PY14-02"
@@ -870,7 +872,7 @@
 				)
 			)
 			(symbol "PY14-02_1_1"
-				(pin unspecified line
+				(pin passive line
 					(at -12.7 5.08 270)
 					(length 2.54)
 					(name "sw1-nc"
@@ -888,7 +890,7 @@
 						)
 					)
 				)
-				(pin unspecified line
+				(pin passive line
 					(at -7.62 5.08 270)
 					(length 2.54)
 					(name "sw2-com"
@@ -906,7 +908,7 @@
 						)
 					)
 				)
-				(pin unspecified line
+				(pin passive line
 					(at 2.54 5.08 270)
 					(length 2.54)
 					(name "sw3-com"
@@ -924,7 +926,7 @@
 						)
 					)
 				)
-				(pin unspecified line
+				(pin passive line
 					(at 12.7 5.08 270)
 					(length 2.54)
 					(name "sw4-com"
@@ -942,8 +944,8 @@
 						)
 					)
 				)
-				(pin unspecified line
-					(at -24.13 -13.97 0)
+				(pin passive line
+					(at 24.13 -13.97 180)
 					(length 2.54)
 					(name "solenoid"
 						(effects
@@ -960,8 +962,8 @@
 						)
 					)
 				)
-				(pin unspecified line
-					(at 24.13 -13.97 180)
+				(pin passive line
+					(at -24.13 -13.97 0)
 					(length 2.54)
 					(name "solenoid"
 						(effects
@@ -978,7 +980,7 @@
 						)
 					)
 				)
-				(pin unspecified line
+				(pin passive line
 					(at -2.54 5.08 270)
 					(length 2.54)
 					(name "sw2-nc"
@@ -996,7 +998,7 @@
 						)
 					)
 				)
-				(pin unspecified line
+				(pin passive line
 					(at 7.62 5.08 270)
 					(length 2.54)
 					(name "sw3-nc"
@@ -1014,7 +1016,7 @@
 						)
 					)
 				)
-				(pin unspecified line
+				(pin passive line
 					(at 17.78 5.08 270)
 					(length 2.54)
 					(name "sw4-nc"
@@ -1032,7 +1034,7 @@
 						)
 					)
 				)
-				(pin unspecified line
+				(pin passive line
 					(at -15.24 5.08 270)
 					(length 2.54)
 					(name "sw1-no"
@@ -1050,7 +1052,7 @@
 						)
 					)
 				)
-				(pin unspecified line
+				(pin passive line
 					(at -5.08 5.08 270)
 					(length 2.54)
 					(name "sw2-no"
@@ -1068,7 +1070,7 @@
 						)
 					)
 				)
-				(pin unspecified line
+				(pin passive line
 					(at 5.08 5.08 270)
 					(length 2.54)
 					(name "sw3-no"
@@ -1086,7 +1088,7 @@
 						)
 					)
 				)
-				(pin unspecified line
+				(pin passive line
 					(at 15.24 5.08 270)
 					(length 2.54)
 					(name "sw4-no"
@@ -1104,7 +1106,7 @@
 						)
 					)
 				)
-				(pin unspecified line
+				(pin passive line
 					(at -17.78 5.08 270)
 					(length 2.54)
 					(name "sw1-com"
@@ -1126,9 +1128,9 @@
 		)
 		(symbol "power:+5V"
 			(power)
+			(pin_numbers hide)
 			(pin_names
-				(offset 0)
-			)
+				(offset 0) hide)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -1176,7 +1178,7 @@
 					(hide yes)
 				)
 			)
-			(property "ki_keywords" "power-flag"
+			(property "ki_keywords" "global power"
 				(at 0 0 0)
 				(effects
 					(font
@@ -1226,8 +1228,8 @@
 			(symbol "+5V_1_1"
 				(pin power_in line
 					(at 0 0 90)
-					(length 0) hide
-					(name "+5V"
+					(length 0)
+					(name "~"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1246,9 +1248,9 @@
 		)
 		(symbol "power:GND"
 			(power)
+			(pin_numbers hide)
 			(pin_names
-				(offset 0)
-			)
+				(offset 0) hide)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -1296,7 +1298,7 @@
 					(hide yes)
 				)
 			)
-			(property "ki_keywords" "power-flag"
+			(property "ki_keywords" "global power"
 				(at 0 0 0)
 				(effects
 					(font
@@ -1322,8 +1324,8 @@
 			(symbol "GND_1_1"
 				(pin power_in line
 					(at 0 0 270)
-					(length 0) hide
-					(name "GND"
+					(length 0)
+					(name "~"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1342,10 +1344,10 @@
 		)
 	)
 	(junction
-		(at 85.09 120.65)
+		(at 66.04 111.76)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "4b2cd6c3-6470-4af6-a847-927a5514a532")
+		(uuid "ab449c52-8a4a-4d40-bf72-ddc0a7ccffc3")
 	)
 	(wire
 		(pts
@@ -1359,23 +1361,33 @@
 	)
 	(wire
 		(pts
-			(xy 82.55 121.92) (xy 82.55 90.17)
+			(xy 68.58 113.03) (xy 68.58 80.01)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "0b21eb02-e973-4d41-b0d6-3a484a7a86a1")
+		(uuid "09988429-bc8f-4548-9040-1f4fd6f1fafd")
 	)
 	(wire
 		(pts
-			(xy 85.09 120.65) (xy 85.09 121.92)
+			(xy 66.04 111.76) (xy 66.04 113.03)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "144460b8-ce78-406c-8e7a-82a0231028cc")
+		(uuid "1dfe6697-1272-4e21-a93e-00943731d1d1")
+	)
+	(wire
+		(pts
+			(xy 107.95 132.08) (xy 111.76 132.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "22ed79b2-f70c-4a7c-95f6-ceb8fc744bb0")
 	)
 	(polyline
 		(pts
@@ -1429,7 +1441,7 @@
 	)
 	(wire
 		(pts
-			(xy 85.09 114.3) (xy 85.09 120.65)
+			(xy 66.04 105.41) (xy 66.04 111.76)
 		)
 		(stroke
 			(width 0)
@@ -1439,33 +1451,23 @@
 	)
 	(wire
 		(pts
-			(xy 74.93 119.38) (xy 74.93 121.92)
+			(xy 96.52 110.49) (xy 96.52 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4ffaa6b4-0689-4743-b56c-6669b1c5812d")
+	)
+	(wire
+		(pts
+			(xy 88.9 110.49) (xy 88.9 113.03)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "58787547-c1f1-46f8-83c2-e967349c0984")
-	)
-	(wire
-		(pts
-			(xy 52.07 120.65) (xy 52.07 121.92)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5b7e8d1a-aca3-4dbb-8f30-c6c4fd95adc9")
-	)
-	(wire
-		(pts
-			(xy 54.61 121.92) (xy 54.61 120.65)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "60ece8db-719a-4256-97e3-d4cbe347ef75")
 	)
 	(wire
 		(pts
@@ -1479,7 +1481,7 @@
 	)
 	(wire
 		(pts
-			(xy 72.39 121.92) (xy 72.39 92.71)
+			(xy 86.36 113.03) (xy 86.36 83.82)
 		)
 		(stroke
 			(width 0)
@@ -1489,7 +1491,7 @@
 	)
 	(wire
 		(pts
-			(xy 72.39 92.71) (xy 74.93 92.71)
+			(xy 86.36 83.82) (xy 88.9 83.82)
 		)
 		(stroke
 			(width 0)
@@ -1519,13 +1521,13 @@
 	)
 	(wire
 		(pts
-			(xy 43.18 140.97) (xy 45.72 140.97)
+			(xy 59.69 111.76) (xy 66.04 111.76)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "838dffa4-5ac5-48c4-9afe-8bb3340b1c43")
+		(uuid "8b168e59-687f-46f9-9b52-6f9a060552a8")
 	)
 	(wire
 		(pts
@@ -1549,7 +1551,17 @@
 	)
 	(wire
 		(pts
-			(xy 74.93 92.71) (xy 74.93 93.98)
+			(xy 99.06 110.49) (xy 99.06 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b72f1fc4-3210-490a-b332-bc399e166d45")
+	)
+	(wire
+		(pts
+			(xy 88.9 83.82) (xy 88.9 85.09)
 		)
 		(stroke
 			(width 0)
@@ -1569,17 +1581,7 @@
 	)
 	(wire
 		(pts
-			(xy 93.98 120.65) (xy 85.09 120.65)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ceb12937-a96d-459e-9b56-28e79a5c9903")
-	)
-	(wire
-		(pts
-			(xy 85.09 111.76) (xy 85.09 105.41)
+			(xy 66.04 102.87) (xy 66.04 96.52)
 		)
 		(stroke
 			(width 0)
@@ -1617,6 +1619,16 @@
 		)
 		(uuid "e0c856dc-0130-4850-bc0a-5a30ef774412")
 	)
+	(wire
+		(pts
+			(xy 59.69 111.76) (xy 59.69 132.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e6a36678-084d-4c1b-ba8d-55cebf4d0498")
+	)
 	(polyline
 		(pts
 			(xy 44.45 163.83) (xy 44.45 198.12)
@@ -1626,16 +1638,6 @@
 			(type dash)
 		)
 		(uuid "eec73c12-5eae-47c3-98b8-c1cc6799ed51")
-	)
-	(wire
-		(pts
-			(xy 93.98 120.65) (xy 93.98 140.97)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f1f34004-4a39-45f0-994f-c498533fdb2a")
 	)
 	(wire
 		(pts
@@ -1658,8 +1660,8 @@
 		(uuid "f949e146-a9e3-40bb-9171-d2ed9725fd5f")
 	)
 	(rectangle
-		(start 71.12 90.805)
-		(end 80.01 138.43)
+		(start 85.09 81.915)
+		(end 93.98 129.54)
 		(stroke
 			(width 0)
 			(type dash_dot)
@@ -1671,18 +1673,18 @@
 	)
 	(text "Bypass key forces mHotSw1 ON.\n---\nOtherwise: mHotSw1 (relay) \nneeds activated by firmware\nto engage this Stage 2 relay."
 		(exclude_from_sim no)
-		(at 84.836 102.362 0)
+		(at 66.802 92.456 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left bottom)
+			(justify right bottom)
 		)
 		(uuid "01b6fcd8-7452-4872-8b02-8496ada00dee")
 	)
 	(text "Out to Stage 3"
 		(exclude_from_sim no)
-		(at 49.784 119.888 90)
+		(at 102.87 111.252 90)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1704,7 +1706,7 @@
 	)
 	(text "S1-set-relay"
 		(exclude_from_sim no)
-		(at 96.774 106.426 0)
+		(at 41.148 97.282 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1724,7 +1726,7 @@
 		)
 		(uuid "41078c4e-59f3-4701-b744-e9710d47f7e9")
 	)
-	(text "S1-2 relay for timeout on tool"
+	(text "S1-2 'reset' relay for timeout on tool"
 		(exclude_from_sim no)
 		(at 213.36 63.5 0)
 		(effects
@@ -1750,23 +1752,23 @@
 	)
 	(text "Boxed area is DC/low-voltage.\nUsed to sense the relay's\nstate with microcontroller.\n---\nNOT connected if DPDT used\nused in the PY14-02 socket."
 		(exclude_from_sim no)
-		(at 70.104 101.854 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "46d4a64e-7349-4b57-b473-d799e4d5fa2c")
-	)
-	(text "Once powered, this relay\nwill self-activate the\ncoil (electrical latch)\nthrough sw4 as shown\nto stay stay 'ON' until \npower is interrupted."
-		(exclude_from_sim no)
-		(at 94.742 136.652 0)
+		(at 95.25 92.964 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify left bottom)
+		)
+		(uuid "46d4a64e-7349-4b57-b473-d799e4d5fa2c")
+	)
+	(text "Once powered, this relay\nwill self-activate the\ncoil (electrical latch)\nthrough sw4 as shown\nto stay stay 'ON' until \npower is interrupted."
+		(exclude_from_sim no)
+		(at 57.658 129.794 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
 		)
 		(uuid "50e9880f-5b5d-4129-bd4f-f3747f4084ae")
 	)
@@ -1783,6 +1785,17 @@
 		)
 		(uuid "53a41ee3-db1b-49d8-a198-3f95a5f96e7e")
 	)
+	(text "This Estop is pysically coupled to 'Member-E-Stop-aux1'\nThe EStop here (aux2) resets the active self-latch\nand also blocks the green button from working."
+		(exclude_from_sim no)
+		(at 194.564 115.824 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "54528bbe-b503-4b3c-baae-0cdd91700e66")
+	)
 	(text "The E-Stop light runs at 5V, yet is shown here\nto be closer to the relevant 'reset' features.\n\nThis lamp-to-switch connection is done on the \nmodular E-Stop switches themselves, not any PCB. \n\nThe middle 'read-E-stop' informs the microcontroller."
 		(exclude_from_sim no)
 		(at 71.12 195.58 0)
@@ -1794,9 +1807,9 @@
 		)
 		(uuid "5d08c72c-f2ec-4a76-b907-ae422e627e51")
 	)
-	(text "There are multiple variants of Omron's MY series relays, which allow for various voltage levels."
+	(text "There are multiple variants of Omron's MY series relays, which allow for various coil voltage levels.\n---> And this footprint also works with Omron's G2A relays, if there is ever a parts shortage..."
 		(exclude_from_sim no)
-		(at 21.59 37.592 0)
+		(at 21.844 37.592 0)
 		(effects
 			(font
 				(size 1.5 1.5)
@@ -1827,16 +1840,40 @@
 		)
 		(uuid "6740d32f-5460-45b5-a99a-5cef3a28ddf1")
 	)
+	(text "The firmware is more manageable if we sense the state of the relay \n(instead of infer the state from any electrical current readings).\nAs long as 4PDT relay is used, microcontroller can sense relay state. \nDPDT versions of Omron MY relays will fit, but not connect this circuit."
+		(exclude_from_sim no)
+		(at 31.242 156.972 0)
+		(effects
+			(font
+				(size 1.905 1.905)
+			)
+			(justify left bottom)
+		)
+		(uuid "76d3717e-6787-482a-8b31-048db801c12f")
+	)
 	(text "N-OFF switch"
 		(exclude_from_sim no)
-		(at 113.03 114.046 0)
+		(at 38.608 104.902 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left bottom)
+			(justify right bottom)
 		)
 		(uuid "7c4fbb21-9858-4cba-a83a-0d45b2547718")
+	)
+	(text "Relay State Feedback to Microcontroller"
+		(exclude_from_sim no)
+		(at 35.56 143.764 0)
+		(effects
+			(font
+				(size 2 2)
+				(thickness 0.4)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "80775dee-5e9a-46c0-ba7e-ef1adc7cae12")
 	)
 	(text "N-ON switch\nneeded for bypass mode"
 		(exclude_from_sim no)
@@ -1883,6 +1920,18 @@
 		)
 		(uuid "932b0a0a-53cf-4e18-95f7-a2828904e0ea")
 	)
+	(text "*If LED lamp us used, put resistor ABOVE the 'read' location."
+		(exclude_from_sim no)
+		(at 70.866 199.644 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(italic yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "947d42ee-ecd5-4c0c-b232-e0498c2a2182")
+	)
 	(text "These are all the ways to 'reset' the Stage 2 relay. \n- (Normally) a member will press the red button \n- (Emergency) the E-Stop to quickly end function\n- timeout could trigger Stage1 Reset relay (if programmed correctly...)\n- overall loss of power, which also causes reset\n\nThe connections needed for the above, are shown below:"
 		(exclude_from_sim no)
 		(at 175.006 45.974 0)
@@ -1894,7 +1943,7 @@
 		)
 		(uuid "a7d2a0c9-deb3-4500-aaa4-f6ed6dbde2b5")
 	)
-	(text "This Estop is linked to 'Member-E-Stop-sw1'\nThe EStop here (sw2) resets the active self-latch\nand also blocks the green button from working."
+	(text "This Estop is pysically coupled to 'Member-E-Stop-sw1'\nThe EStop here (sw2) resets the active self-latch\nand also blocks the green button from working."
 		(exclude_from_sim no)
 		(at 194.31 96.52 0)
 		(effects
@@ -1932,7 +1981,7 @@
 	)
 	(text "'Set' & 'Latch' circuit on Stage 2 relay"
 		(exclude_from_sim no)
-		(at 32.766 66.802 0)
+		(at 35.306 59.182 0)
 		(effects
 			(font
 				(size 2 2)
@@ -1987,9 +2036,9 @@
 		)
 		(uuid "dddcb925-ea06-4280-8a58-6ded8decc310")
 	)
-	(text "In this location, the E-Stop shuts off the tool\nand resets the active self-latch at the same time.\nand this works in bypass mode."
+	(text "Both E-Stops (primary & aux): \n1) shut off the tool at two 'layers' for redundancy\n2) resets the active self-latch on the stage 2 relay\n3) block green button use by member, locking out restarts\nAll this works in redgular + bypass mode."
 		(exclude_from_sim no)
-		(at 194.31 115.57 0)
+		(at 194.818 129.286 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2011,7 +2060,7 @@
 	)
 	(text "This portion of the circuit allows the Stage 2 Relay to turn ON\n& stay ON. When enabled [by Feather or Bypass] a person can turn \nON the relay with the green button. Once activated, the link from\nrelay pin 12-to-8 'latch' the relay ON while powered, until reset.\nAs long as 4PDT relay is used, microcontroller can sense relay state."
 		(exclude_from_sim no)
-		(at 28.448 83.058 0)
+		(at 30.988 75.438 0)
 		(effects
 			(font
 				(size 1.905 1.905)
@@ -2021,20 +2070,20 @@
 		(uuid "f47f5a7b-4538-49c3-a67a-50e85e1672f8")
 	)
 	(label "self-latch"
-		(at 86.36 120.65 0)
+		(at 66.04 111.76 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.75 1.75)
 				(italic yes)
 			)
-			(justify left bottom)
+			(justify right bottom)
 		)
 		(uuid "1bd3d193-bcbb-465e-a3ae-30ed054fba1e")
 	)
 	(global_label "Stage3-NO"
 		(shape input)
-		(at 54.61 120.65 90)
+		(at 99.06 110.49 90)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2044,7 +2093,7 @@
 		)
 		(uuid "209dceb5-b209-4ebc-b1f7-0db897897476")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 54.61 106.9001 90)
+			(at 99.06 96.7401 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2056,29 +2105,29 @@
 	)
 	(global_label "mHotSw1"
 		(shape input)
-		(at 85.09 105.41 0)
+		(at 66.04 96.52 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left)
+			(justify right)
 		)
 		(uuid "221ff463-1af7-4d15-bb4a-ccc0de66e647")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 96.7232 105.41 0)
+			(at 54.4068 96.52 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 				(hide yes)
 			)
 		)
 	)
 	(global_label "DC-read-stage2"
 		(shape input)
-		(at 74.93 119.38 90)
+		(at 88.9 110.49 90)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2088,7 +2137,7 @@
 		)
 		(uuid "24ab9e53-0741-4f90-b066-467d81e2e562")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 74.93 100.1873 90)
+			(at 88.9 91.2973 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2212,22 +2261,22 @@
 	)
 	(global_label "reset"
 		(shape input)
-		(at 43.18 140.97 180)
+		(at 111.76 132.08 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify right)
+			(justify left)
 		)
 		(uuid "8abb8c66-60cc-4f4d-bf1d-beb6f783688c")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 35.4776 140.97 0)
+			(at 119.4624 132.08 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify left)
 				(hide yes)
 			)
 		)
@@ -2278,7 +2327,7 @@
 	)
 	(global_label "Stage3-Com"
 		(shape input)
-		(at 52.07 120.65 90)
+		(at 96.52 110.49 90)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2288,7 +2337,7 @@
 		)
 		(uuid "a45ab463-c3de-41b0-bdb5-82b64af6c778")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 52.07 105.4488 90)
+			(at 96.52 95.2888 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2410,22 +2459,22 @@
 	)
 	(global_label "Member-Green-Button-1"
 		(shape input)
-		(at 85.09 111.76 0)
+		(at 66.04 102.87 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left)
+			(justify right)
 		)
 		(uuid "e6693a7b-7b12-42e8-aab6-d78a93093df6")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 112.2379 111.6806 0)
+			(at 38.3202 102.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 				(hide yes)
 			)
 		)
@@ -2454,44 +2503,44 @@
 	)
 	(global_label "Member-Green-Button-2"
 		(shape input)
-		(at 85.09 114.3 0)
+		(at 66.04 105.41 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left)
+			(justify right)
 		)
 		(uuid "f319386b-15d2-4208-bbd9-176c4e315470")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 112.2379 114.2206 0)
+			(at 38.3202 105.41 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 				(hide yes)
 			)
 		)
 	)
 	(global_label "mains-fused-H{slash}L1"
 		(shape passive)
-		(at 82.55 90.17 0)
+		(at 68.58 80.01 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left)
+			(justify right)
 		)
 		(uuid "f333ff7e-6498-4cbb-8f09-74aed79d9481")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 103.2319 90.17 0)
+			(at 47.8981 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 				(hide yes)
 			)
 		)
@@ -2661,7 +2710,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
 			(at 49.53 190.5 0)
 			(effects
 				(font
@@ -2803,7 +2852,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
 			(at 49.53 170.18 0)
 			(effects
 				(font
@@ -2895,6 +2944,71 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 88.9 85.09 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "b054e19f-49c7-4336-8a4e-2bba8f2da7ea")
+		(property "Reference" "#PWR023"
+			(at 88.9 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 88.9 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 88.9 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 88.9 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 88.9 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "20a0787d-1a87-4ff7-a683-6ee1c401d942")
+		)
+		(instances
+			(project "wing-combo"
+				(path "/586efc0f-7de2-49a7-ac21-ecfef2f716d6/6f44f9bb-3a88-498d-9739-be3794f35f17/fd75559e-77bb-4f15-bd9f-e39243a04df3"
+					(reference "#PWR023")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:Lamp")
 		(at 49.53 176.53 0)
 		(unit 1)
@@ -2966,7 +3080,7 @@
 	)
 	(symbol
 		(lib_id "mk-relay-socket-14:PY14-02")
-		(at 69.85 127 0)
+		(at 83.82 118.11 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2974,7 +3088,7 @@
 		(dnp no)
 		(uuid "cc8b7c3d-ae41-4e08-9ffe-1d12ee6cfe85")
 		(property "Reference" "U4"
-			(at 73.406 143.256 0)
+			(at 87.376 134.366 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2983,7 +3097,7 @@
 			)
 		)
 		(property "Value" "PY14-02"
-			(at 54.864 143.256 0)
+			(at 68.834 134.366 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2992,7 +3106,7 @@
 			)
 		)
 		(property "Footprint" "Library:Relay_Socket_4PDT_Omron_PY14-02-local"
-			(at 66.802 151.638 0)
+			(at 80.772 142.748 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3002,7 +3116,7 @@
 			)
 		)
 		(property "Datasheet" "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/392/G2A_Series_Rev2010.pdf"
-			(at 49.276 154.432 0)
+			(at 63.246 145.542 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3012,7 +3126,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 62.23 146.05 90)
+			(at 76.2 137.16 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3021,7 +3135,7 @@
 			)
 		)
 		(property "LCSC" "C1519213"
-			(at 54.102 149.098 0)
+			(at 68.072 140.208 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3075,71 +3189,6 @@
 			(project ""
 				(path "/586efc0f-7de2-49a7-ac21-ecfef2f716d6/6f44f9bb-3a88-498d-9739-be3794f35f17/fd75559e-77bb-4f15-bd9f-e39243a04df3"
 					(reference "U4")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 74.93 93.98 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "df508490-90d7-4d8c-b8b6-8fdfa206dcda")
-		(property "Reference" "#PWR023"
-			(at 74.93 100.33 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 74.93 97.79 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 74.93 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 74.93 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 74.93 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "0f97cfe3-66c5-43b2-9cfa-34dcd93410bb")
-		)
-		(instances
-			(project "wing-combo"
-				(path "/586efc0f-7de2-49a7-ac21-ecfef2f716d6/6f44f9bb-3a88-498d-9739-be3794f35f17/fd75559e-77bb-4f15-bd9f-e39243a04df3"
-					(reference "#PWR023")
 					(unit 1)
 				)
 			)

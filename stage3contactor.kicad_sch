@@ -826,6 +826,17 @@
 		)
 		(uuid "a6a8a31c-5ec0-4246-8f02-b50965c69f8d")
 	)
+	(text "EStop-aux1-2"
+		(exclude_from_sim no)
+		(at 210.566 121.666 0)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+			(justify left bottom)
+		)
+		(uuid "b1ecd78a-1637-4496-8e25-8fafa9dc580f")
+	)
 	(text "Control for Final Contactor\n"
 		(exclude_from_sim no)
 		(at 41.402 51.816 0)
