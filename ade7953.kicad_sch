@@ -10473,7 +10473,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "dc1e6d4a-b1e3-4817-8793-9b72683ce69f")
-		(property "Reference" "JP7"
+		(property "Reference" "JP11"
 			(at 124.46 161.29 0)
 			(effects
 				(font
@@ -10525,7 +10525,7 @@
 		(instances
 			(project "wing-combo"
 				(path "/586efc0f-7de2-49a7-ac21-ecfef2f716d6/3f0e9b91-fe15-47d5-84d6-aa71b368b91e/03adfa84-7245-4a0a-b28d-db7d09a8f743"
-					(reference "JP7")
+					(reference "JP11")
 					(unit 1)
 				)
 			)
@@ -11257,7 +11257,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "fc21d472-7771-4755-ad6e-a99780f1a32a")
-		(property "Reference" "JP6"
+		(property "Reference" "JP10"
 			(at 123.19 181.61 0)
 			(effects
 				(font
@@ -11309,7 +11309,7 @@
 		(instances
 			(project "wing-combo"
 				(path "/586efc0f-7de2-49a7-ac21-ecfef2f716d6/3f0e9b91-fe15-47d5-84d6-aa71b368b91e/03adfa84-7245-4a0a-b28d-db7d09a8f743"
-					(reference "JP6")
+					(reference "JP10")
 					(unit 1)
 				)
 			)
