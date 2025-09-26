@@ -1533,7 +1533,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "2468395c-31aa-42d8-a00f-8153c94d12e6")
-		(property "Reference" "J1"
+		(property "Reference" "J20"
 			(at 184.15 78.74 0)
 			(effects
 				(font
@@ -1608,7 +1608,7 @@
 		(instances
 			(project ""
 				(path "/586efc0f-7de2-49a7-ac21-ecfef2f716d6/6f44f9bb-3a88-498d-9739-be3794f35f17/7e35b9a1-6df7-4aff-8cae-346c220af792"
-					(reference "J1")
+					(reference "J20")
 					(unit 1)
 				)
 			)
@@ -1624,7 +1624,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "a28fcf18-d1a8-4701-9313-33c88a6ceb69")
-		(property "Reference" "J17"
+		(property "Reference" "J21"
 			(at 184.15 93.98 0)
 			(effects
 				(font
@@ -1699,7 +1699,7 @@
 		(instances
 			(project "wing-combo"
 				(path "/586efc0f-7de2-49a7-ac21-ecfef2f716d6/6f44f9bb-3a88-498d-9739-be3794f35f17/7e35b9a1-6df7-4aff-8cae-346c220af792"
-					(reference "J17")
+					(reference "J21")
 					(unit 1)
 				)
 			)
@@ -1715,7 +1715,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ffccae39-8314-48d4-b5f4-ce98cef64ed5")
-		(property "Reference" "J18"
+		(property "Reference" "J22"
 			(at 184.15 109.22 0)
 			(effects
 				(font
@@ -1790,7 +1790,7 @@
 		(instances
 			(project "wing-combo"
 				(path "/586efc0f-7de2-49a7-ac21-ecfef2f716d6/6f44f9bb-3a88-498d-9739-be3794f35f17/7e35b9a1-6df7-4aff-8cae-346c220af792"
-					(reference "J18")
+					(reference "J22")
 					(unit 1)
 				)
 			)

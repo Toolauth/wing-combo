@@ -3087,7 +3087,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "cc8b7c3d-ae41-4e08-9ffe-1d12ee6cfe85")
-		(property "Reference" "U4"
+		(property "Reference" "relay3"
 			(at 87.376 134.366 0)
 			(effects
 				(font
@@ -3188,7 +3188,7 @@
 		(instances
 			(project ""
 				(path "/586efc0f-7de2-49a7-ac21-ecfef2f716d6/6f44f9bb-3a88-498d-9739-be3794f35f17/fd75559e-77bb-4f15-bd9f-e39243a04df3"
-					(reference "U4")
+					(reference "relay3")
 					(unit 1)
 				)
 			)

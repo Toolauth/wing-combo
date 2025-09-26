@@ -2943,6 +2943,19 @@
 		)
 		(uuid "7464d3bb-c666-4ac9-a37f-0ac9ee96cf5f")
 	)
+	(text "E-Stop1"
+		(exclude_from_sim no)
+		(at 108.712 128.27 0)
+		(effects
+			(font
+				(size 2 2)
+				(thickness 0.4)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "793ad761-3b0d-4961-9880-f97f37551352")
+	)
 	(text "An E-Stop is an essential Safety Measure in any\nworkshop. This is a secondary switch on the E-Stop\nassembly (totaling 3 switches and an LED in the \nstandard config). This circuit allows the ESP32 to \nread the state of the E-Stop. \n! A second E-Stop low voltage circuit can be put in ! \n! parallel on one JST if an Auxilary E-Stop in use. !"
 		(exclude_from_sim no)
 		(at 57.15 114.3 0)
@@ -2964,6 +2977,19 @@
 			(justify right bottom)
 		)
 		(uuid "82fbf1c0-d0dd-4579-a98a-3e6df859f7ca")
+	)
+	(text "E-Stop2"
+		(exclude_from_sim no)
+		(at 110.236 171.196 0)
+		(effects
+			(font
+				(size 2 2)
+				(thickness 0.4)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "8eeac2e2-ac1a-40ea-881c-f778ebb99d18")
 	)
 	(text "Piezo Buzzer Audio Feedback"
 		(exclude_from_sim no)
@@ -3202,7 +3228,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "0c53710a-081d-4731-ad48-cee330b8d267")
-		(property "Reference" "T6"
+		(property "Reference" "T5"
 			(at 80.01 179.07 0)
 			(effects
 				(font
@@ -3271,7 +3297,7 @@
 		(instances
 			(project "wing-combo"
 				(path "/586efc0f-7de2-49a7-ac21-ecfef2f716d6/3f0e9b91-fe15-47d5-84d6-aa71b368b91e/cdc711b4-3986-4d05-ace8-22e18ebb4f7d"
-					(reference "T6")
+					(reference "T5")
 					(unit 1)
 				)
 			)
@@ -3352,7 +3378,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "17252621-b27c-4ed4-96ab-e397ef56915d")
-		(property "Reference" "EN1"
+		(property "Reference" "J19"
 			(at 105.41 67.3099 0)
 			(effects
 				(font
@@ -3416,7 +3442,7 @@
 		(instances
 			(project "wing-combo"
 				(path "/586efc0f-7de2-49a7-ac21-ecfef2f716d6/3f0e9b91-fe15-47d5-84d6-aa71b368b91e/cdc711b4-3986-4d05-ace8-22e18ebb4f7d"
-					(reference "EN1")
+					(reference "J19")
 					(unit 1)
 				)
 			)
@@ -3432,7 +3458,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "1f53ff62-2852-4258-a005-9bfca8952dba")
-		(property "Reference" "D1"
+		(property "Reference" "D10"
 			(at 210.7565 133.35 0)
 			(effects
 				(font
@@ -3487,7 +3513,7 @@
 		(instances
 			(project "wing-combo"
 				(path "/586efc0f-7de2-49a7-ac21-ecfef2f716d6/3f0e9b91-fe15-47d5-84d6-aa71b368b91e/cdc711b4-3986-4d05-ace8-22e18ebb4f7d"
-					(reference "D1")
+					(reference "D10")
 					(unit 1)
 				)
 			)
@@ -3781,7 +3807,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "59cf2b2a-6bf8-4163-8ba1-53fbed91e869")
-		(property "Reference" "R-G-LED1"
+		(property "Reference" "J15"
 			(at 181.864 138.43 0)
 			(effects
 				(font
@@ -3848,7 +3874,7 @@
 		(instances
 			(project "wing-combo"
 				(path "/586efc0f-7de2-49a7-ac21-ecfef2f716d6/3f0e9b91-fe15-47d5-84d6-aa71b368b91e/cdc711b4-3986-4d05-ace8-22e18ebb4f7d"
-					(reference "R-G-LED1")
+					(reference "J15")
 					(unit 1)
 				)
 			)
@@ -4007,7 +4033,7 @@
 		(on_board no)
 		(dnp no)
 		(uuid "634ea96a-d316-4ea9-bc73-8fccb4d5f291")
-		(property "Reference" "J2"
+		(property "Reference" "J100"
 			(at 194.31 138.43 90)
 			(effects
 				(font
@@ -4065,7 +4091,7 @@
 		(instances
 			(project "wing-combo"
 				(path "/586efc0f-7de2-49a7-ac21-ecfef2f716d6/3f0e9b91-fe15-47d5-84d6-aa71b368b91e/cdc711b4-3986-4d05-ace8-22e18ebb4f7d"
-					(reference "J2")
+					(reference "J100")
 					(unit 1)
 				)
 			)
@@ -4454,7 +4480,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "7e41b53d-1c10-44d7-945d-fe6f2cd499b4")
-		(property "Reference" "EStop2"
+		(property "Reference" "J14"
 			(at 111.76 176.53 0)
 			(effects
 				(font
@@ -4520,7 +4546,7 @@
 		(instances
 			(project "wing-combo"
 				(path "/586efc0f-7de2-49a7-ac21-ecfef2f716d6/3f0e9b91-fe15-47d5-84d6-aa71b368b91e/cdc711b4-3986-4d05-ace8-22e18ebb4f7d"
-					(reference "EStop2")
+					(reference "J14")
 					(unit 1)
 				)
 			)
@@ -4614,7 +4640,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "86bd0f03-c54b-45cd-9fc4-a745732221d1")
-		(property "Reference" "R34"
+		(property "Reference" "R30"
 			(at 63.5 168.91 0)
 			(effects
 				(font
@@ -4677,7 +4703,7 @@
 		(instances
 			(project "wing-combo"
 				(path "/586efc0f-7de2-49a7-ac21-ecfef2f716d6/3f0e9b91-fe15-47d5-84d6-aa71b368b91e/cdc711b4-3986-4d05-ace8-22e18ebb4f7d"
-					(reference "R34")
+					(reference "R30")
 					(unit 1)
 				)
 			)
@@ -4692,7 +4718,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "8c9489f7-f54c-49a6-a413-a6f54aae9157")
-		(property "Reference" "R35"
+		(property "Reference" "R31"
 			(at 83.82 168.91 0)
 			(effects
 				(font
@@ -4755,7 +4781,7 @@
 		(instances
 			(project "wing-combo"
 				(path "/586efc0f-7de2-49a7-ac21-ecfef2f716d6/3f0e9b91-fe15-47d5-84d6-aa71b368b91e/cdc711b4-3986-4d05-ace8-22e18ebb4f7d"
-					(reference "R35")
+					(reference "R31")
 					(unit 1)
 				)
 			)
@@ -5048,7 +5074,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "ac5bab79-ba95-4a61-b20c-5101e5b6ca1f")
-		(property "Reference" "boot1"
+		(property "Reference" "J18"
 			(at 72.39 67.3099 0)
 			(effects
 				(font
@@ -5112,7 +5138,7 @@
 		(instances
 			(project "wing-combo"
 				(path "/586efc0f-7de2-49a7-ac21-ecfef2f716d6/3f0e9b91-fe15-47d5-84d6-aa71b368b91e/cdc711b4-3986-4d05-ace8-22e18ebb4f7d"
-					(reference "boot1")
+					(reference "J18")
 					(unit 1)
 				)
 			)
@@ -5571,7 +5597,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "f2e3f77d-33e8-4116-9ad5-aa7ea681de40")
-		(property "Reference" "EStop1"
+		(property "Reference" "J13"
 			(at 109.22 130.81 0)
 			(effects
 				(font
@@ -5637,7 +5663,7 @@
 		(instances
 			(project "wing-combo"
 				(path "/586efc0f-7de2-49a7-ac21-ecfef2f716d6/3f0e9b91-fe15-47d5-84d6-aa71b368b91e/cdc711b4-3986-4d05-ace8-22e18ebb4f7d"
-					(reference "EStop1")
+					(reference "J13")
 					(unit 1)
 				)
 			)

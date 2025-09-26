@@ -5091,7 +5091,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "86db406d-c38d-4e2e-986a-f9b09ad884be")
-		(property "Reference" "D2"
+		(property "Reference" "D1"
 			(at 127 192.0874 90)
 			(effects
 				(font
@@ -5154,7 +5154,7 @@
 		(instances
 			(project "wing-combo"
 				(path "/586efc0f-7de2-49a7-ac21-ecfef2f716d6/6f44f9bb-3a88-498d-9739-be3794f35f17/9191b819-8102-4422-9a84-62b3b85afe01"
-					(reference "D2")
+					(reference "D1")
 					(unit 1)
 				)
 			)
@@ -5234,7 +5234,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "8e79eb53-e1c0-4b0e-b90f-a34c2a1d3f5d")
-		(property "Reference" "D3"
+		(property "Reference" "D2"
 			(at 48.26 81.28 90)
 			(effects
 				(font
@@ -5296,7 +5296,7 @@
 		(instances
 			(project "wing-combo"
 				(path "/586efc0f-7de2-49a7-ac21-ecfef2f716d6/6f44f9bb-3a88-498d-9739-be3794f35f17/9191b819-8102-4422-9a84-62b3b85afe01"
-					(reference "D3")
+					(reference "D2")
 					(unit 1)
 				)
 			)
@@ -5481,7 +5481,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "9bdcdc72-fff1-45cd-8eb5-3d5861765d2e")
-		(property "Reference" "R40"
+		(property "Reference" "R29"
 			(at 181.61 97.028 90)
 			(effects
 				(font
@@ -5542,7 +5542,7 @@
 		(instances
 			(project "wing-combo"
 				(path "/586efc0f-7de2-49a7-ac21-ecfef2f716d6/6f44f9bb-3a88-498d-9739-be3794f35f17/9191b819-8102-4422-9a84-62b3b85afe01"
-					(reference "R40")
+					(reference "R29")
 					(unit 1)
 				)
 			)
@@ -5662,7 +5662,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "af775df8-347a-494a-ba97-12cef91155ac")
-		(property "Reference" "Bypass-1"
+		(property "Reference" "J10"
 			(at 72.898 140.716 0)
 			(effects
 				(font
@@ -5726,7 +5726,7 @@
 		(instances
 			(project "wing-combo"
 				(path "/586efc0f-7de2-49a7-ac21-ecfef2f716d6/6f44f9bb-3a88-498d-9739-be3794f35f17/9191b819-8102-4422-9a84-62b3b85afe01"
-					(reference "Bypass-1")
+					(reference "J10")
 					(unit 1)
 				)
 			)
@@ -5807,7 +5807,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "bbf78595-b248-411e-977a-e22b668912dc")
-		(property "Reference" "D4"
+		(property "Reference" "D3"
 			(at 161.29 81.28 90)
 			(effects
 				(font
@@ -5869,7 +5869,7 @@
 		(instances
 			(project "wing-combo"
 				(path "/586efc0f-7de2-49a7-ac21-ecfef2f716d6/6f44f9bb-3a88-498d-9739-be3794f35f17/9191b819-8102-4422-9a84-62b3b85afe01"
-					(reference "D4")
+					(reference "D3")
 					(unit 1)
 				)
 			)
