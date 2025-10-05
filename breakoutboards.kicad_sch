@@ -3126,186 +3126,6 @@
 				)
 			)
 		)
-		(symbol "Jumper:SolderJumper_2_Open"
-			(pin_names
-				(offset 0) hide)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "JP"
-				(at 0 2.032 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "SolderJumper_2_Open"
-				(at 0 -2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Solder Jumper, 2-pole, open"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "solder jumper SPST"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "SolderJumper*Open*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "SolderJumper_2_Open_0_1"
-				(arc
-					(start -0.254 1.016)
-					(mid -1.2655 0)
-					(end -0.254 -1.016)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start -0.254 1.016)
-					(mid -1.2655 0)
-					(end -0.254 -1.016)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(polyline
-					(pts
-						(xy -0.254 1.016) (xy -0.254 -1.016)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.254 1.016) (xy 0.254 -1.016)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start 0.254 -1.016)
-					(mid 1.2655 0)
-					(end 0.254 1.016)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start 0.254 -1.016)
-					(mid 1.2655 0)
-					(end 0.254 1.016)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-			)
-			(symbol "SolderJumper_2_Open_1_1"
-				(pin passive line
-					(at -3.81 0 0)
-					(length 2.54)
-					(name "A"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 3.81 0 180)
-					(length 2.54)
-					(name "B"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-		)
 		(symbol "Regulator_Linear:AMS1117-3.3"
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -5500,7 +5320,7 @@
 	)
 	(text "feather specification: https://learn.adafruit.com/adafruit-feather/feather-specification"
 		(exclude_from_sim no)
-		(at 80.01 176.276 0)
+		(at 83.058 110.998 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5875,9 +5695,9 @@
 		)
 		(uuid "ed93878c-b5a8-47f5-bd6a-97004759e02e")
 	)
-	(text "If you solder-jumper JP17 (not advised): \nThis board would be back-powering the USB. For that reason, it is advised that you do not have it conencted to \nyour computer's USB port and wall-power at the same time. There is a real risk of damage to the computer.\nhttps://learn.adafruit.com/adafruit-huzzah32-esp32-feather/power-management#alternative-power-options-3122391\nIn that case: \n    1. Program the Feather over USB, first time only. \n    2. Disconnect Feather from computer and seat in wing-combo.\n    3. Reprogram Feather as needed Over-The-Air only."
+	(text ">[!NOTE] The Feather will be powered by the onboard AC/DC power supply on the Wing by default. That means:\n> NEVER plug your computer's USB port into the Feather while the Wing is powered from the AC/DC power supply!\n> This woud backpower your Computer's USB and can cause serious harm to the computer. \n>\n> Here is what you should do: \n>   1. Program the Feather over USB (first time only) while it is NOT SEATED in the Wing-Combo board.\n>   2. Disconnect Feather from computer and seat in Wing-Combo board. It should turn on and connect to WiFi.\n>   3. Reprogram Feather as needed Over-The-Air only. [Never put a USB from inside the box into a computer.]\n\nIf you cut JP17 (not advised): \nThen you can do the odd thing of powering the Feather from one of the USB ports available on the Wing-Combo board.\nThis will require a short jumper USB (just a few centimeters) and be very goofy. Only attempt for good reason...\nhttps://learn.adafruit.com/adafruit-huzzah32-esp32-feather/power-management#alternative-power-options-3122391"
 		(exclude_from_sim no)
-		(at 19.304 188.468 0)
+		(at 30.226 188.976 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5924,7 +5744,7 @@
 	)
 	(text "NOTE: all pins labeled with blue text\nshould not be used in this design, as \nthey have specified roles in feathers."
 		(exclude_from_sim no)
-		(at 58.928 165.862 0)
+		(at 61.722 168.656 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -7049,74 +6869,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Jumper:SolderJumper_2_Open")
-		(at 41.91 157.48 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "22b816bb-4929-48d1-8653-12bce7aa34c5")
-		(property "Reference" "JP17"
-			(at 41.91 160.02 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "no-filter-1"
-			(at 41.91 163.83 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm"
-			(at 41.91 157.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 41.91 157.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 41.91 157.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "6dfb33a4-549d-45e7-8f58-34fbe3f69085")
-		)
-		(pin "2"
-			(uuid "65575612-253b-4e1d-8def-e85441f11881")
-		)
-		(instances
-			(project "wing-combo"
-				(path "/586efc0f-7de2-49a7-ac21-ecfef2f716d6/3f0e9b91-fe15-47d5-84d6-aa71b368b91e/76df30f3-bf0f-4a81-9e12-488966ab08bf"
-					(reference "JP17")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:PWR_FLAG")
 		(at 129.54 167.64 180)
 		(unit 1)
@@ -8134,6 +7886,74 @@
 			(project "wing-combo"
 				(path "/586efc0f-7de2-49a7-ac21-ecfef2f716d6/3f0e9b91-fe15-47d5-84d6-aa71b368b91e/76df30f3-bf0f-4a81-9e12-488966ab08bf"
 					(reference "#PWR0109")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Jumper:SolderJumper_2_Bridged")
+		(at 41.91 157.48 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "92fc84d2-042a-471d-935f-0127d1b52b56")
+		(property "Reference" "JP17"
+			(at 41.91 162.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "bridged"
+			(at 41.91 160.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm"
+			(at 41.91 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 41.91 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 41.91 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "b0d33091-a1ce-42df-abc3-ae855aaa83d1")
+		)
+		(pin "2"
+			(uuid "25327990-a751-4ab2-b2b2-c958611fcfdc")
+		)
+		(instances
+			(project "wing-combo"
+				(path "/586efc0f-7de2-49a7-ac21-ecfef2f716d6/3f0e9b91-fe15-47d5-84d6-aa71b368b91e/76df30f3-bf0f-4a81-9e12-488966ab08bf"
+					(reference "JP17")
 					(unit 1)
 				)
 			)
