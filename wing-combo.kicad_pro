@@ -37,9 +37,9 @@
         "other_text_thickness": 0.15,
         "other_text_upright": false,
         "pads": {
-          "drill": 2.300021,
-          "height": 3.0,
-          "width": 3.0
+          "drill": 1.100023,
+          "height": 1.2,
+          "width": 1.5
         },
         "silk_line_width": 0.15,
         "silk_text_italic": false,
@@ -66,7 +66,6 @@
         "clearance|106358087|112556890|f837f3dc-bc6d-487e-9c55-4e79a9c5eda1|53e33688-4fcc-4d5e-aca7-1999dbb97aff",
         "clearance|108850546|111062965|0d127c5d-bcb2-469d-9d76-89781e36976b|53e33688-4fcc-4d5e-aca7-1999dbb97aff",
         "clearance|109425000|109175000|7ded48f1-8bfa-4eae-a405-ccbaf38eece7|53e33688-4fcc-4d5e-aca7-1999dbb97aff",
-        "courtyards_overlap|72500001|96140601|212913ca-9894-4ccf-8c16-9c3c440f60cf|66b3afb5-4737-4535-b5b9-89a5a353d7d0",
         "lib_footprint_issues|88826600|46356600|ac0fe963-33fb-4a04-9e64-55877a4252c9|00000000-0000-0000-0000-000000000000",
         "lib_footprint_mismatch|106215000|72640000|f6641214-a69e-4a1d-b1cd-1377e9a04151|00000000-0000-0000-0000-000000000000",
         "lib_footprint_mismatch|117385000|38800000|7767a8b6-23d9-4713-9edc-bf66b3394342|00000000-0000-0000-0000-000000000000",
@@ -89,12 +88,10 @@
         "lib_footprint_mismatch|70090000|89405112|eac25349-ff4d-4a9e-b7b6-afbf2f462efc|00000000-0000-0000-0000-000000000000",
         "lib_footprint_mismatch|71775000|65600000|a9d247b5-2fa6-410f-9e62-3818713bc15a|00000000-0000-0000-0000-000000000000",
         "lib_footprint_mismatch|73375000|26000000|00be91a3-2497-4788-9f75-55df5ea93023|00000000-0000-0000-0000-000000000000",
-        "lib_footprint_mismatch|77425000|92950000|7e201c8c-e302-4c5d-856e-119a349eb84a|00000000-0000-0000-0000-000000000000",
         "lib_footprint_mismatch|80985000|26530000|300e14b8-8adb-4533-a2a0-7da521978540|00000000-0000-0000-0000-000000000000",
         "lib_footprint_mismatch|97350000|102575000|fd065578-b733-4b13-96e8-0719105208d2|00000000-0000-0000-0000-000000000000",
         "lib_footprint_mismatch|97425000|29250000|7727c7e2-5ae0-4249-a69c-83a22012f0aa|00000000-0000-0000-0000-000000000000",
-        "starved_thermal|63095000|59080000|066e65b1-1723-45ad-9e18-f895d07e876e|b77aa3d5-1e01-48ff-a11c-ba5754f15e89|B.Cu",
-        "starved_thermal|75025000|95100000|066e65b1-1723-45ad-9e18-f895d07e876e|08e7d9f9-6ccf-4eb2-b914-d4676612167c|B.Cu"
+        "starved_thermal|63095000|59080000|066e65b1-1723-45ad-9e18-f895d07e876e|b77aa3d5-1e01-48ff-a11c-ba5754f15e89|B.Cu"
       ],
       "meta": {
         "version": 2
@@ -554,9 +551,14 @@
     "net_colors": null,
     "netclass_assignments": {
       "/microcontroller/lightsounds/dcp1": "DC-Power",
+      "CC1": "Default",
+      "CC2": "Default",
       "Net-(D2-A)": "DC-Power",
       "Net-(D3-A)": "DC-Power",
       "Net-(D4-A)": "DC-Power",
+      "Net-(Q1-G)": "Default",
+      "VBUS": "DC-Power",
+      "fused-5v": "DC-Power",
       "read-bypass": "Default",
       "unconnected-(T9-D-Pad3)": "DC-Power"
     },
@@ -644,6 +646,26 @@
       {
         "netclass": "DC-Power",
         "pattern": "+3.3VA"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "CC1"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "CC2"
+      },
+      {
+        "netclass": "Default",
+        "pattern": "VREF"
+      },
+      {
+        "netclass": "DC-Power",
+        "pattern": "fused-5v"
+      },
+      {
+        "netclass": "DC-Power",
+        "pattern": "VBUS"
       }
     ]
   },
@@ -810,6 +832,10 @@
     [
       "7e35b9a1-6df7-4aff-8cae-346c220af792",
       "stage3contactor"
+    ],
+    [
+      "889b8cea-6ffa-4852-b7a4-dc047b45bf9a",
+      "usb-c-power-out"
     ]
   ],
   "text_variables": {}

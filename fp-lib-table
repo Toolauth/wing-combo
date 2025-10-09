@@ -9,4 +9,5 @@
   (lib (name "MK-relay-socket")(type "KiCad")(uri "${KIPRJMOD}/odd-parts/mk_relay_socket")(options "")(descr "PY14-02"))
   (lib (name "Library")(type "KiCad")(uri "${KIPRJMOD}/odd-parts/mk_relay_socket/Library.pretty")(options "")(descr ""))
   (lib (name "5v transformer")(type "KiCad")(uri "${KIPRJMOD}/odd-parts/CFM06S050-E-Cincon")(options "")(descr ""))
+  (lib (name "lm393")(type "KiCad")(uri "${KIPRJMOD}/odd-parts/lm393/lm393")(options "")(descr ""))
 )

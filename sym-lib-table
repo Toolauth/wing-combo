@@ -1,5 +1,6 @@
 (sym_lib_table
   (version 7)
   (lib (name "mk-relay-socket-14")(type "KiCad")(uri "${KIPRJMOD}/odd-parts/mk_relay_socket/symbol/PY14-02.kicad_sym")(options "")(descr "PY14-02 relay socket MK"))
-  (lib (name "Cincon Transformer")(type "KiCad")(uri "${KIPRJMOD}/odd-parts/CFM06S050-E-Cincon/CFM06S050E.kicad_sym")(options "")(descr "5vdc transformer"))
+  (lib (name "usbc")(type "KiCad")(uri "${KIPRJMOD}/odd-parts/usbc/.kicad_sym")(options "")(descr ""))
+  (lib (name "usbc_16")(type "KiCad")(uri "${KIPRJMOD}/odd-parts/usbc/usbc_16.kicad_sym")(options "")(descr ""))
 )

@@ -34,7 +34,7 @@
 	)
 	(text "This shows a component to represent the \nAdafruit Feather board, as it will be \nseated in place. However, the component \nitself is not included on the circuit \nboard, instead seating into some breakout \nheaders for easy replacement. This page \nis for reference only, not design.\n----\nEsperience implementing things like this on \nnetworks has taught us that it can be handy\nto be able to get a new device/MAC address \nwithout needing to rewire the entire 'box'\nthat connects to the tool."
 		(exclude_from_sim no)
-		(at 65.532 113.792 0)
+		(at 68.072 106.172 0)
 		(effects
 			(font
 				(size 1.75 1.75)
@@ -45,7 +45,7 @@
 	)
 	(text "Breakout Board Connections"
 		(exclude_from_sim no)
-		(at 33.02 128.27 0)
+		(at 35.56 120.65 0)
 		(effects
 			(font
 				(size 3.5 3.5)
@@ -57,7 +57,7 @@
 	)
 	(text "These are the connections for I2C, SPI, and \nthe Feather headers. There is also a 3.3V \nlinear regulator to power these daughter \nboards, without placing more draw on the \nFeather's onboard linear regulator (this \nincludes powering the ADE7953).\n\nThere are also USB plugs to provide \naccess to 5VDC - this is primarily \nto power the Feaather, as they are \ndesigned to be powered this way or by\nbattery. The second USB port could power \nfuture independent e-ink displays, etc.\n"
 		(exclude_from_sim no)
-		(at 64.77 166.37 0)
+		(at 67.31 158.75 0)
 		(effects
 			(font
 				(size 1.75 1.75)
@@ -91,7 +91,7 @@
 	)
 	(text "ESP32 Core"
 		(exclude_from_sim no)
-		(at 33.02 74.93 0)
+		(at 35.56 67.31 0)
 		(effects
 			(font
 				(size 3.5 3.5)
@@ -100,6 +100,29 @@
 			(justify left bottom)
 		)
 		(uuid "a6f88849-16da-4fe3-b49a-14bc606ddeb3")
+	)
+	(text "USB-C & Solder | Daughter Power"
+		(exclude_from_sim no)
+		(at 35.052 174.752 0)
+		(effects
+			(font
+				(size 3.5 3.5)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "a8bd63c1-80c6-4c6e-b7cb-1a16331544a9")
+	)
+	(text "It is foreseeable that daughter baords will \nbe added, and these connections allow for \nthe ability to power them without needing\na second AC/DC Power Supply. These are fused\nto not over-draw from the main baords/ uses."
+		(exclude_from_sim no)
+		(at 72.136 191.77 0)
+		(effects
+			(font
+				(size 1.75 1.75)
+			)
+			(justify left bottom)
+		)
+		(uuid "db73c6bb-3c6f-4f61-8a2b-57c50778a10b")
 	)
 	(text "Microcontroller Overview"
 		(exclude_from_sim no)
@@ -165,7 +188,7 @@
 		)
 	)
 	(sheet
-		(at 34.29 78.74)
+		(at 36.83 71.12)
 		(size 25.4 13.97)
 		(fields_autoplaced yes)
 		(stroke
@@ -177,7 +200,7 @@
 		)
 		(uuid "72caadd5-963d-408a-b010-ddf83ca901da")
 		(property "Sheetname" "esp32core"
-			(at 34.29 78.0284 0)
+			(at 36.83 70.4084 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -186,7 +209,7 @@
 			)
 		)
 		(property "Sheetfile" "esp32core.kicad_sch"
-			(at 34.29 93.2946 0)
+			(at 36.83 85.6746 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -203,7 +226,7 @@
 		)
 	)
 	(sheet
-		(at 34.29 130.81)
+		(at 36.83 123.19)
 		(size 25.4 13.97)
 		(fields_autoplaced yes)
 		(stroke
@@ -215,7 +238,7 @@
 		)
 		(uuid "76df30f3-bf0f-4a81-9e12-488966ab08bf")
 		(property "Sheetname" "breakoutboards"
-			(at 34.29 130.0984 0)
+			(at 36.83 122.4784 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -224,7 +247,7 @@
 			)
 		)
 		(property "Sheetfile" "breakoutboards.kicad_sch"
-			(at 34.29 145.3646 0)
+			(at 36.83 137.7446 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -236,6 +259,44 @@
 			(project "wing-combo"
 				(path "/586efc0f-7de2-49a7-ac21-ecfef2f716d6/3f0e9b91-fe15-47d5-84d6-aa71b368b91e"
 					(page "5")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 36.83 177.8)
+		(size 25.4 13.97)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "889b8cea-6ffa-4852-b7a4-dc047b45bf9a")
+		(property "Sheetname" "usb-c-power-out"
+			(at 36.83 177.0884 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "usb-c-power-out.kicad_sch"
+			(at 36.83 192.3546 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "wing-combo"
+				(path "/586efc0f-7de2-49a7-ac21-ecfef2f716d6/3f0e9b91-fe15-47d5-84d6-aa71b368b91e"
+					(page "11")
 				)
 			)
 		)
