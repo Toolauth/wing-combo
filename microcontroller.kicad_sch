@@ -23,7 +23,7 @@
 	)
 	(text "This is a collection of the simple circuits \nthat translate between voltage levels, break \nout the programming buttons for the Feather, \ncontrol the buzzer, and control the indicator \nLEDs. Many of these circuits use a mix of 3.3v\nand 5 volts to be as bright/loud as possible.\n"
 		(exclude_from_sim no)
-		(at 171.704 147.066 0)
+		(at 181.864 148.336 0)
 		(effects
 			(font
 				(size 1.75 1.75)
@@ -32,9 +32,9 @@
 		)
 		(uuid "301e80af-5416-4b93-9940-5f5e22e6cc3a")
 	)
-	(text "This shows a component to represent the \nAdafruit Feather board, as it will be \nseated in place. However, the component \nitself is not included on the circuit \nboard, instead seating into some breakout \nheaders for easy replacement. This page \nis for reference only, not design.\n----\nEsperience implementing things like this on \nnetworks has taught us that it can be handy\nto be able to get a new device/MAC address \nwithout needing to rewire the entire 'box'\nthat connects to the tool."
+	(text "This shows a component to represent the \nAdafruit Feather board, as it will be \nseated in place. However, the component \nitself is not included on the circuit \nboard, instead seating into some breakout \nheaders for easy replacement. This page \nis for reference only, not design.\n----\nExperience implementing things like this on \nnetworks has taught us that it can be handy\nto be able to get a new device/MAC address \nwithout needing to rewire the entire 'box'\nthat connects to the tool."
 		(exclude_from_sim no)
-		(at 68.072 106.172 0)
+		(at 69.342 112.522 0)
 		(effects
 			(font
 				(size 1.75 1.75)
@@ -45,7 +45,7 @@
 	)
 	(text "Breakout Board Connections"
 		(exclude_from_sim no)
-		(at 35.56 120.65 0)
+		(at 36.83 127 0)
 		(effects
 			(font
 				(size 3.5 3.5)
@@ -55,9 +55,9 @@
 		)
 		(uuid "59c492da-66d1-4c13-a055-ebe32e8a3be2")
 	)
-	(text "These are the connections for I2C, SPI, and \nthe Feather headers. There is also a 3.3V \nlinear regulator to power these daughter \nboards, without placing more draw on the \nFeather's onboard linear regulator (this \nincludes powering the ADE7953).\n\nThere are also USB plugs to provide \naccess to 5VDC - this is primarily \nto power the Feaather, as they are \ndesigned to be powered this way or by\nbattery. The second USB port could power \nfuture independent e-ink displays, etc.\n"
+	(text "These are the connections for I2C, SPI, and \nthe Feather headers. There is also a 3.3V \nlinear regulator to power these daughter \nboards, without placing more draw on the \nFeather's onboard linear regulator (this \nincludes powering the ADE7953)."
 		(exclude_from_sim no)
-		(at 67.31 158.75 0)
+		(at 69.088 145.542 0)
 		(effects
 			(font
 				(size 1.75 1.75)
@@ -68,7 +68,7 @@
 	)
 	(text "Lights, Sounds & Status"
 		(exclude_from_sim no)
-		(at 142.24 127 0)
+		(at 152.4 128.27 0)
 		(effects
 			(font
 				(size 3.5 3.5)
@@ -80,7 +80,7 @@
 	)
 	(text "The ADE7953 is a high accuracy current, \nvoltage and power measurement chip that \ncommunicates with the ESP32 via I2C. \nThere are three 3.1mm audio jacks to \nenable connecting CT split-ring clamp \nsensors. These CT sensors can be \nclamped around the wires that run \npower to the tool, to monitor the \ncurrent and voltage draw throughout \nuse. Additionally, there are a number \nof jumpers that can be soldered to \nmodify the filtering circuits if \nnecessary. "
 		(exclude_from_sim no)
-		(at 175.26 113.03 0)
+		(at 185.42 114.3 0)
 		(effects
 			(font
 				(size 1.75 1.75)
@@ -91,7 +91,7 @@
 	)
 	(text "ESP32 Core"
 		(exclude_from_sim no)
-		(at 35.56 67.31 0)
+		(at 36.83 73.66 0)
 		(effects
 			(font
 				(size 3.5 3.5)
@@ -103,7 +103,7 @@
 	)
 	(text "USB-C & Solder | Daughter Power"
 		(exclude_from_sim no)
-		(at 35.052 174.752 0)
+		(at 35.052 160.782 0)
 		(effects
 			(font
 				(size 3.5 3.5)
@@ -115,7 +115,7 @@
 	)
 	(text "It is foreseeable that daughter baords will \nbe added, and these connections allow for \nthe ability to power them without needing\na second AC/DC Power Supply. These are fused\nto not over-draw from the main baords/ uses."
 		(exclude_from_sim no)
-		(at 72.136 191.77 0)
+		(at 72.136 177.8 0)
 		(effects
 			(font
 				(size 1.75 1.75)
@@ -139,7 +139,7 @@
 	)
 	(text "ADE7953"
 		(exclude_from_sim no)
-		(at 143.51 73.66 0)
+		(at 153.67 74.93 0)
 		(effects
 			(font
 				(size 3.5 3.5)
@@ -150,7 +150,7 @@
 		(uuid "fd733a39-27c0-4403-b3ee-7e74ff2cc0ff")
 	)
 	(sheet
-		(at 143.51 77.47)
+		(at 153.67 78.74)
 		(size 25.4 13.97)
 		(fields_autoplaced yes)
 		(stroke
@@ -162,7 +162,7 @@
 		)
 		(uuid "03adfa84-7245-4a0a-b28d-db7d09a8f743")
 		(property "Sheetname" "ade7953"
-			(at 143.51 76.7584 0)
+			(at 153.67 78.0284 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -171,7 +171,7 @@
 			)
 		)
 		(property "Sheetfile" "ade7953.kicad_sch"
-			(at 143.51 92.0246 0)
+			(at 153.67 93.2946 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -188,7 +188,7 @@
 		)
 	)
 	(sheet
-		(at 36.83 71.12)
+		(at 38.1 77.47)
 		(size 25.4 13.97)
 		(fields_autoplaced yes)
 		(stroke
@@ -200,7 +200,7 @@
 		)
 		(uuid "72caadd5-963d-408a-b010-ddf83ca901da")
 		(property "Sheetname" "esp32core"
-			(at 36.83 70.4084 0)
+			(at 38.1 76.7584 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -209,7 +209,7 @@
 			)
 		)
 		(property "Sheetfile" "esp32core.kicad_sch"
-			(at 36.83 85.6746 0)
+			(at 38.1 92.0246 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -226,7 +226,7 @@
 		)
 	)
 	(sheet
-		(at 36.83 123.19)
+		(at 38.1 129.54)
 		(size 25.4 13.97)
 		(fields_autoplaced yes)
 		(stroke
@@ -238,7 +238,7 @@
 		)
 		(uuid "76df30f3-bf0f-4a81-9e12-488966ab08bf")
 		(property "Sheetname" "breakoutboards"
-			(at 36.83 122.4784 0)
+			(at 38.1 128.8284 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -247,7 +247,7 @@
 			)
 		)
 		(property "Sheetfile" "breakoutboards.kicad_sch"
-			(at 36.83 137.7446 0)
+			(at 38.1 144.0946 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -264,7 +264,7 @@
 		)
 	)
 	(sheet
-		(at 36.83 177.8)
+		(at 36.83 163.83)
 		(size 25.4 13.97)
 		(fields_autoplaced yes)
 		(stroke
@@ -276,7 +276,7 @@
 		)
 		(uuid "889b8cea-6ffa-4852-b7a4-dc047b45bf9a")
 		(property "Sheetname" "usb-c-power-out"
-			(at 36.83 177.0884 0)
+			(at 36.83 163.1184 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -285,7 +285,7 @@
 			)
 		)
 		(property "Sheetfile" "usb-c-power-out.kicad_sch"
-			(at 36.83 192.3546 0)
+			(at 36.83 178.3846 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -296,13 +296,13 @@
 		(instances
 			(project "wing-combo"
 				(path "/586efc0f-7de2-49a7-ac21-ecfef2f716d6/3f0e9b91-fe15-47d5-84d6-aa71b368b91e"
-					(page "11")
+					(page "7")
 				)
 			)
 		)
 	)
 	(sheet
-		(at 143.51 130.81)
+		(at 153.67 132.08)
 		(size 25.4 13.97)
 		(fields_autoplaced yes)
 		(stroke
@@ -314,7 +314,7 @@
 		)
 		(uuid "cdc711b4-3986-4d05-ace8-22e18ebb4f7d")
 		(property "Sheetname" "lightsounds"
-			(at 143.51 130.0984 0)
+			(at 153.67 131.3684 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -323,7 +323,7 @@
 			)
 		)
 		(property "Sheetfile" "lightsounds.kicad_sch"
-			(at 143.51 145.3646 0)
+			(at 153.67 146.6346 0)
 			(effects
 				(font
 					(size 1.27 1.27)

@@ -1531,15 +1531,13 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "2468395c-31aa-42d8-a00f-8153c94d12e6")
 		(property "Reference" "J20"
-			(at 184.15 78.74 0)
+			(at 180.34 91.948 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Value" "Screw_Terminal_01x06"
@@ -1622,15 +1620,13 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "a28fcf18-d1a8-4701-9313-33c88a6ceb69")
 		(property "Reference" "J21"
-			(at 184.15 93.98 0)
+			(at 180.594 105.918 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Value" "Screw_Terminal_01x06"
@@ -1713,15 +1709,13 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "ffccae39-8314-48d4-b5f4-ce98cef64ed5")
 		(property "Reference" "J22"
-			(at 184.15 109.22 0)
+			(at 180.848 121.412 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(hide yes)
 			)
 		)
 		(property "Value" "Screw_Terminal_01x06"
