@@ -32,9 +32,9 @@
 		)
 		(uuid "f53bef5d-2cc8-4f5f-b2f7-c50e505b3adb")
 	)
-	(text "The main MCU board is a 'Feather', and they can have 'Wings' plugged into them. \nThis is the biggest wing we are aware of: does that mke it an albatross?"
+	(text "The main MCU board is a 'Feather', and they can have 'Wings' plugged into them. \nThis is the biggest wing we are aware of: does that make it an albatross?"
 		(exclude_from_sim no)
-		(at 39.624 184.404 0)
+		(at 41.148 181.102 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -59,7 +59,7 @@
 	)
 	(text "feather specification: https://learn.adafruit.com/adafruit-feather/feather-specification"
 		(exclude_from_sim no)
-		(at 80.264 190.5 0)
+		(at 81.788 187.198 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -115,7 +115,7 @@
 		)
 		(uuid "b6c06f01-68a4-445d-9847-bc7bc38fecfe")
 	)
-	(text "This section covers everything that happens at \nthe AC power level: anywhere from 100VAC to \n240VAC, provided the correct configuration. \n\nThere is only a single relay changed to cover \nvoltage this range. All the panel-mount buttons, \nrelays and Emergency Stops that ensure primary\nfunction of the tool-control are included here."
+	(text "This section covers everything that happens at \nthe AC power level: anywhere from 100VAC to \n240VAC, provided the corresponding configuration. \n\nThere is only a single relay changed to cover \nvoltage this range. All the panel-mount buttons, \nrelays and Emergency Stops that ensure primary\nfunction of the tool-control are included here."
 		(exclude_from_sim no)
 		(at 161.29 130.81 0)
 		(effects
@@ -128,7 +128,7 @@
 	)
 	(text "Based on Adafruit Feather ESP32 boards"
 		(exclude_from_sim no)
-		(at 33.528 181.102 0)
+		(at 35.052 177.8 0)
 		(effects
 			(font
 				(size 3 3)
@@ -152,7 +152,7 @@
 		)
 		(uuid "02352bb7-2c6b-4cd2-a253-8801698af309")
 	)
-	(hierarchical_label "Bypass Control"
+	(hierarchical_label "Stage 1 Relays"
 		(shape output)
 		(at 91.44 149.86 180)
 		(fields_autoplaced yes)
@@ -164,7 +164,7 @@
 		)
 		(uuid "5655a042-307b-467e-a6c2-eaaa67d9e527")
 	)
-	(hierarchical_label "Bypass Control"
+	(hierarchical_label "Stage 1 Relays"
 		(shape input)
 		(at 193.04 149.86 0)
 		(fields_autoplaced yes)

@@ -10,7 +10,7 @@
 		(company "Corey Rice & MakeHaven")
 	)
 	(lib_symbols)
-	(text "This shows the relationships between all components running at 3.3VDC or 5VDC on the board. \nThese are all on the 'low voltage' side of the board. These are all united in their service \nto the Adafruit Feather board. Thinkinc about this design as a whole. it is our past experience\nand makerspace spirit that guided us towards making this a Feather Wing rather than integrate\nthe ESP32 on-board. If the microcontroller is removable, it is easier to program and you can \nreplace a 'problematic feather' for any reason, without needing to rewire the tools. "
+	(text "This shows the relationships between all components running at 3.3VDC or 5VDC on the board. \nThese are all on the 'low voltage' side of the board. These are all united in their service \nto the Adafruit Feather board. Thinking about this design as a whole, it is our past experience\nand makerspace spirit that guided us towards making this a Feather Wing rather than integrate\nthe ESP32 on-board. If the microcontroller is removable, it is easier to program, and you can \nreplace a 'problematic feather' for any reason (without needing to rewire the tools). "
 		(exclude_from_sim no)
 		(at 34.036 57.15 0)
 		(effects

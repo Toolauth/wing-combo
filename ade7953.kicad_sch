@@ -3875,6 +3875,29 @@
 		)
 		(uuid "fa5b0b50-d9e7-490d-bbfd-bfe9e62f82ec")
 	)
+	(rectangle
+		(start 81.788 87.122)
+		(end 131.318 130.302)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid ea80c75e-8be2-4ca0-8d6b-c47c1e3d4344)
+	)
+	(text "If the ADE7953 (this page) is not working for \nyou, try new I2C resistors. Or fully bail on \nthe ADE7953 and use an \"AC current sensing \nrelay\" on our 'backup plan' bin-cur \nconnector. [sometimes we do, no shame]\n  - Previous page in schematic\n  - We really like the M3050 for this job"
+		(exclude_from_sim no)
+		(at 83.312 100.584 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "0fa69701-7929-4ae7-8ca8-688eb98e6640")
+	)
 	(text "CT Clamp Connectors: 3.5mm Audio & two-pin backup"
 		(exclude_from_sim no)
 		(at 33.02 55.88 0)
@@ -3887,6 +3910,63 @@
 			(justify left bottom)
 		)
 		(uuid "1110766c-77c1-4e57-97fa-e73ee864e94d")
+	)
+	(text "- a WCS1800 on board, configured for AC"
+		(exclude_from_sim no)
+		(at 85.852 126.492 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "2c82e0bd-6e70-4cab-884d-b0986eed7bba")
+	)
+	(text "- the TI ADS1115 over I2C"
+		(exclude_from_sim no)
+		(at 85.852 120.396 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+			(href "https://www.ti.com/product/ADS1115")
+		)
+		(uuid "33709109-aafa-47f3-9dd8-35d12fdc5b23")
+	)
+	(text "- on-board shunt resistor options"
+		(exclude_from_sim no)
+		(at 85.852 123.444 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "37b1797a-40f3-4b30-ac92-e1f0d4d2407c")
+	)
+	(text "Measuring AC Current is hard."
+		(exclude_from_sim no)
+		(at 106.68 90.17 0)
+		(effects
+			(font
+				(size 1.905 1.905)
+				(thickness 0.381)
+				(bold yes)
+			)
+		)
+		(uuid "718de88b-5359-4929-a0b4-9ccd49f0d93f")
+	)
+	(text "(like this)"
+		(exclude_from_sim no)
+		(at 117.856 120.396 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(href "https://a.co/d/iXRwzz9")
+		)
+		(uuid "7dbdf4d7-aea1-4f71-91eb-1608146b426f")
 	)
 	(text "Voltage Sensor Filtering"
 		(exclude_from_sim no)
@@ -3972,6 +4052,17 @@
 			(justify left bottom)
 		)
 		(uuid "ee5ab57e-cf00-4583-be6e-5db8151504d2")
+	)
+	(text "In the future, we may get a more elegant \nsolution to monitor the electric current \ndrawn by the tool. There are several possible\nfuture options to explore: "
+		(exclude_from_sim no)
+		(at 83.566 114.554 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "fa5943a6-f8de-4e70-a1f9-eced80cf1191")
 	)
 	(global_label "REVP"
 		(shape input)

@@ -7,6 +7,10 @@
 	(title_block
 		(title "5V USB-C and Pins | Daughter Board Power")
 		(date "2025-10-04")
+		(company "Corey Rice / MakeHaven")
+		(comment 1 "Solderable connection also provided, still guarded by resettable fuse")
+		(comment 2 "Features Cold-Plugging with an LM393 and over current protection")
+		(comment 3 "Bare-minimum USB-C downside facing port")
 	)
 	(lib_symbols
 		(symbol "Comparator:LM393"
@@ -2601,7 +2605,7 @@
 		)
 		(uuid "59daa605-809a-4dcc-afc8-4bd13936f882")
 	)
-	(text "While it is not entirely clear how these will be used, they provide options for powering secondary daugher boards\nwithout needing to add a second AC/DC Power Supply unit to the tool-controller box. The easiest attachment is a \nUSB-C source plug (technically a DFP) that is basically compliant with the proper USB-C specifications. Also, there is\na pair of solderable holes that allow for a more-direct connection to the 5V line, but are still guarded by the \nresettable fuse. Either of these could be used to add a panel-mount USB-C port, and then attach a second MCU for \nany number of purposes: we think an E-Ink display for machine status could be really helpful :)"
+	(text "While it is not entirely clear how these will be used, they provide options for powering secondary daugher boards\nwithout needing to add a second AC/DC Power Supply unit to the tool-controller box. The easiest attachment is a \nUSB-C source plug (technically a DFP) that is basically compliant with the proper USB-C specifications. Also, there is\na pair of solderable holes that allow for a more direct connection to the 5V line, but is still guarded by the shared\nresettable fuse. Either of these could be used to add a panel-mount USB-C port, and then attach a second MCU for \nany number of purposes: ==> We think an E-Ink display for machine status could be really helpful :)"
 		(exclude_from_sim no)
 		(at 35.052 40.894 0)
 		(effects
@@ -2613,9 +2617,9 @@
 		)
 		(uuid "6a15eaea-37a3-4548-ac9d-9b377dcd6e5b")
 	)
-	(text "The Upstream-Facing Port (UFP) will supply 5.1k resistor(s) \non at least one of the plug's `CC1` or `CC2` lines"
+	(text "The Upstream-Facing Port (UFP) will supply 5.1k resistor(s) \non at least one of the plug's `CC1` or `CC2` lines (which is\nthe expectation of the USB_C specifications). This brings the \n'+' input low, and activates the comparator to sink current."
 		(exclude_from_sim no)
-		(at 46.99 118.11 0)
+		(at 44.958 120.142 0)
 		(effects
 			(font
 				(size 1.27 1.27)

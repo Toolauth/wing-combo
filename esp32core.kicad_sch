@@ -17,8 +17,8 @@
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
-			(property "Reference" "A"
-				(at -10.16 29.21 0)
+			(property "Reference" "A1"
+				(at 2.1941 -33.02 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -27,7 +27,7 @@
 				)
 			)
 			(property "Value" "Adafruit_Feather_Generic"
-				(at 2.54 -31.75 0)
+				(at 2.1941 -35.56 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -188,7 +188,7 @@
 				(pin bidirectional line
 					(at -12.7 -12.7 0)
 					(length 2.54)
-					(name "RX"
+					(name "D0/RX"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -206,7 +206,7 @@
 				(pin bidirectional line
 					(at -12.7 -15.24 0)
 					(length 2.54)
-					(name "TX"
+					(name "D1/TX"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -278,7 +278,7 @@
 				(pin bidirectional line
 					(at -12.7 20.32 0)
 					(length 2.54)
-					(name "D0"
+					(name "D6"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -314,7 +314,7 @@
 				(pin bidirectional line
 					(at -12.7 17.78 0)
 					(length 2.54)
-					(name "D1"
+					(name "D5"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -332,7 +332,7 @@
 				(pin bidirectional line
 					(at -12.7 15.24 0)
 					(length 2.54)
-					(name "D2"
+					(name "D9"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -350,7 +350,7 @@
 				(pin bidirectional line
 					(at -12.7 12.7 0)
 					(length 2.54)
-					(name "D3"
+					(name "D10"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -368,7 +368,7 @@
 				(pin bidirectional line
 					(at -12.7 10.16 0)
 					(length 2.54)
-					(name "D4"
+					(name "D11"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -386,7 +386,7 @@
 				(pin bidirectional line
 					(at -12.7 7.62 0)
 					(length 2.54)
-					(name "D5"
+					(name "D12"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -404,7 +404,7 @@
 				(pin bidirectional line
 					(at -12.7 5.08 0)
 					(length 2.54)
-					(name "D6"
+					(name "D13"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -592,126 +592,6 @@
 						)
 					)
 					(number "9"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-		)
-		(symbol "power:+3V3"
-			(power)
-			(pin_names
-				(offset 0)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "#PWR"
-				(at 0 -3.81 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Value" "+3V3"
-				(at 0 3.556 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Power symbol creates a global label with name \"+3V3\""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "power-flag"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "+3V3_0_1"
-				(polyline
-					(pts
-						(xy -0.762 1.27) (xy 0 2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 0) (xy 0 2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 2.54) (xy 0.762 1.27)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "+3V3_1_1"
-				(pin power_in line
-					(at 0 0 90)
-					(length 0) hide
-					(name "+3V3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -940,17 +820,7 @@
 	)
 	(wire
 		(pts
-			(xy 203.2 74.93) (xy 203.2 80.01)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "49e0be37-4770-44d6-83d6-1959f83cfa3f")
-	)
-	(wire
-		(pts
-			(xy 208.28 74.93) (xy 208.28 78.74)
+			(xy 208.28 85.09) (xy 208.28 90.17)
 		)
 		(stroke
 			(width 0)
@@ -960,33 +830,13 @@
 	)
 	(wire
 		(pts
-			(xy 208.28 78.74) (xy 205.74 78.74)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a587885b-34fa-4f05-8cde-d20d04242eb3")
-	)
-	(wire
-		(pts
-			(xy 200.66 143.51) (xy 200.66 147.32)
+			(xy 203.2 153.67) (xy 203.2 157.48)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "c5956f4a-d446-4693-8fbe-f1db7e6376de")
-	)
-	(wire
-		(pts
-			(xy 205.74 78.74) (xy 205.74 80.01)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d4a133f9-0d2e-4b79-8eb0-645693ebf905")
 	)
 	(text "Feather Compatable Board"
 		(exclude_from_sim no)
@@ -1004,7 +854,7 @@
 	)
 	(text "This shows a component to represent the \nFeather Footprint board, as it will be \nseated in place. However, the component \nitself is not included on the circuit \nboard, instead seating into some breakout \nheaders for easy replacement. This page \nis for reference only, not design.\n\n-------------\n\nWe love Feather boards because it is a \nspecification, not just a single vendor \n(but we <3 Adafruit). That way we can more\neasily source and/or upgrade boards over \nthe years we hope to implement this system."
 		(exclude_from_sim no)
-		(at 33.528 157.734 0)
+		(at 25.146 161.036 0)
 		(effects
 			(font
 				(size 3.5 3.5)
@@ -1012,6 +862,18 @@
 			(justify left bottom)
 		)
 		(uuid "b3555e80-b360-4f41-9374-3f9db49b007d")
+	)
+	(text "IRQ (also maybe not needed)---->\nhttps://learn.adafruit.com/\nadafruit-wiz5500-wiznet-\nethernet-featherwing/pinouts\n"
+		(exclude_from_sim no)
+		(at 152.4 121.158 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+			(href "https://learn.adafruit.com/adafruit-wiz5500-wiznet-ethernet-featherwing/pinouts")
+		)
+		(uuid "b8d77f70-f22b-47b7-aeb8-a17c19b6ebdb")
 	)
 	(text "feather specification: \nhttps://learn.adafruit.com/adafruit-feather/feather-specification"
 		(exclude_from_sim no)
@@ -1025,9 +887,40 @@
 		)
 		(uuid "bcab2fc9-8c0d-453e-9540-1a159f94a398")
 	)
+	(text "*Use input_pullup*\n*invert logic*"
+		(exclude_from_sim no)
+		(at 162.814 105.664 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "c6015d40-c2a0-4ad1-8df2-b621a31788d1")
+	)
+	(text "eth-wng-rst\n  **if not using binary current"
+		(exclude_from_sim no)
+		(at 233.172 124.206 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "cab19921-c911-4f37-bbaf-29f4d6fb97fe")
+	)
+	(text "**Use input [not input_pullup]"
+		(exclude_from_sim no)
+		(at 245.618 128.778 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "d0b61b50-ff83-44f2-8ea3-1e40279c14bd")
+	)
 	(global_label "POCI"
 		(shape input)
-		(at 187.96 118.11 180)
+		(at 190.5 128.27 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1037,7 +930,7 @@
 		)
 		(uuid "08a3c4ef-c559-4b71-b7eb-0f76ce860ec1")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 180.4995 118.11 0)
+			(at 183.0395 128.27 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1047,9 +940,31 @@
 			)
 		)
 	)
+	(global_label "read-bypass"
+		(shape input)
+		(at 215.9 128.27 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "0b924920-9090-4f2a-a927-b82d8c2bfe57")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 231.1012 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "SDA"
 		(shape input)
-		(at 187.96 130.81 180)
+		(at 190.5 140.97 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1059,7 +974,7 @@
 		)
 		(uuid "1522ac98-f7ac-489b-949b-5f29bd313a26")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 181.4067 130.81 0)
+			(at 183.9467 140.97 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1069,9 +984,31 @@
 			)
 		)
 	)
+	(global_label "buzz"
+		(shape output)
+		(at 215.9 120.65 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "2ecb587e-7b7c-49ae-8bff-534791670820")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 223.2394 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "EN"
 		(shape input)
-		(at 213.36 97.79 0)
+		(at 215.9 107.95 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1081,7 +1018,95 @@
 		)
 		(uuid "35318a26-3aaf-4989-ac0f-a424564d5c19")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 218.8247 97.79 0)
+			(at 221.3647 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "CS-jst"
+		(shape output)
+		(at 215.9 125.73 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "39a37624-464c-4349-afa4-f2f2febc7a15")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 225.2957 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "read-E-Stop"
+		(shape input)
+		(at 190.5 115.57 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "44edfdbb-2e66-4148-8fcb-2866412bcab5")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 174.815 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "DC-read-stage2"
+		(shape input)
+		(at 190.5 105.41 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "493f18d6-4128-406a-b902-11edd451d7c3")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 171.3073 105.41 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "set3v"
+		(shape output)
+		(at 215.9 115.57 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "603e4a03-9403-429b-9d31-c81ac253ee18")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 223.9047 115.57 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1093,7 +1118,7 @@
 	)
 	(global_label "SCK"
 		(shape input)
-		(at 187.96 113.03 180)
+		(at 190.5 123.19 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1103,7 +1128,7 @@
 		)
 		(uuid "66c56ad1-120d-4543-b4fe-24b3e3e77abb")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 181.2253 113.03 0)
+			(at 183.7653 123.19 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1115,7 +1140,7 @@
 	)
 	(global_label "PICO"
 		(shape input)
-		(at 187.96 115.57 180)
+		(at 190.5 125.73 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1125,7 +1150,29 @@
 		)
 		(uuid "6dc257da-5117-4472-ab5d-f4216c6884b5")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 180.4995 115.57 0)
+			(at 183.0395 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "led-red"
+		(shape output)
+		(at 190.5 102.87 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "99fd4b48-4aa8-4aa1-a241-a27768f13d99")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 180.0158 102.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1137,7 +1184,7 @@
 	)
 	(global_label "boot"
 		(shape input)
-		(at 213.36 90.17 0)
+		(at 215.9 100.33 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1147,7 +1194,7 @@
 		)
 		(uuid "a9685ef6-1fb2-452b-b57d-474289725d9c")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 219.946 90.0906 0)
+			(at 222.486 100.2506 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1157,9 +1204,119 @@
 			)
 		)
 	)
+	(global_label "binary-current"
+		(shape input)
+		(at 215.9 123.19 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "ad32296e-3163-4411-afc3-bfc9cdc21a25")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 233.0365 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "ade7953-IRQ"
+		(shape input)
+		(at 190.5 110.49 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "c35bbf2d-c5ba-4e82-b12d-a4c9c3304fa7")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 174.5125 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "CS-eth0"
+		(shape output)
+		(at 190.5 107.95 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "cd0618ff-f4b4-495c-909e-b86c05070446")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 179.2901 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "reset3v"
+		(shape output)
+		(at 215.9 118.11 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "d130a906-8c6c-42a8-9e61-c3cff112c5ad")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 225.7795 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "led-grn"
+		(shape output)
+		(at 190.5 100.33 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "f65e5b30-2533-4ffc-b82e-57942bce4519")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 179.9554 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "SCL"
 		(shape input)
-		(at 187.96 133.35 180)
+		(at 190.5 143.51 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1169,7 +1326,29 @@
 		)
 		(uuid "f82c8ebc-05f3-429e-a245-ad789fdd4cab")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 181.4672 133.35 0)
+			(at 184.0072 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "two-options"
+		(shape input)
+		(at 190.5 113.03 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "fd451634-0a1d-47ab-a033-929d5bf4f8ed")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 175.7826 113.03 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1181,7 +1360,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 200.66 147.32 0)
+		(at 203.2 157.48 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -1189,7 +1368,7 @@
 		(dnp no)
 		(uuid "0e3f5cbd-49dd-487c-9b49-9a4cc585994f")
 		(property "Reference" "#PWR09"
-			(at 200.66 153.67 0)
+			(at 203.2 163.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1198,7 +1377,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 200.66 151.13 0)
+			(at 203.2 161.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1207,7 +1386,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 200.66 147.32 0)
+			(at 203.2 157.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1216,7 +1395,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 200.66 147.32 0)
+			(at 203.2 157.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1225,7 +1404,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 200.66 147.32 0)
+			(at 203.2 157.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1246,74 +1425,8 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+3V3")
-		(at 203.2 74.93 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "a45c99ef-dedf-4403-b383-1691cc3bdecd")
-		(property "Reference" "#PWR05"
-			(at 203.2 78.74 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+3V3"
-			(at 203.2 69.85 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 203.2 74.93 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 203.2 74.93 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 203.2 74.93 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "13b58479-3956-4009-8058-d8f893c26d8e")
-		)
-		(instances
-			(project "wing-combo"
-				(path "/586efc0f-7de2-49a7-ac21-ecfef2f716d6/3f0e9b91-fe15-47d5-84d6-aa71b368b91e/72caadd5-963d-408a-b010-ddf83ca901da"
-					(reference "#PWR05")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:+5V")
-		(at 208.28 74.93 0)
+		(at 208.28 85.09 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -1321,7 +1434,7 @@
 		(dnp no)
 		(uuid "db275c0d-87eb-4238-aaaf-b09f7285302d")
 		(property "Reference" "#PWR08"
-			(at 208.28 78.74 0)
+			(at 208.28 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1330,7 +1443,7 @@
 			)
 		)
 		(property "Value" "+5V"
-			(at 208.28 71.12 0)
+			(at 208.28 81.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1338,7 +1451,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 208.28 74.93 0)
+			(at 208.28 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1347,7 +1460,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 208.28 74.93 0)
+			(at 208.28 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1356,7 +1469,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 208.28 74.93 0)
+			(at 208.28 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1378,7 +1491,7 @@
 	)
 	(symbol
 		(lib_id "MCU_Module:Adafruit_Feather_Generic")
-		(at 200.66 110.49 0)
+		(at 203.2 120.65 0)
 		(unit 1)
 		(exclude_from_sim yes)
 		(in_bom no)
@@ -1387,7 +1500,7 @@
 		(fields_autoplaced yes)
 		(uuid "ec2a4002-fb18-4699-8393-22272f6e3753")
 		(property "Reference" "A1"
-			(at 202.8541 143.51 0)
+			(at 205.3941 153.67 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1396,7 +1509,7 @@
 			)
 		)
 		(property "Value" "Adafruit_Feather_Generic"
-			(at 202.8541 146.05 0)
+			(at 205.3941 156.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1405,7 +1518,7 @@
 			)
 		)
 		(property "Footprint" "Module:Adafruit_Feather"
-			(at 203.2 144.78 0)
+			(at 205.74 154.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1415,7 +1528,7 @@
 			)
 		)
 		(property "Datasheet" "https://cdn-learn.adafruit.com/downloads/pdf/adafruit-feather.pdf"
-			(at 200.66 130.81 0)
+			(at 203.2 140.97 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1424,7 +1537,7 @@
 			)
 		)
 		(property "Description" "Microcontroller module in various flavor, generic symbol"
-			(at 200.66 110.49 0)
+			(at 203.2 120.65 0)
 			(effects
 				(font
 					(size 1.27 1.27)
