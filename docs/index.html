@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="refresh" content="5;url=interactive-bom/ibom.html">
+        <meta http-equiv="refresh" content="10;url=interactive-bom/ibom.html">
         <title>Redirecting...</title>
         <style>
             body {
@@ -24,7 +24,7 @@
                 border-radius: 10px;
                 box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
                 background-color: #1e1e1e;
-                max-width: 950px;
+                max-height: 90%;
             }
             button {
                 padding: 10px 20px;
@@ -34,7 +34,7 @@
                 color: white;
                 border: none;
                 border-radius: 5px;
-                margin-top: 20px;
+                /* margin-top: 20px; */
             }
             button:hover {
                 background-color: #0056b3;
@@ -48,36 +48,41 @@
                 display: flex;
                 flex-direction: column;
             }
-            .alternatives p, 
-            .alternatives ul {
-                margin: auto;
+            .alternatives p{
+                margin:auto;
             }
-            .alternatives li{
-                padding-top: 0.75rem;
+            .alternatives button{
+                font-size: 2.5rem;
+            }
+            .alternatives div{
+                display:flex; 
+                justify-content:center; 
+                gap:20px;
+            }
+            p{
+                margin-bottom: 0;
             }
             </style>
 </head>
 <body>
     <div class="container">
-        <img src="#" alt="circuit board design" width="100%">
+        <img src="img/offset-rt-both.png" alt="circuit board design" width="100%">
         <h2>We are redirecting you to an interactive bill of materials page.</h2>
         <div class="alternatives">
-            <p>
-                Perhaps you wanted to see these instead:
-                <ul>
-                    <li>Full schematic: <a href="#">something_here.pdf</a></li>
-                    <li>Go To the Wiki: <a href="https://github.com/Toolauth/wing-combo/wiki">wing-combo.wiki</a></li>
-                </ul>
-            </p>
+            <p>Perhaps you wanted to see these instead:</p>
+            <div>
+                <button onclick="window.location.href='#';">Full Schematic</button>
+                <button onclick="window.location.href='https://github.com/Toolauth/wing-combo/wiki';">Board Wiki</button>
+            </div>
         </div>
         <p>If the redirection does not happen automatically, please click the button below:</p>
-        <p class="countdown">Redirecting in <span id="timer">5</span> seconds...</p>
+        <p class="countdown">Redirecting in <span id="timer">10</span> seconds...</p>
         <button onclick="window.location.href='interactive-bom/ibom.html';">Go to Interactive Bill of Materials</button>
     </div>
     
     <script>
         // Countdown logic
-        let countdown = 5;
+        let countdown = 10;
         const timerElement = document.getElementById('timer');
         const interval = setInterval(function() {
             countdown--;
