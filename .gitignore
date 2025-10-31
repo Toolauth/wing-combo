@@ -23,6 +23,7 @@ fp-lib-table
 ~*.lck
 \#auto_saved_files#
 wing-combo-backups/*
+production/backups/*
 
 # Netlist files (exported from Eeschema)
 *.net
