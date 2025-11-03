@@ -1,0 +1,55 @@
+# .github/workflows/release.yml
+name: Create Release from Existing Files
+
+# This action triggers on a push event, but only for tags starting with 'v'
+on:
+  push:
+    tags:
+      - 'v*' # Matches v1.0, v1.0.1, v2.3, etc.
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+    
+    # These permissions are necessary for the action to create a release
+    permissions:
+      contents: write
+      
+    steps:
+      # 1. Check out the repository code at the specific tag
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      # 2. Zip the committed fabrication files
+      # This grabs your 'production' folder and the root PDF
+      - name: Zip Fabrication Files
+        run: |
+          zip -r "fab-files-${{ github.ref_name }}.zip" \
+          production \
+          wing-combo.pdf 
+          
+      # 3. Zip the source/project files for archiving
+      - name: Zip Source Files
+        run: |
+          zip -r "source-files-${{ github.ref_name }}.zip" \
+          wing-combo.kicad_pro \
+          *.kicad_sch \
+          wing-combo.kicad_pcb \
+          *.kicad_sym \
+          *.kicad_mod \
+          fp-lib-table \
+          sym-lib-table
+          
+      # 4. Create the formal GitHub Release
+      - name: Create GitHub Release
+        id: create_release
+        uses: softprops/action-gh-release@v2
+        with:
+          draft: false
+          prerelease: false
+          name: "Release ${{ github.ref_name }}"
+          # Get release notes from the tag's annotated message
+          body: "${{ github.event.head_commit.message }}"
+          files: |
+            fab-files-${{ github.ref_name }}.zip
+            source-files-${{ github.ref_name }}.zip
