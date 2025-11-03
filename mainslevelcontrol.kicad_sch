@@ -1,12 +1,12 @@
 (kicad_sch
-	(version 20231120)
+	(version 20250114)
 	(generator "eeschema")
-	(generator_version "8.0")
+	(generator_version "9.0")
 	(uuid "473ccc68-6a6a-489f-b5f1-15b19fc33a30")
 	(paper "USLetter")
 	(title_block
-		(date "2022-10-09")
-		(rev "3")
+		(date "2025-11-02")
+		(rev "1.4.3")
 		(company "Corey Rice & MakeHaven")
 	)
 	(lib_symbols)
@@ -110,6 +110,10 @@
 	(sheet
 		(at 213.36 120.65)
 		(size 17.78 13.97)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
@@ -148,6 +152,10 @@
 	(sheet
 		(at 33.02 120.65)
 		(size 17.78 13.97)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
@@ -186,6 +194,10 @@
 	(sheet
 		(at 121.92 120.65)
 		(size 17.78 13.97)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)

@@ -1,13 +1,13 @@
 (kicad_sch
-	(version 20231120)
+	(version 20250114)
 	(generator "eeschema")
-	(generator_version "8.0")
+	(generator_version "9.0")
 	(uuid "a7b17ecd-801d-45bc-91bb-dc2518feb6d9")
 	(paper "USLetter")
 	(title_block
 		(title "ADE7953 Current Sensor")
-		(date "2024-12-13")
-		(rev "3")
+		(date "2025-11-02")
+		(rev "1.4.3")
 		(company "Corey Rice & MakeHaven")
 		(comment 1 "ADE7953 implemented as in engineering development board")
 		(comment 2 "Pull-up resistors added to configure chip for I2C communication")
@@ -16,7 +16,9 @@
 	(lib_symbols
 		(symbol "Connector:Conn_01x02_Socket"
 			(pin_names
-				(offset 1.016) hide)
+				(offset 1.016)
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -90,10 +92,10 @@
 				)
 			)
 			(symbol "Conn_01x02_Socket_1_1"
-				(arc
-					(start 0 -2.032)
-					(mid -0.5058 -2.54)
-					(end 0 -3.048)
+				(polyline
+					(pts
+						(xy -1.27 0) (xy -0.508 0)
+					)
 					(stroke
 						(width 0.1524)
 						(type default)
@@ -114,10 +116,10 @@
 						(type none)
 					)
 				)
-				(polyline
-					(pts
-						(xy -1.27 0) (xy -0.508 0)
-					)
+				(arc
+					(start 0 -0.508)
+					(mid -0.5058 0)
+					(end 0 0.508)
 					(stroke
 						(width 0.1524)
 						(type default)
@@ -127,9 +129,9 @@
 					)
 				)
 				(arc
-					(start 0 0.508)
-					(mid -0.5058 0)
-					(end 0 -0.508)
+					(start 0 -3.048)
+					(mid -0.5058 -2.54)
+					(end 0 -2.032)
 					(stroke
 						(width 0.1524)
 						(type default)
@@ -175,6 +177,7 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "Connector_Audio:AudioJack3"
 			(exclude_from_sim no)
@@ -255,18 +258,6 @@
 				)
 				(polyline
 					(pts
-						(xy 0 -2.54) (xy 0.635 -3.175) (xy 1.27 -2.54) (xy 2.54 -2.54)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
 						(xy -1.905 -2.54) (xy -1.27 -3.175) (xy -0.635 -2.54) (xy -0.635 0) (xy 2.54 0)
 					)
 					(stroke
@@ -279,7 +270,7 @@
 				)
 				(polyline
 					(pts
-						(xy 2.54 2.54) (xy -2.54 2.54) (xy -2.54 -2.54) (xy -3.175 -3.175) (xy -3.81 -2.54)
+						(xy 0 -2.54) (xy 0.635 -3.175) (xy 1.27 -2.54) (xy 2.54 -2.54)
 					)
 					(stroke
 						(width 0.254)
@@ -300,26 +291,20 @@
 						(type background)
 					)
 				)
-			)
-			(symbol "AudioJack3_1_1"
-				(pin passive line
-					(at 5.08 0 180)
-					(length 2.54)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
+				(polyline
+					(pts
+						(xy 2.54 2.54) (xy -2.54 2.54) (xy -2.54 -2.54) (xy -3.175 -3.175) (xy -3.81 -2.54)
 					)
-					(number "R"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
 					)
 				)
+			)
+			(symbol "AudioJack3_1_1"
 				(pin passive line
 					(at 5.08 2.54 180)
 					(length 2.54)
@@ -331,6 +316,24 @@
 						)
 					)
 					(number "S"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 5.08 0 180)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "R"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -357,11 +360,16 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "Device:C_Polarized_Small_US"
-			(pin_numbers hide)
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
-				(offset 0.254) hide)
+				(offset 0.254)
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -466,9 +474,9 @@
 					)
 				)
 				(arc
-					(start 1.524 -0.762)
+					(start -1.524 -0.762)
 					(mid 0 -0.3734)
-					(end -1.524 -0.762)
+					(end 1.524 -0.762)
 					(stroke
 						(width 0.3048)
 						(type default)
@@ -516,11 +524,16 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "Device:C_Small"
-			(pin_numbers hide)
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
-				(offset 0.254) hide)
+				(offset 0.254)
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -590,10 +603,10 @@
 			(symbol "C_Small_0_1"
 				(polyline
 					(pts
-						(xy -1.524 -0.508) (xy 1.524 -0.508)
+						(xy -1.524 0.508) (xy 1.524 0.508)
 					)
 					(stroke
-						(width 0.3302)
+						(width 0.3048)
 						(type default)
 					)
 					(fill
@@ -602,10 +615,10 @@
 				)
 				(polyline
 					(pts
-						(xy -1.524 0.508) (xy 1.524 0.508)
+						(xy -1.524 -0.508) (xy 1.524 -0.508)
 					)
 					(stroke
-						(width 0.3048)
+						(width 0.3302)
 						(type default)
 					)
 					(fill
@@ -651,11 +664,16 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "Device:Crystal"
-			(pin_numbers hide)
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
-				(offset 1.016) hide)
+				(offset 1.016)
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -721,17 +739,6 @@
 				)
 			)
 			(symbol "Crystal_0_1"
-				(rectangle
-					(start -1.143 2.54)
-					(end 1.143 -2.54)
-					(stroke
-						(width 0.3048)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
 				(polyline
 					(pts
 						(xy -2.54 0) (xy -1.905 0)
@@ -750,6 +757,17 @@
 					)
 					(stroke
 						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.143 2.54)
+					(end 1.143 -2.54)
+					(stroke
+						(width 0.3048)
 						(type default)
 					)
 					(fill
@@ -819,11 +837,16 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "Device:R_Small_US"
-			(pin_numbers hide)
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
-				(offset 0.254) hide)
+				(offset 0.254)
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -893,7 +916,7 @@
 			(symbol "R_Small_US_1_1"
 				(polyline
 					(pts
-						(xy 0 0) (xy 1.016 -0.381) (xy 0 -0.762) (xy -1.016 -1.143) (xy 0 -1.524)
+						(xy 0 1.524) (xy 1.016 1.143) (xy 0 0.762) (xy -1.016 0.381) (xy 0 0)
 					)
 					(stroke
 						(width 0)
@@ -905,7 +928,7 @@
 				)
 				(polyline
 					(pts
-						(xy 0 1.524) (xy 1.016 1.143) (xy 0 0.762) (xy -1.016 0.381) (xy 0 0)
+						(xy 0 0) (xy 1.016 -0.381) (xy 0 -0.762) (xy -1.016 -1.143) (xy 0 -1.524)
 					)
 					(stroke
 						(width 0)
@@ -952,10 +975,13 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "Jumper:SolderJumper_2_Bridged"
 			(pin_names
-				(offset 0) hide)
+				(offset 0)
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -1032,30 +1058,6 @@
 						(type outline)
 					)
 				)
-				(arc
-					(start -0.254 1.016)
-					(mid -1.2655 0)
-					(end -0.254 -1.016)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start -0.254 1.016)
-					(mid -1.2655 0)
-					(end -0.254 -1.016)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
 				(polyline
 					(pts
 						(xy -0.254 1.016) (xy -0.254 -1.016)
@@ -1068,6 +1070,54 @@
 						(type none)
 					)
 				)
+				(arc
+					(start -0.254 -1.016)
+					(mid -1.2655 0)
+					(end -0.254 1.016)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start -0.254 -1.016)
+					(mid -1.2655 0)
+					(end -0.254 1.016)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(arc
+					(start 0.254 1.016)
+					(mid 1.2655 0)
+					(end 0.254 -1.016)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 0.254 1.016)
+					(mid 1.2655 0)
+					(end 0.254 -1.016)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
 				(polyline
 					(pts
 						(xy 0.254 1.016) (xy 0.254 -1.016)
@@ -1078,30 +1128,6 @@
 					)
 					(fill
 						(type none)
-					)
-				)
-				(arc
-					(start 0.254 -1.016)
-					(mid 1.2655 0)
-					(end 0.254 1.016)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start 0.254 -1.016)
-					(mid 1.2655 0)
-					(end 0.254 1.016)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
 					)
 				)
 			)
@@ -1143,10 +1169,13 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "Jumper:SolderJumper_2_Open"
 			(pin_names
-				(offset 0) hide)
+				(offset 0)
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -1212,30 +1241,6 @@
 				)
 			)
 			(symbol "SolderJumper_2_Open_0_1"
-				(arc
-					(start -0.254 1.016)
-					(mid -1.2655 0)
-					(end -0.254 -1.016)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start -0.254 1.016)
-					(mid -1.2655 0)
-					(end -0.254 -1.016)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
 				(polyline
 					(pts
 						(xy -0.254 1.016) (xy -0.254 -1.016)
@@ -1248,6 +1253,54 @@
 						(type none)
 					)
 				)
+				(arc
+					(start -0.254 -1.016)
+					(mid -1.2655 0)
+					(end -0.254 1.016)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start -0.254 -1.016)
+					(mid -1.2655 0)
+					(end -0.254 1.016)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(arc
+					(start 0.254 1.016)
+					(mid 1.2655 0)
+					(end 0.254 -1.016)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 0.254 1.016)
+					(mid 1.2655 0)
+					(end 0.254 -1.016)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
 				(polyline
 					(pts
 						(xy 0.254 1.016) (xy 0.254 -1.016)
@@ -1258,30 +1311,6 @@
 					)
 					(fill
 						(type none)
-					)
-				)
-				(arc
-					(start 0.254 -1.016)
-					(mid 1.2655 0)
-					(end 0.254 1.016)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start 0.254 -1.016)
-					(mid 1.2655 0)
-					(end 0.254 1.016)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
 					)
 				)
 			)
@@ -1323,10 +1352,13 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "Jumper:SolderJumper_3_Bridged12"
 			(pin_names
-				(offset 0) hide)
+				(offset 0)
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -1392,52 +1424,6 @@
 				)
 			)
 			(symbol "SolderJumper_3_Bridged12_0_1"
-				(rectangle
-					(start -1.016 0.508)
-					(end -0.508 -0.508)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(arc
-					(start -1.016 1.016)
-					(mid -2.0275 0)
-					(end -1.016 -1.016)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start -1.016 1.016)
-					(mid -2.0275 0)
-					(end -1.016 -1.016)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(rectangle
-					(start -0.508 1.016)
-					(end 0.508 -1.016)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
 				(polyline
 					(pts
 						(xy -2.54 0) (xy -2.032 0)
@@ -1462,6 +1448,52 @@
 						(type none)
 					)
 				)
+				(rectangle
+					(start -1.016 0.508)
+					(end -0.508 -0.508)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(arc
+					(start -1.016 -1.016)
+					(mid -2.0275 0)
+					(end -1.016 1.016)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start -1.016 -1.016)
+					(mid -2.0275 0)
+					(end -1.016 1.016)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(rectangle
+					(start -0.508 1.016)
+					(end 0.508 -1.016)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
 				(polyline
 					(pts
 						(xy 0 -1.27) (xy 0 -1.016)
@@ -1472,6 +1504,30 @@
 					)
 					(fill
 						(type none)
+					)
+				)
+				(arc
+					(start 1.016 1.016)
+					(mid 2.0275 0)
+					(end 1.016 -1.016)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 1.016 1.016)
+					(mid 2.0275 0)
+					(end 1.016 -1.016)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
 					)
 				)
 				(polyline
@@ -1496,30 +1552,6 @@
 					)
 					(fill
 						(type none)
-					)
-				)
-				(arc
-					(start 1.016 -1.016)
-					(mid 2.0275 0)
-					(end 1.016 1.016)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start 1.016 -1.016)
-					(mid 2.0275 0)
-					(end 1.016 1.016)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
 					)
 				)
 			)
@@ -1579,6 +1611,7 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "Sensor:ADE7953xCP"
 			(exclude_from_sim no)
@@ -1662,17 +1695,71 @@
 				)
 			)
 			(symbol "ADE7953xCP_1_1"
-				(pin output line
-					(at 12.7 20.32 180)
+				(pin input line
+					(at -12.7 20.32 0)
 					(length 2.54)
-					(name "ZX"
+					(name "~{RESET}"
 						(effects
 							(font
 								(size 1.27 1.27)
 							)
 						)
 					)
-					(number "1"
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -12.7 15.24 0)
+					(length 2.54)
+					(name "IAP"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -12.7 12.7 0)
+					(length 2.54)
+					(name "IAN"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -12.7 7.62 0)
+					(length 2.54)
+					(name "IBP"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "9"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1735,16 +1822,35 @@
 					)
 				)
 				(pin input line
-					(at 12.7 -12.7 180)
+					(at -12.7 -7.62 0)
 					(length 2.54)
-					(name "REF"
+					(hide yes)
+					(name "PULL_HIGH"
 						(effects
 							(font
 								(size 1.27 1.27)
 							)
 						)
 					)
-					(number "13"
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -12.7 -7.62 0)
+					(length 2.54)
+					(name "PULL_HIGH"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1770,17 +1876,53 @@
 						)
 					)
 				)
-				(pin power_out line
-					(at 2.54 25.4 270)
+				(pin power_in line
+					(at -2.54 25.4 270)
 					(length 2.54)
-					(name "VINTA"
+					(name "VDD"
 						(effects
 							(font
 								(size 1.27 1.27)
 							)
 						)
 					)
-					(number "15"
+					(number "17"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
+					(at -2.54 -25.4 90)
+					(length 2.54)
+					(name "DGND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_out line
+					(at 0 25.4 270)
+					(length 2.54)
+					(name "VINTD"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1806,17 +1948,17 @@
 						)
 					)
 				)
-				(pin power_in line
-					(at -2.54 25.4 270)
+				(pin power_out line
+					(at 2.54 25.4 270)
 					(length 2.54)
-					(name "VDD"
+					(name "VINTA"
 						(effects
 							(font
 								(size 1.27 1.27)
 							)
 						)
 					)
-					(number "17"
+					(number "15"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1824,17 +1966,17 @@
 						)
 					)
 				)
-				(pin input line
-					(at 12.7 -20.32 180)
+				(pin passive line
+					(at 2.54 -25.4 90)
 					(length 2.54)
-					(name "CLKIN"
+					(name "EP"
 						(effects
 							(font
 								(size 1.27 1.27)
 							)
 						)
 					)
-					(number "18"
+					(number "29"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1843,34 +1985,16 @@
 					)
 				)
 				(pin output line
-					(at 12.7 -17.78 180)
+					(at 12.7 20.32 180)
 					(length 2.54)
-					(name "CLKOUT"
+					(name "ZX"
 						(effects
 							(font
 								(size 1.27 1.27)
 							)
 						)
 					)
-					(number "19"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at -12.7 20.32 0)
-					(length 2.54)
-					(name "~{RESET}"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
+					(number "1"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1914,17 +2038,71 @@
 						)
 					)
 				)
-				(pin open_collector line
-					(at 12.7 -10.16 180)
+				(pin input line
+					(at 12.7 10.16 180)
 					(length 2.54)
-					(name "~{IRQ}"
+					(name "~{CS}"
 						(effects
 							(font
 								(size 1.27 1.27)
 							)
 						)
 					)
-					(number "22"
+					(number "28"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 12.7 7.62 180)
+					(length 2.54)
+					(name "MOSI/SCL/RX"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "27"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin bidirectional line
+					(at 12.7 5.08 180)
+					(length 2.54)
+					(name "MISO/SDA/TX"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "26"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 12.7 2.54 180)
+					(length 2.54)
+					(name "SCLK"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "25"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1968,35 +2146,17 @@
 						)
 					)
 				)
-				(pin input line
-					(at 12.7 2.54 180)
+				(pin open_collector line
+					(at 12.7 -10.16 180)
 					(length 2.54)
-					(name "SCLK"
+					(name "~{IRQ}"
 						(effects
 							(font
 								(size 1.27 1.27)
 							)
 						)
 					)
-					(number "25"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
-					(at 12.7 5.08 180)
-					(length 2.54)
-					(name "MISO/SDA/TX"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "26"
+					(number "22"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -2005,16 +2165,34 @@
 					)
 				)
 				(pin input line
-					(at 12.7 7.62 180)
+					(at 12.7 -12.7 180)
 					(length 2.54)
-					(name "MOSI/SCL/RX"
+					(name "REF"
 						(effects
 							(font
 								(size 1.27 1.27)
 							)
 						)
 					)
-					(number "27"
+					(number "13"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output line
+					(at 12.7 -17.78 180)
+					(length 2.54)
+					(name "CLKOUT"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "19"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -2023,160 +2201,16 @@
 					)
 				)
 				(pin input line
-					(at 12.7 10.16 180)
+					(at 12.7 -20.32 180)
 					(length 2.54)
-					(name "~{CS}"
+					(name "CLKIN"
 						(effects
 							(font
 								(size 1.27 1.27)
 							)
 						)
 					)
-					(number "28"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 2.54 -25.4 90)
-					(length 2.54)
-					(name "EP"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "29"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_out line
-					(at 0 25.4 270)
-					(length 2.54)
-					(name "VINTD"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at -2.54 -25.4 90)
-					(length 2.54)
-					(name "DGND"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at -12.7 15.24 0)
-					(length 2.54)
-					(name "IAP"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "5"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at -12.7 12.7 0)
-					(length 2.54)
-					(name "IAN"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "6"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at -12.7 -7.62 0)
-					(length 2.54) hide
-					(name "PULL_HIGH"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "7"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at -12.7 -7.62 0)
-					(length 2.54)
-					(name "PULL_HIGH"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "8"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at -12.7 7.62 0)
-					(length 2.54)
-					(name "IBP"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "9"
+					(number "18"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -2185,12 +2219,17 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "power:+3.3V"
 			(power)
-			(pin_numbers hide)
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
-				(offset 0) hide)
+				(offset 0)
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -2262,7 +2301,7 @@
 				)
 				(polyline
 					(pts
-						(xy 0 0) (xy 0 2.54)
+						(xy 0 2.54) (xy 0.762 1.27)
 					)
 					(stroke
 						(width 0)
@@ -2274,7 +2313,7 @@
 				)
 				(polyline
 					(pts
-						(xy 0 2.54) (xy 0.762 1.27)
+						(xy 0 0) (xy 0 2.54)
 					)
 					(stroke
 						(width 0)
@@ -2305,12 +2344,17 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "power:GND"
 			(power)
-			(pin_numbers hide)
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
-				(offset 0) hide)
+				(offset 0)
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -2401,7 +2445,197 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
+	)
+	(rectangle
+		(start 81.788 87.122)
+		(end 131.318 130.302)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid ea80c75e-8be2-4ca0-8d6b-c47c1e3d4344)
+	)
+	(text "If the ADE7953 (this page) is not working for \nyou, try new I2C resistors. Or fully bail on \nthe ADE7953 and use an \"AC current sensing \nrelay\" on our 'backup plan' bin-cur \nconnector. [sometimes we do, no shame]\n  - Previous page in schematic\n  - We really like the M3050 for this job"
+		(exclude_from_sim no)
+		(at 83.312 100.584 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "0fa69701-7929-4ae7-8ca8-688eb98e6640")
+	)
+	(text "CT Clamp Connectors: 3.5mm Audio & two-pin backup"
+		(exclude_from_sim no)
+		(at 33.02 55.88 0)
+		(effects
+			(font
+				(size 2 2)
+				(thickness 0.4)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "1110766c-77c1-4e57-97fa-e73ee864e94d")
+	)
+	(text "- a WCS1800 on board, configured for AC"
+		(exclude_from_sim no)
+		(at 85.852 126.492 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "2c82e0bd-6e70-4cab-884d-b0986eed7bba")
+	)
+	(text "- the TI ADS1115 over I2C"
+		(exclude_from_sim no)
+		(at 85.852 120.396 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+			(href "https://www.ti.com/product/ADS1115")
+		)
+		(uuid "33709109-aafa-47f3-9dd8-35d12fdc5b23")
+	)
+	(text "- on-board shunt resistor options"
+		(exclude_from_sim no)
+		(at 85.852 123.444 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "37b1797a-40f3-4b30-ac92-e1f0d4d2407c")
+	)
+	(text "Measuring AC Current is hard."
+		(exclude_from_sim no)
+		(at 106.68 90.17 0)
+		(effects
+			(font
+				(size 1.905 1.905)
+				(thickness 0.381)
+				(bold yes)
+			)
+		)
+		(uuid "718de88b-5359-4929-a0b4-9ccd49f0d93f")
+	)
+	(text "(like this)"
+		(exclude_from_sim no)
+		(at 117.856 120.396 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(href "https://a.co/d/iXRwzz9")
+		)
+		(uuid "7dbdf4d7-aea1-4f71-91eb-1608146b426f")
+	)
+	(text "Voltage Sensor Filtering"
+		(exclude_from_sim no)
+		(at 99.06 139.7 0)
+		(effects
+			(font
+				(size 2 2)
+				(thickness 0.4)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "83815778-6153-46e7-885e-eb03436c2b87")
+	)
+	(text "https://www.analog.com/media/en/technical-documentation/data-sheets/ADE7953.pdf\n"
+		(exclude_from_sim no)
+		(at 20.32 35.56 0)
+		(effects
+			(font
+				(size 2.5 2.5)
+			)
+			(justify left bottom)
+			(href "https://www.analog.com/media/en/technical-documentation/data-sheets/ADE7953.pdf")
+		)
+		(uuid "965dea60-8399-4cd6-8c4b-d0a244da1f3b")
+	)
+	(text "ADE7953 Current Sensor\n"
+		(exclude_from_sim no)
+		(at 20.32 30.48 0)
+		(effects
+			(font
+				(size 10 10)
+				(thickness 2)
+				(bold yes)
+				(italic yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "a278df89-9957-43c2-95f5-5f162206e70c")
+	)
+	(text "This current sensor was selected because it was known \nto work with the ESP32 and ESPHome (the main platforms \nof this project at large). It took several test-boards \nto get to a useful integration, yet much of this still\njust follows the documentation linked above. There are \njumpers that can be soldered over, if the circuit needs\nany kind of fine tuning from your own observations."
+		(exclude_from_sim no)
+		(at 157.48 68.326 0)
+		(effects
+			(font
+				(size 2.25 2.25)
+			)
+			(justify left bottom)
+		)
+		(uuid "bd474531-a7de-4b23-8f63-2e0a6061fd2c")
+	)
+	(text "<-- This allows you to solder in a CT clamp instead of using the 3.5mm jacks.\nWhile this can let you shorten the lines, it also can be a trap. NOT advised."
+		(exclude_from_sim no)
+		(at 53.34 80.518 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "ceb629c1-f32a-4a82-98c5-59f451ca2bb5")
+	)
+	(text "Current Sensors Filtering"
+		(exclude_from_sim no)
+		(at 30.734 101.6 0)
+		(effects
+			(font
+				(size 2 2)
+				(thickness 0.4)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "e6b0b086-2c1a-4f08-98ca-56a12417ecdd")
+	)
+	(text "This and another jumper allow the \nboard to be configured as either \nreading the Primary and Secondary \nE-Stop separately, or allowing for \na software controlled reset of the \nADE7953 chip from the ESP32 board."
+		(exclude_from_sim no)
+		(at 137.16 118.11 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "ee5ab57e-cf00-4583-be6e-5db8151504d2")
+	)
+	(text "In the future, we may get a more elegant \nsolution to monitor the electric current \ndrawn by the tool. There are several possible\nfuture options to explore: "
+		(exclude_from_sim no)
+		(at 83.566 114.554 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "fa5943a6-f8de-4e70-a1f9-eced80cf1191")
 	)
 	(junction
 		(at 217.17 147.32)
@@ -3874,195 +4108,6 @@
 			(type default)
 		)
 		(uuid "fa5b0b50-d9e7-490d-bbfd-bfe9e62f82ec")
-	)
-	(rectangle
-		(start 81.788 87.122)
-		(end 131.318 130.302)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(fill
-			(type none)
-		)
-		(uuid ea80c75e-8be2-4ca0-8d6b-c47c1e3d4344)
-	)
-	(text "If the ADE7953 (this page) is not working for \nyou, try new I2C resistors. Or fully bail on \nthe ADE7953 and use an \"AC current sensing \nrelay\" on our 'backup plan' bin-cur \nconnector. [sometimes we do, no shame]\n  - Previous page in schematic\n  - We really like the M3050 for this job"
-		(exclude_from_sim no)
-		(at 83.312 100.584 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "0fa69701-7929-4ae7-8ca8-688eb98e6640")
-	)
-	(text "CT Clamp Connectors: 3.5mm Audio & two-pin backup"
-		(exclude_from_sim no)
-		(at 33.02 55.88 0)
-		(effects
-			(font
-				(size 2 2)
-				(thickness 0.4)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-		(uuid "1110766c-77c1-4e57-97fa-e73ee864e94d")
-	)
-	(text "- a WCS1800 on board, configured for AC"
-		(exclude_from_sim no)
-		(at 85.852 126.492 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "2c82e0bd-6e70-4cab-884d-b0986eed7bba")
-	)
-	(text "- the TI ADS1115 over I2C"
-		(exclude_from_sim no)
-		(at 85.852 120.396 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-			(href "https://www.ti.com/product/ADS1115")
-		)
-		(uuid "33709109-aafa-47f3-9dd8-35d12fdc5b23")
-	)
-	(text "- on-board shunt resistor options"
-		(exclude_from_sim no)
-		(at 85.852 123.444 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "37b1797a-40f3-4b30-ac92-e1f0d4d2407c")
-	)
-	(text "Measuring AC Current is hard."
-		(exclude_from_sim no)
-		(at 106.68 90.17 0)
-		(effects
-			(font
-				(size 1.905 1.905)
-				(thickness 0.381)
-				(bold yes)
-			)
-		)
-		(uuid "718de88b-5359-4929-a0b4-9ccd49f0d93f")
-	)
-	(text "(like this)"
-		(exclude_from_sim no)
-		(at 117.856 120.396 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(href "https://a.co/d/iXRwzz9")
-		)
-		(uuid "7dbdf4d7-aea1-4f71-91eb-1608146b426f")
-	)
-	(text "Voltage Sensor Filtering"
-		(exclude_from_sim no)
-		(at 99.06 139.7 0)
-		(effects
-			(font
-				(size 2 2)
-				(thickness 0.4)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-		(uuid "83815778-6153-46e7-885e-eb03436c2b87")
-	)
-	(text "https://www.analog.com/media/en/technical-documentation/data-sheets/ADE7953.pdf\n"
-		(exclude_from_sim no)
-		(at 20.32 35.56 0)
-		(effects
-			(font
-				(size 2.5 2.5)
-			)
-			(justify left bottom)
-			(href "https://www.analog.com/media/en/technical-documentation/data-sheets/ADE7953.pdf")
-		)
-		(uuid "965dea60-8399-4cd6-8c4b-d0a244da1f3b")
-	)
-	(text "ADE7953 Current Sensor\n"
-		(exclude_from_sim no)
-		(at 20.32 30.48 0)
-		(effects
-			(font
-				(size 10 10)
-				(thickness 2)
-				(bold yes)
-				(italic yes)
-			)
-			(justify left bottom)
-		)
-		(uuid "a278df89-9957-43c2-95f5-5f162206e70c")
-	)
-	(text "This current sensor was selected because it was known \nto work with the ESP32 and ESPHome (the main platforms \nof this project at large). It took several test-boards \nto get to a useful integration, yet much of this still\njust follows the documentation linked above. There are \njumpers that can be soldered over, if the circuit needs\nany kind of fine tuning from your own observations."
-		(exclude_from_sim no)
-		(at 157.48 68.326 0)
-		(effects
-			(font
-				(size 2.25 2.25)
-			)
-			(justify left bottom)
-		)
-		(uuid "bd474531-a7de-4b23-8f63-2e0a6061fd2c")
-	)
-	(text "<-- This allows you to solder in a CT clamp instead of using the 3.5mm jacks.\nWhile this can let you shorten the lines, it also can be a trap. NOT advised."
-		(exclude_from_sim no)
-		(at 53.34 80.518 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "ceb629c1-f32a-4a82-98c5-59f451ca2bb5")
-	)
-	(text "Current Sensors Filtering"
-		(exclude_from_sim no)
-		(at 30.734 101.6 0)
-		(effects
-			(font
-				(size 2 2)
-				(thickness 0.4)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-		(uuid "e6b0b086-2c1a-4f08-98ca-56a12417ecdd")
-	)
-	(text "This and another jumper allow the \nboard to be configured as either \nreading the Primary and Secondary \nE-Stop separately, or allowing for \na software controlled reset of the \nADE7953 chip from the ESP32 board."
-		(exclude_from_sim no)
-		(at 137.16 118.11 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "ee5ab57e-cf00-4583-be6e-5db8151504d2")
-	)
-	(text "In the future, we may get a more elegant \nsolution to monitor the electric current \ndrawn by the tool. There are several possible\nfuture options to explore: "
-		(exclude_from_sim no)
-		(at 83.566 114.554 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "fa5943a6-f8de-4e70-a1f9-eced80cf1191")
 	)
 	(global_label "REVP"
 		(shape input)

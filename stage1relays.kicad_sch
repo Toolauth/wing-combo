@@ -1,12 +1,12 @@
 (kicad_sch
-	(version 20231120)
+	(version 20250114)
 	(generator "eeschema")
-	(generator_version "8.0")
+	(generator_version "9.0")
 	(uuid "e2c3ff12-a64f-4bc5-8b20-86448f51ac51")
 	(paper "USLetter")
 	(title_block
-		(date "2025-02-24")
-		(rev "4")
+		(date "2025-11-02")
+		(rev "1.4.3")
 		(company "Corey Rice & MakeHaven")
 		(comment 1 "Twin Stage 1 relays 'set' and 'reset' the Stage 2 latching relay")
 		(comment 2 "Boolean Logic so Bypass Key can cause predictable behavior, blocking all else.")
@@ -92,9 +92,9 @@
 			)
 			(symbol "74HC02_1_1"
 				(arc
-					(start -3.81 -3.81)
+					(start -3.81 3.81)
 					(mid -2.589 0)
-					(end -3.81 3.81)
+					(end -3.81 -3.81)
 					(stroke
 						(width 0.254)
 						(type default)
@@ -103,10 +103,10 @@
 						(type none)
 					)
 				)
-				(arc
-					(start -0.6096 -3.81)
-					(mid 2.1842 -2.5851)
-					(end 3.81 0)
+				(polyline
+					(pts
+						(xy -3.81 3.81) (xy -0.635 3.81)
+					)
 					(stroke
 						(width 0.254)
 						(type default)
@@ -127,10 +127,22 @@
 						(type background)
 					)
 				)
-				(polyline
-					(pts
-						(xy -3.81 3.81) (xy -0.635 3.81)
+				(arc
+					(start 3.81 0)
+					(mid 2.1855 -2.584)
+					(end -0.6096 -3.81)
+					(stroke
+						(width 0.254)
+						(type default)
 					)
+					(fill
+						(type background)
+					)
+				)
+				(arc
+					(start -0.6096 3.81)
+					(mid 2.1928 2.5924)
+					(end 3.81 0)
 					(stroke
 						(width 0.254)
 						(type default)
@@ -151,36 +163,6 @@
 					)
 					(fill
 						(type background)
-					)
-				)
-				(arc
-					(start 3.81 0)
-					(mid 2.1915 2.5936)
-					(end -0.6096 3.81)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-				(pin output inverted
-					(at 7.62 0 180)
-					(length 3.81)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
 					)
 				)
 				(pin input line
@@ -212,6 +194,24 @@
 						)
 					)
 					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output inverted
+					(at 7.62 0 180)
+					(length 3.81)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -222,9 +222,9 @@
 			)
 			(symbol "74HC02_1_2"
 				(arc
-					(start 0 -3.81)
+					(start 0 3.81)
 					(mid 3.7934 0)
-					(end 0 3.81)
+					(end 0 -3.81)
 					(stroke
 						(width 0.254)
 						(type default)
@@ -243,24 +243,6 @@
 					)
 					(fill
 						(type background)
-					)
-				)
-				(pin output line
-					(at 7.62 0 180)
-					(length 3.81)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
 					)
 				)
 				(pin input inverted
@@ -299,12 +281,30 @@
 						)
 					)
 				)
+				(pin output line
+					(at 7.62 0 180)
+					(length 3.81)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
 			)
 			(symbol "74HC02_2_1"
 				(arc
-					(start -3.81 -3.81)
+					(start -3.81 3.81)
 					(mid -2.589 0)
-					(end -3.81 3.81)
+					(end -3.81 -3.81)
 					(stroke
 						(width 0.254)
 						(type default)
@@ -313,10 +313,10 @@
 						(type none)
 					)
 				)
-				(arc
-					(start -0.6096 -3.81)
-					(mid 2.1842 -2.5851)
-					(end 3.81 0)
+				(polyline
+					(pts
+						(xy -3.81 3.81) (xy -0.635 3.81)
+					)
 					(stroke
 						(width 0.254)
 						(type default)
@@ -337,10 +337,22 @@
 						(type background)
 					)
 				)
-				(polyline
-					(pts
-						(xy -3.81 3.81) (xy -0.635 3.81)
+				(arc
+					(start 3.81 0)
+					(mid 2.1855 -2.584)
+					(end -0.6096 -3.81)
+					(stroke
+						(width 0.254)
+						(type default)
 					)
+					(fill
+						(type background)
+					)
+				)
+				(arc
+					(start -0.6096 3.81)
+					(mid 2.1928 2.5924)
+					(end 3.81 0)
 					(stroke
 						(width 0.254)
 						(type default)
@@ -361,36 +373,6 @@
 					)
 					(fill
 						(type background)
-					)
-				)
-				(arc
-					(start 3.81 0)
-					(mid 2.1915 2.5936)
-					(end -0.6096 3.81)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-				(pin output inverted
-					(at 7.62 0 180)
-					(length 3.81)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
 					)
 				)
 				(pin input line
@@ -422,6 +404,24 @@
 						)
 					)
 					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin output inverted
+					(at 7.62 0 180)
+					(length 3.81)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -432,9 +432,9 @@
 			)
 			(symbol "74HC02_2_2"
 				(arc
-					(start 0 -3.81)
+					(start 0 3.81)
 					(mid 3.7934 0)
-					(end 0 3.81)
+					(end 0 -3.81)
 					(stroke
 						(width 0.254)
 						(type default)
@@ -453,24 +453,6 @@
 					)
 					(fill
 						(type background)
-					)
-				)
-				(pin output line
-					(at 7.62 0 180)
-					(length 3.81)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
 					)
 				)
 				(pin input inverted
@@ -509,12 +491,30 @@
 						)
 					)
 				)
+				(pin output line
+					(at 7.62 0 180)
+					(length 3.81)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
 			)
 			(symbol "74HC02_3_1"
 				(arc
-					(start -3.81 -3.81)
+					(start -3.81 3.81)
 					(mid -2.589 0)
-					(end -3.81 3.81)
+					(end -3.81 -3.81)
 					(stroke
 						(width 0.254)
 						(type default)
@@ -523,10 +523,10 @@
 						(type none)
 					)
 				)
-				(arc
-					(start -0.6096 -3.81)
-					(mid 2.1842 -2.5851)
-					(end 3.81 0)
+				(polyline
+					(pts
+						(xy -3.81 3.81) (xy -0.635 3.81)
+					)
 					(stroke
 						(width 0.254)
 						(type default)
@@ -547,10 +547,22 @@
 						(type background)
 					)
 				)
-				(polyline
-					(pts
-						(xy -3.81 3.81) (xy -0.635 3.81)
+				(arc
+					(start 3.81 0)
+					(mid 2.1855 -2.584)
+					(end -0.6096 -3.81)
+					(stroke
+						(width 0.254)
+						(type default)
 					)
+					(fill
+						(type background)
+					)
+				)
+				(arc
+					(start -0.6096 3.81)
+					(mid 2.1928 2.5924)
+					(end 3.81 0)
 					(stroke
 						(width 0.254)
 						(type default)
@@ -573,16 +585,40 @@
 						(type background)
 					)
 				)
-				(arc
-					(start 3.81 0)
-					(mid 2.1915 2.5936)
-					(end -0.6096 3.81)
-					(stroke
-						(width 0.254)
-						(type default)
+				(pin input line
+					(at -7.62 2.54 0)
+					(length 4.318)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
 					)
-					(fill
-						(type background)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -7.62 -2.54 0)
+					(length 4.318)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "9"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
 					)
 				)
 				(pin output inverted
@@ -603,48 +639,12 @@
 						)
 					)
 				)
-				(pin input line
-					(at -7.62 2.54 0)
-					(length 4.318)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "8"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at -7.62 -2.54 0)
-					(length 4.318)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "9"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
 			)
 			(symbol "74HC02_3_2"
 				(arc
-					(start 0 -3.81)
+					(start 0 3.81)
 					(mid 3.7934 0)
-					(end 0 3.81)
+					(end 0 -3.81)
 					(stroke
 						(width 0.254)
 						(type default)
@@ -665,24 +665,6 @@
 						(type background)
 					)
 				)
-				(pin output line
-					(at 7.62 0 180)
-					(length 3.81)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "10"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
 				(pin input inverted
 					(at -7.62 2.54 0)
 					(length 3.81)
@@ -719,12 +701,30 @@
 						)
 					)
 				)
+				(pin output line
+					(at 7.62 0 180)
+					(length 3.81)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "10"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
 			)
 			(symbol "74HC02_4_1"
 				(arc
-					(start -3.81 -3.81)
+					(start -3.81 3.81)
 					(mid -2.589 0)
-					(end -3.81 3.81)
+					(end -3.81 -3.81)
 					(stroke
 						(width 0.254)
 						(type default)
@@ -733,10 +733,10 @@
 						(type none)
 					)
 				)
-				(arc
-					(start -0.6096 -3.81)
-					(mid 2.1842 -2.5851)
-					(end 3.81 0)
+				(polyline
+					(pts
+						(xy -3.81 3.81) (xy -0.635 3.81)
+					)
 					(stroke
 						(width 0.254)
 						(type default)
@@ -757,10 +757,22 @@
 						(type background)
 					)
 				)
-				(polyline
-					(pts
-						(xy -3.81 3.81) (xy -0.635 3.81)
+				(arc
+					(start 3.81 0)
+					(mid 2.1855 -2.584)
+					(end -0.6096 -3.81)
+					(stroke
+						(width 0.254)
+						(type default)
 					)
+					(fill
+						(type background)
+					)
+				)
+				(arc
+					(start -0.6096 3.81)
+					(mid 2.1928 2.5924)
+					(end 3.81 0)
 					(stroke
 						(width 0.254)
 						(type default)
@@ -777,18 +789,6 @@
 					)
 					(stroke
 						(width -25.4)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-				(arc
-					(start 3.81 0)
-					(mid 2.1915 2.5936)
-					(end -0.6096 3.81)
-					(stroke
-						(width 0.254)
 						(type default)
 					)
 					(fill
@@ -852,9 +852,9 @@
 			)
 			(symbol "74HC02_4_2"
 				(arc
-					(start 0 -3.81)
+					(start 0 3.81)
 					(mid 3.7934 0)
-					(end 0 3.81)
+					(end 0 -3.81)
 					(stroke
 						(width 0.254)
 						(type default)
@@ -981,6 +981,7 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "CFM06S050-E-Cincon:CFM06S050-E"
 			(pin_names
@@ -1127,24 +1128,6 @@
 			)
 			(symbol "CFM06S050-E_0_0"
 				(pin passive line
-					(at 0 -2.54 0)
-					(length 5.08)
-					(name "ACN"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
 					(at 0 0 0)
 					(length 5.08)
 					(name "ACL"
@@ -1155,6 +1138,24 @@
 						)
 					)
 					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -2.54 0)
+					(length 5.08)
+					(name "ACN"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1213,10 +1214,13 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "Connector:Conn_01x02_Socket"
 			(pin_names
-				(offset 1.016) hide)
+				(offset 1.016)
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -1290,10 +1294,10 @@
 				)
 			)
 			(symbol "Conn_01x02_Socket_1_1"
-				(arc
-					(start 0 -2.032)
-					(mid -0.5058 -2.54)
-					(end 0 -3.048)
+				(polyline
+					(pts
+						(xy -1.27 0) (xy -0.508 0)
+					)
 					(stroke
 						(width 0.1524)
 						(type default)
@@ -1314,10 +1318,10 @@
 						(type none)
 					)
 				)
-				(polyline
-					(pts
-						(xy -1.27 0) (xy -0.508 0)
-					)
+				(arc
+					(start 0 -0.508)
+					(mid -0.5058 0)
+					(end 0 0.508)
 					(stroke
 						(width 0.1524)
 						(type default)
@@ -1327,9 +1331,9 @@
 					)
 				)
 				(arc
-					(start 0 0.508)
-					(mid -0.5058 0)
-					(end 0 -0.508)
+					(start 0 -3.048)
+					(mid -0.5058 -2.54)
+					(end 0 -2.032)
 					(stroke
 						(width 0.1524)
 						(type default)
@@ -1375,11 +1379,16 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "Device:LED"
-			(pin_numbers hide)
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
-				(offset 1.016) hide)
+				(offset 1.016)
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -1447,10 +1456,22 @@
 			(symbol "LED_0_1"
 				(polyline
 					(pts
-						(xy -1.27 -1.27) (xy -1.27 1.27)
+						(xy -3.048 -0.762) (xy -4.572 -2.286) (xy -3.81 -2.286) (xy -4.572 -2.286) (xy -4.572 -1.524)
 					)
 					(stroke
-						(width 0.254)
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.778 -0.762) (xy -3.302 -2.286) (xy -2.54 -2.286) (xy -3.302 -2.286) (xy -3.302 -1.524)
+					)
+					(stroke
+						(width 0)
 						(type default)
 					)
 					(fill
@@ -1471,7 +1492,7 @@
 				)
 				(polyline
 					(pts
-						(xy 1.27 -1.27) (xy 1.27 1.27) (xy -1.27 0) (xy 1.27 -1.27)
+						(xy -1.27 -1.27) (xy -1.27 1.27)
 					)
 					(stroke
 						(width 0.254)
@@ -1483,22 +1504,10 @@
 				)
 				(polyline
 					(pts
-						(xy -3.048 -0.762) (xy -4.572 -2.286) (xy -3.81 -2.286) (xy -4.572 -2.286) (xy -4.572 -1.524)
+						(xy 1.27 -1.27) (xy 1.27 1.27) (xy -1.27 0) (xy 1.27 -1.27)
 					)
 					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.778 -0.762) (xy -3.302 -2.286) (xy -2.54 -2.286) (xy -3.302 -2.286) (xy -3.302 -1.524)
-					)
-					(stroke
-						(width 0)
+						(width 0.254)
 						(type default)
 					)
 					(fill
@@ -1544,11 +1553,16 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "Device:R_Small_US"
-			(pin_numbers hide)
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
-				(offset 0.254) hide)
+				(offset 0.254)
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -1618,7 +1632,7 @@
 			(symbol "R_Small_US_1_1"
 				(polyline
 					(pts
-						(xy 0 0) (xy 1.016 -0.381) (xy 0 -0.762) (xy -1.016 -1.143) (xy 0 -1.524)
+						(xy 0 1.524) (xy 1.016 1.143) (xy 0 0.762) (xy -1.016 0.381) (xy 0 0)
 					)
 					(stroke
 						(width 0)
@@ -1630,7 +1644,7 @@
 				)
 				(polyline
 					(pts
-						(xy 0 1.524) (xy 1.016 1.143) (xy 0 0.762) (xy -1.016 0.381) (xy 0 0)
+						(xy 0 0) (xy 1.016 -0.381) (xy 0 -0.762) (xy -1.016 -1.143) (xy 0 -1.524)
 					)
 					(stroke
 						(width 0)
@@ -1677,9 +1691,12 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "Device:R_US"
-			(pin_numbers hide)
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
 				(offset 0)
 			)
@@ -1750,18 +1767,6 @@
 			(symbol "R_US_0_1"
 				(polyline
 					(pts
-						(xy 0 -2.286) (xy 0 -2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
 						(xy 0 2.286) (xy 0 2.54)
 					)
 					(stroke
@@ -1774,7 +1779,7 @@
 				)
 				(polyline
 					(pts
-						(xy 0 -0.762) (xy 1.016 -1.143) (xy 0 -1.524) (xy -1.016 -1.905) (xy 0 -2.286)
+						(xy 0 2.286) (xy 1.016 1.905) (xy 0 1.524) (xy -1.016 1.143) (xy 0 0.762)
 					)
 					(stroke
 						(width 0)
@@ -1798,7 +1803,19 @@
 				)
 				(polyline
 					(pts
-						(xy 0 2.286) (xy 1.016 1.905) (xy 0 1.524) (xy -1.016 1.143) (xy 0 0.762)
+						(xy 0 -0.762) (xy 1.016 -1.143) (xy 0 -1.524) (xy -1.016 -1.905) (xy 0 -2.286)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -2.286) (xy 0 -2.54)
 					)
 					(stroke
 						(width 0)
@@ -1847,11 +1864,16 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "Diode:SS14"
-			(pin_numbers hide)
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
-				(offset 1.016) hide)
+				(offset 1.016)
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -1919,10 +1941,10 @@
 			(symbol "SS14_0_1"
 				(polyline
 					(pts
-						(xy 1.27 0) (xy -1.27 0)
+						(xy -1.905 0.635) (xy -1.905 1.27) (xy -1.27 1.27) (xy -1.27 -1.27) (xy -0.635 -1.27) (xy -0.635 -0.635)
 					)
 					(stroke
-						(width 0)
+						(width 0.254)
 						(type default)
 					)
 					(fill
@@ -1943,10 +1965,10 @@
 				)
 				(polyline
 					(pts
-						(xy -1.905 0.635) (xy -1.905 1.27) (xy -1.27 1.27) (xy -1.27 -1.27) (xy -0.635 -1.27) (xy -0.635 -0.635)
+						(xy 1.27 0) (xy -1.27 0)
 					)
 					(stroke
-						(width 0.254)
+						(width 0)
 						(type default)
 					)
 					(fill
@@ -1992,6 +2014,7 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "Relay:SANYOU_SRD_Form_C"
 			(exclude_from_sim no)
@@ -2112,7 +2135,7 @@
 				)
 				(polyline
 					(pts
-						(xy -5.08 -5.08) (xy -5.08 -1.905)
+						(xy -5.08 5.08) (xy -5.08 1.905)
 					)
 					(stroke
 						(width 0)
@@ -2124,7 +2147,7 @@
 				)
 				(polyline
 					(pts
-						(xy -5.08 5.08) (xy -5.08 1.905)
+						(xy -5.08 -5.08) (xy -5.08 -1.905)
 					)
 					(stroke
 						(width 0)
@@ -2233,7 +2256,7 @@
 					)
 				)
 				(pin passive line
-					(at 5.08 -7.62 90)
+					(at -5.08 7.62 270)
 					(length 2.54)
 					(name "~"
 						(effects
@@ -2242,7 +2265,7 @@
 							)
 						)
 					)
-					(number "1"
+					(number "5"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -2269,24 +2292,6 @@
 					)
 				)
 				(pin passive line
-					(at 7.62 7.62 270)
-					(length 2.54)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
 					(at 2.54 7.62 270)
 					(length 2.54)
 					(name "~"
@@ -2305,7 +2310,7 @@
 					)
 				)
 				(pin passive line
-					(at -5.08 7.62 270)
+					(at 5.08 -7.62 90)
 					(length 2.54)
 					(name "~"
 						(effects
@@ -2314,7 +2319,25 @@
 							)
 						)
 					)
-					(number "5"
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 7.62 7.62 270)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -2323,9 +2346,12 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "Transistor_FET:AO3400A"
-			(pin_names hide)
+			(pin_names
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -2398,18 +2424,6 @@
 			(symbol "AO3400A_0_1"
 				(polyline
 					(pts
-						(xy 0.254 0) (xy -2.54 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
 						(xy 0.254 1.905) (xy 0.254 -1.905)
 					)
 					(stroke
@@ -2422,7 +2436,19 @@
 				)
 				(polyline
 					(pts
-						(xy 0.762 -1.27) (xy 0.762 -2.286)
+						(xy 0.254 0) (xy -2.54 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 2.286) (xy 0.762 1.27)
 					)
 					(stroke
 						(width 0.254)
@@ -2446,34 +2472,10 @@
 				)
 				(polyline
 					(pts
-						(xy 0.762 2.286) (xy 0.762 1.27)
+						(xy 0.762 -1.27) (xy 0.762 -2.286)
 					)
 					(stroke
 						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.54 2.54) (xy 2.54 1.778)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.54 -2.54) (xy 2.54 0) (xy 0.762 0)
-					)
-					(stroke
-						(width 0)
 						(type default)
 					)
 					(fill
@@ -2504,6 +2506,63 @@
 						(type outline)
 					)
 				)
+				(circle
+					(center 1.651 0)
+					(radius 2.794)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 2.54) (xy 2.54 1.778)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 2.54 1.778)
+					(radius 0.254)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(circle
+					(center 2.54 -1.778)
+					(radius 0.254)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 -2.54) (xy 2.54 0) (xy 0.762 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
 				(polyline
 					(pts
 						(xy 2.794 0.508) (xy 2.921 0.381) (xy 3.683 0.381) (xy 3.81 0.254)
@@ -2528,39 +2587,6 @@
 						(type none)
 					)
 				)
-				(circle
-					(center 1.651 0)
-					(radius 2.794)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 2.54 -1.778)
-					(radius 0.254)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(circle
-					(center 2.54 1.778)
-					(radius 0.254)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
 			)
 			(symbol "AO3400A_1_1"
 				(pin input line
@@ -2574,24 +2600,6 @@
 						)
 					)
 					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 2.54 -5.08 90)
-					(length 2.54)
-					(name "S"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -2617,13 +2625,36 @@
 						)
 					)
 				)
+				(pin passive line
+					(at 2.54 -5.08 90)
+					(length 2.54)
+					(name "S"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "power:+3.3V"
 			(power)
-			(pin_numbers hide)
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
-				(offset 0) hide)
+				(offset 0)
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -2695,7 +2726,7 @@
 				)
 				(polyline
 					(pts
-						(xy 0 0) (xy 0 2.54)
+						(xy 0 2.54) (xy 0.762 1.27)
 					)
 					(stroke
 						(width 0)
@@ -2707,7 +2738,7 @@
 				)
 				(polyline
 					(pts
-						(xy 0 2.54) (xy 0.762 1.27)
+						(xy 0 0) (xy 0 2.54)
 					)
 					(stroke
 						(width 0)
@@ -2738,12 +2769,17 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "power:+5V"
 			(power)
-			(pin_numbers hide)
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
-				(offset 0) hide)
+				(offset 0)
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -2815,7 +2851,7 @@
 				)
 				(polyline
 					(pts
-						(xy 0 0) (xy 0 2.54)
+						(xy 0 2.54) (xy 0.762 1.27)
 					)
 					(stroke
 						(width 0)
@@ -2827,7 +2863,7 @@
 				)
 				(polyline
 					(pts
-						(xy 0 2.54) (xy 0.762 1.27)
+						(xy 0 0) (xy 0 2.54)
 					)
 					(stroke
 						(width 0)
@@ -2858,12 +2894,17 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "power:GND"
 			(power)
-			(pin_numbers hide)
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
-				(offset 0) hide)
+				(offset 0)
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -2954,7 +2995,296 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
+	)
+	(text "The 'SET' relay allows the tool to be turned on\nwith the additional press of the green button by\nthe human operator. Bypass locks this relay 'ON'"
+		(exclude_from_sim no)
+		(at 22.098 63.754 0)
+		(effects
+			(font
+				(size 2.54 2.54)
+			)
+			(justify left bottom)
+		)
+		(uuid "14333178-c22a-4143-a2ac-b3611299a076")
+	)
+	(text "The 'RESET' relay will break the electrical self-latch on\nthe Stage 2 relay. Used as a way to auto shut-off the \ntool, in event of timeout. Bypass locks this relay 'OFF'"
+		(exclude_from_sim no)
+		(at 145.288 64.008 0)
+		(effects
+			(font
+				(size 2.54 2.54)
+			)
+			(justify left bottom)
+		)
+		(uuid "18e7a4ee-da15-4ebe-8574-0e5f3c62cf93")
+	)
+	(text "check out our mock-up: tinkercad.com ~ sr-relays-bypass-74hc02-b1p3"
+		(exclude_from_sim no)
+		(at 160.782 157.226 0)
+		(effects
+			(font
+				(size 1.397 1.397)
+			)
+			(justify left bottom)
+			(href "https://www.tinkercad.com/things/2GyygmdKxWK-sr-relays-bypass-74hc02-b1p3")
+		)
+		(uuid "191d8632-27bb-49e3-9052-97dd2670f8da")
+	)
+	(text "`set` relay: (ON if `set3v` is HIGH) OR (ON if read-bypass is HIGH [B-key is ON])\n`reset` relay: ON if read-bypass is LOW [B-key is OFF] AND reset3v is HIGH\n              --> else: `reset` relay is OFF [B-key can block `reset` relay]"
+		(exclude_from_sim no)
+		(at 160.782 165.608 0)
+		(effects
+			(font
+				(size 1.397 1.397)
+			)
+			(justify left bottom)
+		)
+		(uuid "2aaa50f0-ec29-45eb-89c9-fda639b3069f")
+	)
+	(text "Relay #1-2 tool timeout\n[5v coil activation]"
+		(exclude_from_sim no)
+		(at 173.99 72.39 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "3a362fcd-82bd-4533-966d-d8ce38386215")
+	)
+	(text "This pair of NOR gates, combined as shown (right to left)\ncreate a single OR logical operation to control the MOSFET."
+		(exclude_from_sim no)
+		(at 59.944 113.538 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "4691bb2a-ad0b-493f-9e4e-d051ac1db061")
+	)
+	(text "[!NOTE] Use input \nnot input_pullup"
+		(exclude_from_sim no)
+		(at 45.466 142.24 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "67a6c17a-97c5-47ec-bfb9-35db0a548d02")
+	)
+	(text "Sealed switching power supply, soldered in place.\nCan accept 90-264VAC to generate 5V, up to 6W.\n100mV ripple and 78% efficient, by datasheet."
+		(exclude_from_sim no)
+		(at 38.1 182.372 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "8aa407c4-e847-431e-a106-24fc8d67df45")
+	)
+	(text "Stage 1 || Control from 5V & 'set' or 'reset' Stage 2 Latch"
+		(exclude_from_sim no)
+		(at 27.94 29.21 0)
+		(effects
+			(font
+				(size 4 4)
+				(thickness 0.8)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "91fdc633-f4fb-492b-8f5f-5c53bd9f5585")
+	)
+	(text "[!NOTE] Experience has taught us that the 'Bypass' should always be predictable,\nand when you need to use it, you shouldn't have to worry about what a \nmicrocontroller or server is thinking. We just want the tools to work in bypass."
+		(exclude_from_sim no)
+		(at 160.528 144.018 0)
+		(effects
+			(font
+				(size 1.397 1.397)
+			)
+			(justify left bottom)
+		)
+		(uuid "a120464a-c017-4c70-a5c8-b910223fea45")
+	)
+	(text "Set\nRelay"
+		(exclude_from_sim no)
+		(at 41.91 76.2 0)
+		(effects
+			(font
+				(size 2 2)
+				(thickness 0.4)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "a264c32e-24c5-4df8-bad5-008592507747")
+	)
+	(text "Reset\nRelay"
+		(exclude_from_sim no)
+		(at 154.94 76.2 0)
+		(effects
+			(font
+				(size 2 2)
+				(thickness 0.4)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "a3c04fc4-2fd9-48fd-839a-c3b15819c2ef")
+	)
+	(text "sanity check power LED\n"
+		(exclude_from_sim no)
+		(at 111.76 176.53 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "a52e2f60-17a8-493f-9766-8db235c29a11")
+	)
+	(text "Relay1 [NOFF  'set' the Stage 2 relay's Latch] {5VDC coil activation} \nRelay2 [NON 'reset' the Stage 2 relay's Latch] {5VDC coil activation}"
+		(exclude_from_sim no)
+		(at 30.734 40.132 0)
+		(effects
+			(font
+				(size 2.5 2.5)
+			)
+			(justify left bottom)
+		)
+		(uuid "a89afef6-5a33-4521-b24e-a318669fbb27")
+	)
+	(text "[!TIP] if key is ON, these connect"
+		(exclude_from_sim no)
+		(at 76.962 145.796 0)
+		(effects
+			(font
+				(size 1.397 1.397)
+			)
+			(justify left bottom)
+		)
+		(uuid "ad9d1335-9bc9-4080-bcf6-f8facc6d4bca")
+	)
+	(text "Physical 'Bypass Key' to lock-ON tool"
+		(exclude_from_sim no)
+		(at 44.196 137.922 0)
+		(effects
+			(font
+				(size 2 2)
+				(thickness 0.4)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "b93c12c5-f7f2-4b37-ac4d-dc7f8abc054b")
+	)
+	(text "[!NOTE] Tool Timeouts should\nonly happen after a tool is \nobserved to not be in use for\na reasonable amount of time \nto ensure there are no cases\nof power-loss that happen \nunexpectedly, suprising a user."
+		(exclude_from_sim no)
+		(at 205.232 90.424 0)
+		(effects
+			(font
+				(size 1.905 1.905)
+			)
+			(justify left bottom)
+		)
+		(uuid "bf907b4f-c203-436b-83d4-b413c04f4b98")
+	)
+	(text "A 'bypass key' mounted on the case \nwill let anyone with the key use a \nfull hardware-override of the system. \nThis will also be readable by the \nmicrocontroller, for feedback."
+		(exclude_from_sim no)
+		(at 69.85 157.734 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "c02851ae-f245-4bff-bb9a-23a7638c0d1f")
+	)
+	(text "This pair of NOR gates, combined as shown (right to left)\nrepresent a logical [inverted] AND to control the MOSFET."
+		(exclude_from_sim no)
+		(at 172.466 113.284 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "c2be959b-8f4d-4931-b984-b9a7052982be")
+	)
+	(text "[!NOTE] We didn't \nwant this to be able \nto automatically turn \non a tool. The human\nintervention is a \nfeature, not a bug.\n--- \nWhen this is 'ON' we\ncommonly call the tool\n'enabled' for use."
+		(exclude_from_sim no)
+		(at 100.584 99.314 0)
+		(effects
+			(font
+				(size 1.905 1.905)
+			)
+			(justify left bottom)
+		)
+		(uuid "c49b5cda-d209-4f50-aa44-21fcc1c5a087")
+	)
+	(text "When `read-bypass` is ON this turns ON the `set` relay, but turns OFF \nthe `reset` relay. By DeMorgan's Laws, that gives us the connections shown \nabove. Note: the final NOT of the `reset` relay logic is in the relay itself."
+		(exclude_from_sim no)
+		(at 160.782 152.908 0)
+		(effects
+			(font
+				(size 1.397 1.397)
+			)
+			(justify left bottom)
+		)
+		(uuid "caf0606d-e51f-475a-98f7-6ef66e1549b7")
+	)
+	(text "Boolean Logic for Hardware Bypass"
+		(exclude_from_sim no)
+		(at 156.718 134.62 0)
+		(effects
+			(font
+				(size 2 2)
+				(thickness 0.4)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "cb6040fa-e106-4de5-b7e9-beae12c0584d")
+	)
+	(text "This stage is responsible for allowing the Feather to control the actions of the mains level of power switching."
+		(exclude_from_sim no)
+		(at 31.242 46.228 0)
+		(effects
+			(font
+				(size 2.5 2.5)
+			)
+			(justify left bottom)
+		)
+		(uuid "e145a209-b8f3-41ba-9850-41774212785e")
+	)
+	(text "5V supply from mains (in box)"
+		(exclude_from_sim no)
+		(at 38.1 176.022 0)
+		(effects
+			(font
+				(size 2 2)
+				(thickness 0.4)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "e5eb7c53-a06e-479e-8e26-6a5f2ba93911")
+	)
+	(text "Relay #1-1 and bypass\n[5v coil activation]"
+		(exclude_from_sim no)
+		(at 59.69 74.93 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "f665fe0e-508f-41e3-9c6f-93a83e841682")
 	)
 	(junction
 		(at 57.15 77.47)
@@ -3361,294 +3691,6 @@
 			(type default)
 		)
 		(uuid "f66e12cd-ea28-4dc5-a71f-4f9101a4f940")
-	)
-	(text "The 'SET' relay allows the tool to be turned on\nwith the additional press of the green button by\nthe human operator. Bypass locks this relay 'ON'"
-		(exclude_from_sim no)
-		(at 22.098 63.754 0)
-		(effects
-			(font
-				(size 2.54 2.54)
-			)
-			(justify left bottom)
-		)
-		(uuid "14333178-c22a-4143-a2ac-b3611299a076")
-	)
-	(text "The 'RESET' relay will break the electrical self-latch on\nthe Stage 2 relay. Used as a way to auto shut-off the \ntool, in event of timeout. Bypass locks this relay 'OFF'"
-		(exclude_from_sim no)
-		(at 145.288 64.008 0)
-		(effects
-			(font
-				(size 2.54 2.54)
-			)
-			(justify left bottom)
-		)
-		(uuid "18e7a4ee-da15-4ebe-8574-0e5f3c62cf93")
-	)
-	(text "check out our mock-up: tinkercad.com ~ sr-relays-bypass-74hc02-b1p3"
-		(exclude_from_sim no)
-		(at 160.782 157.226 0)
-		(effects
-			(font
-				(size 1.397 1.397)
-			)
-			(justify left bottom)
-			(href "https://www.tinkercad.com/things/2GyygmdKxWK-sr-relays-bypass-74hc02-b1p3")
-		)
-		(uuid "191d8632-27bb-49e3-9052-97dd2670f8da")
-	)
-	(text "`set` relay: (ON if `set3v` is HIGH) OR (ON if read-bypass is HIGH [B-key is ON])\n`reset` relay: ON if read-bypass is LOW [B-key is OFF] AND reset3v is HIGH\n              --> else: `reset` relay is OFF [B-key can block `reset` relay]"
-		(exclude_from_sim no)
-		(at 160.782 165.608 0)
-		(effects
-			(font
-				(size 1.397 1.397)
-			)
-			(justify left bottom)
-		)
-		(uuid "2aaa50f0-ec29-45eb-89c9-fda639b3069f")
-	)
-	(text "Relay #1-2 tool timeout\n[5v coil activation]"
-		(exclude_from_sim no)
-		(at 173.99 72.39 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "3a362fcd-82bd-4533-966d-d8ce38386215")
-	)
-	(text "This pair of NOR gates, combined as shown (right to left)\ncreate a single OR logical operation to control the MOSFET."
-		(exclude_from_sim no)
-		(at 59.944 113.538 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "4691bb2a-ad0b-493f-9e4e-d051ac1db061")
-	)
-	(text "[!NOTE] Use input \nnot input_pullup"
-		(exclude_from_sim no)
-		(at 45.466 142.24 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "67a6c17a-97c5-47ec-bfb9-35db0a548d02")
-	)
-	(text "Sealed switching power supply, soldered in place.\nCan accept 90-264VAC to generate 5V, up to 6W.\n100mV ripple and 78% efficient, by datasheet."
-		(exclude_from_sim no)
-		(at 38.1 182.372 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "8aa407c4-e847-431e-a106-24fc8d67df45")
-	)
-	(text "Stage 1 || Control from 5V & 'set' or 'reset' Stage 2 Latch"
-		(exclude_from_sim no)
-		(at 27.94 29.21 0)
-		(effects
-			(font
-				(size 4 4)
-				(thickness 0.8)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-		(uuid "91fdc633-f4fb-492b-8f5f-5c53bd9f5585")
-	)
-	(text "[!NOTE] Experience has taught us that the 'Bypass' should always be predictable,\nand when you need to use it, you shouldn't have to worry about what a \nmicrocontroller or server is thinking. We just want the tools to work in bypass."
-		(exclude_from_sim no)
-		(at 160.528 144.018 0)
-		(effects
-			(font
-				(size 1.397 1.397)
-			)
-			(justify left bottom)
-		)
-		(uuid "a120464a-c017-4c70-a5c8-b910223fea45")
-	)
-	(text "Set\nRelay"
-		(exclude_from_sim no)
-		(at 41.91 76.2 0)
-		(effects
-			(font
-				(size 2 2)
-				(thickness 0.4)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-		(uuid "a264c32e-24c5-4df8-bad5-008592507747")
-	)
-	(text "Reset\nRelay"
-		(exclude_from_sim no)
-		(at 154.94 76.2 0)
-		(effects
-			(font
-				(size 2 2)
-				(thickness 0.4)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-		(uuid "a3c04fc4-2fd9-48fd-839a-c3b15819c2ef")
-	)
-	(text "sanity check power LED\n"
-		(exclude_from_sim no)
-		(at 111.76 176.53 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "a52e2f60-17a8-493f-9766-8db235c29a11")
-	)
-	(text "Relay1 [NOFF  'set' the Stage 2 relay's Latch] {5VDC coil activation} \nRelay2 [NON 'reset' the Stage 2 relay's Latch] {5VDC coil activation}"
-		(exclude_from_sim no)
-		(at 30.734 40.132 0)
-		(effects
-			(font
-				(size 2.5 2.5)
-			)
-			(justify left bottom)
-		)
-		(uuid "a89afef6-5a33-4521-b24e-a318669fbb27")
-	)
-	(text "[!TIP] if key is ON, these connect"
-		(exclude_from_sim no)
-		(at 76.962 145.796 0)
-		(effects
-			(font
-				(size 1.397 1.397)
-			)
-			(justify left bottom)
-		)
-		(uuid "ad9d1335-9bc9-4080-bcf6-f8facc6d4bca")
-	)
-	(text "Physical 'Bypass Key' to lock-ON tool"
-		(exclude_from_sim no)
-		(at 44.196 137.922 0)
-		(effects
-			(font
-				(size 2 2)
-				(thickness 0.4)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-		(uuid "b93c12c5-f7f2-4b37-ac4d-dc7f8abc054b")
-	)
-	(text "[!NOTE] Tool Timeouts should\nonly happen after a tool is \nobserved to not be in use for\na reasonable amount of time \nto ensure there are no cases\nof power-loss that happen \nunexpectedly, suprising a user."
-		(exclude_from_sim no)
-		(at 205.232 90.424 0)
-		(effects
-			(font
-				(size 1.905 1.905)
-			)
-			(justify left bottom)
-		)
-		(uuid "bf907b4f-c203-436b-83d4-b413c04f4b98")
-	)
-	(text "A 'bypass key' mounted on the case \nwill let anyone with the key use a \nfull hardware-override of the system. \nThis will also be readable by the \nmicrocontroller, for feedback."
-		(exclude_from_sim no)
-		(at 69.85 157.734 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "c02851ae-f245-4bff-bb9a-23a7638c0d1f")
-	)
-	(text "This pair of NOR gates, combined as shown (right to left)\nrepresent a logical [inverted] AND to control the MOSFET."
-		(exclude_from_sim no)
-		(at 172.466 113.284 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "c2be959b-8f4d-4931-b984-b9a7052982be")
-	)
-	(text "[!NOTE] We didn't \nwant this to be able \nto automatically turn \non a tool. The human\nintervention is a \nfeature, not a bug.\n--- \nWhen this is 'ON' we\ncommonly call the tool\n'enabled' for use."
-		(exclude_from_sim no)
-		(at 100.584 99.314 0)
-		(effects
-			(font
-				(size 1.905 1.905)
-			)
-			(justify left bottom)
-		)
-		(uuid "c49b5cda-d209-4f50-aa44-21fcc1c5a087")
-	)
-	(text "When `read-bypass` is ON this turns ON the `set` relay, but turns OFF \nthe `reset` relay. By DeMorgan's Laws, that gives us the connections shown \nabove. Note: the final NOT of the `reset` relay logic is in the relay itself."
-		(exclude_from_sim no)
-		(at 160.782 152.908 0)
-		(effects
-			(font
-				(size 1.397 1.397)
-			)
-			(justify left bottom)
-		)
-		(uuid "caf0606d-e51f-475a-98f7-6ef66e1549b7")
-	)
-	(text "Boolean Logic for Hardware Bypass"
-		(exclude_from_sim no)
-		(at 156.718 134.62 0)
-		(effects
-			(font
-				(size 2 2)
-				(thickness 0.4)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-		(uuid "cb6040fa-e106-4de5-b7e9-beae12c0584d")
-	)
-	(text "This stage is responsible for allowing the Feather to control the actions of the mains level of power switching."
-		(exclude_from_sim no)
-		(at 31.242 46.228 0)
-		(effects
-			(font
-				(size 2.5 2.5)
-			)
-			(justify left bottom)
-		)
-		(uuid "e145a209-b8f3-41ba-9850-41774212785e")
-	)
-	(text "5V supply from mains (in box)"
-		(exclude_from_sim no)
-		(at 38.1 176.022 0)
-		(effects
-			(font
-				(size 2 2)
-				(thickness 0.4)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-		(uuid "e5eb7c53-a06e-479e-8e26-6a5f2ba93911")
-	)
-	(text "Relay #1-1 and bypass\n[5v coil activation]"
-		(exclude_from_sim no)
-		(at 59.69 74.93 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "f665fe0e-508f-41e3-9c6f-93a83e841682")
 	)
 	(global_label "reset3v"
 		(shape input)

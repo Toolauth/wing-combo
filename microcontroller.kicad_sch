@@ -1,13 +1,14 @@
 (kicad_sch
-	(version 20231120)
+	(version 20250114)
 	(generator "eeschema")
-	(generator_version "8.0")
+	(generator_version "9.0")
 	(uuid "5bb54eab-2962-4397-a18e-c5fdb30ff9d0")
 	(paper "USLetter")
 	(title_block
-		(date "2022-10-09")
-		(rev "3")
+		(date "2025-11-02")
+		(rev "1.4.3")
 		(company "Corey Rice & MakeHaven")
+		(comment 1 "All subpages for the Microcontroller level items")
 	)
 	(lib_symbols)
 	(text "This shows the relationships between all components running at 3.3VDC or 5VDC on the board. \nThese are all on the 'low voltage' side of the board. These are all united in their service \nto the Adafruit Feather board. Thinking about this design as a whole, it is our past experience\nand makerspace spirit that guided us towards making this a Feather Wing rather than integrate\nthe ESP32 on-board. If the microcontroller is removable, it is easier to program, and you can \nreplace a 'problematic feather' for any reason (without needing to rewire the tools). "
@@ -152,6 +153,10 @@
 	(sheet
 		(at 153.67 78.74)
 		(size 25.4 13.97)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
@@ -190,6 +195,10 @@
 	(sheet
 		(at 38.1 77.47)
 		(size 25.4 13.97)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
@@ -228,6 +237,10 @@
 	(sheet
 		(at 38.1 129.54)
 		(size 25.4 13.97)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
@@ -266,6 +279,10 @@
 	(sheet
 		(at 36.83 163.83)
 		(size 25.4 13.97)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
@@ -304,6 +321,10 @@
 	(sheet
 		(at 153.67 132.08)
 		(size 25.4 13.97)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)

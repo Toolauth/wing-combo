@@ -1,37 +1,17 @@
 (kicad_sch
-	(version 20231120)
+	(version 20250114)
 	(generator "eeschema")
-	(generator_version "8.0")
+	(generator_version "9.0")
 	(uuid "586efc0f-7de2-49a7-ac21-ecfef2f716d6")
 	(paper "USLetter")
 	(title_block
 		(title "ToolAuth Hardware | Overview | ESP32-DEVKITC-V4")
-		(date "2022-10-09")
-		(rev "3")
+		(date "2025-11-02")
+		(rev "1.4.3")
 		(company "Corey Rice & MakeHaven")
 		(comment 1 "Highest Level Overview")
 	)
 	(lib_symbols)
-	(wire
-		(pts
-			(xy 91.44 149.86) (xy 193.04 149.86)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e409c250-7611-46bf-a72f-db15a916d878")
-	)
-	(wire
-		(pts
-			(xy 91.44 140.97) (xy 193.04 140.97)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f53bef5d-2cc8-4f5f-b2f7-c50e505b3adb")
-	)
 	(text "The main MCU board is a 'Feather', and they can have 'Wings' plugged into them. \nThis is the biggest wing we are aware of: does that make it an albatross?"
 		(exclude_from_sim no)
 		(at 41.148 181.102 0)
@@ -140,10 +120,29 @@
 		)
 		(uuid "dd05ed5c-2daf-46bc-bb9c-46fb44594e0f")
 	)
+	(wire
+		(pts
+			(xy 91.44 149.86) (xy 193.04 149.86)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e409c250-7611-46bf-a72f-db15a916d878")
+	)
+	(wire
+		(pts
+			(xy 91.44 140.97) (xy 193.04 140.97)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f53bef5d-2cc8-4f5f-b2f7-c50e505b3adb")
+	)
 	(hierarchical_label "5VDC Power"
 		(shape output)
 		(at 193.04 140.97 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.75 1.75)
@@ -155,7 +154,6 @@
 	(hierarchical_label "Stage 1 Relays"
 		(shape output)
 		(at 91.44 149.86 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.75 1.75)
@@ -167,7 +165,6 @@
 	(hierarchical_label "Stage 1 Relays"
 		(shape input)
 		(at 193.04 149.86 0)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.75 1.75)
@@ -179,7 +176,6 @@
 	(hierarchical_label "5VDC Power"
 		(shape input)
 		(at 91.44 140.97 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.75 1.75)
@@ -191,6 +187,10 @@
 	(sheet
 		(at 49.53 137.16)
 		(size 41.91 24.13)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
@@ -229,6 +229,10 @@
 	(sheet
 		(at 193.04 137.16)
 		(size 38.1 24.13)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
@@ -269,4 +273,5 @@
 			(page "1")
 		)
 	)
+	(embedded_fonts no)
 )

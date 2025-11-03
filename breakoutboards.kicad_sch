@@ -1,13 +1,13 @@
 (kicad_sch
-	(version 20231120)
+	(version 20250114)
 	(generator "eeschema")
-	(generator_version "8.0")
+	(generator_version "9.0")
 	(uuid "b20f39ff-2b54-4a84-9483-abf05fda29a3")
 	(paper "USLetter")
 	(title_block
 		(title "Breakout Connections & Power")
-		(date "2025-09-25")
-		(rev "4")
+		(date "2025-11-02")
+		(rev "1.4.3")
 		(company "Corey Rice & MakeHaven")
 		(comment 1 "Breakouts for I2C and SPI communication with external boards.")
 		(comment 2 "Headers for the Feather to seat into the board")
@@ -17,7 +17,9 @@
 	(lib_symbols
 		(symbol "Connector:Conn_01x02_Socket"
 			(pin_names
-				(offset 1.016) hide)
+				(offset 1.016)
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -91,10 +93,10 @@
 				)
 			)
 			(symbol "Conn_01x02_Socket_1_1"
-				(arc
-					(start 0 -2.032)
-					(mid -0.5058 -2.54)
-					(end 0 -3.048)
+				(polyline
+					(pts
+						(xy -1.27 0) (xy -0.508 0)
+					)
 					(stroke
 						(width 0.1524)
 						(type default)
@@ -115,10 +117,10 @@
 						(type none)
 					)
 				)
-				(polyline
-					(pts
-						(xy -1.27 0) (xy -0.508 0)
-					)
+				(arc
+					(start 0 -0.508)
+					(mid -0.5058 0)
+					(end 0 0.508)
 					(stroke
 						(width 0.1524)
 						(type default)
@@ -128,9 +130,9 @@
 					)
 				)
 				(arc
-					(start 0 0.508)
-					(mid -0.5058 0)
-					(end 0 -0.508)
+					(start 0 -3.048)
+					(mid -0.5058 -2.54)
+					(end 0 -2.032)
 					(stroke
 						(width 0.1524)
 						(type default)
@@ -176,10 +178,13 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "Connector:Conn_01x03_Socket"
 			(pin_names
-				(offset 1.016) hide)
+				(offset 1.016)
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -253,21 +258,9 @@
 				)
 			)
 			(symbol "Conn_01x03_Socket_1_1"
-				(arc
-					(start 0 -2.032)
-					(mid -0.5058 -2.54)
-					(end 0 -3.048)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
 				(polyline
 					(pts
-						(xy -1.27 -2.54) (xy -0.508 -2.54)
+						(xy -1.27 2.54) (xy -0.508 2.54)
 					)
 					(stroke
 						(width 0.1524)
@@ -291,7 +284,7 @@
 				)
 				(polyline
 					(pts
-						(xy -1.27 2.54) (xy -0.508 2.54)
+						(xy -1.27 -2.54) (xy -0.508 -2.54)
 					)
 					(stroke
 						(width 0.1524)
@@ -302,21 +295,33 @@
 					)
 				)
 				(arc
-					(start 0 0.508)
-					(mid -0.5058 0)
-					(end 0 -0.508)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start 0 3.048)
+					(start 0 2.032)
 					(mid -0.5058 2.54)
-					(end 0 2.032)
+					(end 0 3.048)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 0 -0.508)
+					(mid -0.5058 0)
+					(end 0 0.508)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 0 -3.048)
+					(mid -0.5058 -2.54)
+					(end 0 -2.032)
 					(stroke
 						(width 0.1524)
 						(type default)
@@ -380,10 +385,13 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "Connector:Conn_01x04_Socket"
 			(pin_names
-				(offset 1.016) hide)
+				(offset 1.016)
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -457,45 +465,9 @@
 				)
 			)
 			(symbol "Conn_01x04_Socket_1_1"
-				(arc
-					(start 0 -4.572)
-					(mid -0.5058 -5.08)
-					(end 0 -5.588)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start 0 -2.032)
-					(mid -0.5058 -2.54)
-					(end 0 -3.048)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
 				(polyline
 					(pts
-						(xy -1.27 -5.08) (xy -0.508 -5.08)
-					)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.27 -2.54) (xy -0.508 -2.54)
+						(xy -1.27 2.54) (xy -0.508 2.54)
 					)
 					(stroke
 						(width 0.1524)
@@ -519,7 +491,19 @@
 				)
 				(polyline
 					(pts
-						(xy -1.27 2.54) (xy -0.508 2.54)
+						(xy -1.27 -2.54) (xy -0.508 -2.54)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 -5.08) (xy -0.508 -5.08)
 					)
 					(stroke
 						(width 0.1524)
@@ -530,21 +514,45 @@
 					)
 				)
 				(arc
-					(start 0 0.508)
-					(mid -0.5058 0)
-					(end 0 -0.508)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start 0 3.048)
+					(start 0 2.032)
 					(mid -0.5058 2.54)
-					(end 0 2.032)
+					(end 0 3.048)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 0 -0.508)
+					(mid -0.5058 0)
+					(end 0 0.508)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 0 -3.048)
+					(mid -0.5058 -2.54)
+					(end 0 -2.032)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 0 -5.588)
+					(mid -0.5058 -5.08)
+					(end 0 -4.572)
 					(stroke
 						(width 0.1524)
 						(type default)
@@ -626,10 +634,13 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "Connector:Conn_01x06_Socket"
 			(pin_names
-				(offset 1.016) hide)
+				(offset 1.016)
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -703,81 +714,9 @@
 				)
 			)
 			(symbol "Conn_01x06_Socket_1_1"
-				(arc
-					(start 0 -7.112)
-					(mid -0.5058 -7.62)
-					(end 0 -8.128)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start 0 -4.572)
-					(mid -0.5058 -5.08)
-					(end 0 -5.588)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start 0 -2.032)
-					(mid -0.5058 -2.54)
-					(end 0 -3.048)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
 				(polyline
 					(pts
-						(xy -1.27 -7.62) (xy -0.508 -7.62)
-					)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.27 -5.08) (xy -0.508 -5.08)
-					)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.27 -2.54) (xy -0.508 -2.54)
-					)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.27 0) (xy -0.508 0)
+						(xy -1.27 5.08) (xy -0.508 5.08)
 					)
 					(stroke
 						(width 0.1524)
@@ -801,7 +740,43 @@
 				)
 				(polyline
 					(pts
-						(xy -1.27 5.08) (xy -0.508 5.08)
+						(xy -1.27 0) (xy -0.508 0)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 -2.54) (xy -0.508 -2.54)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 -5.08) (xy -0.508 -5.08)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 -7.62) (xy -0.508 -7.62)
 					)
 					(stroke
 						(width 0.1524)
@@ -812,33 +787,69 @@
 					)
 				)
 				(arc
-					(start 0 0.508)
-					(mid -0.5058 0)
-					(end 0 -0.508)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start 0 3.048)
-					(mid -0.5058 2.54)
-					(end 0 2.032)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start 0 5.588)
+					(start 0 4.572)
 					(mid -0.5058 5.08)
-					(end 0 4.572)
+					(end 0 5.588)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 0 2.032)
+					(mid -0.5058 2.54)
+					(end 0 3.048)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 0 -0.508)
+					(mid -0.5058 0)
+					(end 0 0.508)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 0 -3.048)
+					(mid -0.5058 -2.54)
+					(end 0 -2.032)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 0 -5.588)
+					(mid -0.5058 -5.08)
+					(end 0 -4.572)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 0 -8.128)
+					(mid -0.5058 -7.62)
+					(end 0 -7.112)
 					(stroke
 						(width 0.1524)
 						(type default)
@@ -956,10 +967,13 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "Connector_Generic:Conn_01x12"
 			(pin_names
-				(offset 1.016) hide)
+				(offset 1.016)
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -1026,107 +1040,19 @@
 			)
 			(symbol "Conn_01x12_1_1"
 				(rectangle
-					(start -1.27 -15.113)
-					(end 0 -15.367)
+					(start -1.27 13.97)
+					(end 1.27 -16.51)
 					(stroke
-						(width 0.1524)
+						(width 0.254)
 						(type default)
 					)
 					(fill
-						(type none)
+						(type background)
 					)
 				)
 				(rectangle
-					(start -1.27 -12.573)
-					(end 0 -12.827)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start -1.27 -10.033)
-					(end 0 -10.287)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start -1.27 -7.493)
-					(end 0 -7.747)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start -1.27 -4.953)
-					(end 0 -5.207)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start -1.27 -2.413)
-					(end 0 -2.667)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start -1.27 0.127)
-					(end 0 -0.127)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start -1.27 2.667)
-					(end 0 2.413)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start -1.27 5.207)
-					(end 0 4.953)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start -1.27 7.747)
-					(end 0 7.493)
+					(start -1.27 12.827)
+					(end 0 12.573)
 					(stroke
 						(width 0.1524)
 						(type default)
@@ -1147,8 +1073,8 @@
 					)
 				)
 				(rectangle
-					(start -1.27 12.827)
-					(end 0 12.573)
+					(start -1.27 7.747)
+					(end 0 7.493)
 					(stroke
 						(width 0.1524)
 						(type default)
@@ -1158,14 +1084,102 @@
 					)
 				)
 				(rectangle
-					(start -1.27 13.97)
-					(end 1.27 -16.51)
+					(start -1.27 5.207)
+					(end 0 4.953)
 					(stroke
-						(width 0.254)
+						(width 0.1524)
 						(type default)
 					)
 					(fill
-						(type background)
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 2.667)
+					(end 0 2.413)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 0.127)
+					(end 0 -0.127)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 -2.413)
+					(end 0 -2.667)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 -4.953)
+					(end 0 -5.207)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 -7.493)
+					(end 0 -7.747)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 -10.033)
+					(end 0 -10.287)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 -12.573)
+					(end 0 -12.827)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 -15.113)
+					(end 0 -15.367)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
 					)
 				)
 				(pin passive line
@@ -1179,60 +1193,6 @@
 						)
 					)
 					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 -10.16 0)
-					(length 3.81)
-					(name "Pin_10"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "10"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 -12.7 0)
-					(length 3.81)
-					(name "Pin_11"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "11"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 -15.24 0)
-					(length 3.81)
-					(name "Pin_12"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "12"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1384,11 +1344,68 @@
 						)
 					)
 				)
+				(pin passive line
+					(at -5.08 -10.16 0)
+					(length 3.81)
+					(name "Pin_10"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "10"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -12.7 0)
+					(length 3.81)
+					(name "Pin_11"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "11"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -15.24 0)
+					(length 3.81)
+					(name "Pin_12"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "12"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "Connector_Generic:Conn_01x16"
 			(pin_names
-				(offset 1.016) hide)
+				(offset 1.016)
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -1455,151 +1472,19 @@
 			)
 			(symbol "Conn_01x16_1_1"
 				(rectangle
-					(start -1.27 -20.193)
-					(end 0 -20.447)
+					(start -1.27 19.05)
+					(end 1.27 -21.59)
 					(stroke
-						(width 0.1524)
+						(width 0.254)
 						(type default)
 					)
 					(fill
-						(type none)
+						(type background)
 					)
 				)
 				(rectangle
-					(start -1.27 -17.653)
-					(end 0 -17.907)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start -1.27 -15.113)
-					(end 0 -15.367)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start -1.27 -12.573)
-					(end 0 -12.827)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start -1.27 -10.033)
-					(end 0 -10.287)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start -1.27 -7.493)
-					(end 0 -7.747)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start -1.27 -4.953)
-					(end 0 -5.207)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start -1.27 -2.413)
-					(end 0 -2.667)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start -1.27 0.127)
-					(end 0 -0.127)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start -1.27 2.667)
-					(end 0 2.413)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start -1.27 5.207)
-					(end 0 4.953)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start -1.27 7.747)
-					(end 0 7.493)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start -1.27 10.287)
-					(end 0 10.033)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start -1.27 12.827)
-					(end 0 12.573)
+					(start -1.27 17.907)
+					(end 0 17.653)
 					(stroke
 						(width 0.1524)
 						(type default)
@@ -1620,8 +1505,8 @@
 					)
 				)
 				(rectangle
-					(start -1.27 17.907)
-					(end 0 17.653)
+					(start -1.27 12.827)
+					(end 0 12.573)
 					(stroke
 						(width 0.1524)
 						(type default)
@@ -1631,14 +1516,146 @@
 					)
 				)
 				(rectangle
-					(start -1.27 19.05)
-					(end 1.27 -21.59)
+					(start -1.27 10.287)
+					(end 0 10.033)
 					(stroke
-						(width 0.254)
+						(width 0.1524)
 						(type default)
 					)
 					(fill
-						(type background)
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 7.747)
+					(end 0 7.493)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 5.207)
+					(end 0 4.953)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 2.667)
+					(end 0 2.413)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 0.127)
+					(end 0 -0.127)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 -2.413)
+					(end 0 -2.667)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 -4.953)
+					(end 0 -5.207)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 -7.493)
+					(end 0 -7.747)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 -10.033)
+					(end 0 -10.287)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 -12.573)
+					(end 0 -12.827)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 -15.113)
+					(end 0 -15.367)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 -17.653)
+					(end 0 -17.907)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -1.27 -20.193)
+					(end 0 -20.447)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
 					)
 				)
 				(pin passive line
@@ -1652,132 +1669,6 @@
 						)
 					)
 					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 -5.08 0)
-					(length 3.81)
-					(name "Pin_10"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "10"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 -7.62 0)
-					(length 3.81)
-					(name "Pin_11"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "11"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 -10.16 0)
-					(length 3.81)
-					(name "Pin_12"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "12"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 -12.7 0)
-					(length 3.81)
-					(name "Pin_13"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "13"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 -15.24 0)
-					(length 3.81)
-					(name "Pin_14"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "14"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 -17.78 0)
-					(length 3.81)
-					(name "Pin_15"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "15"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 -20.32 0)
-					(length 3.81)
-					(name "Pin_16"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "16"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1929,10 +1820,139 @@
 						)
 					)
 				)
+				(pin passive line
+					(at -5.08 -5.08 0)
+					(length 3.81)
+					(name "Pin_10"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "10"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -7.62 0)
+					(length 3.81)
+					(name "Pin_11"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "11"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -10.16 0)
+					(length 3.81)
+					(name "Pin_12"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "12"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -12.7 0)
+					(length 3.81)
+					(name "Pin_13"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "13"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -15.24 0)
+					(length 3.81)
+					(name "Pin_14"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "14"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -17.78 0)
+					(length 3.81)
+					(name "Pin_15"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "15"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -5.08 -20.32 0)
+					(length 3.81)
+					(name "Pin_16"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "16"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "Device:R_US"
-			(pin_numbers hide)
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
 				(offset 0)
 			)
@@ -2003,18 +2023,6 @@
 			(symbol "R_US_0_1"
 				(polyline
 					(pts
-						(xy 0 -2.286) (xy 0 -2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
 						(xy 0 2.286) (xy 0 2.54)
 					)
 					(stroke
@@ -2027,7 +2035,7 @@
 				)
 				(polyline
 					(pts
-						(xy 0 -0.762) (xy 1.016 -1.143) (xy 0 -1.524) (xy -1.016 -1.905) (xy 0 -2.286)
+						(xy 0 2.286) (xy 1.016 1.905) (xy 0 1.524) (xy -1.016 1.143) (xy 0 0.762)
 					)
 					(stroke
 						(width 0)
@@ -2051,7 +2059,19 @@
 				)
 				(polyline
 					(pts
-						(xy 0 2.286) (xy 1.016 1.905) (xy 0 1.524) (xy -1.016 1.143) (xy 0 0.762)
+						(xy 0 -0.762) (xy 1.016 -1.143) (xy 0 -1.524) (xy -1.016 -1.905) (xy 0 -2.286)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -2.286) (xy 0 -2.54)
 					)
 					(stroke
 						(width 0)
@@ -2100,10 +2120,13 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "Jumper:SolderJumper_2_Bridged"
 			(pin_names
-				(offset 0) hide)
+				(offset 0)
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -2180,30 +2203,6 @@
 						(type outline)
 					)
 				)
-				(arc
-					(start -0.254 1.016)
-					(mid -1.2655 0)
-					(end -0.254 -1.016)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start -0.254 1.016)
-					(mid -1.2655 0)
-					(end -0.254 -1.016)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
 				(polyline
 					(pts
 						(xy -0.254 1.016) (xy -0.254 -1.016)
@@ -2216,6 +2215,54 @@
 						(type none)
 					)
 				)
+				(arc
+					(start -0.254 -1.016)
+					(mid -1.2655 0)
+					(end -0.254 1.016)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start -0.254 -1.016)
+					(mid -1.2655 0)
+					(end -0.254 1.016)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(arc
+					(start 0.254 1.016)
+					(mid 1.2655 0)
+					(end 0.254 -1.016)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 0.254 1.016)
+					(mid 1.2655 0)
+					(end 0.254 -1.016)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
 				(polyline
 					(pts
 						(xy 0.254 1.016) (xy 0.254 -1.016)
@@ -2226,30 +2273,6 @@
 					)
 					(fill
 						(type none)
-					)
-				)
-				(arc
-					(start 0.254 -1.016)
-					(mid 1.2655 0)
-					(end 0.254 1.016)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start 0.254 -1.016)
-					(mid 1.2655 0)
-					(end 0.254 1.016)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
 					)
 				)
 			)
@@ -2291,6 +2314,7 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "Regulator_Linear:AMS1117-3.3"
 			(exclude_from_sim no)
@@ -2373,6 +2397,24 @@
 			)
 			(symbol "AMS1117-3.3_1_1"
 				(pin power_in line
+					(at -7.62 0 0)
+					(length 2.54)
+					(name "VI"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_in line
 					(at 0 -7.62 90)
 					(length 2.54)
 					(name "GND"
@@ -2408,28 +2450,13 @@
 						)
 					)
 				)
-				(pin power_in line
-					(at -7.62 0 0)
-					(length 2.54)
-					(name "VI"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "Transistor_FET:AO3400A"
-			(pin_names hide)
+			(pin_names
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -2502,18 +2529,6 @@
 			(symbol "AO3400A_0_1"
 				(polyline
 					(pts
-						(xy 0.254 0) (xy -2.54 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
 						(xy 0.254 1.905) (xy 0.254 -1.905)
 					)
 					(stroke
@@ -2526,7 +2541,19 @@
 				)
 				(polyline
 					(pts
-						(xy 0.762 -1.27) (xy 0.762 -2.286)
+						(xy 0.254 0) (xy -2.54 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 2.286) (xy 0.762 1.27)
 					)
 					(stroke
 						(width 0.254)
@@ -2550,34 +2577,10 @@
 				)
 				(polyline
 					(pts
-						(xy 0.762 2.286) (xy 0.762 1.27)
+						(xy 0.762 -1.27) (xy 0.762 -2.286)
 					)
 					(stroke
 						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.54 2.54) (xy 2.54 1.778)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.54 -2.54) (xy 2.54 0) (xy 0.762 0)
-					)
-					(stroke
-						(width 0)
 						(type default)
 					)
 					(fill
@@ -2608,6 +2611,63 @@
 						(type outline)
 					)
 				)
+				(circle
+					(center 1.651 0)
+					(radius 2.794)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 2.54) (xy 2.54 1.778)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 2.54 1.778)
+					(radius 0.254)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(circle
+					(center 2.54 -1.778)
+					(radius 0.254)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 -2.54) (xy 2.54 0) (xy 0.762 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
 				(polyline
 					(pts
 						(xy 2.794 0.508) (xy 2.921 0.381) (xy 3.683 0.381) (xy 3.81 0.254)
@@ -2632,39 +2692,6 @@
 						(type none)
 					)
 				)
-				(circle
-					(center 1.651 0)
-					(radius 2.794)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 2.54 -1.778)
-					(radius 0.254)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(circle
-					(center 2.54 1.778)
-					(radius 0.254)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
 			)
 			(symbol "AO3400A_1_1"
 				(pin input line
@@ -2678,24 +2705,6 @@
 						)
 					)
 					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 2.54 -5.08 90)
-					(length 2.54)
-					(name "S"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -2721,13 +2730,36 @@
 						)
 					)
 				)
+				(pin passive line
+					(at 2.54 -5.08 90)
+					(length 2.54)
+					(name "S"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "power:+3.3V"
 			(power)
-			(pin_numbers hide)
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
-				(offset 0) hide)
+				(offset 0)
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -2799,7 +2831,7 @@
 				)
 				(polyline
 					(pts
-						(xy 0 0) (xy 0 2.54)
+						(xy 0 2.54) (xy 0.762 1.27)
 					)
 					(stroke
 						(width 0)
@@ -2811,7 +2843,7 @@
 				)
 				(polyline
 					(pts
-						(xy 0 2.54) (xy 0.762 1.27)
+						(xy 0 0) (xy 0 2.54)
 					)
 					(stroke
 						(width 0)
@@ -2842,12 +2874,17 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "power:+3.3VA"
 			(power)
-			(pin_numbers hide)
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
-				(offset 0) hide)
+				(offset 0)
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -2919,7 +2956,7 @@
 				)
 				(polyline
 					(pts
-						(xy 0 0) (xy 0 2.54)
+						(xy 0 2.54) (xy 0.762 1.27)
 					)
 					(stroke
 						(width 0)
@@ -2931,7 +2968,7 @@
 				)
 				(polyline
 					(pts
-						(xy 0 2.54) (xy 0.762 1.27)
+						(xy 0 0) (xy 0 2.54)
 					)
 					(stroke
 						(width 0)
@@ -2962,12 +2999,17 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "power:+5V"
 			(power)
-			(pin_numbers hide)
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
-				(offset 0) hide)
+				(offset 0)
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -3039,7 +3081,7 @@
 				)
 				(polyline
 					(pts
-						(xy 0 0) (xy 0 2.54)
+						(xy 0 2.54) (xy 0.762 1.27)
 					)
 					(stroke
 						(width 0)
@@ -3051,7 +3093,7 @@
 				)
 				(polyline
 					(pts
-						(xy 0 2.54) (xy 0.762 1.27)
+						(xy 0 0) (xy 0 2.54)
 					)
 					(stroke
 						(width 0)
@@ -3082,12 +3124,17 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "power:GND"
 			(power)
-			(pin_numbers hide)
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
-				(offset 0) hide)
+				(offset 0)
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -3178,12 +3225,17 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "power:PWR_FLAG"
 			(power)
-			(pin_numbers hide)
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
-				(offset 0) hide)
+				(offset 0)
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -3274,7 +3326,722 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
+	)
+	(text "GPIO10"
+		(exclude_from_sim no)
+		(at 75.438 137.414 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "03ed3cd2-3d9b-4bd2-94b3-c8e06270a51a")
+	)
+	(text "**Technically, this \nis just a spare \nlevel-shifted GPIO \ninput you can use."
+		(exclude_from_sim no)
+		(at 173.99 73.914 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(italic yes)
+			)
+			(justify left)
+		)
+		(uuid "05ec3615-3f10-42f2-938e-2106a8e7b936")
+	)
+	(text "GPIO17/A1"
+		(exclude_from_sim no)
+		(at 102.616 150.114 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "0abf9c25-d9f8-40f2-a981-06dc756dfb4b")
+	)
+	(text "Single SPI Bus"
+		(exclude_from_sim no)
+		(at 119.38 49.53 0)
+		(effects
+			(font
+				(size 2 2)
+				(thickness 0.4)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "0dfc3af4-f196-4153-8e48-e5b75ed82c42")
+	)
+	(text "U\nd\nd\nd"
+		(exclude_from_sim no)
+		(at 20.066 179.324 0)
+		(effects
+			(font
+				(face "Webdings")
+				(size 6.35 6.35)
+				(thickness 1.778)
+				(bold yes)
+			)
+			(justify left)
+		)
+		(uuid "1216e459-44ea-454b-a712-d50e4f88dc05")
+	)
+	(text "Backup Plan for Current Measurement"
+		(exclude_from_sim no)
+		(at 210.82 49.022 0)
+		(effects
+			(font
+				(size 1.905 1.905)
+				(thickness 0.381)
+				(bold yes)
+			)
+		)
+		(uuid "14f8144e-ad27-44ad-9aa8-66acbcdc51bf")
+	)
+	(text "**Use input [not input_pullup]"
+		(exclude_from_sim no)
+		(at 149.098 139.954 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "154015d8-2943-486e-8c67-4e12014f0165")
+	)
+	(text "GPIO18/A0"
+		(exclude_from_sim no)
+		(at 102.616 152.654 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "163f41c9-b912-44f1-9cf2-9b4480dde49e")
+	)
+	(text "Signal"
+		(exclude_from_sim no)
+		(at 231.394 81.534 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "1878fa76-b433-4b07-83ac-c1e372f14fc7")
+	)
+	(text "All of the connections are broken out to secondary pins, so they can\nbe accessed fairly easily. This will probably not be needed in normal\noperation, but it definitely helps to diagnose hardware problems or \ngive easy access to the happy matter-hackers that live in our space :)"
+		(exclude_from_sim no)
+		(at 46.99 118.11 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "1ec13ffd-ad47-4014-8841-3d701f8a3cf0")
+	)
+	(text "RESET"
+		(exclude_from_sim no)
+		(at 102.616 162.814 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "346d4ee1-5f17-40e8-93ad-1ef87ff52d90")
+	)
+	(text "Power demands on the Feather \ncan be handled by its own \nlinear regulator. This one \nis added to handle all breakouts \non this board, including the \nADE7953, in hopes that the draw \nof the microcontroller and any \nwings on top are isolated from \nthe 3.3volt needs of this board."
+		(exclude_from_sim no)
+		(at 179.324 150.114 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "3716cfc4-8b8c-40df-b47d-a4320adc1f5c")
+	)
+	(text "https://learn.adafruit.com/\nadafruit-wiz5500-wiznet-\nethernet-featherwing/pinouts\n<--IRQ (also maybe not needed)"
+		(exclude_from_sim no)
+		(at 159.766 121.412 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+			(href "https://learn.adafruit.com/adafruit-wiz5500-wiznet-ethernet-featherwing/pinouts")
+		)
+		(uuid "3b6496d5-6926-4367-8762-46cc02fa308b")
+	)
+	(text "GPIO8/A5"
+		(exclude_from_sim no)
+		(at 102.616 139.954 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "3c36b601-ff2d-4c71-89cc-feac586feaf8")
+	)
+	(text "The three-pin connector is there \nfor flexibility. We don't use all 3. \nBut you could if you found some \nawesome sensor that needed 5v \nto run and output digital signals."
+		(exclude_from_sim no)
+		(at 184.15 98.298 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(italic yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "3d01ed73-095e-4173-9bdf-1fac93ebfacc")
+	)
+	(text "GND"
+		(exclude_from_sim no)
+		(at 231.394 84.074 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "411b7df8-7378-47c9-9fb9-5d04f42cf7bf")
+	)
+	(text "For the M3050, you connect:\n  - K2 to J17-Pin_1 (GND)\n  - K1 to J17-Pin_2 (Signal)\n  - Do not connect J17-Pin_3\nThis AC Current Switch simply \nconnects signal to ground and \ngets powered by the AC current \nit observes. Invert your logic."
+		(exclude_from_sim no)
+		(at 226.822 102.616 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "4490fc83-92b1-4fee-8475-057a6aaccbf5")
+	)
+	(text "D0/RX"
+		(exclude_from_sim no)
+		(at 121.666 129.794 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "45183999-1ce8-49c4-a845-f90febab3ecd")
+	)
+	(text "<--not used"
+		(exclude_from_sim no)
+		(at 145.288 159.512 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "4a67871d-6fa3-42b6-82a7-e154cd67b35a")
+	)
+	(text "GPIO15/A3"
+		(exclude_from_sim no)
+		(at 102.616 145.034 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "4d857741-7c68-4126-9553-546f3eac2575")
+	)
+	(text "3V3-out"
+		(exclude_from_sim no)
+		(at 102.616 160.274 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "51fec6b5-c7ea-482d-9b5d-880df4a045c8")
+	)
+	(text "feather specification: https://learn.adafruit.com/adafruit-feather/feather-specification"
+		(exclude_from_sim no)
+		(at 83.058 103.378 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(href "https://learn.adafruit.com/adafruit-feather/feather-specification")
+		)
+		(uuid "58b43f65-b9fe-4c9f-a476-bd1fb4e77f32")
+	)
+	(text "GPIO13"
+		(exclude_from_sim no)
+		(at 75.438 145.034 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "5961971c-21e7-4eba-986a-03ec2f09678d")
+	)
+	(text "M3050 Current Sensing Switch"
+		(exclude_from_sim no)
+		(at 218.186 66.802 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+			(href "https://a.co/d/cqYblCq")
+		)
+		(uuid "5f9cccc1-6c17-4136-b99a-9f45feda3657")
+	)
+	(text "GPIO3/SDA"
+		(exclude_from_sim no)
+		(at 75.438 124.714 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "63be024f-8820-4526-8615-5c100056573c")
+	)
+	(text "out only"
+		(exclude_from_sim no)
+		(at 134.112 159.512 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(href "https://learn.adafruit.com/adafruit-feather/feather-specification#3-dot-3v-output-2861843")
+		)
+		(uuid "64540799-9532-47d2-acdf-59324545af05")
+	)
+	(text "GPIO4/SCL"
+		(exclude_from_sim no)
+		(at 75.438 127.254 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "6c211e6f-fc10-471b-a96e-70da7f87c2a0")
+	)
+	(text "eth-wng-rst\n  **if not using binary current"
+		(exclude_from_sim no)
+		(at 136.398 146.304 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "6e1a47da-e20d-4a11-9c06-af4f2123e493")
+	)
+	(text "GND"
+		(exclude_from_sim no)
+		(at 102.616 155.194 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "73cc7aa1-38be-4038-9dd7-7d1d0e002466")
+	)
+	(text "GPIO11"
+		(exclude_from_sim no)
+		(at 75.438 139.954 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "74169f1e-7ccb-4e20-87c1-9d310ce8afb2")
+	)
+	(text "5VDC"
+		(exclude_from_sim no)
+		(at 231.394 78.994 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "7a7edfb2-79ea-4fea-9e40-a8b622be1f7d")
+	)
+	(text "EN"
+		(exclude_from_sim no)
+		(at 75.438 150.114 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "7d248752-b87b-4fed-bbb3-e083cd1a5232")
+	)
+	(text "Dual I2C Connections"
+		(exclude_from_sim no)
+		(at 38.354 50.038 0)
+		(effects
+			(font
+				(size 2 2)
+				(thickness 0.4)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "80494b96-f81d-4593-8d51-3541fc1beef5")
+	)
+	(text "GPIO38/RX"
+		(exclude_from_sim no)
+		(at 102.616 129.794 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "8991ff42-a581-42e0-bfdc-13f13c80d55a")
+	)
+	(text "GPIO5"
+		(exclude_from_sim no)
+		(at 75.438 129.794 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "8d6c727f-694a-4450-9730-b96d94717b61")
+	)
+	(text "AREF"
+		(exclude_from_sim no)
+		(at 102.616 157.734 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "8f351e20-f4a6-40a2-b282-ad258160424b")
+	)
+	(text " vUSB"
+		(exclude_from_sim no)
+		(at 55.626 147.574 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "91373f7a-ef16-4912-b566-bfcfa0054606")
+	)
+	(text "*Use input_pullup*\ninvert logic [not input]"
+		(exclude_from_sim no)
+		(at 19.05 136.144 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "942dfe50-b573-4ca1-981c-1f05f7732375")
+	)
+	(text "GPIO14/A4"
+		(exclude_from_sim no)
+		(at 102.616 142.494 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "97eee25e-4a5b-4254-a079-de63e3035cf3")
+	)
+	(text "Linear Regulator"
+		(exclude_from_sim no)
+		(at 180.086 128.524 0)
+		(effects
+			(font
+				(size 2 2)
+				(thickness 0.4)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "981b650a-ba30-4f0a-9f0e-ed79c72c15bc")
+	)
+	(text "GPIO16/A2"
+		(exclude_from_sim no)
+		(at 102.616 147.574 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "a13a2567-f3be-43b3-856a-48f57f289a4d")
+	)
+	(text "Use AC Current \nSensing Switch"
+		(exclude_from_sim no)
+		(at 234.696 72.644 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.1588)
+			)
+		)
+		(uuid "a7a4bcc7-af9e-4a77-b604-f9183c29b1c7")
+	)
+	(text "VBUS"
+		(exclude_from_sim no)
+		(at 75.438 147.574 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "ab026c45-1372-42a2-94dd-198306283354")
+	)
+	(text "GPIO36/SCK"
+		(exclude_from_sim no)
+		(at 102.616 137.414 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "ad75cbbf-4f8b-4b42-86cf-6985de0ad946")
+	)
+	(text "AREF"
+		(exclude_from_sim no)
+		(at 120.65 157.734 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "ae06d842-6752-4d53-b250-882c930b1567")
+	)
+	(text "GPIO12"
+		(exclude_from_sim no)
+		(at 75.438 142.494 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "b300d8ed-1c77-4d7e-835e-c367ef24eaed")
+	)
+	(text " vBATTERY"
+		(exclude_from_sim no)
+		(at 54.864 152.654 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "ba9a08a0-c3ac-449e-901d-41449fdb66af")
+	)
+	(text "Breakout Board Connections"
+		(exclude_from_sim no)
+		(at 31.75 32.766 0)
+		(effects
+			(font
+				(size 10 10)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "bc18386f-a3d1-4aff-8af7-93e98e757605")
+	)
+	(text "The I2C bus connection is used by \nthe ADE7953, but here are 2 more \nthat add more extensibility to the \nboard as a whole. One of these will \nmay be used by a PN532 RFID Card Reader. \n---\nNOTE: Cut jumpers & solder in THT \nresistors if you find the I2C data\nhas a bad rise-time/ connection."
+		(exclude_from_sim no)
+		(at 64.516 71.12 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "bd84ecf7-1bfc-4972-8277-fce6c9c1338e")
+	)
+	(text "D1/TX"
+		(exclude_from_sim no)
+		(at 121.412 127.254 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "c58c3d38-0cc2-47c6-b40e-92b3d50bda24")
+	)
+	(text "GPIO6"
+		(exclude_from_sim no)
+		(at 75.438 132.334 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "c7886488-ec5f-4184-9dad-c28459a5bcc1")
+	)
+	(text "GPIO39/TX"
+		(exclude_from_sim no)
+		(at 102.616 127.254 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "cc0b14a7-6978-46fd-a52a-235c371e18c5")
+	)
+	(text "GPIO37/POCI"
+		(exclude_from_sim no)
+		(at 102.616 132.334 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "d18ab84f-1510-4861-a8f9-5ae2e4134019")
+	)
+	(text "It takes more than just one board to make these controllers work."
+		(exclude_from_sim no)
+		(at 64.77 37.846 0)
+		(effects
+			(font
+				(size 3 3)
+			)
+			(justify left bottom)
+		)
+		(uuid "d79482f6-e7d8-40fc-b49e-a0b311325835")
+	)
+	(text "GPIO9"
+		(exclude_from_sim no)
+		(at 75.438 134.874 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "e4ee5ded-548b-4d12-91fd-f62b72ef8efb")
+	)
+	(text "The ADE7953 can be tricky to fully implement, and we know that an\nold CT Clamp breakout board has worked for years. For that reason,\nwe added this flexible 'backup plan' to easily attach an AC current \nswitch or breakout board (with digital out) if you need a fallback.\n\n[!WARNING] Use an AC current sensor here, with digital output (NOT \nAnalog) or this will not work. Try this:"
+		(exclude_from_sim no)
+		(at 179.832 66.294 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "e5e5aea1-695b-4616-a488-13a300b85a21")
+	)
+	(text "EXTRA"
+		(exclude_from_sim no)
+		(at 102.616 124.714 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "e8621893-a583-4865-8b3c-b8eabd08d73c")
+	)
+	(text "Here is a single SPI connection in a\n6-pin JST configuration. You will need\nto verify the alignment of these pins\nwith whatever you are connecting.\nAlso: be mindful of the new PICO notation \nversus the legacy MOSI notation for boards."
+		(exclude_from_sim no)
+		(at 116.84 63.5 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "ed93878c-b5a8-47f5-bd6a-97004759e02e")
+	)
+	(text ">[!NOTE] The Feather will be powered by the onboard AC/DC power supply on the Wing by default. That means:\n> NEVER plug your computer's USB port into the Feather while the Wing is powered from the AC/DC power supply!\n> This would backpower your Computer's USB and can cause serious harm to the computer.\n> -- Disconnect Jumper J24 if you need to attempt this, but it is NOT recommended [it is NOT completely safe]\n>\n> Here is what you SHOULD do: \n>   1. Program the Feather over USB (first time only) while it is NOT SEATED in the Wing-Combo board.\n>   2. Disconnect Feather from computer and seat in Wing-Combo board. It should turn on and connect to WiFi.\n>   3. Reprogram Feather as needed Over-The-Air only. [Never put a USB from inside the box into a computer.]\n\nIf your Feather requires 5VDC via USB only (not advised for most Feather boards).\nStep 1: Pull the jumper from J24, and leave it disconnected.\nStep 2: Proceed with oddly powering the Feather from the USB-C port available on the Wing-Combo board.\nThis will require a short jumper USB (just a few centimeters) and be very goofy. Only do this for very good reason...\nhttps://learn.adafruit.com/adafruit-huzzah32-esp32-feather/power-management#alternative-power-options-3122391"
+		(exclude_from_sim no)
+		(at 30.226 183.896 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+			(href "https://learn.adafruit.com/adafruit-huzzah32-esp32-feather/power-management#alternative-power-options-3122391")
+		)
+		(uuid "f81a4399-e9b8-4f64-94d8-588392d54979")
+	)
+	(text "GPIO35/PICO"
+		(exclude_from_sim no)
+		(at 102.616 134.874 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "f8dd838c-b32c-4d6d-b199-7bcb44779590")
+	)
+	(text "Headers for easy access to all of the ESP32 Pins"
+		(exclude_from_sim no)
+		(at 44.45 109.22 0)
+		(effects
+			(font
+				(size 2 2)
+				(thickness 0.4)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "fd3ef449-07c3-401c-ac3f-d0689e708a27")
+	)
+	(text "VBAT"
+		(exclude_from_sim no)
+		(at 75.438 152.654 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "fd9f5c6a-950e-4aed-8b95-f52f3ebc9bb4")
+	)
+	(text "NOTE: all pins labeled with blue text\nshould not be used in this design, as \nthey have specified roles in feathers."
+		(exclude_from_sim no)
+		(at 61.722 161.036 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "fdc07e24-b0aa-4196-88a5-b46ce30c41f9")
+	)
+	(text "SPARE"
+		(exclude_from_sim no)
+		(at 121.412 124.714 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(href "https://learn.adafruit.com/adafruit-feather/feather-specification#other-pins-2861847")
+		)
+		(uuid "fe2c579e-6d40-47f8-b865-beea618c38e3")
 	)
 	(junction
 		(at 116.84 137.16)
@@ -4569,720 +5336,6 @@
 			(type default)
 		)
 		(uuid "ffc6879d-db13-4b6b-8251-f350ed281e4f")
-	)
-	(text "GPIO10"
-		(exclude_from_sim no)
-		(at 75.438 137.414 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "03ed3cd2-3d9b-4bd2-94b3-c8e06270a51a")
-	)
-	(text "**Technically, this \nis just a spare \nlevel-shifted GPIO \ninput you can use."
-		(exclude_from_sim no)
-		(at 173.99 73.914 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-				(italic yes)
-			)
-			(justify left)
-		)
-		(uuid "05ec3615-3f10-42f2-938e-2106a8e7b936")
-	)
-	(text "GPIO17/A1"
-		(exclude_from_sim no)
-		(at 102.616 150.114 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "0abf9c25-d9f8-40f2-a981-06dc756dfb4b")
-	)
-	(text "Single SPI Bus"
-		(exclude_from_sim no)
-		(at 119.38 49.53 0)
-		(effects
-			(font
-				(size 2 2)
-				(thickness 0.4)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-		(uuid "0dfc3af4-f196-4153-8e48-e5b75ed82c42")
-	)
-	(text "U\nd\nd\nd"
-		(exclude_from_sim no)
-		(at 20.066 179.324 0)
-		(effects
-			(font
-				(face "Webdings")
-				(size 6.35 6.35)
-				(thickness 1.778)
-				(bold yes)
-			)
-			(justify left)
-		)
-		(uuid "1216e459-44ea-454b-a712-d50e4f88dc05")
-	)
-	(text "Backup Plan for Current Measurement"
-		(exclude_from_sim no)
-		(at 210.82 49.022 0)
-		(effects
-			(font
-				(size 1.905 1.905)
-				(thickness 0.381)
-				(bold yes)
-			)
-		)
-		(uuid "14f8144e-ad27-44ad-9aa8-66acbcdc51bf")
-	)
-	(text "**Use input [not input_pullup]"
-		(exclude_from_sim no)
-		(at 149.098 139.954 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "154015d8-2943-486e-8c67-4e12014f0165")
-	)
-	(text "GPIO18/A0"
-		(exclude_from_sim no)
-		(at 102.616 152.654 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "163f41c9-b912-44f1-9cf2-9b4480dde49e")
-	)
-	(text "Signal"
-		(exclude_from_sim no)
-		(at 231.394 81.534 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "1878fa76-b433-4b07-83ac-c1e372f14fc7")
-	)
-	(text "All of the connections are broken out to secondary pins, so they can\nbe accessed fairly easily. This will probably not be needed in normal\noperation, but it definitely helps to diagnose hardware problems or \ngive easy access to the happy matter-hackers that live in our space :)"
-		(exclude_from_sim no)
-		(at 46.99 118.11 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "1ec13ffd-ad47-4014-8841-3d701f8a3cf0")
-	)
-	(text "RESET"
-		(exclude_from_sim no)
-		(at 102.616 162.814 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "346d4ee1-5f17-40e8-93ad-1ef87ff52d90")
-	)
-	(text "Power demands on the Feather \ncan be handled by its own \nlinear regulator. This one \nis added to handle all breakouts \non this board, including the \nADE7953, in hopes that the draw \nof the microcontroller and any \nwings on top are isolated from \nthe 3.3volt needs of this board."
-		(exclude_from_sim no)
-		(at 179.324 150.114 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "3716cfc4-8b8c-40df-b47d-a4320adc1f5c")
-	)
-	(text "https://learn.adafruit.com/\nadafruit-wiz5500-wiznet-\nethernet-featherwing/pinouts\n<--IRQ (also maybe not needed)"
-		(exclude_from_sim no)
-		(at 159.766 121.412 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-			(href "https://learn.adafruit.com/adafruit-wiz5500-wiznet-ethernet-featherwing/pinouts")
-		)
-		(uuid "3b6496d5-6926-4367-8762-46cc02fa308b")
-	)
-	(text "GPIO8/A5"
-		(exclude_from_sim no)
-		(at 102.616 139.954 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "3c36b601-ff2d-4c71-89cc-feac586feaf8")
-	)
-	(text "The three-pin connector is there \nfor flexibility. We don't use all 3. \nBut you could if you found some \nawesome sensor that needed 5v \nto run and output digital signals."
-		(exclude_from_sim no)
-		(at 184.15 98.298 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-				(italic yes)
-			)
-			(justify left bottom)
-		)
-		(uuid "3d01ed73-095e-4173-9bdf-1fac93ebfacc")
-	)
-	(text "GND"
-		(exclude_from_sim no)
-		(at 231.394 84.074 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "411b7df8-7378-47c9-9fb9-5d04f42cf7bf")
-	)
-	(text "For the M3050, you connect:\n  - K2 to J17-Pin_1 (GND)\n  - K1 to J17-Pin_2 (Signal)\n  - Do not connect J17-Pin_3\nThis AC Current Switch simply \nconnects signal to ground and \ngets powered by the AC current \nit observes. Invert your logic."
-		(exclude_from_sim no)
-		(at 226.822 102.616 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "4490fc83-92b1-4fee-8475-057a6aaccbf5")
-	)
-	(text "D0/RX"
-		(exclude_from_sim no)
-		(at 121.666 129.794 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "45183999-1ce8-49c4-a845-f90febab3ecd")
-	)
-	(text "<--not used"
-		(exclude_from_sim no)
-		(at 145.288 159.512 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "4a67871d-6fa3-42b6-82a7-e154cd67b35a")
-	)
-	(text "GPIO15/A3"
-		(exclude_from_sim no)
-		(at 102.616 145.034 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "4d857741-7c68-4126-9553-546f3eac2575")
-	)
-	(text "3V3-out"
-		(exclude_from_sim no)
-		(at 102.616 160.274 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "51fec6b5-c7ea-482d-9b5d-880df4a045c8")
-	)
-	(text "feather specification: https://learn.adafruit.com/adafruit-feather/feather-specification"
-		(exclude_from_sim no)
-		(at 83.058 103.378 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(href "https://learn.adafruit.com/adafruit-feather/feather-specification")
-		)
-		(uuid "58b43f65-b9fe-4c9f-a476-bd1fb4e77f32")
-	)
-	(text "GPIO13"
-		(exclude_from_sim no)
-		(at 75.438 145.034 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "5961971c-21e7-4eba-986a-03ec2f09678d")
-	)
-	(text "M3050 Current Sensing Switch"
-		(exclude_from_sim no)
-		(at 218.186 66.802 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-			(href "https://a.co/d/cqYblCq")
-		)
-		(uuid "5f9cccc1-6c17-4136-b99a-9f45feda3657")
-	)
-	(text "GPIO3/SDA"
-		(exclude_from_sim no)
-		(at 75.438 124.714 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "63be024f-8820-4526-8615-5c100056573c")
-	)
-	(text "out only"
-		(exclude_from_sim no)
-		(at 134.112 159.512 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(href "https://learn.adafruit.com/adafruit-feather/feather-specification#3-dot-3v-output-2861843")
-		)
-		(uuid "64540799-9532-47d2-acdf-59324545af05")
-	)
-	(text "GPIO4/SCL"
-		(exclude_from_sim no)
-		(at 75.438 127.254 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "6c211e6f-fc10-471b-a96e-70da7f87c2a0")
-	)
-	(text "eth-wng-rst\n  **if not using binary current"
-		(exclude_from_sim no)
-		(at 136.398 146.304 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "6e1a47da-e20d-4a11-9c06-af4f2123e493")
-	)
-	(text "GND"
-		(exclude_from_sim no)
-		(at 102.616 155.194 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "73cc7aa1-38be-4038-9dd7-7d1d0e002466")
-	)
-	(text "GPIO11"
-		(exclude_from_sim no)
-		(at 75.438 139.954 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "74169f1e-7ccb-4e20-87c1-9d310ce8afb2")
-	)
-	(text "5VDC"
-		(exclude_from_sim no)
-		(at 231.394 78.994 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "7a7edfb2-79ea-4fea-9e40-a8b622be1f7d")
-	)
-	(text "EN"
-		(exclude_from_sim no)
-		(at 75.438 150.114 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "7d248752-b87b-4fed-bbb3-e083cd1a5232")
-	)
-	(text "Dual I2C Connections"
-		(exclude_from_sim no)
-		(at 38.354 50.038 0)
-		(effects
-			(font
-				(size 2 2)
-				(thickness 0.4)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-		(uuid "80494b96-f81d-4593-8d51-3541fc1beef5")
-	)
-	(text "GPIO38/RX"
-		(exclude_from_sim no)
-		(at 102.616 129.794 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "8991ff42-a581-42e0-bfdc-13f13c80d55a")
-	)
-	(text "GPIO5"
-		(exclude_from_sim no)
-		(at 75.438 129.794 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "8d6c727f-694a-4450-9730-b96d94717b61")
-	)
-	(text "AREF"
-		(exclude_from_sim no)
-		(at 102.616 157.734 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "8f351e20-f4a6-40a2-b282-ad258160424b")
-	)
-	(text " vUSB"
-		(exclude_from_sim no)
-		(at 55.626 147.574 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "91373f7a-ef16-4912-b566-bfcfa0054606")
-	)
-	(text "*Use input_pullup*\ninvert logic [not input]"
-		(exclude_from_sim no)
-		(at 19.05 136.144 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "942dfe50-b573-4ca1-981c-1f05f7732375")
-	)
-	(text "GPIO14/A4"
-		(exclude_from_sim no)
-		(at 102.616 142.494 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "97eee25e-4a5b-4254-a079-de63e3035cf3")
-	)
-	(text "Linear Regulator"
-		(exclude_from_sim no)
-		(at 180.086 128.524 0)
-		(effects
-			(font
-				(size 2 2)
-				(thickness 0.4)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-		(uuid "981b650a-ba30-4f0a-9f0e-ed79c72c15bc")
-	)
-	(text "GPIO16/A2"
-		(exclude_from_sim no)
-		(at 102.616 147.574 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "a13a2567-f3be-43b3-856a-48f57f289a4d")
-	)
-	(text "Use AC Current \nSensing Switch"
-		(exclude_from_sim no)
-		(at 234.696 72.644 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-				(thickness 0.1588)
-			)
-		)
-		(uuid "a7a4bcc7-af9e-4a77-b604-f9183c29b1c7")
-	)
-	(text "VBUS"
-		(exclude_from_sim no)
-		(at 75.438 147.574 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "ab026c45-1372-42a2-94dd-198306283354")
-	)
-	(text "GPIO36/SCK"
-		(exclude_from_sim no)
-		(at 102.616 137.414 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "ad75cbbf-4f8b-4b42-86cf-6985de0ad946")
-	)
-	(text "AREF"
-		(exclude_from_sim no)
-		(at 120.65 157.734 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "ae06d842-6752-4d53-b250-882c930b1567")
-	)
-	(text "GPIO12"
-		(exclude_from_sim no)
-		(at 75.438 142.494 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "b300d8ed-1c77-4d7e-835e-c367ef24eaed")
-	)
-	(text " vBATTERY"
-		(exclude_from_sim no)
-		(at 54.864 152.654 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "ba9a08a0-c3ac-449e-901d-41449fdb66af")
-	)
-	(text "Breakout Board Connections"
-		(exclude_from_sim no)
-		(at 31.75 32.766 0)
-		(effects
-			(font
-				(size 10 10)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-		(uuid "bc18386f-a3d1-4aff-8af7-93e98e757605")
-	)
-	(text "The I2C bus connection is used by \nthe ADE7953, but here are 2 more \nthat add more extensibility to the \nboard as a whole. One of these will \nmay be used by a PN532 RFID Card Reader. \n---\nNOTE: Cut jumpers & solder in THT \nresistors if you find the I2C data\nhas a bad rise-time/ connection."
-		(exclude_from_sim no)
-		(at 64.516 71.12 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "bd84ecf7-1bfc-4972-8277-fce6c9c1338e")
-	)
-	(text "D1/TX"
-		(exclude_from_sim no)
-		(at 121.412 127.254 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "c58c3d38-0cc2-47c6-b40e-92b3d50bda24")
-	)
-	(text "GPIO6"
-		(exclude_from_sim no)
-		(at 75.438 132.334 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "c7886488-ec5f-4184-9dad-c28459a5bcc1")
-	)
-	(text "GPIO39/TX"
-		(exclude_from_sim no)
-		(at 102.616 127.254 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "cc0b14a7-6978-46fd-a52a-235c371e18c5")
-	)
-	(text "GPIO37/POCI"
-		(exclude_from_sim no)
-		(at 102.616 132.334 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "d18ab84f-1510-4861-a8f9-5ae2e4134019")
-	)
-	(text "It takes more than just one board to make these controllers work."
-		(exclude_from_sim no)
-		(at 64.77 37.846 0)
-		(effects
-			(font
-				(size 3 3)
-			)
-			(justify left bottom)
-		)
-		(uuid "d79482f6-e7d8-40fc-b49e-a0b311325835")
-	)
-	(text "GPIO9"
-		(exclude_from_sim no)
-		(at 75.438 134.874 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "e4ee5ded-548b-4d12-91fd-f62b72ef8efb")
-	)
-	(text "The ADE7953 can be tricky to fully implement, and we know that an\nold CT Clamp breakout board has worked for years. For that reason,\nwe added this flexible 'backup plan' to easily attach an AC current \nswitch or breakout board (with digital out) if you need a fallback.\n\n[!WARNING] Use an AC current sensor here, with digital output (NOT \nAnalog) or this will not work. Try this:"
-		(exclude_from_sim no)
-		(at 179.832 66.294 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "e5e5aea1-695b-4616-a488-13a300b85a21")
-	)
-	(text "EXTRA"
-		(exclude_from_sim no)
-		(at 102.616 124.714 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "e8621893-a583-4865-8b3c-b8eabd08d73c")
-	)
-	(text "Here is a single SPI connection in a\n6-pin JST configuration. You will need\nto verify the alignment of these pins\nwith whatever you are connecting.\nAlso: be mindful of the new PICO notation \nversus the legacy MOSI notation for boards."
-		(exclude_from_sim no)
-		(at 116.84 63.5 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "ed93878c-b5a8-47f5-bd6a-97004759e02e")
-	)
-	(text ">[!NOTE] The Feather will be powered by the onboard AC/DC power supply on the Wing by default. That means:\n> NEVER plug your computer's USB port into the Feather while the Wing is powered from the AC/DC power supply!\n> This would backpower your Computer's USB and can cause serious harm to the computer.\n> -- Disconnect Jumper J24 if you need to attempt this, but it is NOT recommended [it is NOT completely safe]\n>\n> Here is what you SHOULD do: \n>   1. Program the Feather over USB (first time only) while it is NOT SEATED in the Wing-Combo board.\n>   2. Disconnect Feather from computer and seat in Wing-Combo board. It should turn on and connect to WiFi.\n>   3. Reprogram Feather as needed Over-The-Air only. [Never put a USB from inside the box into a computer.]\n\nIf your Feather requires 5VDC via USB only (not advised for most Feather boards).\nStep 1: Pull the jumper from J24, and leave it disconnected.\nStep 2: Proceed with oddly powering the Feather from the USB-C port available on the Wing-Combo board.\nThis will require a short jumper USB (just a few centimeters) and be very goofy. Only do this for very good reason...\nhttps://learn.adafruit.com/adafruit-huzzah32-esp32-feather/power-management#alternative-power-options-3122391"
-		(exclude_from_sim no)
-		(at 30.226 183.896 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-			(href "https://learn.adafruit.com/adafruit-huzzah32-esp32-feather/power-management#alternative-power-options-3122391")
-		)
-		(uuid "f81a4399-e9b8-4f64-94d8-588392d54979")
-	)
-	(text "GPIO35/PICO"
-		(exclude_from_sim no)
-		(at 102.616 134.874 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "f8dd838c-b32c-4d6d-b199-7bcb44779590")
-	)
-	(text "Headers for easy access to all of the ESP32 Pins"
-		(exclude_from_sim no)
-		(at 44.45 109.22 0)
-		(effects
-			(font
-				(size 2 2)
-				(thickness 0.4)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-		(uuid "fd3ef449-07c3-401c-ac3f-d0689e708a27")
-	)
-	(text "VBAT"
-		(exclude_from_sim no)
-		(at 75.438 152.654 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "fd9f5c6a-950e-4aed-8b95-f52f3ebc9bb4")
-	)
-	(text "NOTE: all pins labeled with blue text\nshould not be used in this design, as \nthey have specified roles in feathers."
-		(exclude_from_sim no)
-		(at 61.722 161.036 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "fdc07e24-b0aa-4196-88a5-b46ce30c41f9")
-	)
-	(text "SPARE"
-		(exclude_from_sim no)
-		(at 121.412 124.714 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(href "https://learn.adafruit.com/adafruit-feather/feather-specification#other-pins-2861847")
-		)
-		(uuid "fe2c579e-6d40-47f8-b865-beea618c38e3")
 	)
 	(global_label "SCL"
 		(shape input)

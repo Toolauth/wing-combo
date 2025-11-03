@@ -1,13 +1,13 @@
 (kicad_sch
-	(version 20231120)
+	(version 20250114)
 	(generator "eeschema")
-	(generator_version "8.0")
+	(generator_version "9.0")
 	(uuid "24fc4378-6cc8-4278-b1f1-7915a2382f64")
 	(paper "USLetter")
 	(title_block
 		(title "Stage 3 | Contactor to power the Tool")
-		(date "2022-10-29")
-		(rev "3")
+		(date "2025-11-02")
+		(rev "1.4.3")
 		(company "Corey Rice & MakeHaven")
 		(comment 1 "The contactor actually controls power access to the tool")
 		(comment 2 "E-Stops to interrupt power from the Stage 2 relay to contactor coil")
@@ -16,7 +16,9 @@
 	(lib_symbols
 		(symbol "Connector:Screw_Terminal_01x06"
 			(pin_names
-				(offset 1.016) hide)
+				(offset 1.016)
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -93,78 +95,9 @@
 						(type background)
 					)
 				)
-				(circle
-					(center 0 -7.62)
-					(radius 0.635)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 0 -5.08)
-					(radius 0.635)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 0 -2.54)
-					(radius 0.635)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
 				(polyline
 					(pts
-						(xy -0.5334 -7.2898) (xy 0.3302 -8.128)
-					)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -0.5334 -4.7498) (xy 0.3302 -5.588)
-					)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -0.5334 -2.2098) (xy 0.3302 -3.048)
-					)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -0.5334 0.3302) (xy 0.3302 -0.508)
+						(xy -0.5334 5.4102) (xy 0.3302 4.572)
 					)
 					(stroke
 						(width 0.1524)
@@ -188,7 +121,7 @@
 				)
 				(polyline
 					(pts
-						(xy -0.5334 5.4102) (xy 0.3302 4.572)
+						(xy -0.5334 0.3302) (xy 0.3302 -0.508)
 					)
 					(stroke
 						(width 0.1524)
@@ -200,7 +133,7 @@
 				)
 				(polyline
 					(pts
-						(xy -0.3556 -7.112) (xy 0.508 -7.9502)
+						(xy -0.5334 -2.2098) (xy 0.3302 -3.048)
 					)
 					(stroke
 						(width 0.1524)
@@ -212,7 +145,7 @@
 				)
 				(polyline
 					(pts
-						(xy -0.3556 -4.572) (xy 0.508 -5.4102)
+						(xy -0.5334 -4.7498) (xy 0.3302 -5.588)
 					)
 					(stroke
 						(width 0.1524)
@@ -224,7 +157,7 @@
 				)
 				(polyline
 					(pts
-						(xy -0.3556 -2.032) (xy 0.508 -2.8702)
+						(xy -0.5334 -7.2898) (xy 0.3302 -8.128)
 					)
 					(stroke
 						(width 0.1524)
@@ -236,7 +169,7 @@
 				)
 				(polyline
 					(pts
-						(xy -0.3556 0.508) (xy 0.508 -0.3302)
+						(xy -0.3556 5.588) (xy 0.508 4.7498)
 					)
 					(stroke
 						(width 0.1524)
@@ -260,7 +193,43 @@
 				)
 				(polyline
 					(pts
-						(xy -0.3556 5.588) (xy 0.508 4.7498)
+						(xy -0.3556 0.508) (xy 0.508 -0.3302)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.3556 -2.032) (xy 0.508 -2.8702)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.3556 -4.572) (xy 0.508 -5.4102)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.3556 -7.112) (xy 0.508 -7.9502)
 					)
 					(stroke
 						(width 0.1524)
@@ -271,7 +240,7 @@
 					)
 				)
 				(circle
-					(center 0 0)
+					(center 0 5.08)
 					(radius 0.635)
 					(stroke
 						(width 0.1524)
@@ -293,7 +262,40 @@
 					)
 				)
 				(circle
-					(center 0 5.08)
+					(center 0 0)
+					(radius 0.635)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 0 -2.54)
+					(radius 0.635)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 0 -5.08)
+					(radius 0.635)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 0 -7.62)
 					(radius 0.635)
 					(stroke
 						(width 0.1524)
@@ -412,7 +414,179 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
+	)
+	(text "The terminals are in pairs, and labeled on the board. \n\nPCB screenprinting does not necessarily match the\ntracenames/ flags shown here. Instead, silkscreen\nlabels are designed to be as user-friendly as \npossible. They are explained in this repo's wiki. "
+		(exclude_from_sim no)
+		(at 171.704 79.248 0)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+			(justify left bottom)
+		)
+		(uuid "0cf6328e-dd23-4921-847c-0f6723fce492")
+	)
+	(text "Stage 3 ||Final Contactor & Screw Terminals\n"
+		(exclude_from_sim no)
+		(at 35.56 30.48 0)
+		(effects
+			(font
+				(size 4 4)
+				(thickness 0.8)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "1645e8e0-a72e-487b-9934-bfad0ec8905c")
+	)
+	(text "N-ON switch\n"
+		(exclude_from_sim no)
+		(at 93.218 130.302 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "248bba65-8540-4bb0-a748-658aa9d9812a")
+	)
+	(text "The contactor is not shown here, only the connection point labeled as\n\"S3-Contactor-Control-{1or2}\" which is a screw terminal connection point.\n\nThe Stage 3 contactor can supply power to the tool, directly from the mains\ninput power. However, all that is shown here is for the lower-current control\nloop that activates the contactor. Tool-current should never paass through this PCB.\n\n>[!WARNING] Not for use with latching contactors.\n\nThe E-Stop switches shown here can cut power to the contactor in the unlikely \nevent that their twin switch (sw2 | each E-Stop has 2 switches) is fused shut, \nand the stage 2 relay stays powered. A backup to ensure the E-Stop is effective."
+		(exclude_from_sim no)
+		(at 39.878 82.296 0)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+			(justify left bottom)
+		)
+		(uuid "465bada5-f32e-4827-a845-aac252f01855")
+	)
+	(text "Many tools will have this jumpered-shut.\nOnly tools that need a second E-Stop in a\nmore reachable place will use this.\n"
+		(exclude_from_sim no)
+		(at 69.596 160.782 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "5a6ff54c-b4bb-49b5-9156-4e1be8c126f1")
+	)
+	(text "Putting the main E-Stop here has \nit as 'close' to the tool as possible.\nThis avoids failing E-Stops because\nof a self-welded Stage 2 Relay."
+		(exclude_from_sim no)
+		(at 69.342 141.478 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "6e53bd27-1803-40c6-8502-a5ce862073fa")
+	)
+	(text "The output fron the S2 \nrelay that controls \nthe Stage 3 contactor."
+		(exclude_from_sim no)
+		(at 83.82 120.65 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "91f7a894-d7d0-467d-af95-177a7652c7ed")
+	)
+	(text "main E-stop -->"
+		(exclude_from_sim no)
+		(at 63.5 130.81 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "a6a8a31c-5ec0-4246-8f02-b50965c69f8d")
+	)
+	(text "EStop-aux1-2"
+		(exclude_from_sim no)
+		(at 210.566 121.666 0)
+		(effects
+			(font
+				(size 1.524 1.524)
+			)
+			(justify left bottom)
+		)
+		(uuid "b1ecd78a-1637-4496-8e25-8fafa9dc580f")
+	)
+	(text "Control for Final Contactor\n"
+		(exclude_from_sim no)
+		(at 41.402 51.816 0)
+		(effects
+			(font
+				(size 2 2)
+				(thickness 0.4)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "c0aa64a4-e322-4fe3-bcf5-fb6c2ce0aebd")
+	)
+	(text "N-ON switch\n"
+		(exclude_from_sim no)
+		(at 93.98 153.67 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "d034cdf8-6f92-4406-a24e-234501887afe")
+	)
+	(text "aux E-stop -->"
+		(exclude_from_sim no)
+		(at 63.5 154.94 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "d12ce1f4-b943-43c3-a6b3-f4cd6cbf897d")
+	)
+	(text "Output to control the Contactor, and a light to show the state."
+		(exclude_from_sim no)
+		(at 36.83 35.56 0)
+		(effects
+			(font
+				(size 2.5 2.5)
+			)
+			(justify left bottom)
+		)
+		(uuid "dc6368ee-5afe-4e71-a1bc-4967a46f2ae3")
+	)
+	(text "Screw Terminals for all functions"
+		(exclude_from_sim no)
+		(at 175.26 60.96 0)
+		(effects
+			(font
+				(size 2 2)
+				(thickness 0.4)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+		(uuid "e567d0f0-da2d-433d-87a8-905eb3d912c4")
+	)
+	(text "S2 Output -->"
+		(exclude_from_sim no)
+		(at 63.5 118.11 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "fc7580c8-0f4e-4955-82f0-d4286a6da0f5")
 	)
 	(junction
 		(at 66.04 95.25)
@@ -735,177 +909,6 @@
 			(type default)
 		)
 		(uuid "fb4e418d-f9a5-4976-8739-54ecffb3fd77")
-	)
-	(text "The terminals are in pairs, and labeled on the board. \n\nPCB screenprinting does not necessarily match the\ntracenames/ flags shown here. Instead, silkscreen\nlabels are designed to be as user-friendly as \npossible. They are explained in this repo's wiki. "
-		(exclude_from_sim no)
-		(at 171.704 79.248 0)
-		(effects
-			(font
-				(size 1.524 1.524)
-			)
-			(justify left bottom)
-		)
-		(uuid "0cf6328e-dd23-4921-847c-0f6723fce492")
-	)
-	(text "Stage 3 ||Final Contactor & Screw Terminals\n"
-		(exclude_from_sim no)
-		(at 35.56 30.48 0)
-		(effects
-			(font
-				(size 4 4)
-				(thickness 0.8)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-		(uuid "1645e8e0-a72e-487b-9934-bfad0ec8905c")
-	)
-	(text "N-ON switch\n"
-		(exclude_from_sim no)
-		(at 93.218 130.302 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "248bba65-8540-4bb0-a748-658aa9d9812a")
-	)
-	(text "The contactor is not shown here, only the connection point labeled as\n\"S3-Contactor-Control-{1or2}\" which is a screw terminal connection point.\n\nThe Stage 3 contactor can supply power to the tool, directly from the mains\ninput power. However, all that is shown here is for the lower-current control\nloop that activates the contactor. Tool-current should never paass through this PCB.\n\n>[!WARNING] Not for use with latching contactors.\n\nThe E-Stop switches shown here can cut power to the contactor in the unlikely \nevent that their twin switch (sw2 | each E-Stop has 2 switches) is fused shut, \nand the stage 2 relay stays powered. A backup to ensure the E-Stop is effective."
-		(exclude_from_sim no)
-		(at 39.878 82.296 0)
-		(effects
-			(font
-				(size 1.524 1.524)
-			)
-			(justify left bottom)
-		)
-		(uuid "465bada5-f32e-4827-a845-aac252f01855")
-	)
-	(text "Many tools will have this jumpered-shut.\nOnly tools that need a second E-Stop in a\nmore reachable place will use this.\n"
-		(exclude_from_sim no)
-		(at 69.596 160.782 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "5a6ff54c-b4bb-49b5-9156-4e1be8c126f1")
-	)
-	(text "Putting the main E-Stop here has \nit as 'close' to the tool as possible.\nThis avoids failing E-Stops because\nof a self-welded Stage 2 Relay."
-		(exclude_from_sim no)
-		(at 69.342 141.478 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "6e53bd27-1803-40c6-8502-a5ce862073fa")
-	)
-	(text "The output fron the S2 \nrelay that controls \nthe Stage 3 contactor."
-		(exclude_from_sim no)
-		(at 83.82 120.65 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "91f7a894-d7d0-467d-af95-177a7652c7ed")
-	)
-	(text "main E-stop -->"
-		(exclude_from_sim no)
-		(at 63.5 130.81 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "a6a8a31c-5ec0-4246-8f02-b50965c69f8d")
-	)
-	(text "EStop-aux1-2"
-		(exclude_from_sim no)
-		(at 210.566 121.666 0)
-		(effects
-			(font
-				(size 1.524 1.524)
-			)
-			(justify left bottom)
-		)
-		(uuid "b1ecd78a-1637-4496-8e25-8fafa9dc580f")
-	)
-	(text "Control for Final Contactor\n"
-		(exclude_from_sim no)
-		(at 41.402 51.816 0)
-		(effects
-			(font
-				(size 2 2)
-				(thickness 0.4)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-		(uuid "c0aa64a4-e322-4fe3-bcf5-fb6c2ce0aebd")
-	)
-	(text "N-ON switch\n"
-		(exclude_from_sim no)
-		(at 93.98 153.67 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "d034cdf8-6f92-4406-a24e-234501887afe")
-	)
-	(text "aux E-stop -->"
-		(exclude_from_sim no)
-		(at 63.5 154.94 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "d12ce1f4-b943-43c3-a6b3-f4cd6cbf897d")
-	)
-	(text "Output to control the Contactor, and a light to show the state."
-		(exclude_from_sim no)
-		(at 36.83 35.56 0)
-		(effects
-			(font
-				(size 2.5 2.5)
-			)
-			(justify left bottom)
-		)
-		(uuid "dc6368ee-5afe-4e71-a1bc-4967a46f2ae3")
-	)
-	(text "Screw Terminals for all functions"
-		(exclude_from_sim no)
-		(at 175.26 60.96 0)
-		(effects
-			(font
-				(size 2 2)
-				(thickness 0.4)
-				(bold yes)
-			)
-			(justify left bottom)
-		)
-		(uuid "e567d0f0-da2d-433d-87a8-905eb3d912c4")
-	)
-	(text "S2 Output -->"
-		(exclude_from_sim no)
-		(at 63.5 118.11 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "fc7580c8-0f4e-4955-82f0-d4286a6da0f5")
 	)
 	(global_label "Green-Indicator-light-1"
 		(shape output)
