@@ -35,5 +35,6 @@ production/backups/*
 # Exported BOM files
 *.xml
 *.csv
-!production/bom.csv
-!production/positions.csv
+production/backups/
+!production/*bom.csv
+!production/*positions.csv
