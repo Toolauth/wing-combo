@@ -36,5 +36,6 @@ production/backups/*
 *.xml
 *.csv
 production/backups/
+production/netlist.ipc
 !production/*bom.csv
 !production/*positions.csv
