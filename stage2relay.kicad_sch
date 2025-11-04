@@ -1766,7 +1766,7 @@
 		)
 		(uuid "ec8d5a33-b48f-432f-ba56-4cc0c9a63662")
 	)
-	(text "This portion of the circuit allows the Stage 2 Relay to turn ON\n& stay ON. When enabled [by Feather or Bypass] a person can turn \nON the relay with the green button. Once activated, the link from\nrelay pin 12-to-8 'latch' the relay ON while powered, until reset.\nAs long as 4PDT relay is used, microcontroller can sense relay state."
+	(text "This portion of the circuit allows the Stage 2 Relay to turn ON\n& stay ON. When enabled [by Feather or Bypass] a person can turn \nON the relay with the green button. Once activated, the link from\nrelay pin 9-to-5 'latch' the relay ON while powered, until reset.\nAs long as 4PDT relay is used, microcontroller can sense relay state."
 		(exclude_from_sim no)
 		(at 30.988 75.438 0)
 		(effects
