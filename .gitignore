@@ -39,3 +39,6 @@ production/backups/
 production/netlist.ipc
 !production/*bom.csv
 !production/*positions.csv
+
+# Production quote files
+sierra_quote.log
