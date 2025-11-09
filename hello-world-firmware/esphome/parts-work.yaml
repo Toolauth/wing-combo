@@ -1,69 +1,80 @@
-#
-#
-#     Written to work as ESPHome firmware.
+#  Written to work as ESPHome firmware.
 #     
-#     Simply test that all features of the board are working, not integrate into toolauth.
-#
+#  Simply test that all features of the 
+#  board are working, not integrate into 
+#  toolauth. Hardcoded WiFi ssid + pass.
 #
 
 substitutions:
-  pin_sda: GPIO21
-  pin_scl: GPIO22
-  pin_irq: GPIO25
-  pin_red_led: GPIO32
-  pin_green_led: GPIO33
+  pin_sda: GPIO3
+  pin_scl: GPIO4
+  pin_irq: GPIO11
+  pin_red_led: GPIO5
+  pin_green_led: GPIO6
   pin_reset_relay: GPIO17
-  pin_set_relay: GPIO16
-  pin_buzzer: GPIO5
-  pin_bypass_key: GPIO26
-  pin_estop_1: GPIO27
-  pin_estop_2: GPIO14
+  pin_set_relay: GPIO18
+  pin_buzzer: GPIO16
+  pin_bypass_key: GPIO8
+  pin_estop_1: GPIO13
+  pin_estop_2: GPIO12
+  pin_bin_cur: GPIO15
+  pin_relay_feedback: GPIO9
+  pin_CS_etho0: GPIO10
+  pin_CS_jst: GPIO14
+  pin_POCI: GPIO37
+  pin_PICO: GPIO35
+  pin_SCK: GPIO36
 
+## ----- Basic Setup ------------------
+### baseline config
 esphome:
   name: wing-combo-io-test
   project:
     name: "toolauth.hardware"
-    version: "1.3.1"
+    version: "1.4.4"
 
 esp32:
   board: adafruit_feather_esp32_v2
   framework:
     type: arduino
 
-# Enable logging
+### Enable logging
 logger:
 
-# Enable Home Assistant API
+### Enable Home Assistant API
 api:
   encryption:
     key: "PshkQJcQPu6gSwUX/ixnLBue6fTtERWyU3WqokLrh90="
   services:
-  # double test: api-services && buzzer 
+  # > [!TIP]
+  # > test: api-services && buzzer 
     - service: play_rtttl
       variables:
         song_str: string
       then:
         - rtttl.play: "mario:d=4,o=5,b=100:16e6,16e6,32p,8e6,16c6,8e6,8g6,8p,8g,8p,8c6,16p,8g,16p,8e,16p,8a,8b,16a#,8a,16g.,16e6,16g6,8a6,16f6,8g6,8e6,16c6,16d6,8b,16p,8c6,16p,8g,16p,8e,16p,8a,8b,16a#,8a,16g.,16e6,16g6,8a6,16f6,8g6,8e6,16c6,16d6,8b,8p,16g6,16f#6,16f6,16d#6,16p,16e6,16p,16g#,16a,16c6,16p,16a,16c6,16d6,8p,16g6,16f#6,16f6,16d#6,16p,16e6,16p,16c7,16p,16c7,16c7,p,16g6,16f#6,16f6,16d#6,16p,16e6,16p,16g#,16a,16c6,16p,16a,16c6,16d6,8p,16d#6,8p,16d6,8p,16c6"
 
-# Enable Over The Air updates
+### Enable Over The Air updates
 ota:
   password: "d3281c2e8ad00b965c8bbb69717ce993"
 
-# Enable WiFi funcitonality
+### Enable WiFi funcitonality
 captive_portal:
 wifi:
   ssid: "your_wifi_ssid"
   password: "your_wifi_password"
 
-  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ### Enable fallback hotspot (captive portal) in case wifi connection fails
   ap:
     ssid: "combo board test"
     password: "some_silly_password"
 
+## ------ Sensors ---------------------
+### integrated ADE7953
 i2c:
   sda: pin_sda
   scl: pin_scl
-  
+
 pn532_i2c:
   update_interval: 1s
 
@@ -86,36 +97,14 @@ sensor:
         - multiply: -1
     update_interval: 60s
 
-light:
-  - platform: status_led
-    name: "Red LED"
-    pin: pin_red_led
-  - platform: status_led
-    name: "Green LED"
-    pin: pin_green_led
-    
-switch:
-  - platform: gpio
-    pin: pin_reset_relay
-    name: "reset relay"
-  - platform: gpio
-    pin: pin_set_relay
-    name: "set relay"
-
-# needed for rtttl (buzzer)
-output:
-  - platform: ledc
-    pin: pin_buzzer
-    id: rtttl_out
-rtttl:
-  output: rtttl_out
-  
+### GPIO Sensors 
 binary_sensor:
   - platform: gpio
     id: bypass
     name: "bypass key"
     pin:
       number: pin_bypass_key
+      inverted: true
       mode:
         input: true
   - platform: gpio
@@ -134,3 +123,46 @@ binary_sensor:
       mode:
         input: true
         pullup: false
+  - platform: gpio
+    name: "bin-cur"
+    pin:
+      number: pin_bin_cur
+      inverted: true
+      mode:
+        input: true
+        pullup: false
+  - platform: gpio
+    name: "relay-feedback"
+    pin:
+      number: pin_relay_feedback
+      inverted: true
+      mode:
+        input: true
+        pullup: true
+
+## ----- Outputs ----------------------
+### basic LEDs
+light:
+  - platform: status_led
+    name: "Red LED"
+    pin: pin_red_led
+  - platform: status_led
+    name: "Green LED"
+    pin: pin_green_led
+
+### relays for tool control 
+switch:
+  - platform: gpio
+    pin: pin_reset_relay
+    name: "reset relay"
+  - platform: gpio
+    pin: pin_set_relay
+    name: "set relay"
+
+### needed for rtttl (buzzer)
+output:
+  - platform: ledc
+    pin: pin_buzzer
+    id: rtttl_out
+rtttl:
+  output: rtttl_out
