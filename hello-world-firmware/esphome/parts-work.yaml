@@ -1,11 +1,13 @@
 #  Written to work as ESPHome firmware.
-#     
-#  Simply test that all features of the 
-#  board are working, not integrate into 
+# --> ESPHome Version 2024.11.2
+#    
+#  Simply test that all features of the
+#  board are working, not integrate into
 #  toolauth. Hardcoded WiFi ssid + pass.
 #
 
 substitutions:
+  # for `adafruit_feather_esp32s3_nopsram`
   pin_sda: GPIO3
   pin_scl: GPIO4
   pin_irq: GPIO11
@@ -25,6 +27,47 @@ substitutions:
   pin_PICO: GPIO35
   pin_SCK: GPIO36
 
+  # # for `adafruit_feather_esp32_v2`
+  # pin_sda: GPIO22
+  # pin_scl: GPIO20
+  # pin_irq: GPIO27
+  # pin_red_led: GPIO14
+  # pin_green_led: GPIO32
+  # pin_reset_relay: GPIO25
+  # pin_set_relay: GPIO26
+  # pin_buzzer: GPIO34
+  # pin_bypass_key: GPIO4
+  # pin_estop_1: GPIO13
+  # pin_estop_2: GPIO12
+  # pin_bin_cur: GPIO39
+  # pin_relay_feedback: GPIO15
+  # pin_CS_etho0: GPIO33
+  # pin_CS_jst: GPIO36
+  # pin_POCI: GPIO21
+  # pin_PICO: GPIO19
+  # pin_SCK: GPIO5
+
+  # # for `adafruit_feather_esp32c6`
+  # # > [!WARNING] the Feather ESP32 C6 is not on the platformio list (so doesn't work)
+  # # > https://registry.platformio.org/platforms/platformio/espressif32/boards
+  # pin_sda: GPIO19
+  # pin_scl: GPIO18
+  # pin_irq: GPIO0
+  # pin_red_led: GPIO5
+  # pin_green_led: GPIO6
+  # pin_reset_relay: GPIO4
+  # pin_set_relay: GPIO1
+  # pin_buzzer: GPIO6
+  # pin_bypass_key: GPIO2
+  # pin_estop_1: GPIO15
+  # pin_estop_2: GPIO14
+  # pin_bin_cur: GPIO5
+  # pin_relay_feedback: GPIO7
+  # pin_CS_etho0: GPIO8
+  # pin_CS_jst: GPIO3
+  # pin_POCI: GPIO23
+  # pin_PICO: GPIO22
+
 ## ----- Basic Setup ------------------
 ### baseline config
 esphome:
@@ -36,7 +79,14 @@ esphome:
 esp32:
   board: adafruit_feather_esp32_v2
   framework:
-    type: arduino
+    type: esp-idf
+    version: recommended
+    # Custom sdkconfig options
+    sdkconfig_options:
+      COMPILER_OPTIMIZATION_SIZE: y
+    ## Advanced tweaking options
+    # advanced:
+    #   ignore_efuse_mac_crc: false
 
 ### Enable logging
 logger:
@@ -44,43 +94,64 @@ logger:
 ### Enable Home Assistant API
 api:
   encryption:
+    # > use your own, but this will compile...
     key: "PshkQJcQPu6gSwUX/ixnLBue6fTtERWyU3WqokLrh90="
   services:
   # > [!TIP]
-  # > test: api-services && buzzer 
+  # > test: api-services && buzzer
     - service: play_rtttl
       variables:
         song_str: string
       then:
         - rtttl.play: "mario:d=4,o=5,b=100:16e6,16e6,32p,8e6,16c6,8e6,8g6,8p,8g,8p,8c6,16p,8g,16p,8e,16p,8a,8b,16a#,8a,16g.,16e6,16g6,8a6,16f6,8g6,8e6,16c6,16d6,8b,16p,8c6,16p,8g,16p,8e,16p,8a,8b,16a#,8a,16g.,16e6,16g6,8a6,16f6,8g6,8e6,16c6,16d6,8b,8p,16g6,16f#6,16f6,16d#6,16p,16e6,16p,16g#,16a,16c6,16p,16a,16c6,16d6,8p,16g6,16f#6,16f6,16d#6,16p,16e6,16p,16c7,16p,16c7,16c7,p,16g6,16f#6,16f6,16d#6,16p,16e6,16p,16g#,16a,16c6,16p,16a,16c6,16d6,8p,16d#6,8p,16d6,8p,16c6"
 
-### Enable Over The Air updates
 ota:
-  password: "d3281c2e8ad00b965c8bbb69717ce993"
+  # > use your own, but this will compile...
+  password: "d3281c2e8ad00b965c8bbb69717ce993" 
 
-### Enable WiFi funcitonality
+### Enable WiFi functionality
 captive_portal:
 wifi:
-  ssid: "your_wifi_ssid"
-  password: "your_wifi_password"
+  ssid: "your_ssid"
+  password: "your_pass"
 
-  ### Enable fallback hotspot (captive portal) in case wifi connection fails
-  ap:
-    ssid: "combo board test"
-    password: "some_silly_password"
+  # ### Enable fallback hotspot (captive portal) in case wifi connection fails
+  # ap:
+  #   ssid: "combo board test"
+  #   password: "some_silly_password"
 
 ## ------ Sensors ---------------------
-### integrated ADE7953
+### I2C channel
 i2c:
-  sda: pin_sda
-  scl: pin_scl
-
+  sda: ${pin_sda}
+  scl: ${pin_scl}
+### Card Reader
 pn532_i2c:
   update_interval: 1s
+  on_tag:
+    then:
+      - text_sensor.template.publish:
+          id: rfid_card
+          state: !lambda "return format_hex(tag.get_uid());"
+  on_tag_removed:
+    then:
+      - text_sensor.template.publish:
+          id: rfid_card
+          state: "no card"
 
+text_sensor:
+  - platform: template
+    name: "RFID Card"
+    id: rfid_card
+    internal: false
+    on_value:
+      then:
+        - lambda: |-
+            ESP_LOGD("main", "The current RFID is %s", x.c_str());
+### integrated ADE7953
 sensor:
-  - platform: ade7953
-    irq_pin: pin_irq
+  - platform: ade7953_i2c
+    irq_pin: ${pin_irq}
     voltage:
       name: test Voltage
     current_a:
@@ -97,20 +168,20 @@ sensor:
         - multiply: -1
     update_interval: 60s
 
-### GPIO Sensors 
+### GPIO Sensors
 binary_sensor:
   - platform: gpio
     id: bypass
     name: "bypass key"
     pin:
-      number: pin_bypass_key
-      inverted: true
+      number: ${pin_bypass_key}
+      inverted: false
       mode:
         input: true
   - platform: gpio
     name: "1st E-Stop"
     pin:
-      number: pin_estop_1
+      number: ${pin_estop_1}
       inverted: true
       mode:
         input: true
@@ -118,7 +189,7 @@ binary_sensor:
   - platform: gpio
     name: "2nd E-Stop"
     pin:
-      number: pin_estop_2
+      number: ${pin_estop_2}
       inverted: true
       mode:
         input: true
@@ -126,7 +197,7 @@ binary_sensor:
   - platform: gpio
     name: "bin-cur"
     pin:
-      number: pin_bin_cur
+      number: ${pin_bin_cur}
       inverted: true
       mode:
         input: true
@@ -134,7 +205,7 @@ binary_sensor:
   - platform: gpio
     name: "relay-feedback"
     pin:
-      number: pin_relay_feedback
+      number: ${pin_relay_feedback}
       inverted: true
       mode:
         input: true
@@ -143,26 +214,33 @@ binary_sensor:
 ## ----- Outputs ----------------------
 ### basic LEDs
 light:
-  - platform: status_led
+  - platform: binary
+    output: red_led
     name: "Red LED"
-    pin: pin_red_led
-  - platform: status_led
+  - platform: binary
+    output: green_led
     name: "Green LED"
-    pin: pin_green_led
 
-### relays for tool control 
+### relays for tool control
 switch:
   - platform: gpio
-    pin: pin_reset_relay
+    pin: ${pin_reset_relay}
     name: "reset relay"
   - platform: gpio
-    pin: pin_set_relay
+    pin: ${pin_set_relay}
     name: "set relay"
 
-### needed for rtttl (buzzer)
 output:
+### needed for LEDs to work
+  - platform: gpio
+    id: red_led
+    pin: ${pin_red_led}
+  - platform: gpio
+    id: green_led
+    pin: ${pin_green_led}
+### needed for rtttl (buzzer)
   - platform: ledc
-    pin: pin_buzzer
+    pin: ${pin_buzzer}
     id: rtttl_out
 rtttl:
   output: rtttl_out
