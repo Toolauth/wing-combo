@@ -6,8 +6,8 @@
 	(paper "USLetter")
 	(title_block
 		(title "Onboard Lights, Sounds and Logic Level Converters")
-		(date "2025-11-02")
-		(rev "1.4.3")
+		(date "2025-11-03")
+		(rev "1.4.4")
 		(company "Corey Rice & MakeHaven")
 		(comment 1 "Buzzer and Panel Mount LED for Audio feedback to user")
 		(comment 2 "Logic Level shifters to read states of E-Stop(s) and Bypass Key")

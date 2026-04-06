@@ -5,8 +5,8 @@
 	(uuid "473ccc68-6a6a-489f-b5f1-15b19fc33a30")
 	(paper "USLetter")
 	(title_block
-		(date "2025-11-02")
-		(rev "1.4.3")
+		(date "2025-11-03")
+		(rev "1.4.4")
 		(company "Corey Rice & MakeHaven")
 		(comment 1 "Overview of mains-level components")
 	)

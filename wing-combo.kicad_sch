@@ -6,8 +6,8 @@
 	(paper "USLetter")
 	(title_block
 		(title "ToolAuth Hardware | Overview | ESP32-DEVKITC-V4")
-		(date "2025-11-02")
-		(rev "1.4.3")
+		(date "2025-11-03")
+		(rev "1.4.4")
 		(company "Corey Rice & MakeHaven")
 		(comment 1 "Highest Level Overview")
 	)

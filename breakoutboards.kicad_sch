@@ -6,8 +6,8 @@
 	(paper "USLetter")
 	(title_block
 		(title "Breakout Connections & Power")
-		(date "2025-11-02")
-		(rev "1.4.3")
+		(date "2025-11-03")
+		(rev "1.4.4")
 		(company "Corey Rice & MakeHaven")
 		(comment 1 "Breakouts for I2C and SPI communication with external boards.")
 		(comment 2 "Headers for the Feather to seat into the board")

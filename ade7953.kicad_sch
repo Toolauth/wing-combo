@@ -6,8 +6,8 @@
 	(paper "USLetter")
 	(title_block
 		(title "ADE7953 Current Sensor")
-		(date "2025-11-02")
-		(rev "1.4.3")
+		(date "2025-11-03")
+		(rev "1.4.4")
 		(company "Corey Rice & MakeHaven")
 		(comment 1 "ADE7953 implemented as in engineering development board")
 		(comment 2 "Pull-up resistors added to configure chip for I2C communication")

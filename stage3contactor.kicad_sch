@@ -6,8 +6,8 @@
 	(paper "USLetter")
 	(title_block
 		(title "Stage 3 | Contactor to power the Tool")
-		(date "2025-11-02")
-		(rev "1.4.3")
+		(date "2025-11-03")
+		(rev "1.4.4")
 		(company "Corey Rice & MakeHaven")
 		(comment 1 "The contactor actually controls power access to the tool")
 		(comment 2 "E-Stops to interrupt power from the Stage 2 relay to contactor coil")

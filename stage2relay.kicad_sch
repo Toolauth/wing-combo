@@ -6,8 +6,8 @@
 	(paper "USLetter")
 	(title_block
 		(title "Stage 2 | Core 'Active Self-Latching' relay")
-		(date "2025-11-02")
-		(rev "1.4.3")
+		(date "2025-11-03")
+		(rev "1.4.4")
 		(company "Corey Rice & MakeHaven")
 		(comment 1 "Once activated, relay holds itself in an active state until reset")
 		(comment 2 "Can be interrupted by E-Stops or the S1 'reset' relay")

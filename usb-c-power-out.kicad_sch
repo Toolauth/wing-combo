@@ -6,8 +6,8 @@
 	(paper "USLetter")
 	(title_block
 		(title "5V USB-C and Pins | Daughter Board Power")
-		(date "2025-11-02")
-		(rev "1.4.3")
+		(date "2025-11-03")
+		(rev "1.4.4")
 		(company "Corey Rice / MakeHaven")
 		(comment 1 "Solderable connection also provided, still guarded by resettable fuse")
 		(comment 2 "Features Cold-Plugging with an LM393 and over current protection")

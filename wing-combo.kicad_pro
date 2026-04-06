@@ -891,7 +891,9 @@
       "Net-(D3-A)": [
         "DC-Power"
       ],
-      "Net-(D4-A)": "DC-Power",
+      "Net-(D4-A)": [
+        "DC-Power"
+      ],
       "Net-(J1-Pin_10)": [
         "DC-Power"
       ],
@@ -907,7 +909,9 @@
       "read-bypass": [
         "Default"
       ],
-      "unconnected-(T9-D-Pad3)": "DC-Power"
+      "unconnected-(T9-D-Pad3)": [
+        "DC-Power"
+      ]
     },
     "netclass_patterns": [
       {

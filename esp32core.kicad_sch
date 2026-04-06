@@ -6,8 +6,8 @@
 	(paper "USLetter")
 	(title_block
 		(title "Connections to ESP32 Board")
-		(date "2025-11-02")
-		(rev "1.4.3")
+		(date "2025-11-03")
+		(rev "1.4.4")
 		(company "Corey Rice & MakeHaven")
 		(comment 1 "Connections shown, but part excluded from BOM.")
 		(comment 2 "See actual connections for the Feather board (by standard Feather footprint)")

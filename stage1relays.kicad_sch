@@ -5,8 +5,8 @@
 	(uuid "e2c3ff12-a64f-4bc5-8b20-86448f51ac51")
 	(paper "USLetter")
 	(title_block
-		(date "2025-11-02")
-		(rev "1.4.3")
+		(date "2025-11-03")
+		(rev "1.4.4")
 		(company "Corey Rice & MakeHaven")
 		(comment 1 "Twin Stage 1 relays 'set' and 'reset' the Stage 2 latching relay")
 		(comment 2 "Boolean Logic so Bypass Key can cause predictable behavior, blocking all else.")
