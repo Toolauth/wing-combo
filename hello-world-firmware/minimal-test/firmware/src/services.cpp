@@ -49,7 +49,7 @@ bool sendHttpData(String path, String key, String value){
     https.begin(client, String(API_BASE_URL) + path);
     https.addHeader("Content-Type", "application/json");
 
-    StaticJsonDocument<256> doc;
+    JsonDocument doc;
     doc["tool_id"] = TOOL_ID;
     doc[key] = value;
 

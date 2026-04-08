@@ -2,11 +2,6 @@
 #include "services.h"
 #include "config_check.h"
 
-#if HAS_NFC
-    #include <Adafruit_PN532.h>
-    Adafruit_PN532 nfc(PIN_SDA, PIN_SCL);
-#endif
-
 struct ToolState {
     bool bypassActive;
     bool estopActive;
