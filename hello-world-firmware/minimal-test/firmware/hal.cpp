@@ -1,6 +1,12 @@
 #include "hal.h"
 #include "config_check.h"
 
+// Conditional RFID reader
+#if HAS_NFC
+    Adafruit_PN532 nfc(PIN_SDA, PIN_SCL);
+#endif
+
+
 /*
 Initalize all GPIO pins.
 */
@@ -24,6 +30,13 @@ void initHardware() {
     pinMode(PIN_BIN_CUR, INPUT_PULLUP);
     pinMode(PIN_BYPASS_KEY, INPUT_PULLUP);
     pinMode(PIN_RELAY_FEEDBACK, INPUT_PULLUP);
+
+    // Conditional RFID reader
+    #if HAS_NFC
+        nfc.begin();
+        nfc.SAMConfig(); // Secure Access Module configuration
+        nfc.setPassiveActivationRetries(0x01); // Only try once per call (Fast/Non-blocking)
+    #endif
 }
 
 /*
@@ -107,10 +120,10 @@ bool timelessTone(int dur){
     if(!currently_playing){
         digitalWrite(PIN_BUZZER, HIGH);
         currently_playing = true;
-        last_started = millis(); // vulnerable to rollover 
+        last_started = millis();
         return true;
     }
-    if(millis()-last_started > dur){ // vulnerable to rollover
+    if(millis()-last_started > dur){
         digitalWrite(PIN_BUZZER, LOW);
         currently_playing = false;
         return false;

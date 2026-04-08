@@ -13,4 +13,8 @@
   #ifndef ENABLE_DELAY
     #define ENABLE_DELAY 1000*60*2
   #endif
+
+  #ifndef SCAN_COOLDOWN
+    #define SCAN_COOLDOWN 2500 // 2.5 seconds before the same card can trigger again
+  #endif
 #endif

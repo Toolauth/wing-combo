@@ -1,6 +1,13 @@
 #include <Arduino.h>
 #include "config_check.h"
 
+
+// Conditional RFID reader
+#if HAS_NFC
+    #include <Adafruit_PN532.h>
+    extern Adafruit_PN532 nfc;
+#endif
+
 #define PIN_BUZZER 16 //OUTPUT: feedback for the RFID card reads
 #define PIN_RED_LED 5 //OUTPUT: feedback for RFID card reads
 #define PIN_GREEN_LED 6 //OUTPUT: feedback for RFID card reads

@@ -91,10 +91,16 @@ INPUT: server path, key/value data to send in `http.POST`
 RETURN: true, if a 200 response | false
 */
 bool sendHttpData(String path, String key, String value){
-    int httpResponseCode = 0;
+    if (WiFi.status() != WL_CONNECTED) return false;
+
     WiFiClientSecure client;
     client.setInsecure();
     HTTPClient https;
+
+    // REDUCE TIMEOUT: 500ms is plenty for a local workshop server.
+    // If it takes longer, the user should be moving to the Bypass Key anyway.
+    https.setTimeout(500);
+
     https.begin(client, String(API_BASE_URL) + path);
     https.addHeader("Content-Type", "application/json");
 
@@ -104,14 +110,10 @@ bool sendHttpData(String path, String key, String value){
 
     String body;
     serializeJson(doc, body);
-    httpResponseCode = https.POST(body);
+    int httpResponseCode = https.POST(body);
     https.end();
-    //-------------------------------------------------
-    // take action after server response
-    if (httpResponseCode == 200) { // 200 is Authorized
-        return true;
-    }
-    return false;
+
+    return (httpResponseCode == 200); 
 }
 
 
@@ -203,4 +205,67 @@ Sends `TOOL_ID` & error-string to /status path.
 */
 void sendErrorStatus(String err) {
     sendHttpData("/error", "err", err);
+}
+
+
+static String lastSeenUid = "";
+static unsigned long lastScanAttempt = 0;
+/*
+Read RFID cards & Check authorization
+>[!TIP] Generated with AI --> verify operation...
+*/
+bool processRfid() {
+#if HAS_NFC
+    uint8_t uid[] = { 0, 0, 0, 0, 0, 0, 0 };
+    uint8_t uidLength;
+
+    // Fast glance (50ms timeout)
+    if (nfc.readPassiveTargetID(PN532_MIFARE_ISO14443A, uid, &uidLength, 50)) {
+        
+        // Build the Hex string for either 4-byte (Classic) or 7-byte (NTAG)
+        String idString = "";
+        for (uint8_t i = 0; i < uidLength; i++) {
+            if (uid[i] < 0x10) idString += "0";
+            idString += String(uid[i], HEX);
+        }
+        idString.toUpperCase();
+
+        // Check cooldown (only for the same card)
+        if (idString == lastSeenUid && (millis() - lastScanAttempt < 3000)) {
+            return false; 
+        }
+
+        lastSeenUid = idString;
+        lastScanAttempt = millis();
+
+        // Attempt Network Auth
+        // If server is down, this returns false immediately due to short timeout
+        bool authorized = checkAuth(idString);
+        
+        if (authorized) {
+            playAuthTone(); // Feedback in HAL
+            return true;
+        } else {
+            playDenyTone(); // Feedback in HAL
+            // LOG OFFLINE: If WiFi is down, we could save this attempt to SPIFFS here
+        }
+    }
+#endif
+    return false;
+}
+
+/*
+Check if network is down, and try to reconnect without blocking
+*/
+void manageNetwork() {
+    static unsigned long lastCheck = 0;
+    if (millis() - lastCheck < 10000) return; // Check every 10s
+    lastCheck = millis();
+
+    if (WiFi.status() != WL_CONNECTED) {
+        // Non-blocking attempt to reconnect
+        WiFi.disconnect();
+        WiFi.begin(WIFI_SSID, WIFI_PASS);
+        // Do not use a while loop here! Let the next manageNetwork() check status.
+    }
 }
