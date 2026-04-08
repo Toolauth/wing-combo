@@ -7,6 +7,15 @@
     Adafruit_PN532 nfc(PIN_SDA, PIN_SCL);
 #endif
 
+struct ToolState {
+    bool bypassActive;
+    bool estopActive;
+    bool authorized;    // Set by Remote Auth
+    unsigned long enabled; // timer (only use last)
+    bool relayLatched;
+    bool currentDetected;
+};
+
 void setup() {
     initHardware();
     initNetwork();
@@ -22,97 +31,95 @@ void loop() {
     manageNetwork();
 
     // 1. hardware updates 
-    static bool lastEStopActive = false;
-    bool estop = getEStopActive();
-    if(estop != lastEStopActive){
-        sendEStopStatus(estop);
-        lastEStopActive = estop;
+    static ToolState now;
+    static ToolState last;
+    
+    now.estopActive = getEStopActive();
+    if(now.estopActive != last.estopActive){
+        sendEStopStatus(now.estopActive);
+        last.estopActive = now.estopActive;
     }
-    static bool lastRelayLatched = false;
-    bool relay = getRelayLatched();
-    if(relay != lastRelayLatched){
-        sendRelayStatus(relay);
-        lastRelayLatched = relay;
+    now.relayLatched = getRelayLatched();
+    if(now.relayLatched != last.relayLatched){
+        sendRelayStatus(now.relayLatched);
+        last.relayLatched = now.relayLatched;
     }
-    static bool lastBypassActive = false;
-    bool bypass = getBypassActive();
-    if(bypass != lastBypassActive){
-        if(bypass){
+    now.bypassActive = getBypassActive();
+    if(now.bypassActive != last.bypassActive){
+        if(now.bypassActive){
             setStatusLEDs(LOW,HIGH);
         }else{
             setStatusLEDs(LOW,LOW);
         }
-        sendBypassStatus(bypass);
-        lastBypassActive = bypass;
+        sendBypassStatus(now.bypassActive);
+        last.bypassActive = now.bypassActive;
     }
-    static bool lastCurrentActive = false;
-    bool current = getCurrentActive();
-    if(current != lastCurrentActive){
-        sendCurrentStatus(current);
-        lastCurrentActive = current;
+    
+    now.currentDetected = getCurrentActive();
+    if(now.currentDetected != last.currentDetected){
+        sendCurrentStatus(now.currentDetected);
+        last.currentDetected = now.currentDetected;
     }
     static unsigned long currentHeartbeat = 0;
-    if(current && millis() - currentHeartbeat > 30000){
+    if(now.currentDetected && millis() - currentHeartbeat > 30000){
         // more frequent heartbeat for tool-in-use & timeout
-        sendCurrentStatus(current);
+        sendCurrentStatus(now.currentDetected);
         currentHeartbeat = millis();
     }
 
     // 2. Network Heartbeat (Reports status to C&C)
     sendHeartbeat();
 
-    static bool startEnable = false;
     // 3. RFID - Only compiles if HAS_NFC is 1
     // If ANY card in the wallet is authorized, this returns true
     #if HAS_NFC
-        if(processRfid()){
-            startEnable = true;
-        }
+    processRfid();
     #endif
-
+    
     // 4. Remote Listeners
     // Check if the central server sent an "Unlock" command via WebSocket or API
-    if(!startEnable && checkRemoteAuthorized()){
-        startEnable = true;
-    }
+    if(checkRemoteAuthorized()) now.authorized = true;
 
     // ------------------------------------------------------------------------
     // 5. Start `Enable` (pre-SET) state
     // If tool is not blocked, or already enabled: provide access
-    if(relay){
+    if(now.relayLatched){
         //tool just turned ON
         unEnableTool(); //--> so tool cannot be turned ON again
-        startEnable = false;
+        now.authorized = false;
+        last.authorized = false;
     }
-    if(startEnable && estop){
+    if(now.authorized && now.estopActive){
         //estop blocks activation
         sendErrorStatus("enable requested, tool estop active");
         unEnableTool(); //--> so tool cannot be turned ON again
-        startEnable = false;
+        now.authorized = false;
+        last.authorized = false;
     }
-    static unsigned long lastEnableStart = 0;
-    if (startEnable){
+    if (now.authorized && !last.authorized){
         //must actually be ready to start
         enableTool();
-        lastEnableStart = millis();
-        startEnable = false;
+        last.enabled = millis();
+        last.authorized = true;
     }
 
     // ------------------------------------------------------------------------
 
     // 6. End `Enable` (pre-SET) state
     // remote stop an inactive tool
-    if(millis() - lastEnableStart > ENABLE_DELAY){
+    if(now.authorized && (millis() - last.enabled > ENABLE_DELAY)){
         //enable window has timed out
         unEnableTool();
+        now.authorized = false;
+        last.authorized = false;
     }
 
     // 6. Tool Timeout
     // remote stop an inactive tool
     checkTimeout();
 
-    // 7. Refresh LEDs if in bypass mode
-    if(bypass) setStatusLEDs(LOW,HIGH);
+    // 7. Refresh LEDs
+    updateUI(now.estopActive, now.bypassActive, now.authorized);
 
     delay(10);
 }

@@ -30,4 +30,5 @@ bool getBypassActive();
 void setPreSetGate(bool open);
 void triggerResetPulse();
 void setStatusLEDs(bool red, bool green);
+//bool timelessTone(int dur);
 void playTone(int freq, int dur);

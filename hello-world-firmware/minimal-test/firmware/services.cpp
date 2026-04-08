@@ -14,10 +14,6 @@ void initNetwork() {
     ArduinoOTA.begin();
 }
 
-void handleOTA(){
-    //pass
-}
-
 /*
 Bare metal controls for a simple 'enable' window start.
 This is opens a "pre-Set" for the self latching relay.
@@ -39,21 +35,6 @@ void unEnableTool(){
 }
 
 /*
-Flailing with this one --> messy...
-*/
-bool enable(bool relay, bool estop){
-    if(relay){
-        // tool must have turned ON
-        return false;
-    }
-    if(estop){
-        sendErrorStatus("enable requested, tool estop active");
-        return false;
-    }
-    return true;
-}
-
-/*
 Custom HTTP request to show status of more than one item.
 
 - TOOL_ID
@@ -61,6 +42,8 @@ Custom HTTP request to show status of more than one item.
 - rssi
 */
 void sendHeartbeat() {
+    if (WiFi.status() != WL_CONNECTED) return; //fail without blocking
+
     static unsigned long lastHeartbeat = 0;
     if (millis() - lastHeartbeat < 30*60*1000) return; // Every 30 minutes
 
@@ -116,30 +99,6 @@ bool sendHttpData(String path, String key, String value){
     return (httpResponseCode == 200); 
 }
 
-
-#if HAS_NFC
-/*
->[!WARNING] confirm output of Adafruit PN532 lib
----
-INPUT: RFID number as a list of numbers
-- ...magic to take RFID numbers to a string for auth
-- Make auth request for RFID number
-RETURN: `true`, if a 200 response | `false`
-*/
-bool handleAuthFlow(uint8_t * uid, uint8_t uidLength){
-    // 
-    char rfiduid[uidLength+2]; // Adjust size as needed
-    rfiduid[0] = '\0'; // Initialize as empty string
-
-    for (uint8_t i = 0; i < uidLength; i++) {
-        sprintf(rfiduid + strlen(rfiduid), "%02X", uid[i]);
-    }
-
-    return sendHttpData( "/auth", "uid", String(rfiduid));
-}
-#endif
-
-
 /*
 Ask if server wants to authorize the tool.
 Sends `TOOL_ID` & `null` to /remote path.
@@ -153,9 +112,11 @@ bool checkRemoteAuthorized(){
 /*
 Ask if server wants to timeout abandoned tool.
 Sends `TOOL_ID` & `null` to /timeout path.
-RETURN: true, if a 200 response | false
+RETURN: void --> side effect: RESET tool latch
 */
 void checkTimeout(){
+    if (WiFi.status() != WL_CONNECTED) return; //fail without blocking
+
     bool should_reset = sendHttpData("/timeout", "null", "null");
     if (should_reset) { // 200 is confirmed
         triggerResetPulse();
@@ -240,15 +201,11 @@ bool processRfid() {
 
         // Attempt Network Auth
         // If server is down, this returns false immediately due to short timeout
-        bool authorized = checkAuth(idString);
-        
-        if (authorized) {
-            playAuthTone(); // Feedback in HAL
-            return true;
-        } else {
-            playDenyTone(); // Feedback in HAL
-            // LOG OFFLINE: If WiFi is down, we could save this attempt to SPIFFS here
-        }
+        digitalWrite(PIN_BUZZER, HIGH); //noise
+        bool response = sendHttpData( "/auth", "uid", idString);
+        digitalWrite(PIN_BUZZER, LOW);  //quiet
+
+        return response;
     }
 #endif
     return false;
@@ -267,5 +224,19 @@ void manageNetwork() {
         WiFi.disconnect();
         WiFi.begin(WIFI_SSID, WIFI_PASS);
         // Do not use a while loop here! Let the next manageNetwork() check status.
+    }
+}
+
+
+/*
+Single source of truth for LED refresh
+*/
+void updateUI(bool estop, bool bypass, bool authorized) {
+    if (estop) {
+        setStatusLEDs(HIGH, LOW); // Solid Red for E-Stop
+    } else if (bypass || authorized) {
+        setStatusLEDs(LOW, HIGH); // Green for Active
+    } else {
+        setStatusLEDs(LOW, LOW);  // Dark for Safe
     }
 }
