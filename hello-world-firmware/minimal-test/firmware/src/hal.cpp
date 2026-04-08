@@ -108,34 +108,3 @@ void setStatusLEDs(bool red, bool green){
     digitalWrite(PIN_RED_LED, red);
     digitalWrite(PIN_GREEN_LED, green);
 }
-
-/*
-Currently unused.
-*/
-bool timelessTone(int dur){
-    static unsigned long last_started = 0;
-    static bool currently_playing = false;
-    //does not use delay
-    //turn the buzzer on or off
-    if(!currently_playing){
-        digitalWrite(PIN_BUZZER, HIGH);
-        currently_playing = true;
-        last_started = millis();
-        return true;
-    }
-    if(millis()-last_started > dur){
-        digitalWrite(PIN_BUZZER, LOW);
-        currently_playing = false;
-        return false;
-    }
-}
-
-/*
-Currently unused.
-*/
-void playTone(int freq, int dur){
-    //currently playing dumb
-    timelessTone(dur);
-    delay(dur+10);
-    timelessTone(dur);
-}

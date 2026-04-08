@@ -27,61 +27,59 @@ void setup() {
 }
 
 void loop() {
-    // 0. wifi health check
-    manageNetwork();
+    manageNetwork();        // Background WiFi healing
+    processNetworkQueue();  // Background data uploading
 
-    // 1. hardware updates 
     static ToolState now;
     static ToolState last;
     
+    // 1. Physical Sensing
     now.estopActive = getEStopActive();
+    now.relayLatched = getRelayLatched();
+    now.bypassActive = getBypassActive();
+    now.currentDetected = getCurrentActive();
+
+    // 2. Fire-and-Forget Reporting
     if(now.estopActive != last.estopActive){
-        sendEStopStatus(now.estopActive);
+        queueEvent("/status", "estop", String(now.estopActive));
         last.estopActive = now.estopActive;
     }
-    now.relayLatched = getRelayLatched();
     if(now.relayLatched != last.relayLatched){
-        sendRelayStatus(now.relayLatched);
+        queueEvent("/status", "relay", String(now.relayLatched)); 
         last.relayLatched = now.relayLatched;
     }
-    now.bypassActive = getBypassActive();
     if(now.bypassActive != last.bypassActive){
-        if(now.bypassActive){
-            setStatusLEDs(LOW,HIGH);
-        }else{
-            setStatusLEDs(LOW,LOW);
-        }
-        sendBypassStatus(now.bypassActive);
+        queueEvent("/status", "bypass", String(now.bypassActive));
         last.bypassActive = now.bypassActive;
     }
-    
-    now.currentDetected = getCurrentActive();
     if(now.currentDetected != last.currentDetected){
-        sendCurrentStatus(now.currentDetected);
+        queueEvent("/status", "current", String(now.currentDetected));
         last.currentDetected = now.currentDetected;
     }
     static unsigned long currentHeartbeat = 0;
     if(now.currentDetected && millis() - currentHeartbeat > 30000){
         // more frequent heartbeat for tool-in-use & timeout
-        sendCurrentStatus(now.currentDetected);
+        queueEvent("/status", "current", String(now.currentDetected));
         currentHeartbeat = millis();
     }
 
-    // 2. Network Heartbeat (Reports status to C&C)
+    // 3. Network Heartbeat (Reports status to C&C)
     sendHeartbeat();
 
-    // 3. RFID - Only compiles if HAS_NFC is 1
-    // If ANY card in the wallet is authorized, this returns true
-    #if HAS_NFC
+    // 4. RFID - empty, unless `HAS_NFC` is `true`
     processRfid();
-    #endif
     
-    // 4. Remote Listeners
-    // Check if the central server sent an "Unlock" command via WebSocket or API
-    if(checkRemoteAuthorized()) now.authorized = true;
+    // 5. Remote Listener (Catches "Authorization" from server)
+    // Server will respond "true" to /remote after it processes the /auth event
+    if(!now.authorized){
+        if(checkRemoteAuthorized()) now.authorized = true;
+    }
+
+    // 6. Refresh LEDs
+    updateUI(now.estopActive, now.bypassActive, now.authorized);
 
     // ------------------------------------------------------------------------
-    // 5. Start `Enable` (pre-SET) state
+    // 7. Start `Enable` (pre-SET) state
     // If tool is not blocked, or already enabled: provide access
     if(now.relayLatched){
         //tool just turned ON
@@ -91,7 +89,7 @@ void loop() {
     }
     if(now.authorized && now.estopActive){
         //estop blocks activation
-        sendErrorStatus("enable requested, tool estop active");
+        queueEvent("/error", "err", "enable requested, tool estop active");
         unEnableTool(); //--> so tool cannot be turned ON again
         now.authorized = false;
         last.authorized = false;
@@ -105,7 +103,7 @@ void loop() {
 
     // ------------------------------------------------------------------------
 
-    // 6. End `Enable` (pre-SET) state
+    // 8. End `Enable` (pre-SET) state
     // remote stop an inactive tool
     if(now.authorized && (millis() - last.enabled > ENABLE_DELAY)){
         //enable window has timed out
@@ -114,12 +112,10 @@ void loop() {
         last.authorized = false;
     }
 
-    // 6. Tool Timeout
+    // 9. Tool Timeout
     // remote stop an inactive tool
     checkTimeout();
 
-    // 7. Refresh LEDs
-    updateUI(now.estopActive, now.bypassActive, now.authorized);
-
+    // 10. Short delay to stabilize things
     delay(10);
 }
