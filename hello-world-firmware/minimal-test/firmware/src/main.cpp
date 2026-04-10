@@ -1,6 +1,7 @@
 #include "hal.h"
 #include "services.h"
 #include "config_check.h"
+#include <esp_task_wdt.h>
 
 struct ToolState {
     bool bypassActive;
@@ -13,6 +14,12 @@ struct ToolState {
 
 void setup() {
     initHardware();
+    
+    // Watchdog for 8 seconds
+    // Parameters: (timeout_seconds, panic_mode_enabled)
+    esp_task_wdt_init(8, true); 
+    esp_task_wdt_add(NULL); // Subscribes the main loop task to the watchdog
+
     initNetwork();
 
     #if HAS_NFC
@@ -22,11 +29,20 @@ void setup() {
 }
 
 void loop() {
+    // 0. Updates, Watchdog, WiFi, Queues
+    ArduinoOTA.handle();    // Listen for firmware updates
+    esp_task_wdt_reset();   // Resets the 8s timer each loop
     manageNetwork();        // Background WiFi healing
     processNetworkQueue();  // Background data uploading
 
     static ToolState now;
     static ToolState last;
+
+    // Timer variables for the helper
+    static unsigned long dEstop, hEstop;
+    static unsigned long dBypass, hBypass;
+    static unsigned long dRelay, hRelay;
+    static unsigned long dCurrent, hCurrent;
     
     // 1. Physical Sensing
     now.estopActive = getEStopActive();
@@ -35,32 +51,14 @@ void loop() {
     now.currentDetected = getCurrentActive();
 
     // 2. Fire-and-Forget Reporting
-    if(now.estopActive != last.estopActive){
-        queueEvent("/status", "estop", String(now.estopActive));
-        last.estopActive = now.estopActive;
-    }
-    if(now.relayLatched != last.relayLatched){
-        queueEvent("/status", "relay", String(now.relayLatched)); 
-        last.relayLatched = now.relayLatched;
-    }
-    if(now.bypassActive != last.bypassActive){
-        queueEvent("/status", "bypass", String(now.bypassActive));
-        last.bypassActive = now.bypassActive;
-    }
-    if(now.currentDetected != last.currentDetected){
-        queueEvent("/status", "current", String(now.currentDetected));
-        last.currentDetected = now.currentDetected;
-    }
-    static unsigned long currentHeartbeat = 0;
-    if(now.currentDetected && millis() - currentHeartbeat > 30000){
-        // more frequent heartbeat for tool-in-use & timeout
-        queueEvent("/status", "current", String(now.currentDetected));
-        currentHeartbeat = millis();
-    }
-
+    monitorSignal(now.estopActive, last.estopActive, dEstop, hEstop, "estop");
+    monitorSignal(now.bypassActive, last.bypassActive, dBypass, hBypass, "bypass");
+    monitorSignal(now.relayLatched, last.relayLatched, dRelay, hRelay, "relay", true);
+    monitorSignal(now.currentDetected, last.currentDetected, dCurrent, hCurrent, "current", true);
+    
     // 3. Network Heartbeat (Reports status to C&C)
     sendHeartbeat();
-
+    
     // 4. RFID - empty, unless `HAS_NFC` is `true`
     processRfid();
     
