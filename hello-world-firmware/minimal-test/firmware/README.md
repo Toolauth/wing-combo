@@ -1,44 +1,44 @@
 # Workshop Tool Control System (Firmware)
 
-This firmware runs on ESP32-S3 hardware to gate industrial machinery via an electronic self-latching relay system. It integrates RFID authorization, physical E-Stop monitoring, and a centralized management API.
+This firmware runs on ESP32-S3 hardware to gate industrial machinery via an electronic self-latching relay system. It integrates RFID authorization, physical E-Stop monitoring, and a centralized management API with a focus on high reliability in "dirty" network environments.
 
 ## Core Logic & Safety
-1.  **Self-Latching Architecture**: The ESP32 does not "hold" the tool on. It pulses a `SET` relay to allow a user to start the tool by pressing a green (Normally-OFF) button and pulses a `RESET` relay to force it off if needed (timeout). Typically a user will press a red (Normally-ON) button to stop the tool's operation.
-2.  **E-Stop Monitoring**: Physical E-Stops are wired to the hardware. The ESP32 monitors these and will actively block `SET` pulses and report status if an E-Stop is depressed.
-3.  **Bypass Mode**: A physical key switch allows shop managers to bypass the RFID/Network requirement for maintenance or in the event of firmware/network failures.
-4.  **Network Resilience**: All events (scans, status changes) are stored in a 30-item queue. If the local server is down, the tool remains functional (if authorized) or retries the connection without blocking the main loop.
+1.  **Self-Latching Architecture**: The ESP32 does not "hold" the tool on. It pulses a `SET` relay to allow a user to start the tool and pulses a `RESET` relay to force it off (e.g., on timeout).
+2.  **E-Stop Monitoring**: Physical E-Stops are wired to the hardware. The ESP32 monitors these, actively blocks `SET` pulses, and reports status immediately if an E-Stop is depressed.
+3.  **Bypass Mode**: A physical key switch allows managers to bypass the RFID/Network requirement for maintenance or during network failures.
+4.  **Self-Healing Network**: The system monitors API success. If the device is disconnected from the server for longer than `MAX_OFFLINE_MS`, it performs a software reboot to clear the network stack.
 
 ## File Structure
 * `hal.cpp/h`: Hardware Abstraction Layer. All `digitalRead` and `pinMode` calls live here.
-* `services.cpp/h`: Network, OTA, and RFID logic.
+* `services.cpp/h`: Network, OTA, and RFID logic. Includes the coalesced event queue.
+* `watchdog.cpp/h`: Persistent reset tracking and software-triggered reboot logic.
 * `config_check.h`: Logic to ensure build flags from `platformio.ini` are applied correctly.
-* `main.cpp`: The State Machine.
+* `main.cpp`: The State Machine, signal debouncing, and main execution loop.
 
 ---
 
-## Strategies to Improve Reliability
+## Strategies for Industrial Reliability
 
-### 1. Strategy: Prioritized Pruning
-When the queue reaches a "Pressure Threshold" (e.g., 25 out of 30 slots), the system follows these rules:
-* **Discard Low Priority:** If the new event is a Heartbeat and the queue is heavy, drop it immediately.
-* **Evict for High Priority:** If a critical event (E-Stop or Auth) arrives and the queue is full, search for and delete the oldest Heartbeat to make room.
+### 1. Event Coalescing (State Deduplication)
+To prevent the 30-item network queue from filling with redundant data (e.g., a relay toggling rapidly), the system uses a **Last-Write-Wins** strategy.
+* **How it works:** When a new event is queued, the system searches the existing queue for a matching `path` and `key`.
+* **The Result:** If an update is already pending, the old value is overwritten and the timestamp is refreshed. This ensures only the *latest* state is sent, saving bandwidth and preventing buffer overflows.
 
-#### Summary of Priority Levels
-| Data Type | Path | Priority | Action on Congestion |
-| :--- | :--- | :--- | :--- |
-| **Emergency** | `/status` (estop) | **Critical** | Evict Heartbeats to fit. |
-| **Access** | `/auth` | **High** | Evict Heartbeats to fit. |
-| **Usage** | `/status` (relay/curr) | **Medium** | Standard FIFO. |
-| **Diagnostics** | `/heartbeat` | **Low** | Drop if queue > 20 items. |
+### 2. Temporal Accuracy (Negative Time-Delta)
+Network delays shouldn't corrupt your logs. Each event is timestamped at the moment of occurrence (`queuedAt`).
+* **Offset Calculation:** When an event is finally transmitted, the ESP32 calculates the "age" of the event (`millis() - queuedAt`) and sends it as `offset_ms`.
+* **The Result:** The server can subtract this offset from the receive time to record the **exact** millisecond the physical event happened, even if it was delayed by a 5-minute reboot cycle.
 
-### 2. Event Coalescing (State Deduplication)
-In your current `main.cpp`, you already check `if(now.relayLatched != last.relayLatched)`. This is excellent "Edge Triggering." To take it further, you can check the queue itself. If the network is down and the relay flips `ON -> OFF -> ON`, you have three messages queued. The server only needs to know the tool is currently `ON`.
-* **The Trick:** Before adding a status update, check if the *last* item in the queue is for the same `key`. If it is, update the `value` of that existing item instead of adding a new one.
+### 3. Signal Debouncing & Heartbeats
+Electrical noise from industrial motors can cause "ghost" triggers. All physical inputs are processed through a `monitorSignal` helper.
+* **Debounce:** Signals must remain stable for 50ms before a change is registered or reported.
+* **Still-Active Heartbeat:** For critical states (like "Current Detected"), the system re-reports the "ON" state every 30 seconds to ensure the server knows the tool is still actively in use.
 
-### 3. The "Offline Mode" Heartbeat
-Currently, your `sendHeartbeat()` triggers every 30 minutes. 
-* **The Trick:** If `WiFi.status() != WL_CONNECTED`, don't just return. Increment a "failure counter." If that counter hits a certain threshold (e.g., 2 hours of no connectivity), use `ESP.restart()`. Sometimes the internal WiFi stack can get into a state that only a hardware reset can fix.
-
+### 4. The "Self-Healing" Watchdog
+The ESP32 uses RTC (Real-Time Clock) memory to track its own health across reboots.
+* **Persistent Tally:** A `bootCount` survives software restarts.
+* **API Check:** Connectivity isn't just "WiFi bars"; it is defined by successful HTTP 200 responses from the API.
+* **The Reaper:** If no API contact occurs for 5 minutes, the device increments its `bootCount` and reboots itself. On the next successful connection, it reports its reboot history to the server for diagnostics.
 
 ---
 
@@ -60,35 +60,19 @@ build_flags =
 upload_port = lathe_01.local   ; Target for OTA updates
 ```
 
-### Build Flag Reference
+
 | Flag | Description | Default |
 | :--- | :--- | :--- |
 | `TOOL_ID` | String used in JSON payloads to identify the machine. | `unknown` |
 | `NUM_ESTOPS` | Number of physical E-stop inputs to monitor (0, 1, or 2). | `1` |
-| `HAS_NFC` | Set to `1` to enable PN532 RFID features, `0` to disable. | `1` |
-| `ENABLE_DELAY` | How long (ms) the "Start" window stays open after auth. | `120000` (2m) |
-
----
+| `MAX_OFFLINE_MS` | Max time allowed without API contact before a self-reboot. | `300000` (5m) |
+| `ENABLE_DELAY` | Duration the "Start" window stays open after authorization. | `120000` (2m) |
 
 ## Deployment & OTA Updates
 
-### Initial Flash (Wired)
-1. Connect the ESP32 via USB.
-2. Run: `pio run -e tool_name -t upload`
-
 ### Remote Update (OTA)
-Once the tool is on the network, you can update it wirelessly without removing it from the machine. The firmware uses its `TOOL_ID` as its network hostname.
-
-1. Ensure your computer is on the same local subnet as the tools.
-2. Run the OTA command:
-   ```bash
-   # Example: Updating the Bridgeport Mill wirelessly
-   pio run -e bridgeport_mill -t upload --upload-port bridgeport_mill.local
-   ```
-
-### Scalability Strategy for "Dozens"
-For a large workshop, use the `[env]` base block in `platformio.ini` to define common settings (WiFi SSID, API URL, Library versions). 
-
-
-* **Group by Room**: Use intermediate blocks (e.g., `[room_woodshop]`) to set environment-specific API paths.
-* **Centralized Control**: Since `API_BASE_URL` is a build flag, you can point the entire fleet to a new server IP by changing one line and pushing an OTA update to all envs.
+The firmware uses its `TOOL_ID` as its network hostname for easy wireless updates.
+```bash
+# Example: Updating the Bridgeport Mill wirelessly
+pio run -e bridgeport_mill -t upload --upload-port bridgeport_mill.local
+```
