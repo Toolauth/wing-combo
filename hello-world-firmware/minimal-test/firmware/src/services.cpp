@@ -1,5 +1,8 @@
 #include "hal.h"
 #include "services.h"
+#include "watchdog.h"
+
+unsigned long lastSuccessfulCommunication = 0;
 
 /* 
 Setup WiFi and Prepare for OTA updates
@@ -7,6 +10,8 @@ Setup WiFi and Prepare for OTA updates
 void initNetwork() {
     WiFi.setSleep(false);
     WiFi.begin(WIFI_SSID, WIFI_PASS);
+
+    rebootCounter();
     
     // Configure OTA
     ArduinoOTA.setHostname(TOOL_ID);
@@ -21,12 +26,19 @@ void manageNetwork() {
     static unsigned long lastCheck = 0;
     if (millis() - lastCheck < 10000) return; // Check every 10s
     lastCheck = millis();
-    
-    if (WiFi.status() != WL_CONNECTED) {
-        // Non-blocking attempt to reconnect
+
+    if (WiFi.status() == WL_CONNECTED) {
+        // If we have been connected and successful for a while, 
+        // consider the "reboot cycle" broken.
+        extern unsigned long lastSuccessfulCommunication;
+        if (millis() - lastSuccessfulCommunication < 5000) { 
+            // We just had a successful talk! Reset the tally.
+            bootCount = 0; 
+        }
+    } else {
         WiFi.disconnect();
         WiFi.begin(WIFI_SSID, WIFI_PASS);
-        // Do not use a while loop here! Let the next manageNetwork() check status.
+        selfSoftwareRestart();
     }
 }
 
@@ -38,7 +50,7 @@ INPUT: server path, key/value data to send in `http.POST`
 
 RETURN: true, if a 200 response | false
 */
-bool sendHttpData(String path, String key, String value){
+bool sendHttpData(String path, String key, String value, unsigned long offsetMs){
     if (WiFi.status() != WL_CONNECTED) return false;
 
     WiFiClientSecure client;
@@ -52,16 +64,23 @@ bool sendHttpData(String path, String key, String value){
     JsonDocument doc;
     doc["tool_id"] = TOOL_ID;
     doc[key] = value;
+    doc["offset_ms"] = offsetMs;
 
     String body;
     serializeJson(doc, body);
     int httpResponseCode = https.POST(body);
     https.end();
 
-    return (httpResponseCode == 200); 
+    if (httpResponseCode == 200) {
+        lastSuccessfulCommunication = millis(); // Update on actual success
+        return true;
+    }
+    return false;
 }    
 
-std::queue<NetworkEvent> eventQueue;
+std::deque<NetworkEvent> eventQueue;
+const size_t MAX_QUEUE_SIZE = 30;
+const size_t PRESSURE_THRESHOLD = 20;
 /*
 Send items in http queue.
 
@@ -76,8 +95,11 @@ void processNetworkQueue() {
     if (millis() - lastSend < 200) return; // Rate limit
 
     NetworkEvent event = eventQueue.front();
-    if (sendHttpData(event.path, event.key, event.value)) {
-        eventQueue.pop(); // Only remove if successfully sent
+    // Calculate how long ago this happened
+    unsigned long ageMs = millis() - event.queuedAt;
+
+    if (sendHttpData(event.path, event.key, event.value, ageMs)) {
+        eventQueue.pop_front(); // Only remove if successfully sent
         lastSend = millis();
     }
 }
@@ -86,9 +108,30 @@ void processNetworkQueue() {
 Create queue item, and add it to the queue.
 */
 void queueEvent(String path, String key, String value) {
-    if (eventQueue.size() < 30) { // Limit queue size to prevent memory issues
-        eventQueue.push({path, key, value});
+    bool isHeartbeat = (path == "/heartbeat");
+
+    // 1. Coalescing Logic: Look for an existing pending update for this specific key
+    // We search backwards (from back to front) to find the most recent matching event
+    for (auto it = eventQueue.rbegin(); it != eventQueue.rend(); ++it) {
+        if (it->path == path && it->key == key) {
+            it->value = value; // Update the value in place
+            it->queuedAt = millis(); // Update the time too!
+            return;            // Exit early - we've coalesced the event
+        }
     }
+
+    // 2. Queue Pressure Management (for new events)
+    if (isHeartbeat && eventQueue.size() > PRESSURE_THRESHOLD) {
+        return; 
+    }
+
+    // 3. If strictly full, drop the oldest (FIFO)
+    if (eventQueue.size() >= MAX_QUEUE_SIZE) {
+        eventQueue.pop_front();
+    }
+
+    // 4. Add the new unique event
+    eventQueue.push_back({path, key, value, millis()});
 }
 
 
@@ -126,6 +169,34 @@ void updateUI(bool estop, bool bypass, bool authorized) {
     }
 }
 
+/**
+ * Helper to debounce signals, send status updates, and handle "Still-On" heartbeats.
+ * @param current: The live reading from the sensor
+ * @param last: Reference to the 'last' state in your ToolState struct
+ * @param dTimer: Reference to the debounce timer
+ * @param hTimer: Reference to the heartbeat timer (for 30s updates)
+ * @param key: The JSON key for reporting (e.g., "estop")
+ * @param useHeartbeat: If true, sends updates every 30s while 'current' is true
+ */
+void monitorSignal(bool current, bool &last, unsigned long &dTimer, unsigned long &hTimer, const char* key, bool useHeartbeat) {
+    // 1. Handle State Changes (Debounced)
+    if (current != last) {
+        if (millis() - dTimer > 50) { // 50ms Debounce
+            last = current;
+            queueEvent("/status", key, String(current));
+            if (useHeartbeat) hTimer = millis(); // Reset heartbeat on state change
+        }
+    } else {
+        dTimer = millis(); // Keep timer current as long as state is stable
+    }
+
+    // 2. Handle "Still-Active" Heartbeats
+    if (useHeartbeat && current && (millis() - hTimer > 30000)) {
+        queueEvent("/status", key, String(current));
+        hTimer = millis();
+    }
+}
+
 //-----------------------------------------------------------------------------
 /*
 Queue heartbeat items every 30 minutes.
@@ -153,7 +224,7 @@ RETURN: void --> side effect: RESET tool latch
 void checkTimeout(){
     if (WiFi.status() != WL_CONNECTED) return; //fail without blocking
 
-    bool should_reset = sendHttpData("/timeout", "null", "null");
+    bool should_reset = sendHttpData("/timeout", "null", "null", 0);
     if (should_reset) { // 200 is confirmed
         triggerResetPulse();
     }    
@@ -166,7 +237,7 @@ Sends `TOOL_ID` & `null` to /remote path.
 RETURN: true, if a 200 response | false
 */
 bool checkRemoteAuthorized(){
-    return sendHttpData("/remote", "null", "null");
+    return sendHttpData("/remote", "null", "null", 0);
 }    
 
 
