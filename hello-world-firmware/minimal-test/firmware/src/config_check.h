@@ -17,4 +17,8 @@
   #ifndef SCAN_COOLDOWN
     #define SCAN_COOLDOWN 2500 // 2.5 seconds before the same card can trigger again
   #endif
+
+  #ifndef MAX_OFFLINE_MS
+    #define MAX_OFFLINE_MS 300000 //5 minutes
+  #endif
 #endif
