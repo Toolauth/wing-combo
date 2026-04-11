@@ -21,4 +21,22 @@
   #ifndef MAX_OFFLINE_MS
     #define MAX_OFFLINE_MS 300000 //5 minutes
   #endif
+
+// ----------------------------------------------
+// for Home Assistant Compliance
+  #ifndef MQTT_SERVER
+    #define MQTT_SERVER "homeassistant.local"
+  #endif
+
+  #ifndef MQTT_USER
+    #define MQTT_USER "mqtt_user"
+  #endif
+
+  #ifndef MQTT_PASS
+    #define MQTT_PASS "mqtt_password"
+  #endif
+
+  #ifndef MQTT_PORT
+    #define MQTT_PORT 1883
+  #endif
 #endif
