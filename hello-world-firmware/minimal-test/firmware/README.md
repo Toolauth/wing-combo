@@ -60,13 +60,22 @@ build_flags =
 upload_port = lathe_01.local   ; Target for OTA updates
 ```
 
+### Network & MQTT Credentials
+Define these in your `platformio.ini` or a global header:
+* `WIFI_SSID` / `WIFI_PASS`
+* `MQTT_SERVER` (e.g., `192.168.1.50`)
+* `MQTT_USER` / `MQTT_PASS`
+* `OTA_PASSWORD`
 
+### Flags that change for each tool
 | Flag | Description | Default |
 | :--- | :--- | :--- |
-| `TOOL_ID` | String used in JSON payloads to identify the machine. | `unknown` |
+| `TOOL_ID` | String used for MQTT topics and HA entity naming (e.g., `lathe_01`). | `unknown` |
 | `NUM_ESTOPS` | Number of physical E-stop inputs to monitor (0, 1, or 2). | `1` |
-| `MAX_OFFLINE_MS` | Max time allowed without API contact before a self-reboot. | `300000` (5m) |
-| `ENABLE_DELAY` | Duration the "Start" window stays open after authorization. | `120000` (2m) |
+| `HAS_NFC` | Set to `1` to enable PN532 RFID features, `0` to disable. | `1` |
+| `ENABLE_DELAY` | Duration (ms) the "Start" window stays open after authorization. | `120000` (2m) |
+| `MAX_OFFLINE_MS` | Max time allowed without MQTT contact before a self-reboot. | `300000` (5m) |
+| `SCAN_COOLDOWN` | Milliseconds before the same RFID card can trigger again. | `2500` |
 
 ## Deployment & OTA Updates
 
@@ -75,4 +84,45 @@ The firmware uses its `TOOL_ID` as its network hostname for easy wireless update
 ```bash
 # Example: Updating the Bridgeport Mill wirelessly
 pio run -e bridgeport_mill -t upload --upload-port bridgeport_mill.local
+```
+
+## Home Assistant Integration
+This firmware uses **MQTT Discovery**. When a tool powers on, it automatically creates entities in Home Assistant under the name provided in `TOOL_ID`.
+
+### Entity Mapping
+| Feature | Entity Type | MQTT Topic |
+| :--- | :--- | :--- |
+| **Enable Pulse** | `switch` | `cmnd/TOOL_ID/set_relay` |
+| **Timeout Pulse** | `button` | `cmnd/TOOL_ID/reset_relay` |
+| **RFID Card** | `sensor` | `stat/TOOL_ID/rfid` |
+| **Tool Current** | `binary_sensor` | `stat/TOOL_ID/bincur` |
+| **Relay Feedback** | `binary_sensor` | `stat/TOOL_ID/relay` |
+
+### Adapting Legacy ESPHome Automations
+Because this firmware is no longer a native ESPHome node, you must update your YAML automations to use standard Service calls.
+
+**1. Authorization (RFID Scan)**
+Change your trigger to watch the new MQTT sensor:
+```yaml
+trigger:
+  - platform: state
+    entity_id: sensor.compoundmitersaw_rfid
+```
+
+**2. Enabling the Tool (Success Response)**
+Replace the legacy `esphome.xxxx_enable` action with a switch toggle:
+```yaml
+action:
+  - service: switch.turn_on
+    target:
+      entity_id: switch.compoundmitersaw_set_relay
+```
+
+**3. Tool Timeout (Abandoned Tool)**
+Replace the legacy `esphome.xxxx_latch_reset` action with the force-reset button:
+```yaml
+action:
+  - service: button.press
+    target:
+      entity_id: button.compoundmitersaw_reset_relay
 ```
