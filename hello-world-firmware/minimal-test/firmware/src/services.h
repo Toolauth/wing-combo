@@ -1,34 +1,32 @@
 #include <WiFi.h>
 #include <ArduinoOTA.h>
-#include <HTTPClient.h>
+#include <PubSubClient.h> // New dependency
 #include <ArduinoJson.h>
 #include "config_check.h"
 #include <queue>
 
 struct NetworkEvent {
-    String path;
-    String key;
+    String topic;
     String value;
-    unsigned long queuedAt; // The 'timestamp' when it happened
+    unsigned long queuedAt;
 };
 
-//networking
+// Networking & MQTT
 void initNetwork();
 void manageNetwork(); //recover from dropped WiFi
-//bool sendHttpData(String path, String key, String value, unsigend long offsetMs);
 void processNetworkQueue(); // Call this in loop()
-void queueEvent(String path, String key, String value);
+void queueEvent(String subPath, String value);
+
+// MQTT Specifics
+void mqttCallback(char* topic, byte* payload, unsigned int length);
+void sendDiscovery();
+bool mqttReconnect();
 
 //tool control
 void enableTool();
 void unEnableTool();
 void updateUI(bool estop, bool bypass, bool authorized);
-void monitorSignal(bool current, bool &last, unsigned long &dTimer, unsigned long &hTimer, const char* key, bool useHeartbeat = false);
+void monitorSignal(bool current, bool &last, unsigned long &dTimer, unsigned long &hTimer, const char* subTopic, bool useHeartbeat);
 
 // status update
-void sendHeartbeat();
-void checkTimeout();
-bool checkRemoteAuthorized(); 
-
-// sensing
 void processRfid();

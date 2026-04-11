@@ -2,7 +2,7 @@
 #include "services.h"
 #include "hal.h"
 #include <WiFi.h>
-#include <ESP32Ping.h>
+#include <PubSubClient.h>
 
 RTC_DATA_ATTR int bootCount;
 /*
@@ -33,10 +33,12 @@ void rebootCounter(){
         default: reason = "NO_MEAN";
     }
 
-    queueEvent("/restart", "sw_reboot_count", String(bootCount));
-    queueEvent("/restart", "sw_reboot_reason", reason);
+    queueEvent("sw_reboot_count", String(bootCount));
+    queueEvent("sw_reboot_reason", reason);
     
 }
+
+unsigned long lastSuccessfulCommunication;
 
 /*
 Check if we've been ghosted for too long.
@@ -45,8 +47,10 @@ Software reset if the device can't reach the server.
 void selfSoftwareRestart(){
     // Use the global timestamp from services.cpp
     extern unsigned long lastSuccessfulCommunication;
+    extern PubSubClient client;
 
-    bool pingSucceeds = Ping.ping(API_BASE_URL);
+
+    bool pingSucceeds = client.connected();
     if (pingSucceeds) lastSuccessfulCommunication = millis();
 
     if (millis() - lastSuccessfulCommunication > MAX_OFFLINE_MS) {
