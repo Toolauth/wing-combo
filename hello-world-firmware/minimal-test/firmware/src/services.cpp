@@ -107,19 +107,24 @@ void mqttCallback(char* topic, byte* payload, unsigned int length) {
     
     String tool = String(TOOL_ID);
 
-    // 1. Handling the Enable/Disable Switch
-    if (String(topic) == "cmnd/" + tool + "/enable") {
-        if (msg == "ON") enableTool();
-        else unEnableTool(); // This is the physical RESET pulse
+    // 1. Handling the Enable/Disable Switches
+    if (String(topic) == "cmnd/" + tool + "/set_relay") {
+        if (msg == "ON") {
+            enableTool();
+            queueEvent("set_relay", "ON"); 
+        }else {
+            unEnableTool(); // This is the physical RESET pulse
+            queueEvent("set_relay", "OFF"); 
+        }
     }
 
-    // 2. Handling a Direct Reset Command (Matching the YAML's intent)
+    // 2. Handling a Direct Reset Command (for an abandoned tool)
     // This gives your colleague a dedicated "Pulse Reset" button/action
-    if (String(topic) == "cmnd/" + tool + "/reset") {
+    if (String(topic) == "cmnd/" + tool + "/reset_relay") {
         triggerResetPulse();
-        unEnableTool(); 
-        // We also report back that authorization is now dead
-        queueEvent("enabled", "OFF"); 
+        // probably redundant
+        unEnableTool();  
+        queueEvent("set_relay", "OFF"); 
     }
 }
 
@@ -132,8 +137,15 @@ void sendDiscovery() {
     client.publish(rfidConfigTopic.c_str(), rfidPayload.c_str(), true);
 
     // 2. Enable Switch Discovery (The "SET" Relay)
-    String switchConfigTopic = "homeassistant/switch/" + tool + "/enable/config";
-    String switchPayload = "{\"name\":\"" + tool + " Enable\", \"stat_t\":\"stat/" + tool + "/state\", \"cmd_t\":\"cmnd/" + tool + "/enable\"}";
+    // Note: stat_t now matches the subTopic we used in queueEvent above
+    String switchConfigTopic = "homeassistant/switch/" + tool + "/set_relay/config";
+    String switchPayload = "{"
+        "\"name\":\"" + tool + " Enable\","
+        "\"stat_t\":\"stat/" + tool + "/set_relay\"," 
+        "\"cmd_t\":\"cmnd/" + tool + "/set_relay\","
+        "\"pl_on\":\"ON\","
+        "\"pl_off\":\"OFF\""
+    "}";
     client.publish(switchConfigTopic.c_str(), switchPayload.c_str(), true);
     
     // Example: The E-Stop Binary Sensor
@@ -182,10 +194,10 @@ void sendDiscovery() {
     client.publish(binCurTopic.c_str(), binCurPayload.c_str(), true);
 
     // New: A "Button" entity for the Reset Pulse
-    String resetConfigTopic = "homeassistant/button/" + tool + "/reset/config";
+    String resetConfigTopic = "homeassistant/button/" + tool + "/reset_relay/config";
     String resetPayload = "{"
         "\"name\":\"" + tool + " Force Reset\","
-        "\"cmd_t\":\"cmnd/" + tool + "/reset\","
+        "\"cmd_t\":\"cmnd/" + tool + "/reset_relay\","
         "\"payload_press\":\"RESET\","
         "\"ic\":\"mdi:shredder\""
     "}";
